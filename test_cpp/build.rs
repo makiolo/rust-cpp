@@ -21,7 +21,8 @@ fn main() {
 
     cmake::build(".");
 
-    println!("cargo:rustc-link-search=all={}\\build\\{}", out_dir, profile);
+    // println!("cargo:rustc-link-search=all={}\\build\\{}", out_dir, profile);
+    println!("cargo:rustc-link-search=all={}/build/{}", out_dir, profile);
     println!("cargo:rustc-link-lib=static={}", package_name);
 }
 
