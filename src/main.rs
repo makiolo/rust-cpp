@@ -10,7 +10,7 @@ use std::fmt::Debug;
 use serde::{Serialize, Deserialize};
 use http_parser::{HttpParser, HttpParserType, CallbackResult, ParseAction, HttpParserCallback};
 
-use hello_cpp::{sum};
+use test_cpp::{sum};
 use std::collections::HashMap;
 
 /*
@@ -77,6 +77,27 @@ impl HttpParserCallback for Callback {
         Ok(ParseAction::None)
     }
 
+    fn on_url(&mut self, _parser: &mut HttpParser, data: &[u8]) -> CallbackResult
+    {
+        let body = std::str::from_utf8(data).expect("Invalid utf-8");
+        println!("on url: {}", body);
+
+        Self::parse_http_parameters(&body);
+
+        Ok(ParseAction::None)
+    }
+
+    fn on_status(
+        &mut self,
+        _parser: &mut HttpParser,
+        data: &[u8]
+    ) -> CallbackResult
+    {
+        let body = std::str::from_utf8(data).expect("Invalid utf-8");
+        println!("on status: {}", body);
+        Ok(ParseAction::None)
+    }
+
     fn on_body(
         &mut self,
         _parser: &mut HttpParser,
@@ -86,26 +107,24 @@ impl HttpParserCallback for Callback {
         println!("on body: {}", body);
         Ok(ParseAction::None)
     }
+}
 
-    fn on_url(&mut self, _parser: &mut HttpParser, data: &[u8]) -> CallbackResult
-    {
-        let body = std::str::from_utf8(data).expect("Invalid utf-8");
-        println!("on url: {}", body);
-
+impl Callback {
+    pub fn parse_http_parameters(body: &&str) {
         let index = body.find("?").unwrap_or(0);
         let body_trunc = &body[index + 1..];
 
         let split = body_trunc.split("&");
         let mut mymap = HashMap::new();
         for s in split {
-            let chunks : Vec<&str> = s.split("=").collect();
+            let chunks: Vec<&str> = s.split("=").collect();
             let mut key: Option<&str> = None;
             let mut value: Option<f64> = None;
             let mut i = 0;
             for c in chunks {
                 match i {
-                    0 => {key = Option::from(c);},
-                    1 => {value = Option::from(c.parse::<f64>().unwrap());},
+                    0 => { key = Option::from(c); },
+                    1 => { value = Option::from(c.parse::<f64>().unwrap()); },
                     _ => {}
                 }
                 i += 1;
@@ -123,19 +142,6 @@ impl HttpParserCallback for Callback {
 
             println!("sum = {}", result_sum);
         }
-
-        Ok(ParseAction::None)
-    }
-
-    fn on_status(
-        &mut self,
-        _parser: &mut HttpParser,
-        data: &[u8]
-    ) -> CallbackResult
-    {
-        let body = std::str::from_utf8(data).expect("Invalid utf-8");
-        println!("on status: {}", body);
-        Ok(ParseAction::None)
     }
 }
 

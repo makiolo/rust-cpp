@@ -1,5 +1,5 @@
 [package]
-name = "hello_cpp"
+name = "test_cpp"
 version = "0.1.0"
 authors = ["Ricardo Marmolejo García <makiolo@gmail.com>"]
 edition = "2021"
