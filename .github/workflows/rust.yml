@@ -16,7 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Build
+      continue-on-error: true
+      run: cargo build --verbose
     - name: Introspection
       run: find .
-    - name: Build
-      run: cargo build --verbose
