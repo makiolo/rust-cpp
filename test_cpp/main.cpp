@@ -2,6 +2,6 @@
 
 double sum(double left, double right)
 {
-    return left * right;
+    return left + right;
 }
 
