@@ -1,0 +1,6 @@
+#ifndef RED_PANDAS_PROJECT_PORTFOLIO_H
+#define RED_PANDAS_PROJECT_PORTFOLIO_H
+
+int hello();
+
+#endif

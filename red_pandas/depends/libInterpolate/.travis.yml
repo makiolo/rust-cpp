@@ -1,0 +1,42 @@
+language : cpp
+matrix:
+  include:
+    - os : linux
+      dist: xenial
+      compiler: clang
+    - os : linux
+      dist: xenial
+      compiler: g++
+    - os : linux
+      dist: bionic
+      compiler: g++
+    - os : linux
+      dist: bionic
+      compiler: clang
+
+
+install:
+  - sudo apt-get install python3 python3-pip libboost-dev libeigen3-dev
+  - sudo pip3 install pytest pexpect
+
+  # download an install a newer version of cmake
+  - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
+  - mkdir ${DEPS_DIR}
+  - cd ${DEPS_DIR}
+  - travis_retry wget --no-check-certificate https://cmake.org/files/v3.16/cmake-3.16.9-Linux-x86_64.tar.gz
+  - tar -xf cmake-3.16.9-Linux-x86_64.tar.gz
+  - mv cmake-3.16.9-Linux-x86_64 cmake-install
+  - PATH=${DEPS_DIR}/cmake-install:${DEPS_DIR}/cmake-install/bin:$PATH
+
+  # don't forget to switch back to the main build directory once you are done
+  - cd ${TRAVIS_BUILD_DIR}
+
+before_install:
+  - eval "${MATRIX_EVAL}"
+before_script:
+  - mkdir build
+  - cd build
+  - cmake ..
+script:
+  - make
+  - make test

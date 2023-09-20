@@ -3,6 +3,7 @@ name = "test_cpp"
 version = "0.1.1"
 authors = ["Ricardo Marmolejo García <makiolo@gmail.com>"]
 edition = "2021"
+crate-type = ["staticlib"]
 
 [build-dependencies]
 cc = "1.0"

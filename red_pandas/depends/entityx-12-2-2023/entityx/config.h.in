@@ -1,0 +1,14 @@
+#pragma once
+
+#include <cstdint>
+#include <cstddef>
+#include <memory>
+
+class Serie;
+
+namespace entityx {
+
+static const size_t MAX_COMPONENTS = @ENTITYX_MAX_COMPONENTS@;
+typedef @ENTITYX_DT_TYPE@ TimeDelta;
+
+}  // namespace entityx

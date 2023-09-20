@@ -9,6 +9,7 @@
 use std::fmt::Debug;
 use serde::{Serialize, Deserialize};
 use test_cpp::{sum};
+use red_pandas::{custommain};
 // use http_parser::{HttpParser, HttpParserType, CallbackResult, ParseAction, HttpParserCallback};
 
 // use std::collections::HashMap;
@@ -250,13 +251,11 @@ struct Result {
 
 #[rocket::get("/<name>/<left>/<right>")]
 fn entry_sum(name: &str, left: f64, right: f64) -> String {
-    // let mut response = String::new();
     let mut result : f64 = 0.0;
     match name {
         "sum" => {
             unsafe {
                 result = sum(left, right);
-                // response.push_str(&format!("{}", result));
             }
         }
         _ => (),
@@ -280,6 +279,10 @@ fn test(x: i32, y: i32) -> String {
 
     // Prints deserialized = Point { x: 1, y: 2 }
     // println!("Point deserialized = {:?}", deserialized);
+
+    unsafe {
+        custommain();
+    }
 
     serialized
 }
