@@ -1,6 +1,0 @@
-mkdocs
-mkdocs-localsearch
-mkdocs-material==8.5.11
-mkdocs-material-extensions
-mkdocs-pdf-export-plugin
-mkdocs-print-site-plugin

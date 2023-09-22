@@ -1,0 +1,121 @@
+site_name: Quants - Linear Rates, Inflation, Tools "Smile"
+docs_dir: input
+site_dir: output
+theme:
+    name: material
+    palette:
+      - scheme: default
+        toggle:
+          icon: material/toggle-switch-off-outline
+          name: Dark mode
+        primary: teal
+        accent: purple
+      - scheme: slate
+        toggle:
+          icon: material/toggle-switch
+          name: Light mode
+        primary: teal
+        accent: lime
+    custom_dir: input/theme
+    features:
+      - navigation.tabs
+      - navigation.sections
+      - toc.integrate
+      - navigation.top
+      - search.highlight
+      - search.suggest
+      - content.code.annotate
+      - content.code.annotation
+      - content.code.link
+      - content.code.copy
+    language: en
+    
+site_url: ""
+use_directory_urls: false
+markdown_extensions:
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.keys
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - tables
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.arithmatex:
+      generic: true
+  - admonition
+  - abbr
+  - footnotes
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+plugins:
+- search
+- localsearch
+- mkdocstrings:
+    handlers:
+      python:
+        import:
+        - https://docs.python.org/3/objects.inv
+        - https://mkdocstrings.github.io/objects.inv
+        - https://mkdocstrings.github.io/griffe/objects.inv
+        options:
+          allow_inspection: true
+          show_source: false
+          show_root_heading: true
+          docstring_style: "google"
+          show_docstring_attributes: true
+          show_docstring_returns: true
+          docstring_options:
+            ignore_init_summary: true
+          docstring_section_style: list
+          filters: ["!^_"]
+          heading_level: 2
+          inherited_members: true
+          merge_init_into_class: true
+          preload_modules: [mkdocstrings]
+          separate_signature: true
+          show_root_full_path: false
+          show_signature_annotations: true
+          show_symbol_type_heading: true
+          show_symbol_type_toc: true
+          signature_crossrefs: true
+          summary: true
+          unwrap_annotated: true
+- print-site
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.alm.europe.cloudcenter.corp/cib-mercury-quants/documentation
+    - icon: fontawesome/brands/jenkins
+      link: http://cibmcy20n32931v.sanhq.santanderhq.corp:49152/
+
+copyright: Quants - Linear Rates, Inflation, Tools "Smile"
+
+extra_javascript:
+    - javascripts/mathjax.js
+    - https://polyfill.io/v3/polyfill.min.js?features=es6
+    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+nav:
+  - Home:
+    - "Quick Start": 'index.md'
+  - Tutorials:
+    - "Git Guide": 'git.md'
+    - "Patches Guide": 'patches.md'
+  - Jenkins:
+    - "Webhooks": 'webhooks.md'
+  - Reference Python:
+    - "Mercury": 'python/mercury.md'
+    - "Atenea": 'python/atenea.md'
+  - Random:
+    - "Experiments": 'about.md'

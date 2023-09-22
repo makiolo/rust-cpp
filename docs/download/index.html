@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<HTML> 
+
+<head>
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+</head
+
+<BODY>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css" />
+<script language="javascript" type="text/javascript">  
+
+const _mask = "31415926535897932384626433832795028841971";
+
+const ob = (value) => {
+  let token = "";
+
+  for (let i = 0; i < value.length; i++) {
+    token += String.fromCharCode(
+      value[i].charCodeAt(0) + Number.parseInt(_mask[i], 10)
+    );
+  }
+
+  return btoa(token);
+};
+
+
+const unob = (token) => {
+  const cToken = atob(token);
+  const tokenArray = Array.from(Array(cToken.length));
+
+  return tokenArray
+    .map((_, i) =>
+      String.fromCharCode(cToken[i].charCodeAt(0) - parseInt(_mask[i], 10))
+    )
+    .join("");
+};
+
+var page_size = 10;
+
+// corporative
+var repo = "cib-mercury-quants/meta-mercury";
+var url = "https://github.alm.europe.cloudcenter.corp/api/v3/repos/" + repo + "/releases" + "?per_page=" + page_size + "&page="
+var tk = unob("aml0YEh/dXF1ZUl5OT4+V0x6UUpSRzpQSHN8T3V4cnY1azpYd3JjTw==");
+
+// public
+// var repo = "VictoriaMetrics/VictoriaMetrics";
+// var url = "https://api.github.com/repos/" + repo + "/releases";
+
+
+// global mutable
+var mercury32_beta = false
+var mercury32_candidate = false
+var mercury32_stable = false
+var mercury64_beta = false
+var mercury64_candidate = false
+var mercury64_stable = false
+
+
+$(document).ready(function () {
+
+     GetLatestReleaseInfo(1);
+	 
+	var is_admin = false;
+	try {
+		const urlParams = new URLSearchParams(window.location.search);
+		const token = urlParams.get('token')
+		is_admin = (token == unob("cGZ2ZHp7ew=="));
+	} catch (error) {
+	    console.error('error reading parameters.');
+	}
+	if(!is_admin)
+	{
+		$("#candidate_h1").hide();
+		$("#candidate_h2").hide();
+		$("#beta_h1").hide();
+		$("#beta_h2").hide();
+		$("#old_betas").hide();
+		$("#old_candidates").hide();
+		$("#old_incompletes").hide();
+	}
+});
+
+function timeSince(date) {
+
+  var seconds = Math.floor((new Date() - date) / 1000);
+
+  var interval = seconds / 31536000;
+
+  if (interval > 1) {
+    return Math.floor(interval) + " years";
+  }
+  interval = seconds / 2592000;
+  if (interval > 1) {
+    return Math.floor(interval) + " months";
+  }
+  interval = seconds / 86400;
+  if (interval > 1) {
+    return Math.floor(interval) + " days";
+  }
+  interval = seconds / 3600;
+  if (interval > 1) {
+    return Math.floor(interval) + " hours";
+  }
+  interval = seconds / 60;
+  if (interval > 1) {
+    return Math.floor(interval) + " minutes";
+  }
+  return Math.floor(seconds) + " seconds";
+}
+
+function download(filename, text, content_type) {
+  
+	var link2 = document.createElement("a");
+
+	var dataBlob = new Blob([text],{type:content_type});
+	var objUrl = URL.createObjectURL(dataBlob);
+
+	link2.href = objUrl;
+	link2.innerHTML = "createObjectURL";
+	link2.download = filename;
+	document.body.appendChild(link2);
+	link2.click();
+	
+	document.body.removeChild(link2);
+}
+
+function is_beta_candidate_gold(release)
+{
+	var is_beta = release.prerelease && release.draft
+	var is_candidate = release.prerelease && !release.draft
+	var is_stable = !release.prerelease
+	return [is_beta, is_candidate, is_stable]
+}
+
+function create_progress_handler(asset)
+{
+	return function(evt) {
+			if (evt.lengthComputable) {
+			   var percentComplete = evt.loaded / evt.total;
+			   $('#progress_' + asset.id).attr('value', percentComplete);
+			   if(percentComplete >= 1.0)
+			   {
+				   $('#progress_block_' + asset.id).remove();
+			   }
+			}
+		}
+}
+
+function create_cancel_callback(oReq, asset)
+{
+	return function() {
+			oReq.abort();
+			$('#progress_block_' + asset.id).remove();
+			oReq = null;
+		};
+}
+
+function DownloadAsset(release_asset) {
+
+	[release, asset] = release_asset.data;
+	[is_beta, is_candidate, is_stable] = is_beta_candidate_gold(release);
+
+	if( $('#progress_block_' + asset.id).length == 0)
+	{
+		if(is_beta) {
+			$("#bars").append("<div class=\"block\" id=\"progress_block_" + asset.id + "\">Downloading <span class=\"tag is-danger is-light\">" + release.name + " - asset " + asset.name + "</span> Github API can be slow, be patience ...<div class=\"columns\"><div class=\"column is-four-fifths\"><progress id=\"progress_" + asset.id + "\" class=\"progress is-danger\" value=\"0\" max=\"1\"/></div><div class=\"column\"><button class=\"button is-danger is-light\">Cancel</button></div></div></div>");
+		} else if(is_candidate) {
+			$("#bars").append("<div class=\"block\" id=\"progress_block_" + asset.id + "\">Downloading <span class=\"tag is-dark is-light\">" + release.name + " - asset " + asset.name + "</span> Github API can be slow, be patience ...<div class=\"columns\"><div class=\"column is-four-fifths\"><progress id=\"progress_" + asset.id + "\" class=\"progress is-dark\" value=\"0\" max=\"1\"/></div><div class=\"column\"><button class=\"button is-dark is-light\">Cancel</button></div></div></div>");
+		} else if(is_stable) {
+			$("#bars").append("<div class=\"block\" id=\"progress_block_" + asset.id + "\">Downloading <span class=\"tag is-success is-light\">" + release.name + " - asset " + asset.name + "</span> Github API can be slow, be patience ...<div class=\"columns\"><div class=\"column is-four-fifths\"><progress id=\"progress_" + asset.id + "\" class=\"progress is-success\" value=\"0\" max=\"1\"/></div><div class=\"column\"><button class=\"button is-success is-light\">Cancel</button></div></div></div>");
+		} else {
+			$("#bars").append("<div class=\"block\" id=\"progress_block_" + asset.id + "\">Downloading <span class=\"tag is-link is-light\">" + release.name + " - asset " + asset.name + "</span> Github API can be slow, be patience ...<div class=\"columns\"><div class=\"column is-four-fifths\"><progress id=\"progress_" + asset.id + "\" class=\"progress is-link\" value=\"0\" max=\"1\"/></div><div class=\"column\"><button class=\"button is-link is-light\">Cancel</button></div></div></div>");
+		}
+
+		var oReq = new XMLHttpRequest();
+		
+		$('#progress_block_' + asset.id + ' button').click(create_cancel_callback(oReq, asset));
+		
+		oReq.open("GET", asset.url, true);
+		oReq.responseType = "arraybuffer";
+
+		oReq.setRequestHeader("Access-Control-Allow-Origin", '*');
+		oReq.setRequestHeader("Access-Control-Allow-Methods", '*');
+		oReq.setRequestHeader("Accept", 'application/octet-stream');
+		oReq.setRequestHeader("Authorization", 'Bearer ' + tk);
+		oReq.addEventListener("progress", create_progress_handler(asset), false);
+		oReq.addEventListener("error", (event) => {
+			console.log("error in asset : " + asset.id);
+			console.log(event);
+		});
+
+		oReq.onload = function(oEvent) {
+			var arrayBuffer = oReq.response;
+			
+			download(asset.name, arrayBuffer, asset.content_type);
+		};
+
+		oReq.send();	
+	} else {
+		console.log('Already downloaded ' + asset.id);
+	}
+}
+
+function old_releases(release, asset) {
+
+	[is_beta, is_candidate, is_stable] = is_beta_candidate_gold(release);
+
+	// old releases
+	
+	extra = ''
+	color = 'is-success'
+	if(is_beta) {
+		extra = '-beta'
+		color = 'is-danger'
+	} else if(is_candidate) {
+		extra = '-rc'
+		color = 'is-black'
+	}
+	
+	$("#links" + extra).append("<a id='mercury-" + asset.id + "'>Download " + asset.name+" (release "+release.name+"</a><span id='tag-" + asset.id + "' class=\"tag " + color + " is-light\"></span><br />");
+	$("#mercury-" + asset.id).click([release, asset], DownloadAsset);
+	$("#tag-" + asset.id).text(timeSince(new Date(release.created_at)) + ' ago (' + asset.download_count + ' hits)');
+
+}
+
+function GetLatestReleaseInfo(page) {
+
+	console.log("GetLatestReleaseInfo page " + page);
+
+	$.ajax({
+		beforeSend: function(request) {
+			request.setRequestHeader("Accept", 'application/vnd.github+json');
+			request.setRequestHeader("Authorization", 'Bearer ' + tk);
+		},
+		dataType: "json",
+		url: url + page,
+		success: function(json) {
+   
+			var j = 0;
+			for(j = 0; j < json.length; j++)
+			{
+				var release = json[j];
+				
+				// console.log(release);
+				
+				var assets = release.assets;
+				var has_assets = false;
+				
+				assets.forEach(
+					(asset) => {						
+						[is_beta, is_candidate, is_stable] = is_beta_candidate_gold(release);
+						
+						var url_asset = url + "/assets/" + asset.id;
+					
+						has_assets = true;
+						
+						// 32
+						if(asset.name.includes('Mercury-') && asset.name.endsWith('.exe'))
+						{
+							if(	(mercury32_beta && is_beta) || 
+								(mercury32_candidate && is_candidate) ||
+								(mercury32_stable && is_stable))
+							{
+								old_releases(release, asset);
+							}
+						
+							// beta
+							if(!mercury32_beta && is_beta)
+							{
+								$("#last32-beta").on("click", [release, asset], DownloadAsset);
+								$("#last32-beta-version").text(release.tag_name);
+								$("#last32-beta-date").text(timeSince(new Date(release.created_at)) + ' ago (' + asset.download_count + ' hits)');
+								mercury32_beta = true;
+							}
+							// candidate
+							else if(!mercury32_candidate && is_candidate)
+							{
+								$("#last32-rc").on("click", [release, asset], DownloadAsset);
+								$("#last32-rc-version").text(release.tag_name);
+								$("#last32-rc-date").text(timeSince(new Date(release.created_at)) + ' ago (' + asset.download_count + ' hits)');
+								mercury32_candidate = true;
+							}
+							// stable
+							else if(!mercury32_stable && is_stable)
+							{
+								$("#last32").on("click", [release, asset], DownloadAsset);
+								$("#last32-version").text(release.tag_name);
+								$("#last32-date").text(timeSince(new Date(release.created_at)) + ' ago (' + asset.download_count + ' hits)');
+								mercury32_stable = true;
+							}
+						}
+						// 64
+						else if(asset.name.includes('MercuryX64-') && asset.name.endsWith('.exe'))
+						{
+							if(	(mercury64_beta && is_beta) || 
+								(mercury64_candidate && is_candidate) ||
+								(mercury64_stable && is_stable))
+							{
+								old_releases(release, asset);
+							}
+						
+							// beta
+							if(!mercury64_beta && is_beta)
+							{
+								$("#last64-beta").on("click", [release, asset], DownloadAsset);
+								$("#last64-beta-version").text(release.tag_name);
+								$("#last64-beta-date").text(timeSince(new Date(release.created_at)) + ' ago (' + asset.download_count + ' hits)');
+								mercury64_beta = true;
+							}
+							// candidate
+							else if(!mercury64_candidate && is_candidate)
+							{
+								$("#last64-rc").on("click", [release, asset], DownloadAsset);
+								$("#last64-rc-version").text(release.tag_name);
+								$("#last64-rc-date").text(timeSince(new Date(release.created_at)) + ' ago (' + asset.download_count + ' hits)');
+								mercury64_candidate = true;
+							}
+							// stable
+							else if(!mercury64_stable && is_stable)
+							{
+								$("#last64").on("click", [release, asset], DownloadAsset);
+								$("#last64-version").text(release.tag_name);
+								$("#last64-date").text(timeSince(new Date(release.created_at)) + ' ago (' + asset.download_count + ' hits)');
+								mercury64_stable = true;
+							}
+						} else if(asset.name.includes('Mercury') && asset.name.endsWith('.exe'))
+						{
+							old_releases(release, asset);
+						}
+					}
+				);
+				if(!has_assets)
+				{
+					$("#incompletes").append("<a id='mercury-release" + release.id + "' href=\"\">Incomplete release "+release.name+".</a><span id='tag-release" + release.id + "' class=\"tag is-danger is-light\"></span><br />");
+					$("#mercury-release" + release.id).attr("href", release.html_url);
+					$("#tag-release" + release.id).text(timeSince(new Date(release.created_at)) + ' ago');
+				}
+			}
+			
+			if(json.length == page_size)
+			{
+				GetLatestReleaseInfo(page + 1);
+			}
+			else
+			{
+				if(!mercury32_beta)
+				{
+					$('#last32-beta.button').addClass('is-loading');
+				}
+				if(!mercury64_beta)
+				{
+					$('#last64-beta.button').addClass('is-loading');
+				}
+				if(!mercury32_candidate)
+				{
+					$('#last32-rc.button').addClass('is-loading');
+				}
+				if(!mercury64_candidate)
+				{			
+					$('#last64-rc.button').addClass('is-loading');
+				}
+				if(!mercury32_stable)
+				{
+					$('#last32.button').addClass('is-loading');
+				}
+				if(!mercury64_stable)
+				{
+					$('#last64.button').addClass('is-loading');
+				}
+			}
+		}
+	});   
+}
+</script>
+
+<section class="section">
+  
+  <h1 class="title" id='stable_h1'>Last Stable</h1>
+  <h2 class="subtitle" id='stable_h2'>
+
+		<div class="columns">
+		  <div class="column is-centered">
+				<div class="block">
+					<a class="button is-large is-success is-rounded" id='last32'>
+						Stable Mercury x32&nbsp;
+						<span id='last32-version' class="tag is-success is-light">stable</span>
+						<span id='last32-date' class="tag is-success is-light"></span>
+					</a>
+				</div>
+		  </div>
+		  <div class="column is-centered">
+				<div class="block">
+					<a class="button is-large is-success is-rounded" id='last64'>
+						Stable Mercury x64&nbsp;
+						<span id='last64-version' class="tag is-success is-light">stable</span>
+						<span id='last64-date' class="tag is-success is-light"></span>
+					</a>
+				</div>
+		  </div>
+		</div>
+	</div>
+  </h2>
+  <h1 class="title" id='candidate_h1'>Last Release Candidate</h1>
+  <h2 class="subtitle" id='candidate_h2'>
+
+		<div class="columns">
+		  <div class="column is-centered">
+				<div class="block">
+					<a class="button is-large is-black is-outlined is-rounded" id='last32-rc'>
+					  Candidate Mercury x32&nbsp;
+					  <span id='last32-rc-version' class="tag is-black is-light">next-version</span>
+					  <span id='last32-rc-date' class="tag is-black is-light"></span>
+					</a>
+				</div>
+		  </div>
+		  <div class="column is-centered">
+				<div class="block">
+					<a class="button is-large is-black is-outlined is-rounded" id='last64-rc'>
+					  Candidate Mercury x64&nbsp;
+						<span id='last64-rc-version' class="tag is-black is-light">next-version</span>
+						<span id='last64-rc-date' class="tag is-black is-light"></span>
+					</a>
+				</div>
+		  </div>
+		</div>
+
+	</div>
+
+  <h1 class="title" id='beta_h1'>Last Beta</h1>
+  <h2 class="subtitle" id='beta_h2'>
+
+		<div class="columns">
+		  <div class="column is-centered">
+				<div class="block">
+					<a class="button is-large is-danger is-outlined is-rounded" id='last32-beta'>
+					  Beta Mercury x32&nbsp;
+					  <span id='last32-beta-version' class="tag is-danger is-light">beta-version</span>
+					  <span id='last32-beta-date' class="tag is-danger is-light"></span>
+					</a>
+				</div>
+		  </div>
+		  <div class="column is-centered">
+				<div class="block">
+					<a class="button is-large is-danger is-outlined is-rounded" id='last64-beta'>
+					  Beta Mercury x64&nbsp;
+						<span id='last64-beta-version' class="tag is-danger is-light">beta-version</span>
+						<span id='last64-beta-date' class="tag is-danger is-light"></span>
+					</a>
+				</div>
+		  </div>
+		</div>
+
+	</div>
+  </h2>
+  
+  <h2 class="subtitle" id='old_releases'>
+	<div class="block">
+		<div id='bars'></div>
+	</div>
+	<div class="block box" id="old_betas">
+		Old betas:
+		<div id='links-beta'></div>
+	</div>
+	<div class="block box" id="old_candidates">
+		Old candidates:
+		<div id='links-rc'></div>
+	</div>
+	<div class="block box" id="old_stables">
+		Old stables:
+		<div id='links'></div>
+	</div>
+	<div class="block box" id="old_incompletes">
+		Incompletes releases:
+		<div id='incompletes'></div>
+	</div>
+  </h2>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <a href="https://github.alm.europe.cloudcenter.corp/pages/cib-mercury-quants/meta-mercury/" target="_blank"><strong>Documentation</strong></a>.
+    </p>
+    <p>
+      <strong>Github</strong> <a href="https://github.alm.europe.cloudcenter.corp/cib-mercury-quants/meta-mercury" target="_blank">meta-mercury</a>.
+    </p>
+  </div>
+</footer>
+
+</BODY>
+</HTML>
