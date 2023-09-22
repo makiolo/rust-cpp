@@ -1,0 +1,84 @@
+# The Azure pipeline builds the x86 and x64 release builds.
+# No testing is performed in the pipeline, as that would need Excel installed on the build agent.
+
+trigger:
+- master
+
+variables:
+  solution: '**/excelbind.sln'
+  buildConfiguration: 'Release'
+
+jobs:
+- job: 'Build'
+  strategy:
+    matrix:
+      2022_Release_Win32:
+        pythonVersion: '3.11'
+        python_Version: 'python311'
+        buildPlatformPython: 'x86'
+        buildPlatform: 'Win32'
+        buildConfiguration: 'Release'
+        vsNumber: 2022
+        vsName: 'Visual Studio 17 2022'
+        imageName: 'windows-latest'
+
+      2022_Release_x64_py311:
+        pythonVersion: '3.11'
+        python_Version: 'python311'
+        buildPlatformPython: 'x64'
+        buildPlatform: 'x64'
+        buildConfiguration: 'Release'
+        vsNumber: 2022
+        vsName: 'Visual Studio 17 2022'
+        imageName: 'windows-latest'
+
+
+      2022_Release_x64_py310:
+        pythonVersion: '3.10'
+        python_Version: 'python310'
+        buildPlatformPython: 'x64'
+        buildPlatform: 'x64'
+        buildConfiguration: 'Release'
+        vsNumber: 2022
+        vsName: 'Visual Studio 17 2022'
+        imageName: 'windows-latest'
+
+  pool:
+    vmImage: $(imageName)
+
+  steps:
+  - checkout: self
+    submodules: true
+    persistCredentials: true
+    
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: $(pythonVersion)
+      addToPath: true
+      architecture: $(buildPlatformPython)
+
+  - script: set
+    displayName: View env vars
+
+  - task: NuGetToolInstaller@1
+
+  - task: CmdLine@2
+    inputs:
+      script: |
+        cmake -S src -B build/$(vsNumber)$(buildPlatform) -G "$(vsName)" -A $(buildPlatform)
+
+  - task: VSBuild@1
+    inputs:
+      solution: 'build/$(vsNumber)$(buildPlatform)/excelbind.sln'
+      platform: '$(buildPlatform)'
+      configuration: '$(buildConfiguration)'
+
+  - task: CmdLine@2
+    condition: and(eq(variables['vsNumber'], 2019), eq(variables['pythonVersion'], '3.7'))
+    inputs:
+      script: |
+        git config user.email "53918463+RuneLjungmann@users.noreply.github.com"
+        git config user.name "RuneLjungmann"
+        git checkout master
+        git commit -a -m "Azure Pipeline: Updated binaries" -m "[skip ci]"
+        git push origin
