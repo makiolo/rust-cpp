@@ -1038,8 +1038,8 @@ TEST_CASE("end to custom cash flow", "[CF]")
 
     // Leg -> vector< coupon | start | end | custom > flows;
     Leg product;
-    product.flows.emplace_back(initial);
-    product.flows.emplace_back(final);
+    product.add(initial);
+    product.add(final);
     REQUIRE(product.npv() == Catch::Approx(2000));
 }
 

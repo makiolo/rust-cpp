@@ -3,7 +3,7 @@
 #include "npv.h"
 
 int dice3 (void) {
-    return rand() % 3 + 1;;
+    return rand() % 3 + 1;
 }
 
 TEST_CASE("portfolio_test1", "[example]") {

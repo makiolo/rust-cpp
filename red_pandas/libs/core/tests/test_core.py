@@ -4,6 +4,7 @@ import json
 import time
 import numpy as np
 import red_pandas as rp
+from _pytest.python_api import approx
 from scipy.stats import norm
 
 
@@ -506,6 +507,162 @@ def test_callback():
     rp.use_callback(py_callback)
     rp.use_callback(lambda x,y: py_callback(2*x, 'py_callback_lambda(%d, %s)' % (x,y)))
 
+
+def test_schedule():
+
+    res = rp.on_capital(1000, 5000, rp.Maturity(5))
+    print(res.value)
+
+    r = 0.08
+
+    term1 = rp.TermStructure()
+    term1.append_spot(rp.Maturity(1), rp.InterestRate(r, rp.YIELD, rp.ANNUAL))
+    term1.append_spot(rp.Maturity(2), rp.InterestRate(r, rp.YIELD, rp.ANNUAL))
+    term1.append_spot(rp.Maturity(3), rp.InterestRate(r, rp.YIELD, rp.ANNUAL))
+    term1.build()
+
+    # create CashFlows free (passing TermStructure)
+    coupon = rp.CouponCashFlow(term1, 9.99 * 12)
+    assert(coupon.to_start_cashflow().cash == approx(308.9423868313))
+    assert(coupon.to_end_cashflow().cash == approx(389.178432))
+
+    # create CashFlows from TermStructure (good idea ?)
+    initial = term1.make_cashflow(rp.Maturity(0.0), 1000.0)
+    final = term1.make_cashflow(rp.Maturity(3.0), 1259.712)
+    other = term1.make_cashflow(rp.Maturity(2.0), 3059.712)
+
+    print(initial.to_custom_cashflow(rp.Maturity(1)).cash)
+    print(final.to_custom_cashflow(rp.Maturity(2)).cash)
+
+    # create Leg Products and value
+    leg1 = rp.Leg()
+    leg1.add(initial)
+    leg1.add(final)
+    print('leg1 npv = {}'.format(leg1.npv()))
+
+    leg2 = rp.Leg()
+    leg2.add(other)
+    print('leg2 npv = {}'.format(leg2.npv()))
+
+    product = rp.Product()
+    product.add(leg1)
+    product.add(leg2)
+    print('product npv = {}'.format(product.npv()))
+
+
+def test_blockchain():
+    blockchain = rp.BlockChain()
+    blockchain.add_transaction(0, 1, 1000.0, "EUR")
+    blockchain.add_transaction(1, 2, 1000.0, "EUR")
+    blockchain.add_transaction(0, 1, 1000.0, "EUR")
+    blockchain.add_transaction(1, 2, 1000.0, "EUR")
+    blockchain.add_transaction(0, 1, 1000.0, "EUR")
+    blockchain.add_transaction(1, 2, 1000.0, "EUR")
+    blockchain.add_transaction(0, 1, 1000.0, "EUR")
+    blockchain.add_transaction(1, 2, 1000.0, "EUR")
+    blockchain.add_transaction(2, 1, 500.0, "EUR")
+    blockchain.add_transaction(0, 1, 3.0, "Vacas")
+
+    for wallet in [1, 2, 3]:
+        bal = blockchain.balance(wallet)
+        for k, v in bal.iteritems():
+            print(wallet, k, v)
+
+
+def test_window():
+
+    # initial price
+    S0 = rp.constant(48.40)
+    # anual volatility
+    Vol = rp.constant(0.18)
+    # performance expected
+    r_exp = rp.InterestRate(0.08, rp.YIELD).to_other_interest_rate(rp.EXPONENTIAL).value
+    r = rp.constant(r_exp)
+
+    # dividends
+    q = rp.constant(0.03)
+    # valuation date of simulation
+    valuation_date = '2023-05-11'
+    # start date deals
+    start_deals = ['2023-04-11', '2023-01-15']
+    # end date deals
+    maturities = ['2023-07-11', '2023-12-15']
+    # type deal
+    type_deals = ['MCEuropeanCall', 'MCAmericanCall']
+    # strikes (best use porcentages)
+    K = rp.array([43.0, 48.0, 53.0, 58.0])
+    # maturities in day count
+    maturities_day_count = [3.0, 365.0]
+    # paths to use
+    paths = int(50)
+    # day count convention
+    dcf = rp.constant(1.0 / 365.0)
+
+    def model_brownian_gbm(S, r, q, sigma, dt):
+        # TODO: saturday and sunday, use friday price
+        # implement diffusion jumps
+        Z = rp.rand_normal(S.size())
+        return S * rp.exp(
+            (r - q - rp.pow(sigma, rp.two()) / rp.two()) * dt +
+            (Z * sigma * rp.sqrt(dt))
+        )
+
+    for m in maturities_day_count:
+
+        steps = rp.constant(m)
+        T = dcf * steps
+        dt = T / steps
+        to_present = rp.exp(-r * T)
+
+        pos = []
+        neg = []
+
+        for _ in range(paths):
+
+            S = S0
+
+            # sequence must be here
+            for i in range(int(m)):
+                S = model_brownian_gbm(S, r, q, Vol, dt)
+
+            # fuera del while = EUROPEAN ?
+            # dentro del while = AMERICAN ?
+            last_minus_K = rp.max0(S - K)
+            K_minus_last = rp.max0(K - S)
+
+            pos.append(last_minus_K)
+            neg.append(K_minus_last)
+
+        call_price = rp.mean_transpose(pos) * to_present
+        put_price = rp.mean_transpose(neg) * to_present
+
+        print('call_price mat {} montecarlo = {}'.format(m, call_price))
+        print('put_price mat {} montecarlo = {}'.format(m, put_price))
+
+        duno = rp.d1(S0, K, r, q, T, Vol)
+        ddos = rp.d2(S0, K, r, q, T, Vol)
+
+        call_price_analythic = rp.CallPrice(S0, K, r, q, T, Vol, duno, ddos)
+        put_price_analythic = rp.PutPrice(S0, K, r, q, T, Vol, duno, ddos)
+
+        print('call_price mat {} black scholes = {}'.format(m, call_price_analythic))
+        print('put_price mat {} black scholes = {}'.format(m, put_price_analythic))
+
+        print('-- Teorica mat {} media y varianza --'.format(m))
+
+        r_theorical = (r - q - (rp.pow(Vol, rp.two()) / rp.two())) * T
+        print("rate exp. = {:.2f}%".format(r_theorical.to_vector()[0] * 100.0))
+
+        ir = rp.InterestRate(r_theorical.to_vector()[0], rp.EXPONENTIAL).to_other_interest_rate(rp.YIELD)
+        print("rate yield = {:.2f}%".format(ir.value * 100.0))
+
+        vol_theorical = Vol * rp.sqrt(T)
+        print("volatility of period {} = {:.2f}%".format(T, vol_theorical.to_vector()[0] * 100.0))
+
+
+def _test_serie_integer():
+    n = rp.Serie(5.0, rp.DISCRETE_MUTABLE)
+    print(n)
 
 
 if __name__ == '__main__':

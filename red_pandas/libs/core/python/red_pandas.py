@@ -123,6 +123,102 @@ class SwigPyIterator(object):
 # Register SwigPyIterator in _red_pandas:
 _red_pandas.SwigPyIterator_swigregister(SwigPyIterator)
 
+class map_string_double(object):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+
+    def iterator(self):
+        return _red_pandas.map_string_double_iterator(self)
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self):
+        return _red_pandas.map_string_double___nonzero__(self)
+
+    def __bool__(self):
+        return _red_pandas.map_string_double___bool__(self)
+
+    def __len__(self):
+        return _red_pandas.map_string_double___len__(self)
+    def __iter__(self):
+        return self.key_iterator()
+    def iterkeys(self):
+        return self.key_iterator()
+    def itervalues(self):
+        return self.value_iterator()
+    def iteritems(self):
+        return self.iterator()
+
+    def __getitem__(self, key):
+        return _red_pandas.map_string_double___getitem__(self, key)
+
+    def __delitem__(self, key):
+        return _red_pandas.map_string_double___delitem__(self, key)
+
+    def has_key(self, key):
+        return _red_pandas.map_string_double_has_key(self, key)
+
+    def keys(self):
+        return _red_pandas.map_string_double_keys(self)
+
+    def values(self):
+        return _red_pandas.map_string_double_values(self)
+
+    def items(self):
+        return _red_pandas.map_string_double_items(self)
+
+    def __contains__(self, key):
+        return _red_pandas.map_string_double___contains__(self, key)
+
+    def key_iterator(self):
+        return _red_pandas.map_string_double_key_iterator(self)
+
+    def value_iterator(self):
+        return _red_pandas.map_string_double_value_iterator(self)
+
+    def __setitem__(self, *args):
+        return _red_pandas.map_string_double___setitem__(self, *args)
+
+    def asdict(self):
+        return _red_pandas.map_string_double_asdict(self)
+
+    def __init__(self, *args):
+        _red_pandas.map_string_double_swiginit(self, _red_pandas.new_map_string_double(*args))
+
+    def empty(self):
+        return _red_pandas.map_string_double_empty(self)
+
+    def size(self):
+        return _red_pandas.map_string_double_size(self)
+
+    def swap(self, v):
+        return _red_pandas.map_string_double_swap(self, v)
+
+    def begin(self):
+        return _red_pandas.map_string_double_begin(self)
+
+    def end(self):
+        return _red_pandas.map_string_double_end(self)
+
+    def clear(self):
+        return _red_pandas.map_string_double_clear(self)
+
+    def get_allocator(self):
+        return _red_pandas.map_string_double_get_allocator(self)
+
+    def count(self, x):
+        return _red_pandas.map_string_double_count(self, x)
+
+    def erase(self, *args):
+        return _red_pandas.map_string_double_erase(self, *args)
+
+    def find(self, x):
+        return _red_pandas.map_string_double_find(self, x)
+    __swig_destroy__ = _red_pandas.delete_map_string_double
+
+# Register map_string_double in _red_pandas:
+_red_pandas.map_string_double_swigregister(map_string_double)
+
 class map_string_serie(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -1224,6 +1320,7 @@ unknown_type = _red_pandas.unknown_type
 basic_none_type = _red_pandas.basic_none_type
 string_type = _red_pandas.string_type
 basic_numpy_type = _red_pandas.basic_numpy_type
+integer_numpy_type = _red_pandas.integer_numpy_type
 map_string_serie_type = _red_pandas.map_string_serie_type
 map_serie_serie_type = _red_pandas.map_serie_serie_type
 set_serie_type = _red_pandas.set_serie_type
@@ -1246,6 +1343,12 @@ class NoneType(object):
 # Register NoneType in _red_pandas:
 _red_pandas.NoneType_swigregister(NoneType)
 
+DISCRETE = _red_pandas.DISCRETE
+CONTINUOUS = _red_pandas.CONTINUOUS
+CATEGORICAL = _red_pandas.CATEGORICAL
+DISCRETE_MUTABLE = _red_pandas.DISCRETE_MUTABLE
+CONTINUOUS_MUTABLE = _red_pandas.CONTINUOUS_MUTABLE
+CATEGORICAL_MUTABLE = _red_pandas.CATEGORICAL_MUTABLE
 class Serie(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -1681,6 +1784,12 @@ def one():
 def two():
     return _red_pandas.two()
 
+def log2():
+    return _red_pandas.log2()
+
+def four():
+    return _red_pandas.four()
+
 def onehundred():
     return _red_pandas.onehundred()
 
@@ -1695,6 +1804,9 @@ def two_pi():
 
 def constant(number):
     return _red_pandas.constant(number)
+
+def threshold():
+    return _red_pandas.threshold()
 
 def d1(S, K, r, q, T, Vol):
     return _red_pandas.d1(S, K, r, q, T, Vol)
@@ -1749,6 +1861,9 @@ def PutImpliedvolatility(S, K, r, q, T, Vol_guess, market_price):
 
 def GreeksVolga(S, K, r, q, T, Vol, d_uno, d_dos):
     return _red_pandas.GreeksVolga(S, K, r, q, T, Vol, d_uno, d_dos)
+
+def parkinson(period, high, low):
+    return _red_pandas.parkinson(period, high, low)
 LINEAR = _red_pandas.LINEAR
 YIELD = _red_pandas.YIELD
 EXPONENTIAL = _red_pandas.EXPONENTIAL
@@ -1906,17 +2021,6 @@ _red_pandas.ZeroPeriod_swigregister(ZeroPeriod)
 
 def __lshift__(*args):
     return _red_pandas.__lshift__(*args)
-class Calendar(object):
-    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
-    __repr__ = _swig_repr
-
-    def __init__(self):
-        _red_pandas.Calendar_swiginit(self, _red_pandas.new_Calendar())
-    __swig_destroy__ = _red_pandas.delete_Calendar
-
-# Register Calendar in _red_pandas:
-_red_pandas.Calendar_swigregister(Calendar)
-
 class Schedule(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -1988,34 +2092,15 @@ class InterestRate(object):
 _red_pandas.InterestRate_swigregister(InterestRate)
 InterestRate.ZERO = _red_pandas.static.InterestRate_ZERO
 
-class LegGenerator(object):
-    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
-    __repr__ = _swig_repr
-
-    def __init__(self):
-        _red_pandas.LegGenerator_swiginit(self, _red_pandas.new_LegGenerator())
-    __swig_destroy__ = _red_pandas.delete_LegGenerator
-
-# Register LegGenerator in _red_pandas:
-_red_pandas.LegGenerator_swigregister(LegGenerator)
-
-class ProductGenerator(object):
-    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
-    __repr__ = _swig_repr
-
-    def __init__(self):
-        _red_pandas.ProductGenerator_swiginit(self, _red_pandas.new_ProductGenerator())
-    __swig_destroy__ = _red_pandas.delete_ProductGenerator
-
-# Register ProductGenerator in _red_pandas:
-_red_pandas.ProductGenerator_swigregister(ProductGenerator)
-
 class Leg(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
 
     def npv(self):
         return _red_pandas.Leg_npv(self)
+
+    def add(self, *args):
+        return _red_pandas.Leg_add(self, *args)
     flows = property(_red_pandas.Leg_flows_get, _red_pandas.Leg_flows_set)
 
     def __init__(self):
@@ -2028,6 +2113,9 @@ _red_pandas.Leg_swigregister(Leg)
 class Product(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
+
+    def add(self, leg):
+        return _red_pandas.Product_add(self, leg)
 
     def npv(self):
         return _red_pandas.Product_npv(self)

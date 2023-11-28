@@ -230,15 +230,12 @@ namespace rp {
             mean1 = mean0; // var normal
         else
             mean1 = mean_transpose(dataset); // var transposed
-        // print(dataset, "dataset");
-        // print(mean1, "mean used");
 
-        dataframe result1 = mapapply(dataset, std::bind(rp::sub2, std::placeholders::_1, mean1)); // dataframe result1 = rp::sub2(dataset, mean1);
-        // print(result1, "after sub2");
-        dataframe result2 = mapapply(result1, std::bind(rp::pow, std::placeholders::_1, rp::array({2.0})));  // dataframe result2 = rp::pow(result1, rp::array({2.0}));
-        // print(result2, "after pow 2.0");
+        // dataframe result1 = rp::sub2(dataset, mean1);
+        dataframe result1 = mapapply(dataset, std::bind(rp::sub2, std::placeholders::_1, mean1));
+        // dataframe result2 = rp::pow(result1, rp::array({2.0}));
+        dataframe result2 = mapapply(result1, std::bind(rp::pow, std::placeholders::_1, rp::array({2.0})));
         column_ptr result3 = mean_transpose(result2, sample);
-        // print(result4, "result mean");
         return result3;
     }
 
@@ -395,12 +392,6 @@ namespace rp {
 
     dataframe window(const column_ptr& data, int period)
     {
-        dataframe dataset;
-        for(int i = 0; (i + period) < data->size(); ++i)
-        {
-            auto cutted = data->sub(i, i+period);
-            dataset.emplace_back(cutted);
-        }
         /*
          * hacer slicing desplazando la ventana por el vector
          *
@@ -408,6 +399,12 @@ namespace rp {
          *
          * ahora sobre el dataframe podemos aplicar, mean, std ...
          */
+        dataframe dataset;
+        for(int i = 0; (i + period) < data->size(); ++i)
+        {
+            auto cutted = data->sub(i, i+period);
+            dataset.emplace_back(cutted);
+        }
         return dataset;
     }
 

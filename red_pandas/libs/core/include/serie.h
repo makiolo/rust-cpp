@@ -16,6 +16,7 @@
 //
 #include "calculation.h"
 #include "fes/sync.h"
+#include "npv.h"
 
 enum SerieType
 {
@@ -23,6 +24,7 @@ enum SerieType
 	basic_none_type,
 	string_type,
 	basic_numpy_type,
+    integer_numpy_type,
 
 	map_string_serie_type,
 	map_serie_serie_type,
@@ -56,51 +58,22 @@ struct NoneType
 
 };
 
-//template <typename T>
-//class borrowed_ptr {
-//public:
-//    borrowed_ptr(std::unique_ptr<T>& reference) : ref(&reference), owner(true) {}
-//
-//    borrowed_ptr(const borrowed_ptr& other) = delete
-//    borrowed_ptr& operator=(const borrowed_ptr& other) = delete;
-//
-//    borrowed_ptr(borrowed_ptr&&) = default;
-//    borrowed_ptr& operator=(borrowed_ptr&&) = default;
-//
-//    T& operator*() const;
-//    T* operator->() const;
-//
-//    ~borrowed_ptr();
-//private:
-//    std::unique_ptr<T> ref;
-//    bool owner;
-//};
-//
-//template<typename T>
-//T& borrowed_ptr<T>::operator*() const {
-//    return *ref;
-//}
-//
-//template<typename T>
-//T* borrowed_ptr<T>::operator->() const {
-//    return ref.get();
-//}
-//
-//template<typename T>
-//borrowed_ptr<T>::~borrowed_ptr() {
-//    if (owner) {
-//        *ref = nullptr;
-//        owner = false;
-//    }
-//}
+enum DType {
+    //
+    DISCRETE = 0,
+    CONTINUOUS,
+    CATEGORICAL,
+    //
+    DISCRETE_MUTABLE,
+    CONTINUOUS_MUTABLE,
+    CATEGORICAL_MUTABLE,
+};
 
-//
-// Serie = numerical and Serie = categorical
-//
 class Serie : public std::enable_shared_from_this<Serie>
 {
 public:
     using Buffer = nc::NdArray<double>;
+    using BufferInt = nc::NdArray<int>;
 
     Serie() = default;
     ~Serie() = default;
@@ -141,6 +114,35 @@ public:
 	{
 		//std::cout << "create None" << std::endl;
 	}
+
+    /*
+    Serie(double data, DType dtype)
+    {
+        switch(dtype)
+        {
+            case CATEGORICAL:
+            case CATEGORICAL_MUTABLE:
+            {
+                throw std::runtime_error("Invalid type, not is categorical");
+                break;
+            }
+            case DISCRETE:
+            case DISCRETE_MUTABLE:
+            {
+                values = BufferInt({static_cast<int>(data)});
+                type = SerieType::integer_numpy_type;
+                break;
+            }
+            case CONTINUOUS:
+            case CONTINUOUS_MUTABLE:
+            default:
+            {
+                values = Buffer({data});
+                type = SerieType::basic_numpy_type;
+            }
+        }
+    }
+    */
 
 	Serie(double data)
         : values(Buffer({data}))
@@ -185,7 +187,7 @@ public:
 	}
 
     explicit Serie(const std::initializer_list<double>& data)
-        : values(Buffer(std::forward< Buffer >(data)))
+        : values(Buffer(std::forward<Buffer>(data)))
         , type(SerieType::basic_numpy_type)
     {
         //std::cout << "create numpy1d array from initializer list" << std::endl;
@@ -388,7 +390,8 @@ public:
         }
     }
 
-    const rp::Calculation<Serie>::result_type& get_calc() const
+    // const rp::Calculation<Serie>::result_type& get_calc() const
+    const std::shared_ptr<Serie>& get_calc() const
     {
         const auto& calculation = get< std::shared_ptr<rp::Calculation<Serie>> >();
         const auto& result = calculation->get();
@@ -639,6 +642,7 @@ protected:
         // double
 		std::string,
         Buffer,
+        BufferInt,
 
 		// dict
 		std::unordered_map<std::string, std::shared_ptr<Serie> >,
@@ -686,6 +690,7 @@ std::shared_ptr<Serie> operator-(const std::shared_ptr<Serie>& one);
 //std::shared_ptr<Serie> operator+=(const std::shared_ptr<Serie>& one, const std::shared_ptr<Serie>& other);
 //std::shared_ptr<Serie> operator*=(const std::shared_ptr<Serie>& one, const std::shared_ptr<Serie>& other);
 bool operator==(const std::shared_ptr<Serie>& one, const std::shared_ptr<Serie>& other);
+// std::shared_ptr<Serie> operator==(const std::shared_ptr<Serie>& one, const std::shared_ptr<Serie>& other);
 
 // print operator
 std::ostream& operator<<(std::ostream &out, const std::shared_ptr<Serie>& s);

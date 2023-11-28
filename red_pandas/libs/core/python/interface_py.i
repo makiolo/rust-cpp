@@ -32,6 +32,7 @@
 #include "rand_normal.h"
 #include "categorical.h"
 #include "formulas/greeks.h"
+#include "formulas/volatility.h"
 // finance library
 #include "npv.h"
 // portfolio library
@@ -89,6 +90,7 @@
 // map
 %include <std_unordered_map.i>
 namespace std {
+    %template(map_string_double) unordered_map<string, double >;
     %template(map_string_serie) unordered_map<string, shared_ptr<Serie> >;
     %template(map_serie_serie) unordered_map<shared_ptr<Serie>, shared_ptr<Serie> >;
     //
@@ -208,12 +210,15 @@ import_array();
 %include "rand_normal.h"
 %include "categorical.h"
 %include "formulas/greeks.h"
+%include "formulas/volatility.h"
+
 // finance library
 %include "npv.h"
 // portfolio library
 %include "portfolio.h"
 // simulator library
 %include "simulator.h"
+
 
 
 %begin %{

@@ -12,10 +12,14 @@ set(PUBLIC_npv_include_dirs
         depends/date
         libs/finance/include/
         )
+set(PUBLIC_targets
+        portfolio
+        )
 add_library(npv_static STATIC)
 target_sources(npv_static PRIVATE ${PRIVATE_npv_sources} PUBLIC ${PUBLIC_npv_sources})
 target_include_directories(npv_static PUBLIC ${PUBLIC_npv_include_dirs})
 target_compile_features(npv_static PUBLIC cxx_std_20)
+target_link_libraries(npv_static PUBLIC ${PUBLIC_targets})
 set_target_properties(npv_static PROPERTIES VERSION ${PROJECT_VERSION})
 install(TARGETS npv_static DESTINATION ${CMAKE_SOURCE_DIR}/bin)
 

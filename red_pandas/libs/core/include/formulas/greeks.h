@@ -15,11 +15,14 @@ namespace rp {
     rp::column_ptr zero();
     rp::column_ptr one();
     rp::column_ptr two();
+    rp::column_ptr log2();
+    rp::column_ptr four();
     rp::column_ptr onehundred();
     rp::column_ptr half();
     rp::column_ptr pi();
     rp::column_ptr two_pi();
     rp::column_ptr constant(double number);
+    rp::column_ptr threshold();
 
     // Asset
 

@@ -15,11 +15,14 @@ namespace rp {
     static auto _zero = rp::array({0.0});
     static auto _one = rp::array({1.0});
     static auto _two = rp::array({2.0});
+    static auto _log2 = rp::log(rp::array({2.0}));
+    static auto _four = rp::array({4.0});
     static auto _onehundred = rp::array({100.0});
     static auto _year = rp::array({365.0});
     static auto _half = rp::array({0.5});
     static auto _pi = rp::array({3.141592653589793238462643383279502884L});
     static auto _two_pi = rp::array({2 * 3.141592653589793238462643383279502884L});
+    static auto _threshold = rp::array({1e-5});
     static thread_local auto cache_constants = std::unordered_map<double, rp::column_ptr>();
 
     rp::column_ptr year()
@@ -42,6 +45,16 @@ namespace rp {
         return _two;
     }
 
+    rp::column_ptr log2()
+    {
+        return _log2;
+    }
+
+    rp::column_ptr four()
+    {
+        return _four;
+    }
+
     rp::column_ptr onehundred()
     {
         return _onehundred;
@@ -60,6 +73,11 @@ namespace rp {
     rp::column_ptr two_pi()
     {
         return _two_pi;
+    }
+
+    rp::column_ptr threshold()
+    {
+        return _threshold;
     }
 
     rp::column_ptr constant(double number)

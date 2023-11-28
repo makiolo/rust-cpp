@@ -7,6 +7,7 @@
 #include <ta_libc.h>
 #include "abs.h"
 #include "operators/less.h"
+#include "formulas/greeks.h"
 
 
 struct talib_data
@@ -34,13 +35,6 @@ namespace talib_init {
 namespace rp {
 
     Serie ZERO(0.0);
-/*
-Serie HALF(0.5);
-Serie ONE(1.0);
-Serie TWO(2.0);
-Serie PI(3.141592653589793238462643383279502884L);
-Serie TWO_PI(2 * 3.141592653589793238462643383279502884L);
-*/
 
 }
 
@@ -145,11 +139,15 @@ bool operator==(const std::shared_ptr<Serie>& one, const std::shared_ptr<Serie>&
     else
         right = other;
 
-    return rp::all_less(
-            rp::abs(left - right),
-            std::make_shared<Serie>(std::forward<std::vector<double> >({1e-4}))
-    );
+    return rp::all_less(rp::abs(left - right), rp::threshold());
 }
+
+/*
+std::shared_ptr<Serie> operator==(const std::shared_ptr<Serie>& one, const std::shared_ptr<Serie>& other)
+{
+    return rp::threshold();
+}
+*/
 
 std::ostream& operator<<(std::ostream &out, const std::shared_ptr<Serie>& s)
 {

@@ -43,7 +43,8 @@ public:
         es.each<Asset>([&](entityx::Entity entity, Asset &asset)
         {
             auto new_price = asset.price * rp::exp(
-                (asset.mu - rp::pow(asset.sigma, rp::two()) / rp::two()) * dt + (asset.sigma * rp::sqrt(dt) * rp::rand_normal(asset.price->size()))
+                (asset.mu - rp::pow(asset.sigma, rp::two()) / rp::two()) * dt +
+                (asset.sigma * rp::sqrt(dt) * rp::rand_normal(asset.price->size()))
             );
             asset.historic_price.emplace_back(new_price);
             asset.price = asset.historic_price.back();

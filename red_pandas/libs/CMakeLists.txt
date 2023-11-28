@@ -10,6 +10,8 @@ add_subdirectory(depends/entityx-12-2-2023)
 
 add_subdirectory(depends/mdspan-stable)
 
+add_subdirectory(depends/excelbind/src)
+
 # internal
 enable_testing()
 include(libs/core/CMakeLists.txt)

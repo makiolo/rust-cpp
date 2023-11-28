@@ -1,9 +1,4 @@
 
-# create LIBRARY
-
-set(PYTHON_BASEDIR "${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python")
-set(PYTHON_INSTALL ${PYTHONHOME}/Lib/site-packages/red_pandas)
-
 set(PRIVATE_sources
         libs/core/src/div.cpp
         libs/core/src/mul.cpp
@@ -35,6 +30,7 @@ set(PRIVATE_sources
         libs/core/src/calculation.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python/interface_py_wrap.cxx
         libs/core/src/formulas/greeks.cpp
+        libs/core/src/formulas/volatility.cpp
         libs/core/src/allocator.cpp
         )
 set(PUBLIC_sources
@@ -69,6 +65,7 @@ set(PUBLIC_sources
         libs/core/include/util.h
         libs/core/include/api.h
         libs/core/include/formulas/greeks.h
+        libs/core/include/formulas/volatility.h
         )
 set(PUBLIC_extra_sources
         libs/core/tests/test_core.py
@@ -109,14 +106,13 @@ set(PRIVATE_targets
         ${MKL_LIB}
         ${PYTHON3_LIB}
         ${NUMPY_LIB}
-        npv_static
-        portfolio
-        simulator
         ta_lib_static
         )
 
 set(PUBLIC_targets
         std::mdspan
+        npv_static
+        simulator
         )
 
 # add AUTOGEN code
@@ -178,6 +174,12 @@ target_include_directories(test_core PUBLIC ${PUBLIC_include_dirs})
 target_compile_features(test_core PUBLIC cxx_std_20)
 target_link_libraries(test_core PUBLIC ${PUBLIC_targets})
 
+# test c++
+add_test(	NAME test_core_cpp
+        COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/test_core.exe
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests)
+set_tests_properties(test_core_cpp PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;$ENV{PATH}")
+
 # test python
 add_test(	NAME test_core_py
         COMMAND ${PYTHON3_EXE} ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests/test_core.py
@@ -185,13 +187,42 @@ add_test(	NAME test_core_py
 set_tests_properties(test_core_py PROPERTIES ENVIRONMENT "PATH=${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}\;${PYTHONHOME}\;${PYTHONHOME}/Scripts\;${PYTHONHOME}/Library/bin\;${THIRD_LIB}\;$ENV{PATH};PYTHONHOME=${PYTHONHOME};PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python\;${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}\;${THIRD_LIB}")
 
 
+
+add_executable(test_volatility)
+set(PRIVATE_tests_sources
+        depends/Catch2/src/catch_amalgamated.cpp
+        libs/core/tests/test_volatility.cpp
+        )
+set(PUBLIC_tests_sources
+        depends/Catch2/include/catch_amalgamated.hpp
+        )
+set(PUBLIC_include_dirs
+        depends/Catch2/include
+        )
+set(PUBLIC_targets
+        red_pandas_static
+        )
+target_sources(test_volatility PRIVATE ${PRIVATE_tests_sources} PUBLIC ${PUBLIC_tests_sources})
+target_include_directories(test_volatility PUBLIC ${PUBLIC_include_dirs})
+target_compile_features(test_volatility PUBLIC cxx_std_20)
+target_link_libraries(test_volatility PUBLIC ${PUBLIC_targets})
+
+# test c++
+add_test(	NAME test_volatility_cpp
+        COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/test_volatility.exe
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests)
+set_tests_properties(test_volatility_cpp PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;$ENV{PATH}")
+
+# test python
+add_test(	NAME test_volatility_py
+        COMMAND ${PYTHON3_EXE} ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests/test_volatility.py
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests)
+set_tests_properties(test_volatility_py PROPERTIES ENVIRONMENT "PATH=${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}\;${PYTHONHOME}\;${PYTHONHOME}/Scripts\;${PYTHONHOME}/Library/bin\;${THIRD_LIB}\;$ENV{PATH};PYTHONHOME=${PYTHONHOME};PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python\;${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}\;${THIRD_LIB}")
+
+
 # copy resources to dist
+set(PYTHON_BASEDIR "${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python")
+set(PYTHON_INSTALL ${PYTHONHOME}/Lib/site-packages/red_pandas)
 install(TARGETS red_pandas DESTINATION ${PYTHON_INSTALL})
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python/red_pandas.py DESTINATION ${PYTHON_INSTALL} RENAME __init__.py)
 
-
-# test c++
-add_test(	NAME test_core_cpp
-        COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/test_core.exe
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests)
-set_tests_properties(test_core_cpp PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;$ENV{PATH}")

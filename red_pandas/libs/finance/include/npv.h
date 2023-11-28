@@ -14,6 +14,7 @@
 // date doc: https://howardhinnant.github.io/date.html
 #include "date.h"
 //#include "rapidcsv.h"
+#include "portfolio.h"
 
 namespace qs {
 
@@ -207,10 +208,10 @@ namespace qs {
     std::ostream& operator<<(std::ostream& out, const Maturity& obj);
     std::ostream& operator<<(std::ostream& out, const ForwardPeriod& obj);
 
-    struct Calendar
-    {
+    // struct Calendar
+    // {
         // TODO:
-    };
+    // };
 
     struct Schedule
     {
@@ -563,9 +564,9 @@ namespace qs {
 
     //////////////////////////////////////////////////////////////
 
-    class LegGenerator
-    {
-    public:
+    // class LegGenerator
+    // {
+    // public:
         // schedule each 1 month -> next maturity
         // end date
         /*
@@ -578,35 +579,48 @@ namespace qs {
            ]
         )
         */
-    };
+    // };
 
-    class ProductGenerator
-    {
-        std::vector<LegGenerator> leg_generators;
-    };
+    // class ProductGenerator
+    // {
+    //    std::vector<LegGenerator> leg_generators;
+    // };
 
     class Leg  // like Leg
     {
     public:
         double npv() const;
+        void add(const std::shared_ptr<const CustomCashFlow>& flow);
+        void add(const CustomCashFlow& flow);
     public:
-        std::vector< std::reference_wrapper<const CashFlow> > flows;
+        std::vector< std::shared_ptr<const CustomCashFlow> > flows;
+
+        // CounterParty from
+        // CounterParty to
     };
 
     class Product
     {
     public:
+        void add(const Leg& leg)
+        {
+            legs.emplace_back(leg);
+        }
+
         double npv() const
         {
             double npv = 0.0;
-            for(const auto& product : legs)
+            for(const auto& leg : legs)
             {
-                npv += product.npv();
+                npv += leg.npv();
             }
             return npv;
         }
     public:
         std::vector< Leg > legs;
+        // Product open linked to Product close
+        // and viceversa
+        // Product* product_linked;
     };
 
     class TermStructure
@@ -782,6 +796,14 @@ namespace qs {
 
         CustomCashFlow make_cashflow(const Maturity& maturity, double cash);
 
+        /*
+         * product_id create_cashflow_founder(a, b, maturity, cash)
+         * void create_cashflow_continuation(product_id, a, b, maturity, cash)
+         * void create_cashflow_close(product_id, a, b, maturity, cash)
+         * Product get_product(product_id)
+         * vector<Procuct> get_products()
+         */
+
         std::vector< InterestRate >& get_spots()
         {
             return _interest_rates;
@@ -835,6 +857,7 @@ namespace qs {
         std::vector< Maturity > _maturities;
         std::vector< InterestRate > _interest_rates;
         std::vector< InterestRate > _forward_rates;
+        pf::BlockChain blockchain;
 
     };
 
@@ -981,8 +1004,8 @@ namespace qs {
         }
         virtual CouponCashFlow to_coupon(const InterestRate& growth = InterestRate::ZERO) const override
         {
-            // TODO: is ok ?
-            return CouponCashFlow{term, cash};
+            // TODO: is ok ? growth ?
+            return CouponCashFlow(term, cash);  // , growth
         };
         virtual CustomCashFlow to_custom_cashflow(const Maturity& maturity) const override;
         virtual CustomCashFlow to_custom_cashflow(const Maturity& maturity, const InterestRate& other_interest_rate) const;

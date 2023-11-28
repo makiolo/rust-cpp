@@ -13,9 +13,17 @@ namespace qs {
         double npv = 0.0;
         for(const auto &v : flows)
         {
-            npv += v.get().to_start_cashflow().cash;
+            npv += v->to_start_cashflow().cash;
         }
         return npv;
+    }
+
+    void Leg::add(const std::shared_ptr<const CustomCashFlow>& flow) {
+        flows.emplace_back(flow);
+    }
+
+    void Leg::add(const CustomCashFlow& flow) {
+        flows.emplace_back(std::make_shared<const CustomCashFlow>(flow));
     }
 
     CustomCashFlow TermStructure::make_cashflow(const Maturity& maturity, double cash)

@@ -13,7 +13,7 @@ TEST_CASE("simulator_test1", "[example]")
     //
     // timestep major == column major
     // path major == row major
-    // 12 combinations (fondo) and 100 timesteps (ancho) per path
+    // 12 combinations (fondo) and 100 steps (ancho) per path
     // total 50 paths (alto)
     //
     auto S = rp::array({48.40, 48.40, 48.40, 48.40, 48.40, 48.40, 48.40, 48.40, 48.40, 48.40, 48.40, 48.40});
@@ -24,10 +24,10 @@ TEST_CASE("simulator_test1", "[example]")
     auto q = rp::array({0.06, 0.06, 0.06, 0.06, 0.06, 0.06, 0.06, 0.06, 0.06, 0.06, 0.06, 0.06});
 
     // num paths = num estrategias
-    // 12 prices (6 strikes x 2 tiempos) x Y paths x Z timesteps
+    // 12 prices (6 strikes x 2 tiempos) x Y paths x Z steps
     // size_t elements = S->size();
     size_t paths = 50;  // paths
-    auto timesteps = rp::constant(100);  // timesteps
+    auto steps = rp::constant(100);
 
     auto mu = r - q;
     sim::Simulator sim(sim::Simulator::PRICE_VOLATILITY);
@@ -35,7 +35,7 @@ TEST_CASE("simulator_test1", "[example]")
     {
         sim.append_path(S, Vol, mu);
     }
-    auto dt = T / timesteps;
+    auto dt = T / steps;
     auto acum_dt = rp::zero();
     while(rp::all_less(acum_dt, T))
     {
@@ -52,40 +52,9 @@ TEST_CASE("simulator_test1", "[example]")
     rp::dataframe positive;
     rp::dataframe negative;
     size_t i = 0;
-    for(const auto& path : sim.get_results())
+    for(const auto& slice : sim.get_results())
     {
-        const auto& last_price = path.at("price");
-        // const auto& last_sigma = path.at("sigma");
-        //
-//        const auto& price0 = path.at("price_0");
-//        const auto& price1 = path.at("price_1");
-//        const auto& price2 = path.at("price_2");
-//        const auto& price3 = path.at("price_3");
-//        const auto& price4 = path.at("price_4");
-//        const auto& price5 = path.at("price_5");
-//        const auto& price6 = path.at("price_6");
-//        const auto& price7 = path.at("price_7");
-//        const auto& price8 = path.at("price_8");
-//        const auto& price9 = path.at("price_9");
-//        const auto& price10 = path.at("price_10");
-//        const auto& price11 = path.at("price_11");
-//        //
-//        const auto& rsi0 = path.at("rsi_0");
-//        const auto& rsi1 = path.at("rsi_1");
-//        const auto& rsi2 = path.at("rsi_2");
-//        const auto& rsi3 = path.at("rsi_3");
-//        const auto& rsi4 = path.at("rsi_4");
-//        const auto& rsi5 = path.at("rsi_5");
-//        const auto& rsi6 = path.at("rsi_6");
-//        const auto& rsi7 = path.at("rsi_7");
-//        const auto& rsi8 = path.at("rsi_8");
-//        const auto& rsi9 = path.at("rsi_9");
-//        const auto& rsi10 = path.at("rsi_10");
-//        const auto& rsi11 = path.at("rsi_11");
-//        const auto& mean0 = rp::mean({price0, price1, price2, price3, price4, price5, price6, price7, price8, price9, price10, price11});
-//        const auto& std0 = rp::std({price0, price1, price2, price3, price4, price5, price6, price7, price8, price9, price10, price11});
-//        const auto& mean1 = rp::mean({rsi0, rsi1, rsi2, rsi3, rsi4, rsi5, rsi6, rsi7, rsi8, rsi9, rsi10, rsi11});
-//        const auto& std1 = rp::std({rsi0, rsi1, rsi2, rsi3, rsi4, rsi5, rsi6, rsi7, rsi8, rsi9, rsi10, rsi11});
+        const auto& last_price = slice.at("price");
         const auto& last_minus_K = rp::max0(last_price - K);
         const auto& K_minus_last = rp::max0(K - last_price);   // last_price - K - last_minus_K
         positive.emplace_back(last_minus_K);
