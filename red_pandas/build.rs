@@ -20,7 +20,7 @@ fn main() {
 
     cmake::build(".");
     println!("cargo:rustc-link-search=all=C:\\dev\\rust\\rust-cpp\\red_pandas\\bin");
-    println!("cargo:rustc-link-search=all=C:\\dev\\meta3\\ExternalLibs\\MKL\\MKL_2019\\lib\\intel64");
+    println!("cargo:rustc-link-search=all=C:\\dev\\ExternalLibs\\MKL\\MKL_2019\\lib\\intel64");
     println!("cargo:rustc-link-search=all=C:\\Miniconda2\\libs");
     if cfg!(windows) {
         let profile = env::var("PROFILE").unwrap();

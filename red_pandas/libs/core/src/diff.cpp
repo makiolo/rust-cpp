@@ -16,7 +16,7 @@ namespace rp {
         template <typename T>
         explicit Diff(T&& s0, int period) {
             _future = _promise.get_future();
-            _task = std::jthread([](std::promise<result_type> &promise, const T& ss0, int period) -> void {
+            _task = std::thread([](std::promise<result_type> &promise, const T& ss0, int period) -> void {
 
 #if defined(RELEASE_PYTHON_THREAD) && RELEASE_PYTHON_THREAD == 1
                 gil_scoped_release release;
@@ -49,6 +49,7 @@ namespace rp {
                 promise.set_value(std::make_shared<Serie>(output, num_elements, true));
 
             }, std::ref(_promise), std::forward<T>(s0), period);
+            _task.join();
         }
     };
 

@@ -2,11 +2,18 @@ cmake_minimum_required(VERSION 3.25)
 cmake_policy(SET CMP0116 OLD)
 
 # config it
-project(red_pandas_project LANGUAGES CXX)
+# project(red_pandas_project LANGUAGES CXX)
+project(red_pandas_project)
+
 set(PROJECT_VERSION "1.0.0")
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
+
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-error=deprecated-declarations -Wno-error=register")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=deprecated-declarations -Wno-error=register")
+
+add_compile_definitions("-D_LIBCPP_DISABLE_DEPRECATION_WARNINGS=1")
 
 # TODO: need remove it
 set(EXTERNALLIBS C:/dev/ExternalLibs)
