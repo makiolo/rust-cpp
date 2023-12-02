@@ -14,7 +14,7 @@ namespace rp {
         template<typename T>
         explicit Div(T&& s0, T&& s1) {
             _future = _promise.get_future();
-            _task = std::thread([](std::promise<result_type>& promise, const T& ss0, const T& ss1) -> void {
+            _task = std::jthread([](std::promise<result_type>& promise, const T& ss0, const T& ss1) -> void {
 
 #if defined(RELEASE_PYTHON_THREAD) && RELEASE_PYTHON_THREAD == 1
                 gil_scoped_release release;
@@ -39,7 +39,7 @@ namespace rp {
                 }
 
             }, std::ref(_promise), std::forward<T>(s0), std::forward<T>(s1));
-            _task.join();
+            // _task.join();
         }
 
     };

@@ -57,7 +57,7 @@ protected:
     std::shared_future<result_type> _future;
     // non-copyable
     std::promise<result_type> _promise;
-    std::thread _task;
+    std::jthread _task;
 };
 
 

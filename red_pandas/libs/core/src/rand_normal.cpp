@@ -14,7 +14,7 @@ namespace rp {
 
         explicit RandNormal(int n) {
             _future = _promise.get_future();
-            _task = std::thread([](std::promise<result_type> &promise, int nn) -> void {
+            _task = std::jthread([](std::promise<result_type> &promise, int nn) -> void {
 
 #if defined(RELEASE_PYTHON_THREAD) && RELEASE_PYTHON_THREAD == 1
                 gil_scoped_release release;
@@ -22,7 +22,7 @@ namespace rp {
                 promise.set_value(std::make_shared<Serie>(nc::random::randN<double>(nc::Shape(1, nn))));
 
             }, std::ref(_promise), n);
-            _task.join();
+            // _task.join();
         }
     };
 

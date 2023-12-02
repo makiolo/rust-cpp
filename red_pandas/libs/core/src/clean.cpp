@@ -14,7 +14,7 @@ namespace rp {
         template <typename T>
         explicit Clean(T&& s0, bool replace, double neutral) {
             _future = _promise.get_future();
-            _task = std::thread([=](std::promise<result_type> &promise, const T& ss0, bool replace, double neutral) -> void {
+            _task = std::jthread([=](std::promise<result_type> &promise, const T& ss0, bool replace, double neutral) -> void {
 
 #if defined(RELEASE_PYTHON_THREAD) && RELEASE_PYTHON_THREAD == 1
                 gil_scoped_release release;
@@ -38,7 +38,7 @@ namespace rp {
                 promise.set_value(std::make_shared<Serie>(newarray));
 
             }, std::ref(_promise), std::forward<T>(s0), replace, neutral);
-            _task.join();
+            // _task.join();
         }
     };
 

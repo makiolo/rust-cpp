@@ -15,7 +15,7 @@ namespace rp {
 
         explicit Range(int elements) {
             _future = _promise.get_future();
-            _task = std::thread([](std::promise<result_type>& promise, int elements) -> void {
+            _task = std::jthread([](std::promise<result_type>& promise, int elements) -> void {
 
 #if defined(RELEASE_PYTHON_THREAD) && RELEASE_PYTHON_THREAD == 1
                 gil_scoped_release release;
@@ -42,7 +42,7 @@ namespace rp {
                 promise.set_value(std::make_shared<Serie>(output, num_elements, true));
 
             }, std::ref(_promise), elements);
-            _task.join();
+            // _task.join();
         }
     };
 
