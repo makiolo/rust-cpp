@@ -6,6 +6,7 @@
 //
 #include <mkl.h>
 
+
 void* operator new (std::size_t n) noexcept(false)
 {
     int alignment = std::min(int((trunc(double(n - 1) / 8.0) + 1) * 8), 16); // max 128 bits

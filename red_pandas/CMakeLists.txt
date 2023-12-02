@@ -10,8 +10,10 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-error=deprecated-declarations -Wno-error=register")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=deprecated-declarations -Wno-error=register")
+IF(NOT MSVC)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-error=deprecated-declarations -Wno-error=register")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=deprecated-declarations -Wno-error=register")
+ENDIF()
 
 add_compile_definitions("-D_LIBCPP_DISABLE_DEPRECATION_WARNINGS=1")
 
@@ -19,10 +21,10 @@ add_compile_definitions("-D_LIBCPP_DISABLE_DEPRECATION_WARNINGS=1")
 set(EXTERNALLIBS C:/dev/ExternalLibs)
 
 if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
-    set(PYTHONHOME "C:/Miniconda2")
-    set(PYTHONLIBNAME "python27.lib")
-    # set(PYTHONHOME "C:/Miniconda3")
-    # set(PYTHONLIBNAME "python310.lib")
+    # set(PYTHONHOME "C:/Miniconda2")
+    # set(PYTHONLIBNAME "python27.lib")
+    set(PYTHONHOME "D:/miniconda311")
+    set(PYTHONLIBNAME "python311.lib")
 else()
     set(PYTHONHOME "C:/Python27")
     set(PYTHONLIBNAME "python27.lib")
@@ -33,8 +35,6 @@ set(PYTHON3_LIB "${PYTHONHOME}/libs/${PYTHONLIBNAME}")
 set(PYTHON3_INCLUDE "${PYTHONHOME}/include")
 set(PYTHON3_EXE "${PYTHONHOME}/python.exe")
 
-# need mkl-include in conda
-# conda install -c anaconda mkl-include
 
 if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
     message("-- detected win64")
@@ -61,5 +61,12 @@ else()
     )
     set(THIRD_LIB "${EXTERNALLIBS}/dll/win32")
 endif()
+
+# need mkl-include in conda
+# conda install -c intel mkl mkl-devel
+# conda install -c anaconda boost
+# https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-windows/2024-0/conda.html
+set(MKL_INCLUDE "${PYTHONHOME}/Library/include")
+set(MKL_LIBDIR "${PYTHONHOME}/Library/lib")
 
 include(libs/CMakeLists.txt)

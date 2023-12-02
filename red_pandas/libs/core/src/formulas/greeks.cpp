@@ -22,7 +22,7 @@ namespace rp {
     static auto _half = rp::array({0.5});
     static auto _pi = rp::array({3.141592653589793238462643383279502884L});
     static auto _two_pi = rp::array({2 * 3.141592653589793238462643383279502884L});
-    static auto _threshold = rp::array({1e-5});
+    static auto _threshold = rp::array({1e-3});
     static thread_local auto cache_constants = std::unordered_map<double, rp::column_ptr>();
 
     rp::column_ptr year()

@@ -88,8 +88,8 @@ bool operator!=(const BufferAllocator <T>&, const BufferAllocator <U>&) { return
 template <typename T>
 T* BufferAllocator<T>::allocate(size_t n)
 {
-    return (T*)mkl_calloc(n, sizeof(T), 16);
-    // return (T*)mkl_malloc(n * sizeof(T), 16);
+    // return (T*)mkl_calloc(n, sizeof(T), 16);
+    return (T*)mkl_malloc(n * sizeof(T), 16);
 }
 
 template <typename T>
