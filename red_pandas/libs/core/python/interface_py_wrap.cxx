@@ -2986,55 +2986,55 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 /* -------- TYPES TABLE (BEGIN) -------- */
 
 #define SWIGTYPE_p_Buffer swig_types[0]
-#define SWIGTYPE_p_BufferInt swig_types[1]
-#define SWIGTYPE_p_Categorical swig_types[2]
-#define SWIGTYPE_p_CategoricalBuffer swig_types[3]
-#define SWIGTYPE_p_CategoricalNoneType swig_types[4]
-#define SWIGTYPE_p_NoneType swig_types[5]
-#define SWIGTYPE_p_Serie swig_types[6]
-#define SWIGTYPE_p_allocator_type swig_types[7]
-#define SWIGTYPE_p_char swig_types[8]
-#define SWIGTYPE_p_date__year_month_day swig_types[9]
-#define SWIGTYPE_p_difference_type swig_types[10]
-#define SWIGTYPE_p_double swig_types[11]
-#define SWIGTYPE_p_f_int_p_q_const__char__void swig_types[12]
-#define SWIGTYPE_p_hasher swig_types[13]
-#define SWIGTYPE_p_key_equal swig_types[14]
-#define SWIGTYPE_p_key_type swig_types[15]
-#define SWIGTYPE_p_long swig_types[16]
-#define SWIGTYPE_p_mapped_type swig_types[17]
-#define SWIGTYPE_p_nc__NdArrayT_double_t swig_types[18]
-#define SWIGTYPE_p_nc__NdArrayT_long_t swig_types[19]
-#define SWIGTYPE_p_p_PyObject swig_types[20]
-#define SWIGTYPE_p_pf__BlockChain swig_types[21]
-#define SWIGTYPE_p_pf__ClosedDeal swig_types[22]
-#define SWIGTYPE_p_pf__Deal swig_types[23]
-#define SWIGTYPE_p_pf__FakeTrader swig_types[24]
-#define SWIGTYPE_p_pf__OpenDeal swig_types[25]
-#define SWIGTYPE_p_pf__SymbolInfoTick swig_types[26]
-#define SWIGTYPE_p_pf__Transaction swig_types[27]
-#define SWIGTYPE_p_pf__TxFrom swig_types[28]
-#define SWIGTYPE_p_pf__TxTo swig_types[29]
-#define SWIGTYPE_p_pf__amount_info swig_types[30]
-#define SWIGTYPE_p_pf__tuple_hash swig_types[31]
-#define SWIGTYPE_p_qs__CashFlow swig_types[32]
-#define SWIGTYPE_p_qs__CouponCashFlow swig_types[33]
-#define SWIGTYPE_p_qs__CustomCashFlow swig_types[34]
-#define SWIGTYPE_p_qs__DiscountFactor swig_types[35]
-#define SWIGTYPE_p_qs__EndCashFlow swig_types[36]
-#define SWIGTYPE_p_qs__ForwardPeriod swig_types[37]
-#define SWIGTYPE_p_qs__InterestRate swig_types[38]
-#define SWIGTYPE_p_qs__Leg swig_types[39]
-#define SWIGTYPE_p_qs__Maturity swig_types[40]
-#define SWIGTYPE_p_qs__Product swig_types[41]
-#define SWIGTYPE_p_qs__Schedule swig_types[42]
-#define SWIGTYPE_p_qs__StartCashFlow swig_types[43]
-#define SWIGTYPE_p_qs__TermStructure swig_types[44]
-#define SWIGTYPE_p_qs__ZeroPeriod swig_types[45]
-#define SWIGTYPE_p_results_type swig_types[46]
-#define SWIGTYPE_p_rp__CalculationT_Categorical_t swig_types[47]
-#define SWIGTYPE_p_rp__CalculationT_Categorical_t__result_type swig_types[48]
-#define SWIGTYPE_p_rp__CalculationT_Serie_t swig_types[49]
+#define SWIGTYPE_p_Categorical swig_types[1]
+#define SWIGTYPE_p_CategoricalBuffer swig_types[2]
+#define SWIGTYPE_p_CategoricalNoneType swig_types[3]
+#define SWIGTYPE_p_NoneType swig_types[4]
+#define SWIGTYPE_p_Serie swig_types[5]
+#define SWIGTYPE_p_allocator_type swig_types[6]
+#define SWIGTYPE_p_char swig_types[7]
+#define SWIGTYPE_p_date__year_month_day swig_types[8]
+#define SWIGTYPE_p_difference_type swig_types[9]
+#define SWIGTYPE_p_double swig_types[10]
+#define SWIGTYPE_p_f_int_p_q_const__char__void swig_types[11]
+#define SWIGTYPE_p_hasher swig_types[12]
+#define SWIGTYPE_p_key_equal swig_types[13]
+#define SWIGTYPE_p_key_type swig_types[14]
+#define SWIGTYPE_p_long swig_types[15]
+#define SWIGTYPE_p_mapped_type swig_types[16]
+#define SWIGTYPE_p_nc__NdArrayT_double_t swig_types[17]
+#define SWIGTYPE_p_nc__NdArrayT_long_t swig_types[18]
+#define SWIGTYPE_p_p_PyObject swig_types[19]
+#define SWIGTYPE_p_pf__BlockChain swig_types[20]
+#define SWIGTYPE_p_pf__ClosedDeal swig_types[21]
+#define SWIGTYPE_p_pf__Deal swig_types[22]
+#define SWIGTYPE_p_pf__FakeTrader swig_types[23]
+#define SWIGTYPE_p_pf__OpenDeal swig_types[24]
+#define SWIGTYPE_p_pf__SymbolInfoTick swig_types[25]
+#define SWIGTYPE_p_pf__Transaction swig_types[26]
+#define SWIGTYPE_p_pf__TxFrom swig_types[27]
+#define SWIGTYPE_p_pf__TxTo swig_types[28]
+#define SWIGTYPE_p_pf__amount_info swig_types[29]
+#define SWIGTYPE_p_pf__tuple_hash swig_types[30]
+#define SWIGTYPE_p_qs__CashFlow swig_types[31]
+#define SWIGTYPE_p_qs__CouponCashFlow swig_types[32]
+#define SWIGTYPE_p_qs__CustomCashFlow swig_types[33]
+#define SWIGTYPE_p_qs__DiscountFactor swig_types[34]
+#define SWIGTYPE_p_qs__EndCashFlow swig_types[35]
+#define SWIGTYPE_p_qs__ForwardPeriod swig_types[36]
+#define SWIGTYPE_p_qs__InterestRate swig_types[37]
+#define SWIGTYPE_p_qs__Leg swig_types[38]
+#define SWIGTYPE_p_qs__Maturity swig_types[39]
+#define SWIGTYPE_p_qs__Product swig_types[40]
+#define SWIGTYPE_p_qs__Schedule swig_types[41]
+#define SWIGTYPE_p_qs__StartCashFlow swig_types[42]
+#define SWIGTYPE_p_qs__TermStructure swig_types[43]
+#define SWIGTYPE_p_qs__ZeroPeriod swig_types[44]
+#define SWIGTYPE_p_results_type swig_types[45]
+#define SWIGTYPE_p_rp__CalculationT_Categorical_t swig_types[46]
+#define SWIGTYPE_p_rp__CalculationT_Categorical_t__result_type swig_types[47]
+#define SWIGTYPE_p_rp__CalculationT_Serie_t swig_types[48]
+#define SWIGTYPE_p_rp__CalculationT_Serie_t__result_type swig_types[49]
 #define SWIGTYPE_p_rp__Serie2d swig_types[50]
 #define SWIGTYPE_p_sim__Simulator swig_types[51]
 #define SWIGTYPE_p_size_t swig_types[52]
@@ -28649,7 +28649,7 @@ SWIGINTERN PyObject *_wrap_Serie_get_calc(PyObject *self, PyObject *args) {
   std::shared_ptr< Serie const > tempshared1 ;
   std::shared_ptr< Serie const > *smartarg1 = 0 ;
   PyObject *swig_obj[1] ;
-  std::shared_ptr< Serie > *result = 0 ;
+  rp::Calculation< Serie >::result_type *result = 0 ;
   
   if (!args) SWIG_fail;
   swig_obj[0] = args;
@@ -28670,7 +28670,7 @@ SWIGINTERN PyObject *_wrap_Serie_get_calc(PyObject *self, PyObject *args) {
   }
   {
     try {
-      result = (std::shared_ptr< Serie > *) &((Serie const *)arg1)->get_calc();
+      result = (rp::Calculation< Serie >::result_type *) &((Serie const *)arg1)->get_calc();
     } catch (std::bad_variant_access& e) {
       SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
     } catch (std::out_of_range& e) {
@@ -28681,10 +28681,7 @@ SWIGINTERN PyObject *_wrap_Serie_get_calc(PyObject *self, PyObject *args) {
       SWIG_exception(SWIG_RuntimeError, e.what());
     }
   }
-  {
-    std::shared_ptr<  Serie > *smartresult = *result ? new std::shared_ptr<  Serie >(*result) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Serie_t, SWIG_POINTER_OWN);
-  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_rp__CalculationT_Serie_t__result_type, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -65278,7 +65275,6 @@ static void *_p_qs__ZeroPeriodTo_p_qs__ForwardPeriod(void *x, int *SWIGUNUSEDPAR
     return (void *)((qs::ForwardPeriod *)  ((qs::ZeroPeriod *) x));
 }
 static swig_type_info _swigt__p_Buffer = {"_p_Buffer", "Buffer *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_BufferInt = {"_p_BufferInt", "BufferInt *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Categorical = {"_p_Categorical", "Categorical *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_CategoricalBuffer = {"_p_CategoricalBuffer", "CategoricalBuffer *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_CategoricalNoneType = {"_p_CategoricalNoneType", "CategoricalNoneType *", 0, 0, (void*)0, 0};
@@ -65327,6 +65323,7 @@ static swig_type_info _swigt__p_results_type = {"_p_results_type", "results_type
 static swig_type_info _swigt__p_rp__CalculationT_Categorical_t = {"_p_rp__CalculationT_Categorical_t", "rp::Calculation< Categorical > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_rp__CalculationT_Categorical_t__result_type = {"_p_rp__CalculationT_Categorical_t__result_type", "rp::Calculation< Categorical >::result_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_rp__CalculationT_Serie_t = {"_p_rp__CalculationT_Serie_t", "rp::Calculation< Serie > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_rp__CalculationT_Serie_t__result_type = {"_p_rp__CalculationT_Serie_t__result_type", "rp::Calculation< Serie >::result_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_rp__Serie2d = {"_p_rp__Serie2d", "rp::Serie2d *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_sim__Simulator = {"_p_sim__Simulator", "sim::Simulator *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_size_t = {"_p_size_t", "size_t *", 0, 0, (void*)0, 0};
@@ -65395,7 +65392,6 @@ static swig_type_info _swigt__p_wchar_t = {"_p_wchar_t", "wchar_t *", 0, 0, (voi
 
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Buffer,
-  &_swigt__p_BufferInt,
   &_swigt__p_Categorical,
   &_swigt__p_CategoricalBuffer,
   &_swigt__p_CategoricalNoneType,
@@ -65444,6 +65440,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_rp__CalculationT_Categorical_t,
   &_swigt__p_rp__CalculationT_Categorical_t__result_type,
   &_swigt__p_rp__CalculationT_Serie_t,
+  &_swigt__p_rp__CalculationT_Serie_t__result_type,
   &_swigt__p_rp__Serie2d,
   &_swigt__p_sim__Simulator,
   &_swigt__p_size_t,
@@ -65512,7 +65509,6 @@ static swig_type_info *swig_type_initial[] = {
 };
 
 static swig_cast_info _swigc__p_Buffer[] = {  {&_swigt__p_Buffer, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_BufferInt[] = {  {&_swigt__p_BufferInt, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Categorical[] = {  {&_swigt__p_Categorical, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_CategoricalBuffer[] = {  {&_swigt__p_CategoricalBuffer, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_CategoricalNoneType[] = {  {&_swigt__p_CategoricalNoneType, 0, 0, 0},{0, 0, 0, 0}};
@@ -65561,6 +65557,7 @@ static swig_cast_info _swigc__p_results_type[] = {  {&_swigt__p_results_type, 0,
 static swig_cast_info _swigc__p_rp__CalculationT_Categorical_t[] = {  {&_swigt__p_rp__CalculationT_Categorical_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_rp__CalculationT_Categorical_t__result_type[] = {  {&_swigt__p_rp__CalculationT_Categorical_t__result_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_rp__CalculationT_Serie_t[] = {  {&_swigt__p_rp__CalculationT_Serie_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_rp__CalculationT_Serie_t__result_type[] = {  {&_swigt__p_rp__CalculationT_Serie_t__result_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_rp__Serie2d[] = {  {&_swigt__p_rp__Serie2d, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sim__Simulator[] = {  {&_swigt__p_sim__Simulator, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_size_t[] = {  {&_swigt__p_size_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -65629,7 +65626,6 @@ static swig_cast_info _swigc__p_wchar_t[] = {  {&_swigt__p_wchar_t, 0, 0, 0},{0,
 
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Buffer,
-  _swigc__p_BufferInt,
   _swigc__p_Categorical,
   _swigc__p_CategoricalBuffer,
   _swigc__p_CategoricalNoneType,
@@ -65678,6 +65674,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_rp__CalculationT_Categorical_t,
   _swigc__p_rp__CalculationT_Categorical_t__result_type,
   _swigc__p_rp__CalculationT_Serie_t,
+  _swigc__p_rp__CalculationT_Serie_t__result_type,
   _swigc__p_rp__Serie2d,
   _swigc__p_sim__Simulator,
   _swigc__p_size_t,
@@ -66233,12 +66230,6 @@ SWIG_init(void) {
   SWIG_Python_SetConstant(d, "vector_serie_type",SWIG_From_int(static_cast< int >(vector_serie_type)));
   SWIG_Python_SetConstant(d, "calculation_type",SWIG_From_int(static_cast< int >(calculation_type)));
   SWIG_Python_SetConstant(d, "total_types",SWIG_From_int(static_cast< int >(total_types)));
-  SWIG_Python_SetConstant(d, "DISCRETE",SWIG_From_int(static_cast< int >(DISCRETE)));
-  SWIG_Python_SetConstant(d, "CONTINUOUS",SWIG_From_int(static_cast< int >(CONTINUOUS)));
-  SWIG_Python_SetConstant(d, "CATEGORICAL",SWIG_From_int(static_cast< int >(CATEGORICAL)));
-  SWIG_Python_SetConstant(d, "DISCRETE_MUTABLE",SWIG_From_int(static_cast< int >(DISCRETE_MUTABLE)));
-  SWIG_Python_SetConstant(d, "CONTINUOUS_MUTABLE",SWIG_From_int(static_cast< int >(CONTINUOUS_MUTABLE)));
-  SWIG_Python_SetConstant(d, "CATEGORICAL_MUTABLE",SWIG_From_int(static_cast< int >(CATEGORICAL_MUTABLE)));
   globals = SWIG_globals();
   if (!globals) {
     PyErr_SetString(PyExc_TypeError, "Failure to create SWIG globals.");

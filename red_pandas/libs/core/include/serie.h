@@ -58,6 +58,7 @@ struct NoneType
 
 };
 
+/*
 enum DType {
     //
     DISCRETE = 0,
@@ -68,12 +69,13 @@ enum DType {
     CONTINUOUS_MUTABLE,
     CATEGORICAL_MUTABLE,
 };
+*/
 
 class Serie : public std::enable_shared_from_this<Serie>
 {
 public:
     using Buffer = nc::NdArray<double>;
-    using BufferInt = nc::NdArray<int>;
+    // using BufferInt = nc::NdArray<int>;
 
     Serie() = default;
     ~Serie() = default;
@@ -390,8 +392,8 @@ public:
         }
     }
 
-    // const rp::Calculation<Serie>::result_type& get_calc() const
-    const std::shared_ptr<Serie>& get_calc() const
+    const rp::Calculation<Serie>::result_type& get_calc() const
+    // const std::shared_ptr<Serie>& get_calc() const
     {
         const auto& calculation = get< std::shared_ptr<rp::Calculation<Serie>> >();
         const auto& result = calculation->get();
@@ -642,7 +644,7 @@ protected:
         // double
 		std::string,
         Buffer,
-        BufferInt,
+        // BufferInt,
 
 		// dict
 		std::unordered_map<std::string, std::shared_ptr<Serie> >,

@@ -1326,12 +1326,6 @@ class NoneType(object):
 
 # Register NoneType in _red_pandas:
 _red_pandas.NoneType_swigregister(NoneType)
-DISCRETE = _red_pandas.DISCRETE
-CONTINUOUS = _red_pandas.CONTINUOUS
-CATEGORICAL = _red_pandas.CATEGORICAL
-DISCRETE_MUTABLE = _red_pandas.DISCRETE_MUTABLE
-CONTINUOUS_MUTABLE = _red_pandas.CONTINUOUS_MUTABLE
-CATEGORICAL_MUTABLE = _red_pandas.CATEGORICAL_MUTABLE
 class Serie(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr

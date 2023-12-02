@@ -139,7 +139,12 @@ bool operator==(const std::shared_ptr<Serie>& one, const std::shared_ptr<Serie>&
     else
         right = other;
 
-    return rp::all_less(rp::abs(left - right), rp::threshold());
+    // return rp::all_less(rp::abs(left - right), rp::threshold());
+
+    return rp::all_less(
+        rp::abs(left - right),
+        std::make_shared<Serie>(std::forward<std::vector<double> >({ 1e-4 }))
+    );
 }
 
 /*
