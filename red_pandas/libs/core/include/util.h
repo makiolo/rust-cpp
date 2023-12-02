@@ -85,15 +85,17 @@ class gil_scoped_release {
 public:
     explicit gil_scoped_release()
     {
-        tstate = PyEval_SaveThread();
+        // tstate = PyEval_SaveThread();
     }
 
     ~gil_scoped_release() {
+        /*
         if (!tstate) {
             return;
         }
 
         PyEval_RestoreThread(tstate);
+        */
     }
 
 private:
