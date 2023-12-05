@@ -15,7 +15,7 @@ namespace rp {
     static auto _zero = rp::array({0.0});
     static auto _one = rp::array({1.0});
     static auto _two = rp::array({2.0});
-    static auto _log2 = rp::log(rp::array({2.0}));
+    static auto _log2 = rp::array({ 0.69314718055994530941723212145817656807550013436025L });
     static auto _four = rp::array({4.0});
     static auto _onehundred = rp::array({100.0});
     static auto _year = rp::array({365.0});

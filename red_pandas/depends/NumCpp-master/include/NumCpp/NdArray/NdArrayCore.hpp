@@ -63,6 +63,7 @@
 #include <vector>
 
 
+#if defined(MKL_ALLOCATOR) && MKL_ALLOCATOR == 1
 
 #include <mkl.h>
 
@@ -98,13 +99,19 @@ void BufferAllocator<T>::deallocate(T* p, size_t n)
     mkl_free((void*)p);
 }
 
+#endif
+
 
 namespace nc
 {
 //================================================================================
     // Class Description:
     /// Holds 1D and 2D arrays, the main work horse of the NumCpp library
+#if defined(MKL_ALLOCATOR) && MKL_ALLOCATOR == 1
     template<typename dtype, class Allocator = BufferAllocator<dtype> >
+#else
+    template<typename dtype, class Allocator = std::allocator<dtype> >
+#endif
     class NdArray
     {
     private:

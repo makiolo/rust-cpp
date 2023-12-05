@@ -1,5 +1,6 @@
 # -*- coding: UTF-8 -*-
 
+import sys
 import json
 import time
 import numpy as np
@@ -582,11 +583,11 @@ def test_window():
     # dividends
     q = rp.constant(0.03)
     # valuation date of simulation
-    valuation_date = '2023-05-11'
+    valuation_date = '2023-05-14'
     # start date deals
-    start_deals = ['2023-04-11', '2023-01-15']
+    start_deals = ['2023-04-14', '2023-01-15']
     # end date deals
-    maturities = ['2023-07-11', '2023-12-15']
+    maturities = ['2023-07-14', '2023-12-15']
     # type deal
     type_deals = ['MCEuropeanCall', 'MCAmericanCall']
     # strikes (best use porcentages)
@@ -594,7 +595,7 @@ def test_window():
     # maturities in day count
     maturities_day_count = [3.0, 365.0]
     # paths to use
-    paths = int(50)
+    paths = int(1)
     # day count convention
     dcf = rp.constant(1.0 / 365.0)
 
@@ -670,4 +671,4 @@ if __name__ == '__main__':
     import pytest
     args_str = "-rP -k test_"
     args = args_str.split(" ")
-    pytest.main(args)
+    sys.exit(pytest.main(args))

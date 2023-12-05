@@ -1,7 +1,8 @@
 import math
+import sys
 import numpy as np
-import pandas as pd
 import red_pandas as rp
+import matplotlib.pyplot as plt
 
 
 def get_estimator(price_data, window=30, trading_periods=252, clean=True):
@@ -36,10 +37,15 @@ def test_volatility_parkinson():
     result = rp.onehundred() * rp.parkinson(period, high, low)
     print(result.to_vector()[0])
 
+def test_matplotlib():
+    x = rp.array(np.linspace(0, 100, 300))
+    print(x)
+    print(np.array(x.to_vector()))
+
 
 if __name__ == '__main__':
 
     import pytest
     args_str = "-rP -k test_volatility"
     args = args_str.split(" ")
-    pytest.main(args)
+    sys.exit(pytest.main(args))
