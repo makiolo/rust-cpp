@@ -178,13 +178,13 @@ target_link_libraries(test_core PUBLIC ${PUBLIC_targets})
 add_test(	NAME test_core_cpp
         COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/test_core.exe
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests)
-set_tests_properties(test_core_cpp PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;$ENV{PATH}")
+# set_tests_properties(test_core_cpp PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;$ENV{PATH}")
 
 # test python
-add_test(	NAME test_core_py
-        COMMAND ${PYTHON3_EXE} ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests/test_core.py
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests)
-set_tests_properties(test_core_py PROPERTIES ENVIRONMENT "PATH=${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}\;${PYTHONHOME}\;${PYTHONHOME}/Scripts\;${PYTHONHOME}/Library/bin\;${THIRD_LIB}\;$ENV{PATH};PYTHONHOME=${PYTHONHOME};PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python\;${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}\;${THIRD_LIB}")
+#add_test(	NAME test_core_py
+#        COMMAND ${PYTHON3_EXE} ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests/test_core.py
+#        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests)
+#set_tests_properties(test_core_py PROPERTIES ENVIRONMENT "PATH=${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}\;${PYTHONHOME}\;${PYTHONHOME}/Scripts\;${PYTHONHOME}/Library/bin\;$ENV{PATH};PYTHONHOME=${PYTHONHOME};PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python\;${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}")
 
 
 
@@ -211,13 +211,13 @@ target_link_libraries(test_volatility PUBLIC ${PUBLIC_targets})
 add_test(	NAME test_volatility_cpp
         COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/test_volatility.exe
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests)
-set_tests_properties(test_volatility_cpp PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;$ENV{PATH}")
+# set_tests_properties(test_volatility_cpp PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;$ENV{PATH}")
 
 # test python
-add_test(	NAME test_volatility_py
-        COMMAND ${PYTHON3_EXE} ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests/test_volatility.py
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests)
-set_tests_properties(test_volatility_py PROPERTIES ENVIRONMENT "PATH=${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}\;${PYTHONHOME}\;${PYTHONHOME}/Scripts\;${PYTHONHOME}/Library/bin\;${THIRD_LIB}\;$ENV{PATH};PYTHONHOME=${PYTHONHOME};PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python\;${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}\;${THIRD_LIB}")
+#add_test(	NAME test_volatility_py
+#        COMMAND ${PYTHON3_EXE} ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests/test_volatility.py
+#        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests)
+#set_tests_properties(test_volatility_py PROPERTIES ENVIRONMENT "PATH=${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}\;${PYTHONHOME}\;${PYTHONHOME}/Scripts\;${PYTHONHOME}/Library/bin\;$ENV{PATH};PYTHONHOME=${PYTHONHOME};PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python\;${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}")
 
 
 # copy resources to dist

@@ -11,9 +11,10 @@ namespace rp {
                                 const rp::column_ptr& high,
                                 const rp::column_ptr& low)
     {
-//        auto d = rp::array({4.0 * period}) * rp::log2();
-//        auto s = rp::sum({rp::pow(rp::log(high / low), rp::two())});
-//        return rp::sqrt(s / d);
-        return rp::two();
+        auto d = rp::array({4.0 * period}) * rp::log2();
+        auto t = rp::pow(rp::log(high / low), rp::two());
+        auto s = rp::sum({rp::calculate(t)});
+        return rp::calculate(rp::sqrt(s / d));
+        // return rp::two();
     }
 }

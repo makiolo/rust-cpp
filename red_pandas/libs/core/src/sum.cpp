@@ -391,7 +391,7 @@ namespace rp {
         return rp::transpose(dataset_T, true);
     }
 
-    dataframe window(const column_ptr& data, int period)
+    dataframe window(const column_ptr& data, int period, bool right)
     {
         /*
          * hacer slicing desplazando la ventana por el vector
@@ -401,10 +401,16 @@ namespace rp {
          * ahora sobre el dataframe podemos aplicar, mean, std ...
          */
         dataframe dataset;
-        for(int i = 0; (i + period) < data->size(); ++i)
-        {
-            auto cutted = data->sub(i, i+period);
-            dataset.emplace_back(cutted);
+        if(right) {
+            for (int i = period; i < data->size(); ++i) {
+                auto cutted = data->sub(i - period, i);
+                dataset.emplace_back(cutted);
+            }
+        } else {
+            for (int i = 0; (i + period) < data->size(); ++i) {
+                auto cutted = data->sub(i, i + period);
+                dataset.emplace_back(cutted);
+            }
         }
         return dataset;
     }

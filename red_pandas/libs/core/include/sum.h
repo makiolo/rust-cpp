@@ -92,7 +92,7 @@ namespace rp {
     column_ptr std(const dataframe& dataset, bool sample = true);
     column_ptr std_transpose(const dataframe& dataset, bool sample = true);
 
-    dataframe window(const column_ptr& data, int period=20);
+    dataframe window(const column_ptr& data, int period, bool right = true);
 
     dataframe transpose(const dataframe& dataset, bool drop_nan = false, double neutral = NAN, bool needcalculate = true);
 
