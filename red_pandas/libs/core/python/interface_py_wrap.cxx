@@ -2917,7 +2917,7 @@ namespace swig {
 
 
 
-
+    
 #include "serie.h"
 #include "serie2d.h"
 #include "calculation.h"

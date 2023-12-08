@@ -1,5 +1,7 @@
 import json
 import ctypes
+import numpy as np
+import matplotlib.pyplot as plt
 from pprint import pprint
 
 
@@ -221,13 +223,20 @@ def Serie_iteritems(self):
 def Serie__repr__(self):
     return _red_pandas.Serie___str__(self)
 
+def Serie_to_numpy(self):
+    return np.array(self.to_vector())
+
+def Serie_plot(self):
+    plt.plot(range(self.size()), self.to_numpy())
+
 Serie.get = Serie_get
 Serie.set = Serie_set
 Serie.iteritems = Serie_iteritems
 Serie.__getitem__ = Serie___getitem__
 Serie.__iter__ = Serie___iter__
 Serie.__repr__ = Serie__repr__
-
+Serie.to_numpy = Serie_to_numpy
+Serie.plot = Serie_plot
 
 # a ctypes callback prototype
 py_callback_type = ctypes.CFUNCTYPE(None, ctypes.c_int, ctypes.c_char_p)

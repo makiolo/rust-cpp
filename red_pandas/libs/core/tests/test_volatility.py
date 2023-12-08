@@ -1,5 +1,7 @@
-import math
 import sys
+import pytest
+##
+import math
 import numpy as np
 import red_pandas as rp
 import matplotlib.pyplot as plt
@@ -37,15 +39,36 @@ def test_volatility_parkinson():
     result = rp.onehundred() * rp.parkinson(period, high, low)
     print(result.to_vector()[0])
 
+
+def model_brownian_gbm(S, r, q, sigma, dt):
+    Z = rp.rand_normal(S.size())
+    return S * rp.exp(
+        (r - q - rp.pow(sigma, rp.two()) / rp.two()) * dt +
+        (Z * sigma * rp.sqrt(dt))
+    )
+
 def test_matplotlib():
-    x = rp.array(np.linspace(0, 100, 300))
-    print(x)
-    print(np.array(x.to_vector()))
+    paths = 200
+    steps = 100
+    current_price = 100.0
+    r = rp.constant(0.05)
+    q = rp.constant(0.02)
+    sigma = rp.constant(0.31)
+    dcf = rp.constant(1.0 / 365.0)
+    T = dcf * rp.constant(steps)
+    dt = T / rp.constant(steps)
+
+    x = []
+    S = rp.array([current_price] * paths)
+    for i in range(int(steps)):
+        S = model_brownian_gbm(S, r, q, sigma, dt)
+        x.append(S.to_numpy())
+    plt.plot(range(int(steps)), x)
+    plt.show()
 
 
 if __name__ == '__main__':
 
-    import pytest
-    args_str = "-rP -k test_volatility"
+    args_str = "-rP -k test_"
     args = args_str.split(" ")
     sys.exit(pytest.main(args))
