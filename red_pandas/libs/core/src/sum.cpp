@@ -15,6 +15,8 @@
 #include "max0.h"
 #include "min0.h"
 #include "cdf.h"
+#include "rsi.h"
+
 
 namespace rp {
 
@@ -366,6 +368,17 @@ namespace rp {
         std::cout << "." << std::endl;
     }
 
+    column_ptr first(const column_ptr& left, const column_ptr& right)
+    {
+        return left;
+    }
+
+    column_ptr last(const column_ptr& left, const column_ptr& right)
+    {
+        // left is more new.
+        return right;
+    }
+
     rp::column_ptr agg(const dataframe& dataset, const function_ptr& aggregator)
     {
         // check is normalized ?
@@ -413,6 +426,50 @@ namespace rp {
             }
         }
         return dataset;
+    }
+
+    column_ptr window2(const column_ptr& data, int period, const function_ptr& aggregator)
+    {
+        std::vector<double> result;
+        for (int i = period; i < data->size(); ++i) {
+            auto cutted = data->sub(i - period, i);
+            result.emplace_back(rp::agg({cutted}, aggregator)->read(0));
+        }
+        return rp::array(result);
+    }
+
+    column_ptr window2_mean(const column_ptr& data, int period, bool sample)
+    {
+        auto result = window2(data, period, std::bind(rp::sum2, std::placeholders::_1, std::placeholders::_2));
+        if(sample)
+            return result / rp::array({(double)period - 1.0});
+        else
+            return result / rp::array({(double)period});
+    }
+
+    dataframe window3(const dataframe& data, int period,
+                       const indicator_ptr& indicator)
+    {
+        dataframe result;
+        for (int i = period; i < data[0]->size(); ++i) {
+            dataframe cutted;
+            for(int j = 0; j < data.size(); ++j)
+            {
+                auto cut = data[j]->sub(i - period, i);
+                cutted.emplace_back(cut);
+            }
+            auto df_indicator = rp::transpose(indicator(cutted, period));
+            result.emplace_back(df_indicator.back());
+        }
+        return result;
+    }
+
+    column_ptr window3_last_rsi(const column_ptr& close, int window_period, int rsi_period)
+    {
+        auto data2 = rp::mapcalculate({close});
+        auto result = window3(data2, window_period,
+                       std::bind(rp::rsi_indicator, std::placeholders::_1, rsi_period));
+        return rp::mapcalculate(result)[0];
     }
 
     void use_callback(void (*f)(int i, const char* str))

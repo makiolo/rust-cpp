@@ -15,6 +15,5 @@ namespace rp {
         auto t = rp::pow(rp::log(high / low), rp::two());
         auto s = rp::sum({rp::calculate(t)});
         return rp::calculate(rp::sqrt(s / d));
-        // return rp::two();
     }
 }

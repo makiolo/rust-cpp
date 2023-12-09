@@ -214,20 +214,35 @@ def Serie_set(self, data):
 def Serie___getitem__(self, key):
     return dumps(self).__getitem__(key)
 
+
 def Serie___iter__(self):
     return dumps(self).__iter__()
+
 
 def Serie_iteritems(self):
     return dumps(self).iteritems()
 
+
 def Serie__repr__(self):
     return _red_pandas.Serie___str__(self)
+
 
 def Serie_to_numpy(self):
     return np.array(self.to_vector())
 
+
 def Serie_plot(self):
     plt.plot(range(self.size()), self.to_numpy())
+
+
+def plot_transpose(simulation):
+    simulation = map(lambda e: e.to_numpy(), simulation)
+    plt.plot(range(len(simulation)), simulation)
+
+
+def show():
+    plt.show()
+
 
 Serie.get = Serie_get
 Serie.set = Serie_set

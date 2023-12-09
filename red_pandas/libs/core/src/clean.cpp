@@ -22,16 +22,12 @@ namespace rp {
 
                 const auto& n0 = get_value< Serie::Buffer >(ss0);
 
-                bool modified = false;
                 std::vector<double> newarray;
                 for(const auto& value : n0)
                 {
                     if(std::isfinite(value)) {
-                        modified = true;
                         newarray.emplace_back(value);
-                    }
-                    else if(replace)
-                    {
+                    } else if(replace) {
                         newarray.emplace_back(neutral);
                     }
                 }

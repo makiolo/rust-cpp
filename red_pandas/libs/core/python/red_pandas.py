@@ -1316,6 +1316,112 @@ class vector_results(object):
 # Register vector_results in _red_pandas:
 _red_pandas.vector_results_swigregister(vector_results)
 
+class vector_tx_from(object):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+
+    def iterator(self):
+        return _red_pandas.vector_tx_from_iterator(self)
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self):
+        return _red_pandas.vector_tx_from___nonzero__(self)
+
+    def __bool__(self):
+        return _red_pandas.vector_tx_from___bool__(self)
+
+    def __len__(self):
+        return _red_pandas.vector_tx_from___len__(self)
+
+    def __getslice__(self, i, j):
+        return _red_pandas.vector_tx_from___getslice__(self, i, j)
+
+    def __setslice__(self, *args):
+        return _red_pandas.vector_tx_from___setslice__(self, *args)
+
+    def __delslice__(self, i, j):
+        return _red_pandas.vector_tx_from___delslice__(self, i, j)
+
+    def __delitem__(self, *args):
+        return _red_pandas.vector_tx_from___delitem__(self, *args)
+
+    def __getitem__(self, *args):
+        return _red_pandas.vector_tx_from___getitem__(self, *args)
+
+    def __setitem__(self, *args):
+        return _red_pandas.vector_tx_from___setitem__(self, *args)
+
+    def pop(self):
+        return _red_pandas.vector_tx_from_pop(self)
+
+    def append(self, x):
+        return _red_pandas.vector_tx_from_append(self, x)
+
+    def empty(self):
+        return _red_pandas.vector_tx_from_empty(self)
+
+    def size(self):
+        return _red_pandas.vector_tx_from_size(self)
+
+    def swap(self, v):
+        return _red_pandas.vector_tx_from_swap(self, v)
+
+    def begin(self):
+        return _red_pandas.vector_tx_from_begin(self)
+
+    def end(self):
+        return _red_pandas.vector_tx_from_end(self)
+
+    def rbegin(self):
+        return _red_pandas.vector_tx_from_rbegin(self)
+
+    def rend(self):
+        return _red_pandas.vector_tx_from_rend(self)
+
+    def clear(self):
+        return _red_pandas.vector_tx_from_clear(self)
+
+    def get_allocator(self):
+        return _red_pandas.vector_tx_from_get_allocator(self)
+
+    def pop_back(self):
+        return _red_pandas.vector_tx_from_pop_back(self)
+
+    def erase(self, *args):
+        return _red_pandas.vector_tx_from_erase(self, *args)
+
+    def __init__(self, *args):
+        _red_pandas.vector_tx_from_swiginit(self, _red_pandas.new_vector_tx_from(*args))
+
+    def push_back(self, x):
+        return _red_pandas.vector_tx_from_push_back(self, x)
+
+    def front(self):
+        return _red_pandas.vector_tx_from_front(self)
+
+    def back(self):
+        return _red_pandas.vector_tx_from_back(self)
+
+    def assign(self, n, x):
+        return _red_pandas.vector_tx_from_assign(self, n, x)
+
+    def resize(self, *args):
+        return _red_pandas.vector_tx_from_resize(self, *args)
+
+    def insert(self, *args):
+        return _red_pandas.vector_tx_from_insert(self, *args)
+
+    def reserve(self, n):
+        return _red_pandas.vector_tx_from_reserve(self, n)
+
+    def capacity(self):
+        return _red_pandas.vector_tx_from_capacity(self)
+    __swig_destroy__ = _red_pandas.delete_vector_tx_from
+
+# Register vector_tx_from in _red_pandas:
+_red_pandas.vector_tx_from_swigregister(vector_tx_from)
+
 unknown_type = _red_pandas.unknown_type
 basic_none_type = _red_pandas.basic_none_type
 string_type = _red_pandas.string_type
@@ -1371,6 +1477,12 @@ class Serie(object):
 
     def __str__(self):
         return _red_pandas.Serie___str__(self)
+
+    def read(self, offset):
+        return _red_pandas.Serie_read(self, offset)
+
+    def write(self, offset, data):
+        return _red_pandas.Serie_write(self, offset, data)
 
     def get_calc(self):
         return _red_pandas.Serie_get_calc(self)
@@ -1494,6 +1606,12 @@ def sum2ref(s0, s1):
 def array(*args):
     return _red_pandas.array(*args)
 
+def first(left, right):
+    return _red_pandas.first(left, right)
+
+def last(left, right):
+    return _red_pandas.last(left, right)
+
 def agg(dataset, aggregator):
     return _red_pandas.agg(dataset, aggregator)
 
@@ -1550,6 +1668,18 @@ def std_transpose(dataset, sample=True):
 
 def window(data, period, right=True):
     return _red_pandas.window(data, period, right)
+
+def window2(data, period, aggregator):
+    return _red_pandas.window2(data, period, aggregator)
+
+def window2_mean(data, period, sample=False):
+    return _red_pandas.window2_mean(data, period, sample)
+
+def window3(data, period, indicator):
+    return _red_pandas.window3(data, period, indicator)
+
+def window3_last_rsi(close, window_period=14, rsi_period=14):
+    return _red_pandas.window3_last_rsi(close, window_period, rsi_period)
 
 def transpose(*args):
     return _red_pandas.transpose(*args)
@@ -1634,6 +1764,9 @@ def min2(s0, s1):
 
 def min2ref(s0, s1):
     return _red_pandas.min2ref(s0, s1)
+
+def rsi_indicator(data, period):
+    return _red_pandas.rsi_indicator(data, period)
 
 def rsi(*args):
     return _red_pandas.rsi(*args)
@@ -2347,8 +2480,6 @@ class Transaction(object):
     txid = property(_red_pandas.Transaction_txid_get, _red_pandas.Transaction_txid_set)
     description = property(_red_pandas.Transaction_description_get, _red_pandas.Transaction_description_set)
     group = property(_red_pandas.Transaction_group_get, _red_pandas.Transaction_group_set)
-    pay_id = property(_red_pandas.Transaction_pay_id_get, _red_pandas.Transaction_pay_id_set)
-    contract_id = property(_red_pandas.Transaction_contract_id_get, _red_pandas.Transaction_contract_id_set)
     amounts = property(_red_pandas.Transaction_amounts_get, _red_pandas.Transaction_amounts_set)
     froms = property(_red_pandas.Transaction_froms_get, _red_pandas.Transaction_froms_set)
     tos = property(_red_pandas.Transaction_tos_get, _red_pandas.Transaction_tos_set)
@@ -2817,20 +2948,35 @@ def Serie_set(self, data):
 def Serie___getitem__(self, key):
     return dumps(self).__getitem__(key)
 
+
 def Serie___iter__(self):
     return dumps(self).__iter__()
+
 
 def Serie_iteritems(self):
     return dumps(self).iteritems()
 
+
 def Serie__repr__(self):
     return _red_pandas.Serie___str__(self)
+
 
 def Serie_to_numpy(self):
     return np.array(self.to_vector())
 
+
 def Serie_plot(self):
     plt.plot(range(self.size()), self.to_numpy())
+
+
+def plot_transpose(simulation):
+    simulation = map(lambda e: e.to_numpy(), simulation)
+    plt.plot(range(len(simulation)), simulation)
+
+
+def show():
+    plt.show()
+
 
 Serie.get = Serie_get
 Serie.set = Serie_set

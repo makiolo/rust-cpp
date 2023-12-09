@@ -12,13 +12,6 @@ namespace rp {
 
     // TODO: MOVE CODE TO C++ CORE
 
-    using internal_array = Serie::Buffer;
-    using column = Serie;
-    using column_ptr = std::shared_ptr<column>;
-    using dataframe = std::vector<column_ptr>;
-    using function_ptr = std::function< column_ptr(const column_ptr&, const column_ptr&) >;
-    using transformer_ptr = std::function< column_ptr(const column_ptr&) >;
-
     column_ptr array(const column& data);
     column_ptr array(const std::initializer_list<double>& data);
     column_ptr array(const std::vector<double>& data);
@@ -65,6 +58,9 @@ namespace rp {
     // corr (matriz de correlaciones)
     // cov (matriz de covarianzas)
 
+    column_ptr first(const column_ptr& left, const column_ptr& right);
+    column_ptr last(const column_ptr& left, const column_ptr& right);
+
     column_ptr agg(const dataframe& dataset, const function_ptr& aggregator);
     column_ptr agg_transpose(const dataframe& dataset, const function_ptr& aggregator);
 
@@ -93,6 +89,15 @@ namespace rp {
     column_ptr std_transpose(const dataframe& dataset, bool sample = true);
 
     dataframe window(const column_ptr& data, int period, bool right = true);
+
+    // window agg()
+    column_ptr window2(const column_ptr& data, int period, const function_ptr& aggregator);
+    column_ptr window2_mean(const column_ptr& data, int period, bool sample = false);
+
+    // window indicators
+    dataframe window3(const dataframe& data, int period, const indicator_ptr& indicator);
+    column_ptr window3_last_rsi(const column_ptr& close, int window_period = 14, int rsi_period = 14);
+
 
     dataframe transpose(const dataframe& dataset, bool drop_nan = false, double neutral = NAN, bool needcalculate = true);
 

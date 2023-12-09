@@ -61,9 +61,9 @@ namespace pf {
         std::string group;
 
         // pay identificator
-        std::string pay_id;
+        // std::string pay_id;
         // contract identificator
-        std::string contract_id;
+        // std::string contract_id;
 
         // translates to EUR, USD ...
         std::vector<amount_info> amounts;
@@ -83,20 +83,6 @@ namespace pf {
             std::cerr << "Invalid currency " << currency << std::endl;
             throw std::runtime_error("Invalid currency.");
         }
-
-        /*
-        double get_amount_commission(const std::string& currency) {
-            for(const auto& amount : commissions)
-            {
-                if(amount.get_currency() == currency)
-                {
-                    return amount.get_amount();
-                }
-            }
-            std::cerr << "Invalid currency " << currency << std::endl;
-            throw std::runtime_error("Invalid currency.");
-        }
-        */
     };
 
     struct tuple_hash

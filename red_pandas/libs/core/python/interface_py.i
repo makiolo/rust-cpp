@@ -3,6 +3,7 @@
 %{
 
 
+
 #include "serie.h"
 #include "serie2d.h"
 #include "calculation.h"
@@ -114,6 +115,8 @@ namespace std {
     %template(vectorm) vector<unordered_map<shared_ptr<Serie>, shared_ptr<Serie> > >;
     //
     %template(vector_results) vector<unordered_map<string, Serie > >;
+    // blockchain
+    %template(vector_tx_from) vector<pf::TxFrom>;
 };
 
 

@@ -358,7 +358,17 @@ public:
 		}
 	}
 
-	template <typename T>
+    double read(int offset) const
+    {
+        return raw_data()[offset];
+    }
+
+    void write(int offset, double data)
+    {
+        raw_data()[offset] = data;
+    }
+
+    template <typename T>
 	inline const T& get() const  // throw(std::bad_variant_access)
 	{
         try {
@@ -684,6 +694,7 @@ extern Serie TWO_PI;
 }
 
 
+
 std::shared_ptr<Serie> operator+(const std::shared_ptr<Serie>& one, const std::shared_ptr<Serie>& other);
 std::shared_ptr<Serie> operator-(const std::shared_ptr<Serie>& one, const std::shared_ptr<Serie>& other);
 std::shared_ptr<Serie> operator*(const std::shared_ptr<Serie>& one, const std::shared_ptr<Serie>& other);
@@ -698,3 +709,15 @@ bool operator==(const std::shared_ptr<Serie>& one, const std::shared_ptr<Serie>&
 std::ostream& operator<<(std::ostream &out, const std::shared_ptr<Serie>& s);
 std::ostream& operator<<(std::ostream &out, const Serie& s);
 
+
+namespace rp {
+
+    using internal_array = Serie::Buffer;
+    using column = Serie;
+    using column_ptr = std::shared_ptr<column>;
+    using dataframe = std::vector<column_ptr>;
+    using function_ptr = std::function< column_ptr(const column_ptr&, const column_ptr&) >;
+    using transformer_ptr = std::function< column_ptr(const column_ptr&) >;
+    using indicator_ptr = std::function< dataframe(const dataframe&, int) >;
+
+}

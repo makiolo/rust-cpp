@@ -61,9 +61,14 @@ namespace rp {
         }
     };
 
-    std::shared_ptr<Serie> rsi(const std::shared_ptr<Serie> &s0, int period)
+    column_ptr rsi(const column_ptr& s0, int period)
     {
         return std::make_shared<Serie>(Rsi(s0, period));
+    }
+
+    dataframe rsi_indicator(const dataframe &data, int period)
+    {
+        return { std::make_shared<Serie>(Rsi(data[0], period)) };
     }
 
     Serie rsi(const Serie& s0, int period)
