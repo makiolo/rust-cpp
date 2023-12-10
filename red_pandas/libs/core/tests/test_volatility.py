@@ -82,7 +82,8 @@ def test_matplotlib():
     # TODO: only start with buys
     # number operations to generate
     for _ in range(10):
-        product = np.array([0.0] * steps)
+        # product = np.array([0.0] * steps)
+        product = np.zeros(steps)
         size = int(random.uniform(10, 50))
         offset = int(random.uniform(size, steps - 2*size)) + 1
         for i in range(offset, offset + size):
@@ -199,7 +200,7 @@ def test_matplotlib():
     # x = S.to_numpy()
     # plt.plot(range(len(x)), x)
 
-    rp.show()
+    # rp.show()
 
     elapsed = time.time() - begin
     print('Eleapsed time: {}'.format(elapsed))

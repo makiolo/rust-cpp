@@ -19,8 +19,8 @@ fn main() {
     let package_name = env::var("CARGO_PKG_NAME").unwrap();
 
     cmake::build(".");
-    println!("cargo:rustc-link-search=all=C:\\dev\\rust\\rust-cpp\\red_pandas\\bin");
-    println!("cargo:rustc-link-search=all=C:\\dev\\ExternalLibs\\MKL\\MKL_2019\\lib\\intel64");
+    println!("cargo:rustc-link-search=all={}\\..\\bin", out_dir);
+    println!("cargo:rustc-link-search=all=C:\\Miniconda2\\Library\\bin");
     println!("cargo:rustc-link-search=all=C:\\Miniconda2\\libs");
     if cfg!(windows) {
         let profile = env::var("PROFILE").unwrap();
@@ -36,4 +36,7 @@ fn main() {
     println!("cargo:rustc-link-lib=static={}", "mkl_intel_thread_dll");
     println!("cargo:rustc-link-lib=static={}", "mkl_core_dll");
     println!("cargo:rustc-link-lib=static={}", "ta_lib_a");
+    println!("cargo:rustc-link-lib=static={}", "portfolio");
+    println!("cargo:rustc-link-lib=static={}", "simulator");
+    println!("cargo:rustc-link-lib=static={}", "npv_static");
 }

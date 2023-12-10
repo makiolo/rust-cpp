@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.25)
 project(nativefiledialog-extended)
 
 set(nfd_PLATFORM Undefined)

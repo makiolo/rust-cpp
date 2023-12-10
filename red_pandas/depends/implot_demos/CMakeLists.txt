@@ -1,4 +1,6 @@
-cmake_minimum_required(VERSION 3.11.0)
+cmake_minimum_required(VERSION 3.25)
+cmake_policy(SET CMP0135 NEW)
+
 project(implot_demos VERSION 0.1.0)
 
 ###############################################################################
@@ -29,7 +31,7 @@ FetchContent_MakeAvailable(curl)
 add_library(curl_int INTERFACE)
 target_link_libraries(curl_int INTERFACE libcurl)
 target_include_directories(curl_int INTERFACE ${curl_SOURCE_DIR}/include ${curl_BINARY_DIR}/include/curl)
-add_library(CURL::libcurl ALIAS curl_int)
+add_library(curl_int)
 
 # LOCAL LIBS
 
@@ -150,7 +152,7 @@ target_link_libraries(demo app)
 
 # maps demo
 add_executable(maps "demos/maps.cpp")
-target_link_libraries(maps app CURL::libcurl)
+target_link_libraries(maps app curl_int)
 target_compile_features(maps PRIVATE cxx_std_17)
 
 # perlin demo
@@ -188,7 +190,7 @@ add_custom_command(TARGET spectrogram POST_BUILD  COMMAND ${CMAKE_COMMAND} -E co
 
 # stocks demo
 add_executable(stocks "demos/stocks.cpp" )
-target_link_libraries(stocks app fmt::fmt CURL::libcurl)
+target_link_libraries(stocks app fmt::fmt curl_int)
 target_compile_features(stocks PRIVATE cxx_std_17)
 
 # voice demo
