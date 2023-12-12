@@ -42,4 +42,4 @@ target_link_libraries(test_portfolio PUBLIC ${PUBLIC_targets})
 add_test(	NAME test_portfolio
             COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/test_portfolio.exe
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/portfolio/tests)
-# set_tests_properties(test_portfolio PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;$ENV{PATH}")
+set_tests_properties(test_portfolio PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;$ENV{PATH}")

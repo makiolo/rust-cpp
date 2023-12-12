@@ -13,18 +13,18 @@ namespace rp {
 
         template <typename T>
         explicit Neg(T&& s0) {
-            _future = _promise.get_future();
-            _task = std::jthread([=](std::promise<result_type> &promise, const T& ss0) -> void {
+            auto ticket = make_ticket();
+            _task = std::jthread([](const ticket_type& ticket, T &&ss0) -> void {
 
 #if defined(RELEASE_PYTHON_THREAD) && RELEASE_PYTHON_THREAD == 1
                 gil_scoped_release release;
 #endif
 
-                const auto& n0 = get_value< Serie::Buffer >(ss0);
-                promise.set_value(std::make_shared<Serie>(-n0));
+                auto s0 = rp::calculate(ss0);
+                const auto& n0 = get_value< Serie::Buffer >(s0);
+                ticket->set_value(std::make_shared<Serie>(-n0));
 
-            }, std::ref(_promise), std::forward<T>(s0));
-            // _task.join();
+            }, ticket, std::forward<T>(s0));
         }
     };
 

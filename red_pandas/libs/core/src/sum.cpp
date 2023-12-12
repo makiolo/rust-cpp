@@ -26,72 +26,91 @@ namespace rp {
 
         template<typename T>
         explicit Sum(T&& s0, T&& s1) {
-            _future = _promise.get_future();
-            _task = std::jthread([](std::promise<result_type>& promise, T&& ss0, T&& ss1) -> void {
+
+            auto ticket = make_ticket();
+            _task = std::jthread([](const ticket_type& ticket, T &&ss0, T &&ss1) -> void {
 
 #if defined(RELEASE_PYTHON_THREAD) && RELEASE_PYTHON_THREAD == 1
                 gil_scoped_release release;
 #endif
                 auto s0 = rp::calculate(ss0);
                 auto s1 = rp::calculate(ss1);
-                const auto& n0 = get_value< Serie::Buffer >(s0);
-                const auto& n1 = get_value< Serie::Buffer >(s1);
 
-                if (n0.numCols() == n1.numCols()) {
-                    promise.set_value(std::make_shared<Serie>(n0 + n1));
-                } else if (n0.numCols() == 1) {
-                    promise.set_value(std::make_shared<Serie>(n0[0] + n1));
-                } else if (n1.numCols() == 1) {
-                    promise.set_value(std::make_shared<Serie>(n0 + n1[0]));
-                } else if (n0.numCols() > 1) {
-                    throw std::runtime_error("TODO: Implement excel auto-fill");
-                } else if (n1.numCols() > 1) {
-                    throw std::runtime_error("TODO: Implement excel auto-fill");
-                } else {
-                    throw std::runtime_error("Invalid shapes on Sub.");
-                }
+//                if constexpr ( !std::is_same_v<Serie, std::remove_cvref_t<T> > ) {
+//                    ss0->write_notification.connect([](const Serie& changed) {
+//                        std::cout << "modified sum left: " << changed << std::endl;
+//                    });
+//                    ss1->write_notification.connect([](const Serie& changed) {
+//                        std::cout << "modified sum right: " << changed << std::endl;
+//                    });
+//                }
 
-            }, std::ref(_promise), std::forward<T>(s0), std::forward<T>(s1));
-            // _task.join();
+                const auto &n0 = get_value<Serie::Buffer>(s0);
+                const auto &n1 = get_value<Serie::Buffer>(s1);
+                column_ptr result;
+                Sum::calculate(n0, n1, result);
+
+                ticket->set_value(result);
+
+            }, ticket, std::forward<T>(s0), std::forward<T>(s1));
+        }
+
+        ~Sum()
+        {
+
+        }
+
+        static void calculate(const Serie::Buffer& n0, const Serie::Buffer& n1, rp::column_ptr& result) {
+            if (n0.numCols() == n1.numCols()) {
+                result = rp::array(n0 + n1);
+            } else if (n0.numCols() == 1) {
+                result = rp::array(n0[0] + n1);
+            } else if (n1.numCols() == 1) {
+                result = rp::array(n0 + n1[0]);
+            } else if (n0.numCols() > 1) {
+                throw std::runtime_error("TODO: Implement excel auto-fill");
+            } else if (n1.numCols() > 1) {
+                throw std::runtime_error("TODO: Implement excel auto-fill");
+            } else {
+                throw std::runtime_error("Invalid shapes on Sub.");
+            }
         }
     };
 
     std::shared_ptr<Serie> sum2(const std::shared_ptr<Serie>& s0, const std::shared_ptr<Serie> &s1)
     {
-        return std::make_shared<Serie>(Sum{s0, s1});
+        auto result = std::make_shared<Serie>(Sum(s0, s1));
+//        s0->write_notification.connect([](const Serie& changed) {
+//
+//        });
+//        s1->write_notification.connect([](const Serie& changed) {
+//
+//        });
+        return result;
     }
 
     Serie sum2ref(const Serie& s0, const Serie& s1)
     {
-        return Serie(Sum{s0, s1});
+        auto result = Serie(Sum(s0, s1));
+        return result;
+    }
+
+    // make reactive
+    std::shared_ptr<Serie> sum_reactive(const std::shared_ptr<Serie>& s0, const std::shared_ptr<Serie> &s1)
+    {
+        auto result = std::make_shared<Serie>(Sum(s0, s1));
+        s0->write_notification.connect([&](const std::shared_ptr<Serie>& newserie) {
+            auto newresult = std::make_shared<Calculation<Serie> >(Sum(newserie, s1));
+            result->set_calculation(newresult);
+        });
+        s1->write_notification.connect([&](const std::shared_ptr<Serie>& newserie) {
+            auto newresult = std::make_shared<Calculation<Serie> >(Sum(s0, newserie));
+            result->set_calculation(newresult);
+        });
+        return result;
     }
 
     // TODO: MOVE CODE TO C++
-
-    column_ptr array(const column& data)
-    {
-        return std::make_shared<column>(data);
-    }
-
-    column_ptr array(const std::initializer_list<double>& data)
-    {
-        return std::make_shared<column>(std::forward<internal_array>(data));
-    }
-
-    column_ptr array(const std::vector<double>& data)
-    {
-        return std::make_shared<column>(data);
-    }
-
-    column_ptr array(double* xx, int xx_n)
-    {
-        return std::make_shared<column>(xx, xx_n);
-    }
-
-    column_ptr array(double* xx, int xx_n, bool takeOwnerShip)
-    {
-        return std::make_shared<column>(xx, xx_n, takeOwnerShip);
-    }
 
     rp::column_ptr agg_transpose(const dataframe& dataset, const function_ptr& aggregator)
     {

@@ -50,4 +50,4 @@ target_link_libraries(test_simulator PUBLIC ${PUBLIC_targets})
 add_test(	NAME test_simulator
             COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/test_simulator.exe
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/simulator/tests)
-# set_tests_properties(test_simulator PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;$ENV{PATH}")
+set_tests_properties(test_simulator PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;$ENV{PATH}")

@@ -12,7 +12,9 @@ namespace rp {
         DEFINE_KEY(Less);
 
         template <typename T>
-        explicit IsFinite(T&& s0, bool any_isfinite = true) {
+        explicit IsFinite(T&& ss0, bool any_isfinite = true) {
+
+            auto s0 = rp::calculate(ss0);
 
             const auto& n0 = get_value< Serie::Buffer >(s0);
 

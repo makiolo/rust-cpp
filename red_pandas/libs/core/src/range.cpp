@@ -14,8 +14,8 @@ namespace rp {
         DEFINE_KEY(Range);
 
         explicit Range(int elements) {
-            _future = _promise.get_future();
-            _task = std::jthread([](std::promise<result_type>& promise, int elements) -> void {
+            auto ticket = make_ticket();
+            _task = std::jthread([](const ticket_type& ticket, int elements) -> void {
 
 #if defined(RELEASE_PYTHON_THREAD) && RELEASE_PYTHON_THREAD == 1
                 gil_scoped_release release;
@@ -39,10 +39,9 @@ namespace rp {
                     }
                 }
 
-                promise.set_value(std::make_shared<Serie>(output, num_elements, true));
+                ticket->set_value(std::make_shared<Serie>(output, num_elements, true));
 
-            }, std::ref(_promise), elements);
-            // _task.join();
+            }, ticket, elements);
         }
     };
 

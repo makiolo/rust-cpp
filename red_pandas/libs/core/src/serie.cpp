@@ -8,6 +8,9 @@
 #include "abs.h"
 #include "operators/less.h"
 #include "formulas/greeks.h"
+// torch
+// #include <torch/torch.h>
+// #include <ATen/Context.h>
 
 
 struct talib_data
@@ -87,6 +90,7 @@ Serie Serie::operator-() const
 {
     return rp::sub2ref(rp::ZERO, *this);
 }
+
 /////////////////////////////
 
 std::shared_ptr<Serie> operator+(const std::shared_ptr<Serie>& one, const std::shared_ptr<Serie>& other)
@@ -164,4 +168,32 @@ std::ostream& operator<<(std::ostream &out, const Serie &s)
 {
     out << s.__str__();
     return out;
+}
+
+namespace rp {
+
+    column_ptr array(const internal_array &data) {
+        return std::make_shared<column>(data);
+    }
+
+    column_ptr array(const column &data) {
+        return std::make_shared<column>(data);
+    }
+
+    column_ptr array(const std::initializer_list<double> &data) {
+        return std::make_shared<column>(std::forward<internal_array>(data));
+    }
+
+    column_ptr array(const std::vector<double> &data) {
+        return std::make_shared<column>(data);
+    }
+
+    column_ptr array(double *xx, int xx_n) {
+        return std::make_shared<column>(xx, xx_n);
+    }
+
+    column_ptr array(double *xx, int xx_n, bool takeOwnerShip) {
+        return std::make_shared<column>(xx, xx_n, takeOwnerShip);
+    }
+
 }

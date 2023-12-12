@@ -10,29 +10,10 @@ namespace rp {
     // C++
     Serie sum2ref(const Serie& s0, const Serie& s1);
 
+    // make reactive
+    std::shared_ptr<Serie> sum_reactive(const std::shared_ptr<Serie>& s0, const std::shared_ptr<Serie> &s1);
+
     // TODO: MOVE CODE TO C++ CORE
-
-    column_ptr array(const column& data);
-    column_ptr array(const std::initializer_list<double>& data);
-    column_ptr array(const std::vector<double>& data);
-    column_ptr array(double* xx, int xx_n);
-    column_ptr array(double* xx, int xx_n, bool takeOwnerShip);
-
-    template <typename T>
-    column_ptr calculate(T&& calculation)
-    {
-        if constexpr ( std::is_same_v<Serie, std::remove_cvref_t<T> > ) {
-            if(calculation.type == SerieType::calculation_type)
-                return calculation.get_calc();
-            else
-                return rp::array(calculation);
-        } else {
-            if(calculation->type == SerieType::calculation_type)
-                return calculation->get_calc();
-            else
-                return calculation;
-        }
-    }
 
     /*
     column_ptr divide_count(const column_ptr& result)

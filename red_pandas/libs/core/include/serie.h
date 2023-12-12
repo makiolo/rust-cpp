@@ -17,6 +17,7 @@
 #include "calculation.h"
 #include "fes/sync.h"
 #include "npv.h"
+#include "IterableRepository.h"
 
 enum SerieType
 {
@@ -75,7 +76,6 @@ class Serie : public std::enable_shared_from_this<Serie>
 {
 public:
     using Buffer = nc::NdArray<double>;
-    // using BufferInt = nc::NdArray<int>;
 
     Serie() = default;
     ~Serie() = default;
@@ -83,30 +83,38 @@ public:
     Serie(const Serie& other)
         : values(other.values)
         , type(other.type)
+        , write_notification(other.write_notification)
     {
-        //std::cout << "copy constructor" << std::endl;
+        std::cout << "Serie copy constructor" << std::endl;
     }
 
     Serie(Serie&& other) noexcept
         : values(std::move(other.values))
         , type(other.type)
+        , write_notification(std::move(other.write_notification))
     {
-        //std::cout << "move constructor" << std::endl;
+        std::cout << "Serie move constructor" << std::endl;
     }
 
     Serie& operator=(const Serie& other)
     {
-        //std::cout << "operator= copy" << std::endl;
-        values = other.values;
-        type = other.type;
+        if (this != &other) {
+            std::cout << "Serie operator= copy" << std::endl;
+            values = other.values;
+            type = other.type;
+            write_notification = other.write_notification;
+        }
         return *this;
     }
 
     Serie& operator=(Serie&& other) noexcept
     {
-        //std::cout << "operator= move" << std::endl;
-        values = std::move(other.values);
-        type = other.type;
+        if (this != &other) {
+            std::cout << "Serie operator= move" << std::endl;
+            values = std::move(other.values);
+            type = other.type;
+            write_notification = std::move(write_notification);
+        }
         return *this;
     }
 
@@ -366,6 +374,7 @@ public:
     void write(int offset, double data)
     {
         raw_data()[offset] = data;
+        write_notification(shared_from_this());
     }
 
     template <typename T>
@@ -402,12 +411,10 @@ public:
         }
     }
 
-    const rp::Calculation<Serie>::result_type& get_calc() const
-    // const std::shared_ptr<Serie>& get_calc() const
+    rp::Calculation<Serie>::result_type get_calc() const
     {
-        const auto& calculation = get< std::shared_ptr<rp::Calculation<Serie>> >();
-        const auto& result = calculation->get();
-        return result;
+        auto calculation = get< std::shared_ptr<rp::Calculation<Serie>> >();
+        return calculation->get();
     }
 
     template <typename T>
@@ -442,24 +449,24 @@ public:
 
     std::shared_ptr<Serie> sub(int stop)
     {
-        if(type == SerieType::calculation_type)
-            throw std::runtime_error("Serie is calculation type.");
+//        if(type == SerieType::calculation_type)
+//            throw std::runtime_error("Serie is calculation type.");
         const auto& array_data = data();
         return std::make_shared<Serie>( array_data.at( nc::Slice(stop) ) );
     }
 
     std::shared_ptr<Serie> sub(int start, int stop)
     {
-        if(type == SerieType::calculation_type)
-            throw std::runtime_error("Serie is calculation type.");
+//        if(type == SerieType::calculation_type)
+//            throw std::runtime_error("Serie is calculation type.");
         const auto& array_data = data();
         return std::make_shared<Serie>( array_data.at( nc::Slice(start, stop) ) );
     }
 
     std::shared_ptr<Serie> sub(int start, int stop, int step)
     {
-        if(type == SerieType::calculation_type)
-            throw std::runtime_error("Serie is calculation type.");
+//        if(type == SerieType::calculation_type)
+//            throw std::runtime_error("Serie is calculation type.");
         const auto& array_data = data();
         return std::make_shared<Serie>( array_data.at( nc::Slice(start, stop, step) ) );
     }
@@ -509,7 +516,7 @@ public:
 	{
         if(type == SerieType::calculation_type)
         {
-            const auto& calculation = get< std::shared_ptr<rp::Calculation<Serie>> >();
+            auto calculation = get< std::shared_ptr<rp::Calculation<Serie>> >();
             calculation->wait(duration);
         }
         else
@@ -522,7 +529,7 @@ public:
 	{
         if(type == SerieType::calculation_type)
         {
-            const auto &calculation = get< std::shared_ptr<rp::Calculation<Serie>> >();
+            auto calculation = get< std::shared_ptr<rp::Calculation<Serie>> >();
             return calculation->is_ready();
         }
         else
@@ -571,12 +578,6 @@ public:
 		return get<std::vector<std::unordered_map<std::shared_ptr<Serie>, std::shared_ptr<Serie> > > >();
 	}
 
-    // DEPRECATED
-    inline std::vector<double> get_basic_numpy() const
-    {
-        return data().toStlVector();
-    }
-
     inline std::vector<double> to_vector() const
     {
         return data().toStlVector();
@@ -594,56 +595,118 @@ public:
 
     /////////////////////////////////////
 
-
     void set_basic_string(const std::string& data)
     {
-        type = SerieType::string_type;
-        values = data;
+        if(type == SerieType::string_type || type == SerieType::basic_none_type)
+        {
+            values = data;
+            write_notification(shared_from_this());
+        }
+        else
+        {
+            throw std::runtime_error("type expected is string_type.");
+        }
     }
 
     void set_basic_none()
     {
         type = SerieType::basic_none_type;
+        write_notification(shared_from_this());
     }
 
     void set_basic_numpy(double data)
     {
-        type = SerieType::basic_numpy_type;
-        values = Buffer({data});
+        if(type == SerieType::basic_numpy_type || type == SerieType::basic_none_type)
+        {
+            values = Buffer({data});
+            write_notification(shared_from_this());
+        }
+        else
+        {
+            throw std::runtime_error("type expected is basic_numpy_type.");
+        }
     }
 
     void set_basic_numpy(double* xx, int xx_n)
     {
-        type = SerieType::basic_numpy_type;
-        values = Buffer(xx, xx_n);
+        if(type == SerieType::basic_numpy_type || type == SerieType::basic_none_type)
+        {
+            values = Buffer(xx, xx_n);
+            write_notification(shared_from_this());
+        }
+        else
+        {
+            throw std::runtime_error("type expected is basic_numpy_type.");
+        }
     }
 
     void set_basic_numpy(const Buffer& data)
     {
-        type = SerieType::basic_numpy_type;
-        values = data;
+        if(type == SerieType::basic_numpy_type || type == SerieType::basic_none_type)
+        {
+            values = data;
+            write_notification(shared_from_this());
+        }
+        else
+        {
+            throw std::runtime_error("type expected is basic_numpy_type.");
+        }
     }
 
     void set_basic_numpy(const std::initializer_list<double>& data)
     {
-        type = SerieType::basic_numpy_type;
-        values = Buffer(std::forward< Buffer >(data));
+        if(type == SerieType::basic_numpy_type || type == SerieType::basic_none_type)
+        {
+            values = Buffer(std::forward< Buffer >(data));
+            write_notification(shared_from_this());
+        }
+        else
+        {
+            throw std::runtime_error("type expected is basic_numpy_type.");
+        }
     }
 
     void set_basic_numpy(const std::vector<double>& data)
     {
-        type = SerieType::basic_numpy_type;
-        values = Buffer(data.data(), data.size());
+        if(type == SerieType::basic_numpy_type || type == SerieType::basic_none_type)
+        {
+            values = Buffer(data.data(), data.size());
+            write_notification(shared_from_this());
+        }
+        else
+        {
+            throw std::runtime_error("type expected is basic_numpy_type.");
+        }
     }
 
     void set_vector_string(const std::vector<std::string>& data)
     {
-        type = SerieType::vector_string_type;
-        values = data;
+        if(type == SerieType::vector_string_type || type == SerieType::basic_none_type)
+        {
+            values = data;
+            write_notification(shared_from_this());
+        }
+        else
+        {
+            throw std::runtime_error("type expected is vector_string_type.");
+        }
+    }
+
+    void set_calculation(const std::shared_ptr<rp::Calculation<Serie> >& data)
+    {
+        if(type == SerieType::calculation_type)
+        {
+            values = data;
+        }
+        else
+        {
+            throw std::runtime_error("type expected is set_calculation.");
+        }
     }
 
 public:
 	SerieType type;
+    mutable fes::sync<std::shared_ptr<Serie> > write_notification;
 
 protected:
 	std::variant<
@@ -676,7 +739,6 @@ protected:
         std::shared_ptr<rp::Calculation<Serie>>
 
 	> values;
-    size_t precision;
 };
 
 
@@ -720,4 +782,26 @@ namespace rp {
     using transformer_ptr = std::function< column_ptr(const column_ptr&) >;
     using indicator_ptr = std::function< dataframe(const dataframe&, int) >;
 
+    column_ptr array(const column& data);
+    column_ptr array(const internal_array& data);
+    column_ptr array(const std::initializer_list<double>& data);
+    column_ptr array(const std::vector<double>& data);
+    column_ptr array(double* xx, int xx_n);
+    column_ptr array(double* xx, int xx_n, bool takeOwnerShip);
+
+    template <typename T>
+    column_ptr calculate(T&& calculation)
+    {
+        if constexpr ( std::is_same_v<Serie, std::remove_cvref_t<T> > ) {
+            if(calculation.type == SerieType::calculation_type)
+                return calculation.get_calc();
+            else
+                return rp::array(calculation);
+        } else {
+            if(calculation->type == SerieType::calculation_type)
+                return calculation->get_calc();
+            else
+                return calculation;
+        }
+    }
 }

@@ -47,5 +47,5 @@ target_link_libraries(test_finance PUBLIC ${PUBLIC_targets})
 add_test(	NAME test_finance
         COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/test_finance.exe
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/finance/tests)
-# set_tests_properties(test_finance PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;$ENV{PATH}")
+set_tests_properties(test_finance PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;$ENV{PATH}")
 

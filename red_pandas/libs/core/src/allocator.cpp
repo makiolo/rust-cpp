@@ -1,9 +1,15 @@
 //
 // Created by n424613 on 27/10/2022.
 //
+//
+
+// #include "mimalloc-new-delete.h"
+
+#if 1
+
 #include <cstddef>
 #include <unordered_map>
-//
+
 #include <mkl.h>
 
 
@@ -28,3 +34,5 @@ void operator delete[](void *p) noexcept
 {
     mkl_free(p);
 }
+
+#endif

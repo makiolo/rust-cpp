@@ -5,7 +5,6 @@
 #include <thread>
 #include "util.h"
 #include <ta_libc.h>
-#include "sum.h"
 
 namespace rp {
 
@@ -15,41 +14,44 @@ namespace rp {
 
         template <typename T>
         explicit Shift(T&& s0, int period) {
-            _future = _promise.get_future();
-            _task = std::jthread([](std::promise<result_type> &promise, const T& ss0, int period) -> void {
+            auto ticket = make_ticket();
+            _task = std::jthread([](const ticket_type& ticket, T &&ss0, int period) -> void {
 
 #if defined(RELEASE_PYTHON_THREAD) && RELEASE_PYTHON_THREAD == 1
                 gil_scoped_release release;
 #endif
-
                 auto s0 = rp::calculate(ss0);
+
                 const auto& n0 = get_value< Serie::Buffer >(s0);
+
                 const double* data = const_raw_data(s0);
                 size_t num_elements = get_size(s0);
 
-                // copy
-                auto* output = new double[num_elements];
+                column_ptr result;
+                Shift::calculate(data, num_elements, period, result);
+                ticket->set_value(result);
 
-                if(period >=0)
-                {
-//                    for(size_t i = 0; i < period; ++i)
-//                        output[i] = NAN
-                    std::fill_n(output, period, NAN);
-                    for(size_t i = period; i < num_elements; ++i)
-                        output[i] = data[i - period];
-                }
-                else // period negative
-                {
-                    for(size_t i = 0; i < num_elements + period; ++i)
-                        output[i] = data[i - period];
-                    for(size_t i = num_elements + period; i < num_elements; ++i)
-                        output[i] = NAN;
-                }
+            }, ticket, std::forward<T>(s0), period);
+        }
 
-                promise.set_value(std::make_shared<Serie>(output, num_elements, true));
+        static void calculate(const double* data, size_t num_elements, int period, column_ptr& result)
+        {
+            auto* output = new double[num_elements];
 
-            }, std::ref(_promise), std::forward<T>(s0), period);
-            // _task.join();
+            if(period >= 0)
+            {
+                std::fill_n(output, period, NAN);
+                for(size_t i = period; i < num_elements; ++i)
+                    output[i] = data[i - period];
+            }
+            else // period negative
+            {
+                for(size_t i = 0; i < num_elements + period; ++i)
+                    output[i] = data[i - period];
+                for(size_t i = num_elements + period; i < num_elements; ++i)
+                    output[i] = NAN;
+            }
+            result = std::make_shared<Serie>(output, num_elements, true);
         }
     };
 

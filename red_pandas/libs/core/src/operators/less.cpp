@@ -12,7 +12,10 @@ namespace rp {
         DEFINE_KEY(Less);
 
         template <typename T>
-        explicit Less(T&& s0, T&& s1, bool any_less = true) {
+        explicit Less(T&& ss0, T&& ss1, bool any_less = true) {
+
+            auto s0 = rp::calculate(ss0);
+            auto s1 = rp::calculate(ss1);
 
             const auto& n0 = get_value< Serie::Buffer >(s0);
             const auto& n1 = get_value< Serie::Buffer >(s1);

@@ -1529,9 +1529,6 @@ class Serie(object):
     def get_vector_map_serie_serie(self):
         return _red_pandas.Serie_get_vector_map_serie_serie(self)
 
-    def get_basic_numpy(self):
-        return _red_pandas.Serie_get_basic_numpy(self)
-
     def to_vector(self):
         return _red_pandas.Serie_to_vector(self)
 
@@ -1552,11 +1549,18 @@ class Serie(object):
 
     def set_vector_string(self, data):
         return _red_pandas.Serie_set_vector_string(self, data)
+
+    def set_calculation(self, data):
+        return _red_pandas.Serie_set_calculation(self, data)
     type = property(_red_pandas.Serie_type_get, _red_pandas.Serie_type_set)
+    write_notification = property(_red_pandas.Serie_write_notification_get, _red_pandas.Serie_write_notification_set)
 
 # Register Serie in _red_pandas:
 _red_pandas.Serie_swigregister(Serie)
 
+
+def array(*args):
+    return _red_pandas.array(*args)
 class Serie2d(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -1603,8 +1607,8 @@ def sum2(s0, s1):
 def sum2ref(s0, s1):
     return _red_pandas.sum2ref(s0, s1)
 
-def array(*args):
-    return _red_pandas.array(*args)
+def sum_reactive(s0, s1):
+    return _red_pandas.sum_reactive(s0, s1)
 
 def first(left, right):
     return _red_pandas.first(left, right)
@@ -1813,90 +1817,6 @@ class CategoricalNoneType(object):
 
 # Register CategoricalNoneType in _red_pandas:
 _red_pandas.CategoricalNoneType_swigregister(CategoricalNoneType)
-
-class Categorical(object):
-    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
-    __repr__ = _swig_repr
-    __swig_destroy__ = _red_pandas.delete_Categorical
-
-    def __init__(self, *args):
-        _red_pandas.Categorical_swiginit(self, _red_pandas.new_Categorical(*args))
-
-    def __str__(self):
-        return _red_pandas.Categorical___str__(self)
-
-    def get_calc(self):
-        return _red_pandas.Categorical_get_calc(self)
-
-    def data(self):
-        return _red_pandas.Categorical_data(self)
-
-    def raw_data(self, *args):
-        return _red_pandas.Categorical_raw_data(self, *args)
-
-    def sub(self, *args):
-        return _red_pandas.Categorical_sub(self, *args)
-
-    def size(self):
-        return _red_pandas.Categorical_size(self)
-
-    def wait(self, *args):
-        return _red_pandas.Categorical_wait(self, *args)
-
-    def is_calculated(self):
-        return _red_pandas.Categorical_is_calculated(self)
-
-    def get_basic_string(self):
-        return _red_pandas.Categorical_get_basic_string(self)
-
-    def get_map_string_serie(self):
-        return _red_pandas.Categorical_get_map_string_serie(self)
-
-    def get_map_serie_serie(self):
-        return _red_pandas.Categorical_get_map_serie_serie(self)
-
-    def get_vector_none(self):
-        return _red_pandas.Categorical_get_vector_none(self)
-
-    def get_vector_string(self):
-        return _red_pandas.Categorical_get_vector_string(self)
-
-    def get_vector_serie(self):
-        return _red_pandas.Categorical_get_vector_serie(self)
-
-    def get_vector_map_string_serie(self):
-        return _red_pandas.Categorical_get_vector_map_string_serie(self)
-
-    def get_vector_map_serie_serie(self):
-        return _red_pandas.Categorical_get_vector_map_serie_serie(self)
-
-    def get_basic_numpy(self):
-        return _red_pandas.Categorical_get_basic_numpy(self)
-
-    def to_vector(self):
-        return _red_pandas.Categorical_to_vector(self)
-
-    def get_set_serie(self):
-        return _red_pandas.Categorical_get_set_serie(self)
-
-    def get_vector_set_serie(self):
-        return _red_pandas.Categorical_get_vector_set_serie(self)
-
-    def set_basic_string(self, data):
-        return _red_pandas.Categorical_set_basic_string(self, data)
-
-    def set_basic_none(self):
-        return _red_pandas.Categorical_set_basic_none(self)
-
-    def set_basic_numpy(self, *args):
-        return _red_pandas.Categorical_set_basic_numpy(self, *args)
-
-    def set_vector_string(self, data):
-        return _red_pandas.Categorical_set_vector_string(self, data)
-    type = property(_red_pandas.Categorical_type_get, _red_pandas.Categorical_type_set)
-
-# Register Categorical in _red_pandas:
-_red_pandas.Categorical_swigregister(Categorical)
 
 
 def year():

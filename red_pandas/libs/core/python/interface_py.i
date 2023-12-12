@@ -61,9 +61,9 @@
 %include <std_shared_ptr.i>
 
 %shared_ptr(Serie)
-%shared_ptr(Categorical)
+// %shared_ptr(Categorical)
 %shared_ptr(Calculation<Serie> )
-%shared_ptr(Calculation<Categorical> )
+// %shared_ptr(Calculation<Categorical> )
 
 %ignore Serie::reshape;
 

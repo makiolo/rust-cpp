@@ -17,12 +17,12 @@ add_subdirectory(depends/mdspan-stable)
 # Excel bridge
 add_subdirectory(depends/excelbind/src)
 
-# GUI
-# add_subdirectory(depends/implot_demos)
-
 # internal Core
 enable_testing()
 include(libs/core/CMakeLists.txt)
 include(libs/finance/CMakeLists.txt)
 include(libs/portfolio/CMakeLists.txt)
 include(libs/simulator/CMakeLists.txt)
+
+# optional GUI
+# add_subdirectory(depends/implot_demos)

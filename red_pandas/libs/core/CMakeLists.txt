@@ -63,6 +63,7 @@ set(PUBLIC_sources
         libs/core/include/categorical.h
         libs/core/include/util.h
         libs/core/include/api.h
+        libs/core/include/IterableRepository.h
         libs/core/include/formulas/greeks.h
         libs/core/include/formulas/volatility.h
         )
@@ -77,12 +78,15 @@ set(PUBLIC_include_dirs
         libs/core/include
         depends/NumCpp-master/include
         depends/parallel-hashmap
+        # depends/libtorch/include
+        # depends/libtorch/include/torch/csrc/api/include
         ${PYTHON3_INCLUDE}
         ${MKL_INCLUDE}
         ${NUMPY_INCLUDE}
         )
 set(PUBLIC_link_dirs
         ${MKL_LIBDIR}
+        # depends/libtorch/lib
         )
 set(PUBLIC_options
         # $<$<CONFIG:Debug>:-/MDd>
@@ -105,6 +109,8 @@ set(PRIVATE_targets
         ${PYTHON3_LIB}
         ${NUMPY_LIB}
         ta_lib_static
+        # torch_cpu
+        # c10
         )
 
 set(PUBLIC_targets
@@ -140,8 +146,9 @@ target_link_libraries(red_pandas PUBLIC ${PUBLIC_targets})
 
 # create STATIC library
 add_library(red_pandas_static STATIC)
+# target_sources(red_pandas_static PRIVATE ${PRIVATE_sources} depends/mimalloc-master/src/static.c libs/core/src/allocator.cpp PUBLIC ${PUBLIC_sources} ${PUBLIC_extra_sources})
+# target_include_directories(red_pandas_static PUBLIC ${PUBLIC_include_dirs} depends/mimalloc-master/include)
 target_sources(red_pandas_static PRIVATE ${PRIVATE_sources} libs/core/src/allocator.cpp PUBLIC ${PUBLIC_sources} ${PUBLIC_extra_sources})
-# target_sources(red_pandas_static PRIVATE ${PRIVATE_sources} PUBLIC ${PUBLIC_sources} ${PUBLIC_extra_sources})
 target_include_directories(red_pandas_static PUBLIC ${PUBLIC_include_dirs})
 target_compile_options(red_pandas_static PUBLIC ${PUBLIC_options})
 target_compile_features(red_pandas_static PUBLIC cxx_std_20)
@@ -179,13 +186,13 @@ target_link_libraries(test_core PUBLIC ${PUBLIC_targets})
 add_test(	NAME test_core_cpp
         COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/test_core.exe
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests)
-# set_tests_properties(test_core_cpp PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;$ENV{PATH}")
+set_tests_properties(test_core_cpp PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;$ENV{PATH}")
 
 # test python
 add_test(	NAME test_core_py
         COMMAND ${PYTHON3_EXE} ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests/test_core.py
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests)
-set_tests_properties(test_core_py PROPERTIES ENVIRONMENT "PATH=${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}\;${PYTHONHOME}\;${PYTHONHOME}/Scripts\;${PYTHONHOME}/Library/bin\;$ENV{PATH};PYTHONHOME=${PYTHONHOME};PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python\;${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}")
+set_tests_properties(test_core_py PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}\;${PYTHONHOME}\;${PYTHONHOME}/Scripts\;${PYTHONHOME}/Library/bin\;$ENV{PATH};PYTHONHOME=${PYTHONHOME};PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python\;${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}")
 
 
 
@@ -212,13 +219,13 @@ target_link_libraries(test_volatility PUBLIC ${PUBLIC_targets})
 add_test(	NAME test_volatility_cpp
         COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/test_volatility.exe
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests)
-# set_tests_properties(test_volatility_cpp PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;$ENV{PATH}")
+set_tests_properties(test_volatility_cpp PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;$ENV{PATH}")
 
 # test python
 add_test(	NAME test_volatility_py
         COMMAND ${PYTHON3_EXE} ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests/test_volatility.py
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/tests)
-set_tests_properties(test_volatility_py PROPERTIES ENVIRONMENT "PATH=${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}\;${PYTHONHOME}\;${PYTHONHOME}/Scripts\;${PYTHONHOME}/Library/bin\;$ENV{PATH};PYTHONHOME=${PYTHONHOME};PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python\;${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}")
+set_tests_properties(test_volatility_py PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}\;${PYTHONHOME}\;${PYTHONHOME}/Scripts\;${PYTHONHOME}/Library/bin\;$ENV{PATH};PYTHONHOME=${PYTHONHOME};PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python\;${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}")
 
 
 # copy resources to dist

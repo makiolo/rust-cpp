@@ -13,18 +13,18 @@ namespace rp {
 
         template <typename T>
         explicit Max0(T&& s0) {
-            _future = _promise.get_future();
-            _task = std::jthread([](std::promise<result_type> &promise, const T& ss0) -> void {
+            auto ticket = make_ticket();
+            _task = std::jthread([](const ticket_type& ticket, T &&ss0) -> void {
 
 #if defined(RELEASE_PYTHON_THREAD) && RELEASE_PYTHON_THREAD == 1
                 gil_scoped_release release;
 #endif
+                auto s0 = rp::calculate(ss0);
 
-                const auto& n0 = get_value< Serie::Buffer >(ss0);
-                promise.set_value(std::make_shared<Serie>(nc::maximum(n0, nc::zeros<double>(n0.numRows(), n0.numCols()))));
+                const auto& n0 = get_value< Serie::Buffer >(s0);
+                ticket->set_value(std::make_shared<Serie>(nc::maximum(n0, nc::zeros<double>(n0.numRows(), n0.numCols()))));
 
-            }, std::ref(_promise), std::forward<T>(s0));
-            // _task.join();
+            }, ticket, std::forward<T>(s0));
         }
     };
 
@@ -34,8 +34,8 @@ namespace rp {
 
         template <typename T>
         explicit Max2(T&& s0, T&& s1) {
-            _future = _promise.get_future();
-            _task = std::jthread([](std::promise<result_type> &promise, const T& ss0, const T& ss1) -> void {
+            auto ticket = make_ticket();
+            _task = std::jthread([](const ticket_type& ticket, T &&ss0, T &&ss1) -> void {
 
 #if defined(RELEASE_PYTHON_THREAD) && RELEASE_PYTHON_THREAD == 1
                 gil_scoped_release release;
@@ -43,9 +43,9 @@ namespace rp {
 
                 const auto& n0 = get_value< Serie::Buffer >(ss0);
                 const auto& n1 = get_value< Serie::Buffer >(ss1);
-                promise.set_value(std::make_shared<Serie>(nc::maximum(n0, n1)));
+                ticket->set_value(std::make_shared<Serie>(nc::maximum(n0, n1)));
 
-            }, std::ref(_promise), std::forward<T>(s0), std::forward<T>(s1));
+            }, ticket, std::forward<T>(s0), std::forward<T>(s1));
         }
     };
 

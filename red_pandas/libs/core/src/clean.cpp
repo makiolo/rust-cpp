@@ -13,14 +13,15 @@ namespace rp {
 
         template <typename T>
         explicit Clean(T&& s0, bool replace, double neutral) {
-            _future = _promise.get_future();
-            _task = std::jthread([=](std::promise<result_type> &promise, const T& ss0, bool replace, double neutral) -> void {
+            auto ticket = make_ticket();
+            _task = std::jthread([](const ticket_type& ticket, T &&ss0, bool replace, double neutral) -> void {
 
 #if defined(RELEASE_PYTHON_THREAD) && RELEASE_PYTHON_THREAD == 1
                 gil_scoped_release release;
 #endif
+                auto s0 = rp::calculate(ss0);
 
-                const auto& n0 = get_value< Serie::Buffer >(ss0);
+                const auto& n0 = get_value< Serie::Buffer >(s0);
 
                 std::vector<double> newarray;
                 for(const auto& value : n0)
@@ -31,10 +32,9 @@ namespace rp {
                         newarray.emplace_back(neutral);
                     }
                 }
-                promise.set_value(std::make_shared<Serie>(newarray));
+                ticket->set_value(std::make_shared<Serie>(newarray));
 
-            }, std::ref(_promise), std::forward<T>(s0), replace, neutral);
-            // _task.join();
+            }, ticket, std::forward<T>(s0), replace, neutral);
         }
     };
 

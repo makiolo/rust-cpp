@@ -2697,124 +2697,109 @@ SWIGINTERN PyObject *SWIG_PyStaticMethod_New(PyObject *SWIGUNUSEDPARM(self), PyO
 /* -------- TYPES TABLE (BEGIN) -------- */
 
 #define SWIGTYPE_p_Buffer swig_types[0]
-#define SWIGTYPE_p_Categorical swig_types[1]
-#define SWIGTYPE_p_CategoricalBuffer swig_types[2]
-#define SWIGTYPE_p_CategoricalNoneType swig_types[3]
-#define SWIGTYPE_p_NoneType swig_types[4]
-#define SWIGTYPE_p_Serie swig_types[5]
-#define SWIGTYPE_p_allocator_type swig_types[6]
-#define SWIGTYPE_p_char swig_types[7]
-#define SWIGTYPE_p_date__year_month_day swig_types[8]
-#define SWIGTYPE_p_difference_type swig_types[9]
-#define SWIGTYPE_p_double swig_types[10]
-#define SWIGTYPE_p_f_int_p_q_const__char__void swig_types[11]
-#define SWIGTYPE_p_hasher swig_types[12]
-#define SWIGTYPE_p_key_equal swig_types[13]
-#define SWIGTYPE_p_key_type swig_types[14]
-#define SWIGTYPE_p_long swig_types[15]
-#define SWIGTYPE_p_mapped_type swig_types[16]
-#define SWIGTYPE_p_nc__NdArrayT_double_t swig_types[17]
-#define SWIGTYPE_p_nc__NdArrayT_long_t swig_types[18]
-#define SWIGTYPE_p_p_PyObject swig_types[19]
-#define SWIGTYPE_p_pf__BlockChain swig_types[20]
-#define SWIGTYPE_p_pf__ClosedDeal swig_types[21]
-#define SWIGTYPE_p_pf__Deal swig_types[22]
-#define SWIGTYPE_p_pf__FakeTrader swig_types[23]
-#define SWIGTYPE_p_pf__OpenDeal swig_types[24]
-#define SWIGTYPE_p_pf__SymbolInfoTick swig_types[25]
-#define SWIGTYPE_p_pf__Transaction swig_types[26]
-#define SWIGTYPE_p_pf__TxFrom swig_types[27]
-#define SWIGTYPE_p_pf__TxTo swig_types[28]
-#define SWIGTYPE_p_pf__amount_info swig_types[29]
-#define SWIGTYPE_p_pf__tuple_hash swig_types[30]
-#define SWIGTYPE_p_qs__CashFlow swig_types[31]
-#define SWIGTYPE_p_qs__CouponCashFlow swig_types[32]
-#define SWIGTYPE_p_qs__CustomCashFlow swig_types[33]
-#define SWIGTYPE_p_qs__DiscountFactor swig_types[34]
-#define SWIGTYPE_p_qs__EndCashFlow swig_types[35]
-#define SWIGTYPE_p_qs__ForwardPeriod swig_types[36]
-#define SWIGTYPE_p_qs__InterestRate swig_types[37]
-#define SWIGTYPE_p_qs__Leg swig_types[38]
-#define SWIGTYPE_p_qs__Maturity swig_types[39]
-#define SWIGTYPE_p_qs__Product swig_types[40]
-#define SWIGTYPE_p_qs__Schedule swig_types[41]
-#define SWIGTYPE_p_qs__StartCashFlow swig_types[42]
-#define SWIGTYPE_p_qs__TermStructure swig_types[43]
-#define SWIGTYPE_p_qs__ZeroPeriod swig_types[44]
-#define SWIGTYPE_p_results_type swig_types[45]
-#define SWIGTYPE_p_rp__CalculationT_Categorical_t swig_types[46]
-#define SWIGTYPE_p_rp__CalculationT_Categorical_t__result_type swig_types[47]
-#define SWIGTYPE_p_rp__CalculationT_Serie_t swig_types[48]
-#define SWIGTYPE_p_rp__CalculationT_Serie_t__result_type swig_types[49]
-#define SWIGTYPE_p_rp__Serie2d swig_types[50]
-#define SWIGTYPE_p_sim__Simulator swig_types[51]
-#define SWIGTYPE_p_size_t swig_types[52]
-#define SWIGTYPE_p_size_type swig_types[53]
-#define SWIGTYPE_p_std__allocatorT_NoneType_t swig_types[54]
-#define SWIGTYPE_p_std__allocatorT_double_t swig_types[55]
-#define SWIGTYPE_p_std__allocatorT_long_t swig_types[56]
-#define SWIGTYPE_p_std__allocatorT_pf__TxFrom_t swig_types[57]
-#define SWIGTYPE_p_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t swig_types[58]
-#define SWIGTYPE_p_std__allocatorT_std__pairT_std__string_const_Serie_t_t swig_types[59]
-#define SWIGTYPE_p_std__allocatorT_std__pairT_std__string_const_double_t_t swig_types[60]
-#define SWIGTYPE_p_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t swig_types[61]
-#define SWIGTYPE_p_std__allocatorT_std__shared_ptrT_Serie_t_t swig_types[62]
-#define SWIGTYPE_p_std__allocatorT_std__string_t swig_types[63]
-#define SWIGTYPE_p_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_t swig_types[64]
-#define SWIGTYPE_p_std__allocatorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_t swig_types[65]
-#define SWIGTYPE_p_std__functionT_std__shared_ptrT_Serie_t_frp__column_ptr_const_RF_t swig_types[66]
-#define SWIGTYPE_p_std__functionT_std__shared_ptrT_Serie_t_frp__column_ptr_const_R_rp__column_ptr_const_RF_t swig_types[67]
-#define SWIGTYPE_p_std__functionT_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_fstd__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_const_R_intF_t swig_types[68]
-#define SWIGTYPE_p_std__initializer_listT_double_t swig_types[69]
-#define SWIGTYPE_p_std__initializer_listT_long_t swig_types[70]
-#define SWIGTYPE_p_std__invalid_argument swig_types[71]
-#define SWIGTYPE_p_std__ostream swig_types[72]
-#define SWIGTYPE_p_std__shared_ptrT_CalculationT_Categorical_t_t swig_types[73]
-#define SWIGTYPE_p_std__shared_ptrT_CalculationT_Serie_t_t swig_types[74]
-#define SWIGTYPE_p_std__shared_ptrT_Categorical_t swig_types[75]
-#define SWIGTYPE_p_std__shared_ptrT_Serie_t swig_types[76]
-#define SWIGTYPE_p_std__shared_ptrT_qs__CustomCashFlow_const_t swig_types[77]
-#define SWIGTYPE_p_std__tupleT_long_long_t swig_types[78]
-#define SWIGTYPE_p_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t swig_types[79]
-#define SWIGTYPE_p_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t swig_types[80]
-#define SWIGTYPE_p_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t swig_types[81]
-#define SWIGTYPE_p_std__unordered_mapT_std__string_double_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_double_t_t_t swig_types[82]
-#define SWIGTYPE_p_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t swig_types[83]
-#define SWIGTYPE_p_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t swig_types[84]
-#define SWIGTYPE_p_std__unordered_mapT_std__tupleT_long_long_t_std__tupleT_pf__Transaction_pf__TxTo_t_pf__tuple_hash_std__equal_toT_std__tupleT_long_long_t_t_std__allocatorT_std__pairT_std__tupleT_long_long_t_const_std__tupleT_pf__Transaction_pf__TxTo_t_t_t_t swig_types[85]
-#define SWIGTYPE_p_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t swig_types[86]
-#define SWIGTYPE_p_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t swig_types[87]
-#define SWIGTYPE_p_std__vectorT_CategoricalNoneType_std__allocatorT_CategoricalNoneType_t_t swig_types[88]
-#define SWIGTYPE_p_std__vectorT_NoneType_std__allocatorT_NoneType_t_t swig_types[89]
-#define SWIGTYPE_p_std__vectorT_double_std__allocatorT_double_t_t swig_types[90]
-#define SWIGTYPE_p_std__vectorT_long_std__allocatorT_long_t_t swig_types[91]
-#define SWIGTYPE_p_std__vectorT_pf__Transaction_std__allocatorT_pf__Transaction_t_t swig_types[92]
-#define SWIGTYPE_p_std__vectorT_pf__TxFrom_std__allocatorT_pf__TxFrom_t_t swig_types[93]
-#define SWIGTYPE_p_std__vectorT_pf__TxTo_std__allocatorT_pf__TxTo_t_t swig_types[94]
-#define SWIGTYPE_p_std__vectorT_pf__amount_info_std__allocatorT_pf__amount_info_t_t swig_types[95]
-#define SWIGTYPE_p_std__vectorT_qs__DiscountFactor_std__allocatorT_qs__DiscountFactor_t_t swig_types[96]
-#define SWIGTYPE_p_std__vectorT_qs__ForwardPeriod_std__allocatorT_qs__ForwardPeriod_t_t swig_types[97]
-#define SWIGTYPE_p_std__vectorT_qs__InterestRate_std__allocatorT_qs__InterestRate_t_t swig_types[98]
-#define SWIGTYPE_p_std__vectorT_qs__Leg_std__allocatorT_qs__Leg_t_t swig_types[99]
-#define SWIGTYPE_p_std__vectorT_qs__Maturity_std__allocatorT_qs__Maturity_t_t swig_types[100]
-#define SWIGTYPE_p_std__vectorT_qs__ZeroPeriod_std__allocatorT_qs__ZeroPeriod_t_t swig_types[101]
-#define SWIGTYPE_p_std__vectorT_std__shared_ptrT_Categorical_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t swig_types[102]
-#define SWIGTYPE_p_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t swig_types[103]
-#define SWIGTYPE_p_std__vectorT_std__shared_ptrT_qs__CustomCashFlow_const_t_std__allocatorT_std__shared_ptrT_qs__CustomCashFlow_const_t_t_t swig_types[104]
-#define SWIGTYPE_p_std__vectorT_std__string_std__allocatorT_std__string_t_t swig_types[105]
-#define SWIGTYPE_p_std__vectorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_std__allocatorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_t_t swig_types[106]
-#define SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_t_t swig_types[107]
-#define SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_t_t swig_types[108]
-#define SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_std__allocatorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_t_t swig_types[109]
-#define SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_t_t swig_types[110]
-#define SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_t_t swig_types[111]
-#define SWIGTYPE_p_std__vectorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_t_t swig_types[112]
-#define SWIGTYPE_p_std__vectorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_t_t swig_types[113]
-#define SWIGTYPE_p_swig__SwigPyIterator swig_types[114]
-#define SWIGTYPE_p_value_type swig_types[115]
-#define SWIGTYPE_p_wchar_t swig_types[116]
-static swig_type_info *swig_types[118];
-static swig_module_info swig_module = {swig_types, 117, 0, 0, 0, 0};
+#define SWIGTYPE_p_CategoricalNoneType swig_types[1]
+#define SWIGTYPE_p_NoneType swig_types[2]
+#define SWIGTYPE_p_Serie swig_types[3]
+#define SWIGTYPE_p_allocator_type swig_types[4]
+#define SWIGTYPE_p_char swig_types[5]
+#define SWIGTYPE_p_date__year_month_day swig_types[6]
+#define SWIGTYPE_p_difference_type swig_types[7]
+#define SWIGTYPE_p_double swig_types[8]
+#define SWIGTYPE_p_f_int_p_q_const__char__void swig_types[9]
+#define SWIGTYPE_p_fes__syncT_std__shared_ptrT_Serie_t_t swig_types[10]
+#define SWIGTYPE_p_hasher swig_types[11]
+#define SWIGTYPE_p_key_equal swig_types[12]
+#define SWIGTYPE_p_key_type swig_types[13]
+#define SWIGTYPE_p_mapped_type swig_types[14]
+#define SWIGTYPE_p_nc__NdArrayT_double_t swig_types[15]
+#define SWIGTYPE_p_p_PyObject swig_types[16]
+#define SWIGTYPE_p_pf__BlockChain swig_types[17]
+#define SWIGTYPE_p_pf__ClosedDeal swig_types[18]
+#define SWIGTYPE_p_pf__Deal swig_types[19]
+#define SWIGTYPE_p_pf__FakeTrader swig_types[20]
+#define SWIGTYPE_p_pf__OpenDeal swig_types[21]
+#define SWIGTYPE_p_pf__SymbolInfoTick swig_types[22]
+#define SWIGTYPE_p_pf__Transaction swig_types[23]
+#define SWIGTYPE_p_pf__TxFrom swig_types[24]
+#define SWIGTYPE_p_pf__TxTo swig_types[25]
+#define SWIGTYPE_p_pf__amount_info swig_types[26]
+#define SWIGTYPE_p_pf__tuple_hash swig_types[27]
+#define SWIGTYPE_p_qs__CashFlow swig_types[28]
+#define SWIGTYPE_p_qs__CouponCashFlow swig_types[29]
+#define SWIGTYPE_p_qs__CustomCashFlow swig_types[30]
+#define SWIGTYPE_p_qs__DiscountFactor swig_types[31]
+#define SWIGTYPE_p_qs__EndCashFlow swig_types[32]
+#define SWIGTYPE_p_qs__ForwardPeriod swig_types[33]
+#define SWIGTYPE_p_qs__InterestRate swig_types[34]
+#define SWIGTYPE_p_qs__Leg swig_types[35]
+#define SWIGTYPE_p_qs__Maturity swig_types[36]
+#define SWIGTYPE_p_qs__Product swig_types[37]
+#define SWIGTYPE_p_qs__Schedule swig_types[38]
+#define SWIGTYPE_p_qs__StartCashFlow swig_types[39]
+#define SWIGTYPE_p_qs__TermStructure swig_types[40]
+#define SWIGTYPE_p_qs__ZeroPeriod swig_types[41]
+#define SWIGTYPE_p_results_type swig_types[42]
+#define SWIGTYPE_p_rp__CalculationT_Serie_t swig_types[43]
+#define SWIGTYPE_p_rp__CalculationT_Serie_t__result_type swig_types[44]
+#define SWIGTYPE_p_rp__Serie2d swig_types[45]
+#define SWIGTYPE_p_sim__Simulator swig_types[46]
+#define SWIGTYPE_p_size_t swig_types[47]
+#define SWIGTYPE_p_size_type swig_types[48]
+#define SWIGTYPE_p_std__allocatorT_NoneType_t swig_types[49]
+#define SWIGTYPE_p_std__allocatorT_double_t swig_types[50]
+#define SWIGTYPE_p_std__allocatorT_long_t swig_types[51]
+#define SWIGTYPE_p_std__allocatorT_pf__TxFrom_t swig_types[52]
+#define SWIGTYPE_p_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t swig_types[53]
+#define SWIGTYPE_p_std__allocatorT_std__pairT_std__string_const_Serie_t_t swig_types[54]
+#define SWIGTYPE_p_std__allocatorT_std__pairT_std__string_const_double_t_t swig_types[55]
+#define SWIGTYPE_p_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t swig_types[56]
+#define SWIGTYPE_p_std__allocatorT_std__shared_ptrT_Serie_t_t swig_types[57]
+#define SWIGTYPE_p_std__allocatorT_std__string_t swig_types[58]
+#define SWIGTYPE_p_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_t swig_types[59]
+#define SWIGTYPE_p_std__allocatorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_t swig_types[60]
+#define SWIGTYPE_p_std__functionT_std__shared_ptrT_Serie_t_frp__column_ptr_const_RF_t swig_types[61]
+#define SWIGTYPE_p_std__functionT_std__shared_ptrT_Serie_t_frp__column_ptr_const_R_rp__column_ptr_const_RF_t swig_types[62]
+#define SWIGTYPE_p_std__functionT_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_fstd__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_const_R_intF_t swig_types[63]
+#define SWIGTYPE_p_std__initializer_listT_double_t swig_types[64]
+#define SWIGTYPE_p_std__invalid_argument swig_types[65]
+#define SWIGTYPE_p_std__ostream swig_types[66]
+#define SWIGTYPE_p_std__shared_ptrT_CalculationT_Serie_t_t swig_types[67]
+#define SWIGTYPE_p_std__shared_ptrT_Serie_t swig_types[68]
+#define SWIGTYPE_p_std__shared_ptrT_qs__CustomCashFlow_const_t swig_types[69]
+#define SWIGTYPE_p_std__shared_ptrT_rp__CalculationT_Serie_t_t swig_types[70]
+#define SWIGTYPE_p_std__tupleT_long_long_t swig_types[71]
+#define SWIGTYPE_p_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t swig_types[72]
+#define SWIGTYPE_p_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t swig_types[73]
+#define SWIGTYPE_p_std__unordered_mapT_std__string_double_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_double_t_t_t swig_types[74]
+#define SWIGTYPE_p_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t swig_types[75]
+#define SWIGTYPE_p_std__unordered_mapT_std__tupleT_long_long_t_std__tupleT_pf__Transaction_pf__TxTo_t_pf__tuple_hash_std__equal_toT_std__tupleT_long_long_t_t_std__allocatorT_std__pairT_std__tupleT_long_long_t_const_std__tupleT_pf__Transaction_pf__TxTo_t_t_t_t swig_types[76]
+#define SWIGTYPE_p_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t swig_types[77]
+#define SWIGTYPE_p_std__vectorT_NoneType_std__allocatorT_NoneType_t_t swig_types[78]
+#define SWIGTYPE_p_std__vectorT_double_std__allocatorT_double_t_t swig_types[79]
+#define SWIGTYPE_p_std__vectorT_long_std__allocatorT_long_t_t swig_types[80]
+#define SWIGTYPE_p_std__vectorT_pf__Transaction_std__allocatorT_pf__Transaction_t_t swig_types[81]
+#define SWIGTYPE_p_std__vectorT_pf__TxFrom_std__allocatorT_pf__TxFrom_t_t swig_types[82]
+#define SWIGTYPE_p_std__vectorT_pf__TxTo_std__allocatorT_pf__TxTo_t_t swig_types[83]
+#define SWIGTYPE_p_std__vectorT_pf__amount_info_std__allocatorT_pf__amount_info_t_t swig_types[84]
+#define SWIGTYPE_p_std__vectorT_qs__DiscountFactor_std__allocatorT_qs__DiscountFactor_t_t swig_types[85]
+#define SWIGTYPE_p_std__vectorT_qs__ForwardPeriod_std__allocatorT_qs__ForwardPeriod_t_t swig_types[86]
+#define SWIGTYPE_p_std__vectorT_qs__InterestRate_std__allocatorT_qs__InterestRate_t_t swig_types[87]
+#define SWIGTYPE_p_std__vectorT_qs__Leg_std__allocatorT_qs__Leg_t_t swig_types[88]
+#define SWIGTYPE_p_std__vectorT_qs__Maturity_std__allocatorT_qs__Maturity_t_t swig_types[89]
+#define SWIGTYPE_p_std__vectorT_qs__ZeroPeriod_std__allocatorT_qs__ZeroPeriod_t_t swig_types[90]
+#define SWIGTYPE_p_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t swig_types[91]
+#define SWIGTYPE_p_std__vectorT_std__shared_ptrT_qs__CustomCashFlow_const_t_std__allocatorT_std__shared_ptrT_qs__CustomCashFlow_const_t_t_t swig_types[92]
+#define SWIGTYPE_p_std__vectorT_std__string_std__allocatorT_std__string_t_t swig_types[93]
+#define SWIGTYPE_p_std__vectorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_std__allocatorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_t_t swig_types[94]
+#define SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_t_t swig_types[95]
+#define SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_std__allocatorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_t_t swig_types[96]
+#define SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_t_t swig_types[97]
+#define SWIGTYPE_p_std__vectorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_t_t swig_types[98]
+#define SWIGTYPE_p_swig__SwigPyIterator swig_types[99]
+#define SWIGTYPE_p_value_type swig_types[100]
+#define SWIGTYPE_p_wchar_t swig_types[101]
+static swig_type_info *swig_types[103];
+static swig_module_info swig_module = {swig_types, 102, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -30356,7 +30341,7 @@ SWIGINTERN PyObject *_wrap_Serie_get_calc(PyObject *SWIGUNUSEDPARM(self), PyObje
   std::shared_ptr< Serie const > tempshared1 ;
   std::shared_ptr< Serie const > *smartarg1 = 0 ;
   PyObject *swig_obj[1] ;
-  rp::Calculation< Serie >::result_type *result = 0 ;
+  SwigValueWrapper< rp::Calculation< Serie >::result_type > result;
   
   if (!args) SWIG_fail;
   swig_obj[0] = args;
@@ -30377,7 +30362,7 @@ SWIGINTERN PyObject *_wrap_Serie_get_calc(PyObject *SWIGUNUSEDPARM(self), PyObje
   }
   {
     try {
-      result = (rp::Calculation< Serie >::result_type *) &((Serie const *)arg1)->get_calc();
+      result = ((Serie const *)arg1)->get_calc();
     } catch (std::bad_variant_access& e) {
       SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
     } catch (std::out_of_range& e) {
@@ -30388,7 +30373,7 @@ SWIGINTERN PyObject *_wrap_Serie_get_calc(PyObject *SWIGUNUSEDPARM(self), PyObje
       SWIG_exception(SWIG_RuntimeError, e.what());
     }
   }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_rp__CalculationT_Serie_t__result_type, 0 |  0 );
+  resultobj = SWIG_NewPointerObj((new rp::Calculation< Serie >::result_type(static_cast< const rp::Calculation< Serie >::result_type& >(result))), SWIGTYPE_p_rp__CalculationT_Serie_t__result_type, SWIG_POINTER_OWN |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -31443,53 +31428,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_Serie_get_basic_numpy(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Serie *arg1 = (Serie *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Serie const > tempshared1 ;
-  std::shared_ptr< Serie const > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  std::vector< double,std::allocator< double > > result;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Serie_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Serie_get_basic_numpy" "', argument " "1"" of type '" "Serie const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Serie > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Serie > * >(argp1);
-      arg1 = const_cast< Serie * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Serie > * >(argp1);
-      arg1 = const_cast< Serie * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = ((Serie const *)arg1)->get_basic_numpy();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = swig::from(static_cast< std::vector< double,std::allocator< double > > >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_Serie_to_vector(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Serie *arg1 = (Serie *) 0 ;
@@ -32177,6 +32115,62 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Serie_set_calculation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Serie *arg1 = (Serie *) 0 ;
+  std::shared_ptr< rp::Calculation< Serie > > *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  std::shared_ptr< Serie > tempshared1 ;
+  std::shared_ptr< Serie > *smartarg1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "Serie_set_calculation", 2, 2, swig_obj)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Serie_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Serie_set_calculation" "', argument " "1"" of type '" "Serie *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< std::shared_ptr<  Serie > * >(argp1);
+      delete reinterpret_cast< std::shared_ptr<  Serie > * >(argp1);
+      arg1 = const_cast< Serie * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< std::shared_ptr<  Serie > * >(argp1);
+      arg1 = const_cast< Serie * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  res2 = SWIG_ConvertPtr(swig_obj[1], &argp2, SWIGTYPE_p_std__shared_ptrT_rp__CalculationT_Serie_t_t,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Serie_set_calculation" "', argument " "2"" of type '" "std::shared_ptr< rp::Calculation< Serie > > const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Serie_set_calculation" "', argument " "2"" of type '" "std::shared_ptr< rp::Calculation< Serie > > const &""'"); 
+  }
+  arg2 = reinterpret_cast< std::shared_ptr< rp::Calculation< Serie > > * >(argp2);
+  {
+    try {
+      (arg1)->set_calculation((std::shared_ptr< rp::Calculation< Serie > > const &)*arg2);
+    } catch (std::bad_variant_access& e) {
+      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
+    } catch (std::out_of_range& e) {
+      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
+    } catch (const std::overflow_error& e) {
+      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_Serie_type_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Serie *arg1 = (Serie *) 0 ;
@@ -32253,6 +32247,90 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Serie_write_notification_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Serie *arg1 = (Serie *) 0 ;
+  fes::sync< std::shared_ptr< Serie > > arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  std::shared_ptr< Serie > tempshared1 ;
+  std::shared_ptr< Serie > *smartarg1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "Serie_write_notification_set", 2, 2, swig_obj)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Serie_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Serie_write_notification_set" "', argument " "1"" of type '" "Serie *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< std::shared_ptr<  Serie > * >(argp1);
+      delete reinterpret_cast< std::shared_ptr<  Serie > * >(argp1);
+      arg1 = const_cast< Serie * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< std::shared_ptr<  Serie > * >(argp1);
+      arg1 = const_cast< Serie * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  {
+    res2 = SWIG_ConvertPtr(swig_obj[1], &argp2, SWIGTYPE_p_fes__syncT_std__shared_ptrT_Serie_t_t,  0  | 0);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Serie_write_notification_set" "', argument " "2"" of type '" "fes::sync< std::shared_ptr< Serie > >""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Serie_write_notification_set" "', argument " "2"" of type '" "fes::sync< std::shared_ptr< Serie > >""'");
+    } else {
+      fes::sync< std::shared_ptr< Serie > > * temp = reinterpret_cast< fes::sync< std::shared_ptr< Serie > > * >(argp2);
+      arg2 = *temp;
+      if (SWIG_IsNewObj(res2)) delete temp;
+    }
+  }
+  if (arg1) (arg1)->write_notification = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Serie_write_notification_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Serie *arg1 = (Serie *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  std::shared_ptr< Serie > tempshared1 ;
+  std::shared_ptr< Serie > *smartarg1 = 0 ;
+  PyObject *swig_obj[1] ;
+  fes::sync< std::shared_ptr< Serie > > result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Serie_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Serie_write_notification_get" "', argument " "1"" of type '" "Serie *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< std::shared_ptr<  Serie > * >(argp1);
+      delete reinterpret_cast< std::shared_ptr<  Serie > * >(argp1);
+      arg1 = const_cast< Serie * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< std::shared_ptr<  Serie > * >(argp1);
+      arg1 = const_cast< Serie * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result =  ((arg1)->write_notification);
+  resultobj = SWIG_NewPointerObj((new fes::sync< std::shared_ptr< Serie > >(static_cast< const fes::sync< std::shared_ptr< Serie > >& >(result))), SWIGTYPE_p_fes__syncT_std__shared_ptrT_Serie_t_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *Serie_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!SWIG_Python_UnpackTuple(args, "swigregister", 1, 1, &obj)) return NULL;
@@ -32293,6 +32371,377 @@ SWIGINTERN PyObject *Swig_var_ZERO_get(void) {
     pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Serie_t, SWIG_POINTER_OWN);
   }
   return pyobj;
+}
+
+
+SWIGINTERN PyObject *_wrap_array__SWIG_0(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  rp::column *arg1 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  std::shared_ptr< Serie const > tempshared1 ;
+  rp::column_ptr result;
+  
+  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Serie_t,  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "array" "', argument " "1"" of type '" "rp::column const &""'");
+    }
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "array" "', argument " "1"" of type '" "rp::column const &""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< std::shared_ptr< const Serie > * >(argp1);
+      delete reinterpret_cast< std::shared_ptr< const Serie > * >(argp1);
+      arg1 = const_cast< rp::column * >(tempshared1.get());
+    } else {
+      arg1 = const_cast< rp::column * >(reinterpret_cast< std::shared_ptr< const Serie > * >(argp1)->get());
+    }
+  }
+  {
+    try {
+      result = rp::array((Serie const &)*arg1);
+    } catch (std::bad_variant_access& e) {
+      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
+    } catch (std::out_of_range& e) {
+      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
+    } catch (const std::overflow_error& e) {
+      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  {
+    std::shared_ptr<  Serie > *smartresult = result ? new std::shared_ptr<  Serie >(result) : 0;
+    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Serie_t, SWIG_POINTER_OWN);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_array__SWIG_1(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  rp::internal_array *arg1 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  rp::column_ptr result;
+  
+  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_nc__NdArrayT_double_t,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "array" "', argument " "1"" of type '" "rp::internal_array const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "array" "', argument " "1"" of type '" "rp::internal_array const &""'"); 
+  }
+  arg1 = reinterpret_cast< rp::internal_array * >(argp1);
+  {
+    try {
+      result = rp::array((nc::NdArray< double > const &)*arg1);
+    } catch (std::bad_variant_access& e) {
+      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
+    } catch (std::out_of_range& e) {
+      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
+    } catch (const std::overflow_error& e) {
+      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  {
+    std::shared_ptr<  Serie > *smartresult = result ? new std::shared_ptr<  Serie >(result) : 0;
+    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Serie_t, SWIG_POINTER_OWN);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_array__SWIG_2(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::initializer_list< double > *arg1 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  rp::column_ptr result;
+  
+  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_std__initializer_listT_double_t,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "array" "', argument " "1"" of type '" "std::initializer_list< double > const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "array" "', argument " "1"" of type '" "std::initializer_list< double > const &""'"); 
+  }
+  arg1 = reinterpret_cast< std::initializer_list< double > * >(argp1);
+  {
+    try {
+      result = rp::array((std::initializer_list< double > const &)*arg1);
+    } catch (std::bad_variant_access& e) {
+      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
+    } catch (std::out_of_range& e) {
+      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
+    } catch (const std::overflow_error& e) {
+      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  {
+    std::shared_ptr<  Serie > *smartresult = result ? new std::shared_ptr<  Serie >(result) : 0;
+    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Serie_t, SWIG_POINTER_OWN);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_array__SWIG_3(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::vector< double,std::allocator< double > > *arg1 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
+  rp::column_ptr result;
+  
+  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
+  {
+    std::vector< double,std::allocator< double > > *ptr = (std::vector< double,std::allocator< double > > *)0;
+    res1 = swig::asptr(swig_obj[0], &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "array" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "array" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  {
+    try {
+      result = rp::array((std::vector< double,std::allocator< double > > const &)*arg1);
+    } catch (std::bad_variant_access& e) {
+      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
+    } catch (std::out_of_range& e) {
+      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
+    } catch (const std::overflow_error& e) {
+      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  {
+    std::shared_ptr<  Serie > *smartresult = result ? new std::shared_ptr<  Serie >(result) : 0;
+    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Serie_t, SWIG_POINTER_OWN);
+  }
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_array__SWIG_4(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  double *arg1 = (double *) 0 ;
+  int arg2 ;
+  PyArrayObject *array1 = NULL ;
+  int is_new_object1 = 0 ;
+  rp::column_ptr result;
+  
+  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
+  {
+    npy_intp size[1] = {
+      -1 
+    };
+    array1 = obj_to_array_contiguous_allow_conversion(swig_obj[0],
+      NPY_DOUBLE,
+      &is_new_object1);
+    if (!array1 || !require_dimensions(array1, 1) ||
+      !require_size(array1, size, 1)) SWIG_fail;
+    arg1 = (double*) array_data(array1);
+    arg2 = (int) array_size(array1,0);
+  }
+  {
+    try {
+      result = rp::array(arg1,arg2);
+    } catch (std::bad_variant_access& e) {
+      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
+    } catch (std::out_of_range& e) {
+      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
+    } catch (const std::overflow_error& e) {
+      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  {
+    std::shared_ptr<  Serie > *smartresult = result ? new std::shared_ptr<  Serie >(result) : 0;
+    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Serie_t, SWIG_POINTER_OWN);
+  }
+  {
+    if (is_new_object1 && array1)
+    {
+      Py_DECREF(array1); 
+    }
+  }
+  return resultobj;
+fail:
+  {
+    if (is_new_object1 && array1)
+    {
+      Py_DECREF(array1); 
+    }
+  }
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_array__SWIG_5(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  double *arg1 = (double *) 0 ;
+  int arg2 ;
+  bool arg3 ;
+  PyArrayObject *array1 = NULL ;
+  int is_new_object1 = 0 ;
+  bool val3 ;
+  int ecode3 = 0 ;
+  rp::column_ptr result;
+  
+  if ((nobjs < 2) || (nobjs > 2)) SWIG_fail;
+  {
+    npy_intp size[1] = {
+      -1 
+    };
+    array1 = obj_to_array_contiguous_allow_conversion(swig_obj[0],
+      NPY_DOUBLE,
+      &is_new_object1);
+    if (!array1 || !require_dimensions(array1, 1) ||
+      !require_size(array1, size, 1)) SWIG_fail;
+    arg1 = (double*) array_data(array1);
+    arg2 = (int) array_size(array1,0);
+  }
+  ecode3 = SWIG_AsVal_bool(swig_obj[1], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "array" "', argument " "3"" of type '" "bool""'");
+  } 
+  arg3 = static_cast< bool >(val3);
+  {
+    try {
+      result = rp::array(arg1,arg2,arg3);
+    } catch (std::bad_variant_access& e) {
+      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
+    } catch (std::out_of_range& e) {
+      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
+    } catch (const std::overflow_error& e) {
+      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  {
+    std::shared_ptr<  Serie > *smartresult = result ? new std::shared_ptr<  Serie >(result) : 0;
+    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Serie_t, SWIG_POINTER_OWN);
+  }
+  {
+    if (is_new_object1 && array1)
+    {
+      Py_DECREF(array1); 
+    }
+  }
+  return resultobj;
+fail:
+  {
+    if (is_new_object1 && array1)
+    {
+      Py_DECREF(array1); 
+    }
+  }
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_array(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  
+  if (!(argc = SWIG_Python_UnpackTuple(args, "array", 0, 2, argv))) SWIG_fail;
+  --argc;
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__shared_ptrT_Serie_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_array__SWIG_0(self, argc, argv);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_nc__NdArrayT_double_t, SWIG_POINTER_NO_NULL | 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_array__SWIG_1(self, argc, argv);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__initializer_listT_double_t, SWIG_POINTER_NO_NULL | 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_array__SWIG_2(self, argc, argv);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector< double,std::allocator< double > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_array__SWIG_3(self, argc, argv);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    {
+      _v = is_array(argv[0]) || PySequence_Check(argv[0]);
+    }
+    if (_v) {
+      if (argc <= 1) {
+        return _wrap_array__SWIG_4(self, argc, argv);
+      }
+      return _wrap_array__SWIG_4(self, argc, argv);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    {
+      _v = is_array(argv[0]) || PySequence_Check(argv[0]);
+    }
+    if (_v) {
+      {
+        int res = SWIG_AsVal_bool(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_array__SWIG_5(self, argc, argv);
+      }
+    }
+  }
+  
+fail:
+  SWIG_Python_RaiseOrModifyTypeError("Wrong number or type of arguments for overloaded function 'array'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    rp::array(rp::column const &)\n"
+    "    rp::array(rp::internal_array const &)\n"
+    "    rp::array(std::initializer_list< double > const &)\n"
+    "    rp::array(std::vector< double,std::allocator< double > > const &)\n"
+    "    rp::array(double *,int)\n"
+    "    rp::array(double *,int,bool)\n");
+  return 0;
 }
 
 
@@ -33724,35 +34173,51 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_array__SWIG_0(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
+SWIGINTERN PyObject *_wrap_sum_reactive(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  rp::column *arg1 = 0 ;
-  void *argp1 = 0 ;
+  std::shared_ptr< Serie > *arg1 = 0 ;
+  std::shared_ptr< Serie > *arg2 = 0 ;
+  void *argp1 ;
   int res1 = 0 ;
-  std::shared_ptr< Serie const > tempshared1 ;
-  rp::column_ptr result;
+  std::shared_ptr< Serie > tempshared1 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  std::shared_ptr< Serie > tempshared2 ;
+  PyObject *swig_obj[2] ;
+  std::shared_ptr< Serie > result;
   
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
+  if (!SWIG_Python_UnpackTuple(args, "sum_reactive", 2, 2, swig_obj)) SWIG_fail;
   {
     int newmem = 0;
     res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Serie_t,  0 , &newmem);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "array" "', argument " "1"" of type '" "rp::column const &""'");
-    }
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "array" "', argument " "1"" of type '" "rp::column const &""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "sum_reactive" "', argument " "1"" of type '" "std::shared_ptr< Serie > const &""'");
     }
     if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Serie > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Serie > * >(argp1);
-      arg1 = const_cast< rp::column * >(tempshared1.get());
+      if (argp1) tempshared1 = *reinterpret_cast< std::shared_ptr< Serie > * >(argp1);
+      delete reinterpret_cast< std::shared_ptr< Serie > * >(argp1);
+      arg1 = &tempshared1;
     } else {
-      arg1 = const_cast< rp::column * >(reinterpret_cast< std::shared_ptr< const Serie > * >(argp1)->get());
+      arg1 = (argp1) ? reinterpret_cast< std::shared_ptr< Serie > * >(argp1) : &tempshared1;
+    }
+  }
+  {
+    int newmem = 0;
+    res2 = SWIG_ConvertPtrAndOwn(swig_obj[1], &argp2, SWIGTYPE_p_std__shared_ptrT_Serie_t,  0 , &newmem);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "sum_reactive" "', argument " "2"" of type '" "std::shared_ptr< Serie > const &""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp2) tempshared2 = *reinterpret_cast< std::shared_ptr< Serie > * >(argp2);
+      delete reinterpret_cast< std::shared_ptr< Serie > * >(argp2);
+      arg2 = &tempshared2;
+    } else {
+      arg2 = (argp2) ? reinterpret_cast< std::shared_ptr< Serie > * >(argp2) : &tempshared2;
     }
   }
   {
     try {
-      result = rp::array((Serie const &)*arg1);
+      result = rp::sum_reactive((std::shared_ptr< Serie > const &)*arg1,(std::shared_ptr< Serie > const &)*arg2);
     } catch (std::bad_variant_access& e) {
       SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
     } catch (std::out_of_range& e) {
@@ -33770,280 +34235,6 @@ SWIGINTERN PyObject *_wrap_array__SWIG_0(PyObject *SWIGUNUSEDPARM(self), Py_ssiz
   return resultobj;
 fail:
   return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_array__SWIG_1(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  std::initializer_list< double > *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  rp::column_ptr result;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_std__initializer_listT_double_t,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "array" "', argument " "1"" of type '" "std::initializer_list< double > const &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "array" "', argument " "1"" of type '" "std::initializer_list< double > const &""'"); 
-  }
-  arg1 = reinterpret_cast< std::initializer_list< double > * >(argp1);
-  {
-    try {
-      result = rp::array((std::initializer_list< double > const &)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Serie > *smartresult = result ? new std::shared_ptr<  Serie >(result) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Serie_t, SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_array__SWIG_2(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  std::vector< double,std::allocator< double > > *arg1 = 0 ;
-  int res1 = SWIG_OLDOBJ ;
-  rp::column_ptr result;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  {
-    std::vector< double,std::allocator< double > > *ptr = (std::vector< double,std::allocator< double > > *)0;
-    res1 = swig::asptr(swig_obj[0], &ptr);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "array" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
-    }
-    if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "array" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
-    }
-    arg1 = ptr;
-  }
-  {
-    try {
-      result = rp::array((std::vector< double,std::allocator< double > > const &)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Serie > *smartresult = result ? new std::shared_ptr<  Serie >(result) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Serie_t, SWIG_POINTER_OWN);
-  }
-  if (SWIG_IsNewObj(res1)) delete arg1;
-  return resultobj;
-fail:
-  if (SWIG_IsNewObj(res1)) delete arg1;
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_array__SWIG_3(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  double *arg1 = (double *) 0 ;
-  int arg2 ;
-  PyArrayObject *array1 = NULL ;
-  int is_new_object1 = 0 ;
-  rp::column_ptr result;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  {
-    npy_intp size[1] = {
-      -1 
-    };
-    array1 = obj_to_array_contiguous_allow_conversion(swig_obj[0],
-      NPY_DOUBLE,
-      &is_new_object1);
-    if (!array1 || !require_dimensions(array1, 1) ||
-      !require_size(array1, size, 1)) SWIG_fail;
-    arg1 = (double*) array_data(array1);
-    arg2 = (int) array_size(array1,0);
-  }
-  {
-    try {
-      result = rp::array(arg1,arg2);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Serie > *smartresult = result ? new std::shared_ptr<  Serie >(result) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Serie_t, SWIG_POINTER_OWN);
-  }
-  {
-    if (is_new_object1 && array1)
-    {
-      Py_DECREF(array1); 
-    }
-  }
-  return resultobj;
-fail:
-  {
-    if (is_new_object1 && array1)
-    {
-      Py_DECREF(array1); 
-    }
-  }
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_array__SWIG_4(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  double *arg1 = (double *) 0 ;
-  int arg2 ;
-  bool arg3 ;
-  PyArrayObject *array1 = NULL ;
-  int is_new_object1 = 0 ;
-  bool val3 ;
-  int ecode3 = 0 ;
-  rp::column_ptr result;
-  
-  if ((nobjs < 2) || (nobjs > 2)) SWIG_fail;
-  {
-    npy_intp size[1] = {
-      -1 
-    };
-    array1 = obj_to_array_contiguous_allow_conversion(swig_obj[0],
-      NPY_DOUBLE,
-      &is_new_object1);
-    if (!array1 || !require_dimensions(array1, 1) ||
-      !require_size(array1, size, 1)) SWIG_fail;
-    arg1 = (double*) array_data(array1);
-    arg2 = (int) array_size(array1,0);
-  }
-  ecode3 = SWIG_AsVal_bool(swig_obj[1], &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "array" "', argument " "3"" of type '" "bool""'");
-  } 
-  arg3 = static_cast< bool >(val3);
-  {
-    try {
-      result = rp::array(arg1,arg2,arg3);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Serie > *smartresult = result ? new std::shared_ptr<  Serie >(result) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Serie_t, SWIG_POINTER_OWN);
-  }
-  {
-    if (is_new_object1 && array1)
-    {
-      Py_DECREF(array1); 
-    }
-  }
-  return resultobj;
-fail:
-  {
-    if (is_new_object1 && array1)
-    {
-      Py_DECREF(array1); 
-    }
-  }
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_array(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[3] = {
-    0
-  };
-  
-  if (!(argc = SWIG_Python_UnpackTuple(args, "array", 0, 2, argv))) SWIG_fail;
-  --argc;
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__shared_ptrT_Serie_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_array__SWIG_0(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__initializer_listT_double_t, SWIG_POINTER_NO_NULL | 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_array__SWIG_1(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    int res = swig::asptr(argv[0], (std::vector< double,std::allocator< double > >**)(0));
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_array__SWIG_2(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    {
-      _v = is_array(argv[0]) || PySequence_Check(argv[0]);
-    }
-    if (_v) {
-      if (argc <= 1) {
-        return _wrap_array__SWIG_3(self, argc, argv);
-      }
-      return _wrap_array__SWIG_3(self, argc, argv);
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    {
-      _v = is_array(argv[0]) || PySequence_Check(argv[0]);
-    }
-    if (_v) {
-      {
-        int res = SWIG_AsVal_bool(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        return _wrap_array__SWIG_4(self, argc, argv);
-      }
-    }
-  }
-  
-fail:
-  SWIG_Python_RaiseOrModifyTypeError("Wrong number or type of arguments for overloaded function 'array'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    rp::array(rp::column const &)\n"
-    "    rp::array(std::initializer_list< double > const &)\n"
-    "    rp::array(std::vector< double,std::allocator< double > > const &)\n"
-    "    rp::array(double *,int)\n"
-    "    rp::array(double *,int,bool)\n");
-  return 0;
 }
 
 
@@ -40404,3184 +40595,6 @@ SWIGINTERN PyObject *CategoricalNoneType_swigregister(PyObject *SWIGUNUSEDPARM(s
 }
 
 SWIGINTERN PyObject *CategoricalNoneType_swiginit(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  return SWIG_Python_InitShadowInstance(args);
-}
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_0(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **SWIGUNUSEDPARM(swig_obj)) {
-  PyObject *resultobj = 0;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 0) || (nobjs > 0)) SWIG_fail;
-  {
-    try {
-      result = (Categorical *)new Categorical();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_Categorical(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical > tempshared1 ;
-  std::shared_ptr< Categorical > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_Categorical" "', argument " "1"" of type '" "Categorical *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      (void)arg1; delete smartarg1;
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_1(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t,  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "Categorical const &""'");
-    }
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Categorical" "', argument " "1"" of type '" "Categorical const &""'"); 
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      arg1 = const_cast< Categorical * >(reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1)->get());
-    }
-  }
-  {
-    try {
-      result = (Categorical *)new Categorical((Categorical const &)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_2(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_Categorical,  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "Categorical &&""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Categorical" "', argument " "1"" of type '" "Categorical &&""'"); 
-  }
-  arg1 = reinterpret_cast< Categorical * >(argp1);
-  {
-    try {
-      result = (Categorical *)new Categorical((Categorical &&)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_3(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  CategoricalNoneType *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_CategoricalNoneType,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "CategoricalNoneType const &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Categorical" "', argument " "1"" of type '" "CategoricalNoneType const &""'"); 
-  }
-  arg1 = reinterpret_cast< CategoricalNoneType * >(argp1);
-  {
-    try {
-      result = (Categorical *)new Categorical((CategoricalNoneType const &)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_4(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  long arg1 ;
-  long val1 ;
-  int ecode1 = 0 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  ecode1 = SWIG_AsVal_long(swig_obj[0], &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Categorical" "', argument " "1"" of type '" "long""'");
-  } 
-  arg1 = static_cast< long >(val1);
-  {
-    try {
-      result = (Categorical *)new Categorical(arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_5(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  std::string *arg1 = 0 ;
-  int res1 = SWIG_OLDOBJ ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  {
-    std::string *ptr = (std::string *)0;
-    res1 = SWIG_AsPtr_std_string(swig_obj[0], &ptr);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "std::string const &""'"); 
-    }
-    if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Categorical" "', argument " "1"" of type '" "std::string const &""'"); 
-    }
-    arg1 = ptr;
-  }
-  {
-    try {
-      result = (Categorical *)new Categorical((std::string const &)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  if (SWIG_IsNewObj(res1)) delete arg1;
-  return resultobj;
-fail:
-  if (SWIG_IsNewObj(res1)) delete arg1;
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_6(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  long *arg1 = (long *) 0 ;
-  int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 2) || (nobjs > 2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_long, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "long const *""'"); 
-  }
-  arg1 = reinterpret_cast< long * >(argp1);
-  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Categorical" "', argument " "2"" of type '" "int""'");
-  } 
-  arg2 = static_cast< int >(val2);
-  {
-    try {
-      result = (Categorical *)new Categorical((long const *)arg1,arg2);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_7(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  long *arg1 = (long *) 0 ;
-  int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 2) || (nobjs > 2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_long, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "long *""'"); 
-  }
-  arg1 = reinterpret_cast< long * >(argp1);
-  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Categorical" "', argument " "2"" of type '" "int""'");
-  } 
-  arg2 = static_cast< int >(val2);
-  {
-    try {
-      result = (Categorical *)new Categorical(arg1,arg2);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_8(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  long *arg1 = (long *) 0 ;
-  int arg2 ;
-  bool arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  bool val3 ;
-  int ecode3 = 0 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 3) || (nobjs > 3)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_long, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "long *""'"); 
-  }
-  arg1 = reinterpret_cast< long * >(argp1);
-  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Categorical" "', argument " "2"" of type '" "int""'");
-  } 
-  arg2 = static_cast< int >(val2);
-  ecode3 = SWIG_AsVal_bool(swig_obj[2], &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_Categorical" "', argument " "3"" of type '" "bool""'");
-  } 
-  arg3 = static_cast< bool >(val3);
-  {
-    try {
-      result = (Categorical *)new Categorical(arg1,arg2,arg3);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_9(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  Categorical::CategoricalBuffer *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_nc__NdArrayT_long_t,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "Categorical::CategoricalBuffer const &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Categorical" "', argument " "1"" of type '" "Categorical::CategoricalBuffer const &""'"); 
-  }
-  arg1 = reinterpret_cast< Categorical::CategoricalBuffer * >(argp1);
-  {
-    try {
-      result = (Categorical *)new Categorical((Categorical::CategoricalBuffer const &)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_10(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  std::initializer_list< long > *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_std__initializer_listT_long_t,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "std::initializer_list< long > const &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Categorical" "', argument " "1"" of type '" "std::initializer_list< long > const &""'"); 
-  }
-  arg1 = reinterpret_cast< std::initializer_list< long > * >(argp1);
-  {
-    try {
-      result = (Categorical *)new Categorical((std::initializer_list< long > const &)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_11(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > > *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > > const &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Categorical" "', argument " "1"" of type '" "std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > > const &""'"); 
-  }
-  arg1 = reinterpret_cast< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > > * >(argp1);
-  {
-    try {
-      result = (Categorical *)new Categorical((std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > > const &)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_12(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > > *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > > const &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Categorical" "', argument " "1"" of type '" "std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > > const &""'"); 
-  }
-  arg1 = reinterpret_cast< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > > * >(argp1);
-  {
-    try {
-      result = (Categorical *)new Categorical((std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > > const &)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_13(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > > *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > > const &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Categorical" "', argument " "1"" of type '" "std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > > const &""'"); 
-  }
-  arg1 = reinterpret_cast< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > > * >(argp1);
-  {
-    try {
-      result = (Categorical *)new Categorical((std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > > const &)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_14(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  rp::Calculation< Categorical > *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_rp__CalculationT_Categorical_t,  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "rp::Calculation< Categorical > &&""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Categorical" "', argument " "1"" of type '" "rp::Calculation< Categorical > &&""'"); 
-  }
-  arg1 = reinterpret_cast< rp::Calculation< Categorical > * >(argp1);
-  {
-    try {
-      result = (Categorical *)new Categorical((rp::Calculation< Categorical > &&)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_15(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  std::vector< CategoricalNoneType,std::allocator< CategoricalNoneType > > *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_std__vectorT_CategoricalNoneType_std__allocatorT_CategoricalNoneType_t_t,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "std::vector< CategoricalNoneType,std::allocator< CategoricalNoneType > > const &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Categorical" "', argument " "1"" of type '" "std::vector< CategoricalNoneType,std::allocator< CategoricalNoneType > > const &""'"); 
-  }
-  arg1 = reinterpret_cast< std::vector< CategoricalNoneType,std::allocator< CategoricalNoneType > > * >(argp1);
-  {
-    try {
-      result = (Categorical *)new Categorical((std::vector< CategoricalNoneType,std::allocator< CategoricalNoneType > > const &)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_16(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  std::vector< long,std::allocator< long > > *arg1 = 0 ;
-  int res1 = SWIG_OLDOBJ ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  {
-    std::vector< long,std::allocator< long > > *ptr = (std::vector< long,std::allocator< long > > *)0;
-    res1 = swig::asptr(swig_obj[0], &ptr);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "std::vector< long,std::allocator< long > > const &""'"); 
-    }
-    if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Categorical" "', argument " "1"" of type '" "std::vector< long,std::allocator< long > > const &""'"); 
-    }
-    arg1 = ptr;
-  }
-  {
-    try {
-      result = (Categorical *)new Categorical((std::vector< long,std::allocator< long > > const &)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  if (SWIG_IsNewObj(res1)) delete arg1;
-  return resultobj;
-fail:
-  if (SWIG_IsNewObj(res1)) delete arg1;
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_17(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  std::vector< long,std::allocator< long > > *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_std__vectorT_long_std__allocatorT_long_t_t,  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "std::vector< long,std::allocator< long > > &&""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Categorical" "', argument " "1"" of type '" "std::vector< long,std::allocator< long > > &&""'"); 
-  }
-  arg1 = reinterpret_cast< std::vector< long,std::allocator< long > > * >(argp1);
-  {
-    try {
-      result = (Categorical *)new Categorical((std::vector< long,std::allocator< long > > &&)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_18(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  std::vector< std::string,std::allocator< std::string > > *arg1 = 0 ;
-  int res1 = SWIG_OLDOBJ ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  {
-    std::vector< std::string,std::allocator< std::string > > *ptr = (std::vector< std::string,std::allocator< std::string > > *)0;
-    res1 = swig::asptr(swig_obj[0], &ptr);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "std::vector< std::string,std::allocator< std::string > > const &""'"); 
-    }
-    if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Categorical" "', argument " "1"" of type '" "std::vector< std::string,std::allocator< std::string > > const &""'"); 
-    }
-    arg1 = ptr;
-  }
-  {
-    try {
-      result = (Categorical *)new Categorical((std::vector< std::string,std::allocator< std::string > > const &)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  if (SWIG_IsNewObj(res1)) delete arg1;
-  return resultobj;
-fail:
-  if (SWIG_IsNewObj(res1)) delete arg1;
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_19(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  std::vector< std::shared_ptr< Categorical >,std::allocator< std::shared_ptr< Categorical > > > *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_std__vectorT_std__shared_ptrT_Categorical_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "std::vector< std::shared_ptr< Categorical >,std::allocator< std::shared_ptr< Categorical > > > const &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Categorical" "', argument " "1"" of type '" "std::vector< std::shared_ptr< Categorical >,std::allocator< std::shared_ptr< Categorical > > > const &""'"); 
-  }
-  arg1 = reinterpret_cast< std::vector< std::shared_ptr< Categorical >,std::allocator< std::shared_ptr< Categorical > > > * >(argp1);
-  {
-    try {
-      result = (Categorical *)new Categorical((std::vector< std::shared_ptr< Categorical >,std::allocator< std::shared_ptr< Categorical > > > const &)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_20(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  std::vector< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > >,std::allocator< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > > > > *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_t_t,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "std::vector< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > >,std::allocator< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > > > > const &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Categorical" "', argument " "1"" of type '" "std::vector< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > >,std::allocator< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > > > > const &""'"); 
-  }
-  arg1 = reinterpret_cast< std::vector< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > >,std::allocator< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > > > > * >(argp1);
-  {
-    try {
-      result = (Categorical *)new Categorical((std::vector< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > >,std::allocator< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > > > > const &)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_21(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  std::vector< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > >,std::allocator< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > > > > *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_t_t,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "std::vector< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > >,std::allocator< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > > > > const &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Categorical" "', argument " "1"" of type '" "std::vector< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > >,std::allocator< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > > > > const &""'"); 
-  }
-  arg1 = reinterpret_cast< std::vector< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > >,std::allocator< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > > > > * >(argp1);
-  {
-    try {
-      result = (Categorical *)new Categorical((std::vector< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > >,std::allocator< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > > > > const &)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical__SWIG_22(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  std::vector< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > >,std::allocator< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > > > > *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  Categorical *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_std__vectorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_t_t,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Categorical" "', argument " "1"" of type '" "std::vector< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > >,std::allocator< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > > > > const &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Categorical" "', argument " "1"" of type '" "std::vector< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > >,std::allocator< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > > > > const &""'"); 
-  }
-  arg1 = reinterpret_cast< std::vector< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > >,std::allocator< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > > > > * >(argp1);
-  {
-    try {
-      result = (Categorical *)new Categorical((std::vector< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > >,std::allocator< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > > > > const &)*arg1);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Categorical(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[4] = {
-    0
-  };
-  
-  if (!(argc = SWIG_Python_UnpackTuple(args, "new_Categorical", 0, 3, argv))) SWIG_fail;
-  --argc;
-  if (argc == 0) {
-    return _wrap_new_Categorical__SWIG_0(self, argc, argv);
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_1(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_Categorical, SWIG_POINTER_NO_NULL);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_2(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_CategoricalNoneType, SWIG_POINTER_NO_NULL | 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_3(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_nc__NdArrayT_long_t, SWIG_POINTER_NO_NULL | 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_9(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__initializer_listT_long_t, SWIG_POINTER_NO_NULL | 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_10(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t, SWIG_POINTER_NO_NULL | 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_11(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t, SWIG_POINTER_NO_NULL | 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_12(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t, SWIG_POINTER_NO_NULL | 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_13(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_rp__CalculationT_Categorical_t, SWIG_POINTER_NO_NULL);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_14(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__vectorT_CategoricalNoneType_std__allocatorT_CategoricalNoneType_t_t, SWIG_POINTER_NO_NULL | 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_15(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_std__vectorT_long_std__allocatorT_long_t_t, SWIG_POINTER_NO_NULL);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_17(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__vectorT_std__shared_ptrT_Categorical_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t, SWIG_POINTER_NO_NULL | 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_19(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_t_t, SWIG_POINTER_NO_NULL | 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_20(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_t_t, SWIG_POINTER_NO_NULL | 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_21(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__vectorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_t_t, SWIG_POINTER_NO_NULL | 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_22(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    {
-      int res = SWIG_AsVal_long(argv[0], NULL);
-      _v = SWIG_CheckState(res);
-    }
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_4(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_5(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    int res = swig::asptr(argv[0], (std::vector< long,std::allocator< long > >**)(0));
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_16(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    int res = swig::asptr(argv[0], (std::vector< std::string,std::allocator< std::string > >**)(0));
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_Categorical__SWIG_18(self, argc, argv);
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_long, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_int(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        return _wrap_new_Categorical__SWIG_6(self, argc, argv);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_long, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_int(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        return _wrap_new_Categorical__SWIG_7(self, argc, argv);
-      }
-    }
-  }
-  if (argc == 3) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_long, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_int(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        {
-          int res = SWIG_AsVal_bool(argv[2], NULL);
-          _v = SWIG_CheckState(res);
-        }
-        if (_v) {
-          return _wrap_new_Categorical__SWIG_8(self, argc, argv);
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_Python_RaiseOrModifyTypeError("Wrong number or type of arguments for overloaded function 'new_Categorical'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    Categorical::Categorical()\n"
-    "    Categorical::Categorical(Categorical const &)\n"
-    "    Categorical::Categorical(Categorical &&)\n"
-    "    Categorical::Categorical(CategoricalNoneType const &)\n"
-    "    Categorical::Categorical(long)\n"
-    "    Categorical::Categorical(std::string const &)\n"
-    "    Categorical::Categorical(long const *,int)\n"
-    "    Categorical::Categorical(long *,int)\n"
-    "    Categorical::Categorical(long *,int,bool)\n"
-    "    Categorical::Categorical(Categorical::CategoricalBuffer const &)\n"
-    "    Categorical::Categorical(std::initializer_list< long > const &)\n"
-    "    Categorical::Categorical(std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > > const &)\n"
-    "    Categorical::Categorical(std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > > const &)\n"
-    "    Categorical::Categorical(std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > > const &)\n"
-    "    Categorical::Categorical(rp::Calculation< Categorical > &&)\n"
-    "    Categorical::Categorical(std::vector< CategoricalNoneType,std::allocator< CategoricalNoneType > > const &)\n"
-    "    Categorical::Categorical(std::vector< long,std::allocator< long > > const &)\n"
-    "    Categorical::Categorical(std::vector< long,std::allocator< long > > &&)\n"
-    "    Categorical::Categorical(std::vector< std::string,std::allocator< std::string > > const &)\n"
-    "    Categorical::Categorical(std::vector< std::shared_ptr< Categorical >,std::allocator< std::shared_ptr< Categorical > > > const &)\n"
-    "    Categorical::Categorical(std::vector< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > >,std::allocator< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > > > > const &)\n"
-    "    Categorical::Categorical(std::vector< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > >,std::allocator< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > > > > const &)\n"
-    "    Categorical::Categorical(std::vector< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > >,std::allocator< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > > > > const &)\n");
-  return 0;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical___str__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  char *result = 0 ;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical___str__" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = (char *)((Categorical const *)arg1)->__str__();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_FromCharPtr((const char *)result);
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_get_calc(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  rp::Calculation< Categorical >::result_type *result = 0 ;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_get_calc" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = (rp::Calculation< Categorical >::result_type *) &((Categorical const *)arg1)->get_calc();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_rp__CalculationT_Categorical_t__result_type, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_data(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  Categorical::CategoricalBuffer *result = 0 ;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_data" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = (Categorical::CategoricalBuffer *) &((Categorical const *)arg1)->data();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_nc__NdArrayT_long_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_raw_data__SWIG_0(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  long *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_raw_data" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = (long *)((Categorical const *)arg1)->raw_data();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_long, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_raw_data__SWIG_1(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical > tempshared1 ;
-  std::shared_ptr< Categorical > *smartarg1 = 0 ;
-  long *result = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_raw_data" "', argument " "1"" of type '" "Categorical *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = (long *)(arg1)->raw_data();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_long, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_raw_data(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[2] = {
-    0
-  };
-  
-  if (!(argc = SWIG_Python_UnpackTuple(args, "Categorical_raw_data", 0, 1, argv))) SWIG_fail;
-  --argc;
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_Categorical_raw_data__SWIG_1(self, argc, argv);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_Categorical_raw_data__SWIG_0(self, argc, argv);
-    }
-  }
-  
-fail:
-  SWIG_Python_RaiseOrModifyTypeError("Wrong number or type of arguments for overloaded function 'Categorical_raw_data'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    Categorical::raw_data() const\n"
-    "    Categorical::raw_data()\n");
-  return 0;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_sub__SWIG_0(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical > tempshared1 ;
-  std::shared_ptr< Categorical > *smartarg1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  std::shared_ptr< Categorical > result;
-  
-  if ((nobjs < 2) || (nobjs > 2)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_sub" "', argument " "1"" of type '" "Categorical *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Categorical_sub" "', argument " "2"" of type '" "int""'");
-  } 
-  arg2 = static_cast< int >(val2);
-  {
-    try {
-      result = (arg1)->sub(arg2);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_sub__SWIG_1(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical > tempshared1 ;
-  std::shared_ptr< Categorical > *smartarg1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  int val3 ;
-  int ecode3 = 0 ;
-  std::shared_ptr< Categorical > result;
-  
-  if ((nobjs < 3) || (nobjs > 3)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_sub" "', argument " "1"" of type '" "Categorical *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Categorical_sub" "', argument " "2"" of type '" "int""'");
-  } 
-  arg2 = static_cast< int >(val2);
-  ecode3 = SWIG_AsVal_int(swig_obj[2], &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Categorical_sub" "', argument " "3"" of type '" "int""'");
-  } 
-  arg3 = static_cast< int >(val3);
-  {
-    try {
-      result = (arg1)->sub(arg2,arg3);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_sub__SWIG_2(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  int arg4 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical > tempshared1 ;
-  std::shared_ptr< Categorical > *smartarg1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  int val3 ;
-  int ecode3 = 0 ;
-  int val4 ;
-  int ecode4 = 0 ;
-  std::shared_ptr< Categorical > result;
-  
-  if ((nobjs < 4) || (nobjs > 4)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_sub" "', argument " "1"" of type '" "Categorical *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Categorical_sub" "', argument " "2"" of type '" "int""'");
-  } 
-  arg2 = static_cast< int >(val2);
-  ecode3 = SWIG_AsVal_int(swig_obj[2], &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Categorical_sub" "', argument " "3"" of type '" "int""'");
-  } 
-  arg3 = static_cast< int >(val3);
-  ecode4 = SWIG_AsVal_int(swig_obj[3], &val4);
-  if (!SWIG_IsOK(ecode4)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "Categorical_sub" "', argument " "4"" of type '" "int""'");
-  } 
-  arg4 = static_cast< int >(val4);
-  {
-    try {
-      result = (arg1)->sub(arg2,arg3,arg4);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  {
-    std::shared_ptr<  Categorical > *smartresult = result ? new std::shared_ptr<  Categorical >(result) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_POINTER_OWN);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_sub(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[5] = {
-    0
-  };
-  
-  if (!(argc = SWIG_Python_UnpackTuple(args, "Categorical_sub", 0, 4, argv))) SWIG_fail;
-  --argc;
-  if (argc == 2) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_int(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        return _wrap_Categorical_sub__SWIG_0(self, argc, argv);
-      }
-    }
-  }
-  if (argc == 3) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_int(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        {
-          int res = SWIG_AsVal_int(argv[2], NULL);
-          _v = SWIG_CheckState(res);
-        }
-        if (_v) {
-          return _wrap_Categorical_sub__SWIG_1(self, argc, argv);
-        }
-      }
-    }
-  }
-  if (argc == 4) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_int(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        {
-          int res = SWIG_AsVal_int(argv[2], NULL);
-          _v = SWIG_CheckState(res);
-        }
-        if (_v) {
-          {
-            int res = SWIG_AsVal_int(argv[3], NULL);
-            _v = SWIG_CheckState(res);
-          }
-          if (_v) {
-            return _wrap_Categorical_sub__SWIG_2(self, argc, argv);
-          }
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_Python_RaiseOrModifyTypeError("Wrong number or type of arguments for overloaded function 'Categorical_sub'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    Categorical::sub(int)\n"
-    "    Categorical::sub(int,int)\n"
-    "    Categorical::sub(int,int,int)\n");
-  return 0;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_size(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  size_t result;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_size" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = ((Categorical const *)arg1)->size();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_wait__SWIG_0(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  
-  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_wait" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      ((Categorical const *)arg1)->wait();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_wait__SWIG_1(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  long long arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  long long val2 ;
-  int ecode2 = 0 ;
-  
-  if ((nobjs < 2) || (nobjs > 2)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_wait" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  ecode2 = SWIG_AsVal_long_SS_long(swig_obj[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Categorical_wait" "', argument " "2"" of type '" "long long""'");
-  } 
-  arg2 = static_cast< long long >(val2);
-  {
-    try {
-      ((Categorical const *)arg1)->wait(arg2);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_wait(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[3] = {
-    0
-  };
-  
-  if (!(argc = SWIG_Python_UnpackTuple(args, "Categorical_wait", 0, 2, argv))) SWIG_fail;
-  --argc;
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_Categorical_wait__SWIG_0(self, argc, argv);
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_long_SS_long(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        return _wrap_Categorical_wait__SWIG_1(self, argc, argv);
-      }
-    }
-  }
-  
-fail:
-  SWIG_Python_RaiseOrModifyTypeError("Wrong number or type of arguments for overloaded function 'Categorical_wait'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    Categorical::wait() const\n"
-    "    Categorical::wait(long long) const\n");
-  return 0;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_is_calculated(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  bool result;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_is_calculated" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = (bool)((Categorical const *)arg1)->is_calculated();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_get_basic_string(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  std::string *result = 0 ;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_get_basic_string" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = (std::string *) &((Categorical const *)arg1)->get_basic_string();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_get_map_string_serie(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > > *result = 0 ;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_get_map_string_serie" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = (std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > > *) &((Categorical const *)arg1)->get_map_string_serie();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_get_map_serie_serie(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > > *result = 0 ;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_get_map_serie_serie" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = (std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > > *) &((Categorical const *)arg1)->get_map_serie_serie();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_get_vector_none(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  std::vector< CategoricalNoneType,std::allocator< CategoricalNoneType > > *result = 0 ;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_get_vector_none" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = (std::vector< CategoricalNoneType,std::allocator< CategoricalNoneType > > *) &((Categorical const *)arg1)->get_vector_none();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_CategoricalNoneType_std__allocatorT_CategoricalNoneType_t_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_get_vector_string(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  std::vector< std::string,std::allocator< std::string > > *result = 0 ;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_get_vector_string" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = (std::vector< std::string,std::allocator< std::string > > *) &((Categorical const *)arg1)->get_vector_string();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = swig::from(static_cast< std::vector< std::string,std::allocator< std::string > > >(*result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_get_vector_serie(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  std::vector< std::shared_ptr< Categorical >,std::allocator< std::shared_ptr< Categorical > > > *result = 0 ;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_get_vector_serie" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = (std::vector< std::shared_ptr< Categorical >,std::allocator< std::shared_ptr< Categorical > > > *) &((Categorical const *)arg1)->get_vector_serie();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_std__shared_ptrT_Categorical_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_get_vector_map_string_serie(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  std::vector< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > >,std::allocator< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > > > > *result = 0 ;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_get_vector_map_string_serie" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = (std::vector< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > >,std::allocator< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > > > > *) &((Categorical const *)arg1)->get_vector_map_string_serie();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_t_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_get_vector_map_serie_serie(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  std::vector< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > >,std::allocator< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > > > > *result = 0 ;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_get_vector_map_serie_serie" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = (std::vector< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > >,std::allocator< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > > > > *) &((Categorical const *)arg1)->get_vector_map_serie_serie();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_t_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_get_basic_numpy(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  std::vector< long,std::allocator< long > > result;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_get_basic_numpy" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = ((Categorical const *)arg1)->get_basic_numpy();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = swig::from(static_cast< std::vector< long,std::allocator< long > > >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_to_vector(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  std::vector< long,std::allocator< long > > result;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_to_vector" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = ((Categorical const *)arg1)->to_vector();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = swig::from(static_cast< std::vector< long,std::allocator< long > > >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_get_set_serie(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > > *result = 0 ;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_get_set_serie" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = (std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > > *) &((Categorical const *)arg1)->get_set_serie();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_get_vector_set_serie(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical const > tempshared1 ;
-  std::shared_ptr< Categorical const > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  std::vector< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > >,std::allocator< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > > > > *result = 0 ;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_get_vector_set_serie" "', argument " "1"" of type '" "Categorical const *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr< const Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      result = (std::vector< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > >,std::allocator< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > > > > *) &((Categorical const *)arg1)->get_vector_set_serie();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_t_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_set_basic_string(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  std::string *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical > tempshared1 ;
-  std::shared_ptr< Categorical > *smartarg1 = 0 ;
-  int res2 = SWIG_OLDOBJ ;
-  PyObject *swig_obj[2] ;
-  
-  if (!SWIG_Python_UnpackTuple(args, "Categorical_set_basic_string", 2, 2, swig_obj)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_set_basic_string" "', argument " "1"" of type '" "Categorical *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    res2 = SWIG_AsPtr_std_string(swig_obj[1], &ptr);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Categorical_set_basic_string" "', argument " "2"" of type '" "std::string const &""'"); 
-    }
-    if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Categorical_set_basic_string" "', argument " "2"" of type '" "std::string const &""'"); 
-    }
-    arg2 = ptr;
-  }
-  {
-    try {
-      (arg1)->set_basic_string((std::string const &)*arg2);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  if (SWIG_IsNewObj(res2)) delete arg2;
-  return resultobj;
-fail:
-  if (SWIG_IsNewObj(res2)) delete arg2;
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_set_basic_none(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical > tempshared1 ;
-  std::shared_ptr< Categorical > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_set_basic_none" "', argument " "1"" of type '" "Categorical *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    try {
-      (arg1)->set_basic_none();
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_set_basic_numpy__SWIG_0(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  long arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical > tempshared1 ;
-  std::shared_ptr< Categorical > *smartarg1 = 0 ;
-  long val2 ;
-  int ecode2 = 0 ;
-  
-  if ((nobjs < 2) || (nobjs > 2)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_set_basic_numpy" "', argument " "1"" of type '" "Categorical *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  ecode2 = SWIG_AsVal_long(swig_obj[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Categorical_set_basic_numpy" "', argument " "2"" of type '" "long""'");
-  } 
-  arg2 = static_cast< long >(val2);
-  {
-    try {
-      (arg1)->set_basic_numpy(arg2);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_set_basic_numpy__SWIG_1(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  long *arg2 = (long *) 0 ;
-  int arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical > tempshared1 ;
-  std::shared_ptr< Categorical > *smartarg1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  int val3 ;
-  int ecode3 = 0 ;
-  
-  if ((nobjs < 3) || (nobjs > 3)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_set_basic_numpy" "', argument " "1"" of type '" "Categorical *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  res2 = SWIG_ConvertPtr(swig_obj[1], &argp2,SWIGTYPE_p_long, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Categorical_set_basic_numpy" "', argument " "2"" of type '" "long *""'"); 
-  }
-  arg2 = reinterpret_cast< long * >(argp2);
-  ecode3 = SWIG_AsVal_int(swig_obj[2], &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Categorical_set_basic_numpy" "', argument " "3"" of type '" "int""'");
-  } 
-  arg3 = static_cast< int >(val3);
-  {
-    try {
-      (arg1)->set_basic_numpy(arg2,arg3);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_set_basic_numpy__SWIG_2(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  Categorical::CategoricalBuffer *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical > tempshared1 ;
-  std::shared_ptr< Categorical > *smartarg1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  
-  if ((nobjs < 2) || (nobjs > 2)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_set_basic_numpy" "', argument " "1"" of type '" "Categorical *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  res2 = SWIG_ConvertPtr(swig_obj[1], &argp2, SWIGTYPE_p_nc__NdArrayT_long_t,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Categorical_set_basic_numpy" "', argument " "2"" of type '" "Categorical::CategoricalBuffer const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Categorical_set_basic_numpy" "', argument " "2"" of type '" "Categorical::CategoricalBuffer const &""'"); 
-  }
-  arg2 = reinterpret_cast< Categorical::CategoricalBuffer * >(argp2);
-  {
-    try {
-      (arg1)->set_basic_numpy((Categorical::CategoricalBuffer const &)*arg2);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_set_basic_numpy__SWIG_3(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  std::initializer_list< long > *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical > tempshared1 ;
-  std::shared_ptr< Categorical > *smartarg1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  
-  if ((nobjs < 2) || (nobjs > 2)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_set_basic_numpy" "', argument " "1"" of type '" "Categorical *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  res2 = SWIG_ConvertPtr(swig_obj[1], &argp2, SWIGTYPE_p_std__initializer_listT_long_t,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Categorical_set_basic_numpy" "', argument " "2"" of type '" "std::initializer_list< long > const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Categorical_set_basic_numpy" "', argument " "2"" of type '" "std::initializer_list< long > const &""'"); 
-  }
-  arg2 = reinterpret_cast< std::initializer_list< long > * >(argp2);
-  {
-    try {
-      (arg1)->set_basic_numpy((std::initializer_list< long > const &)*arg2);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_set_basic_numpy__SWIG_4(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  std::vector< long,std::allocator< long > > *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical > tempshared1 ;
-  std::shared_ptr< Categorical > *smartarg1 = 0 ;
-  int res2 = SWIG_OLDOBJ ;
-  
-  if ((nobjs < 2) || (nobjs > 2)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_set_basic_numpy" "', argument " "1"" of type '" "Categorical *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    std::vector< long,std::allocator< long > > *ptr = (std::vector< long,std::allocator< long > > *)0;
-    res2 = swig::asptr(swig_obj[1], &ptr);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Categorical_set_basic_numpy" "', argument " "2"" of type '" "std::vector< long,std::allocator< long > > const &""'"); 
-    }
-    if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Categorical_set_basic_numpy" "', argument " "2"" of type '" "std::vector< long,std::allocator< long > > const &""'"); 
-    }
-    arg2 = ptr;
-  }
-  {
-    try {
-      (arg1)->set_basic_numpy((std::vector< long,std::allocator< long > > const &)*arg2);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  if (SWIG_IsNewObj(res2)) delete arg2;
-  return resultobj;
-fail:
-  if (SWIG_IsNewObj(res2)) delete arg2;
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_set_basic_numpy(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[4] = {
-    0
-  };
-  
-  if (!(argc = SWIG_Python_UnpackTuple(args, "Categorical_set_basic_numpy", 0, 3, argv))) SWIG_fail;
-  --argc;
-  if (argc == 2) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_nc__NdArrayT_long_t, SWIG_POINTER_NO_NULL | 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_Categorical_set_basic_numpy__SWIG_2(self, argc, argv);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_std__initializer_listT_long_t, SWIG_POINTER_NO_NULL | 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_Categorical_set_basic_numpy__SWIG_3(self, argc, argv);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_long(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        return _wrap_Categorical_set_basic_numpy__SWIG_0(self, argc, argv);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = swig::asptr(argv[1], (std::vector< long,std::allocator< long > >**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_Categorical_set_basic_numpy__SWIG_4(self, argc, argv);
-      }
-    }
-  }
-  if (argc == 3) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      void *vptr = 0;
-      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_long, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        {
-          int res = SWIG_AsVal_int(argv[2], NULL);
-          _v = SWIG_CheckState(res);
-        }
-        if (_v) {
-          return _wrap_Categorical_set_basic_numpy__SWIG_1(self, argc, argv);
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_Python_RaiseOrModifyTypeError("Wrong number or type of arguments for overloaded function 'Categorical_set_basic_numpy'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    Categorical::set_basic_numpy(long)\n"
-    "    Categorical::set_basic_numpy(long *,int)\n"
-    "    Categorical::set_basic_numpy(Categorical::CategoricalBuffer const &)\n"
-    "    Categorical::set_basic_numpy(std::initializer_list< long > const &)\n"
-    "    Categorical::set_basic_numpy(std::vector< long,std::allocator< long > > const &)\n");
-  return 0;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_set_vector_string(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  std::vector< std::string,std::allocator< std::string > > *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical > tempshared1 ;
-  std::shared_ptr< Categorical > *smartarg1 = 0 ;
-  int res2 = SWIG_OLDOBJ ;
-  PyObject *swig_obj[2] ;
-  
-  if (!SWIG_Python_UnpackTuple(args, "Categorical_set_vector_string", 2, 2, swig_obj)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_set_vector_string" "', argument " "1"" of type '" "Categorical *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  {
-    std::vector< std::string,std::allocator< std::string > > *ptr = (std::vector< std::string,std::allocator< std::string > > *)0;
-    res2 = swig::asptr(swig_obj[1], &ptr);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Categorical_set_vector_string" "', argument " "2"" of type '" "std::vector< std::string,std::allocator< std::string > > const &""'"); 
-    }
-    if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Categorical_set_vector_string" "', argument " "2"" of type '" "std::vector< std::string,std::allocator< std::string > > const &""'"); 
-    }
-    arg2 = ptr;
-  }
-  {
-    try {
-      (arg1)->set_vector_string((std::vector< std::string,std::allocator< std::string > > const &)*arg2);
-    } catch (std::bad_variant_access& e) {
-      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
-    } catch (std::out_of_range& e) {
-      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
-    } catch (const std::overflow_error& e) {
-      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
-    } catch (const std::exception& e) {
-      SWIG_exception(SWIG_RuntimeError, e.what());
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  if (SWIG_IsNewObj(res2)) delete arg2;
-  return resultobj;
-fail:
-  if (SWIG_IsNewObj(res2)) delete arg2;
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_type_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  CategoricalType arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical > tempshared1 ;
-  std::shared_ptr< Categorical > *smartarg1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  PyObject *swig_obj[2] ;
-  
-  if (!SWIG_Python_UnpackTuple(args, "Categorical_type_set", 2, 2, swig_obj)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_type_set" "', argument " "1"" of type '" "Categorical *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Categorical_type_set" "', argument " "2"" of type '" "CategoricalType""'");
-  } 
-  arg2 = static_cast< CategoricalType >(val2);
-  if (arg1) (arg1)->type = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Categorical_type_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Categorical *arg1 = (Categorical *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  std::shared_ptr< Categorical > tempshared1 ;
-  std::shared_ptr< Categorical > *smartarg1 = 0 ;
-  PyObject *swig_obj[1] ;
-  CategoricalType result;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Categorical_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Categorical_type_get" "', argument " "1"" of type '" "Categorical *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      delete reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< std::shared_ptr<  Categorical > * >(argp1);
-      arg1 = const_cast< Categorical * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  result = (CategoricalType) ((arg1)->type);
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *Categorical_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!SWIG_Python_UnpackTuple(args, "swigregister", 1, 1, &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_std__shared_ptrT_Categorical_t, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *Categorical_swiginit(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   return SWIG_Python_InitShadowInstance(args);
 }
 
@@ -67110,7 +64123,6 @@ static PyMethodDef SwigMethods[] = {
 	 { "Serie_get_vector_serie", _wrap_Serie_get_vector_serie, METH_O, NULL},
 	 { "Serie_get_vector_map_string_serie", _wrap_Serie_get_vector_map_string_serie, METH_O, NULL},
 	 { "Serie_get_vector_map_serie_serie", _wrap_Serie_get_vector_map_serie_serie, METH_O, NULL},
-	 { "Serie_get_basic_numpy", _wrap_Serie_get_basic_numpy, METH_O, NULL},
 	 { "Serie_to_vector", _wrap_Serie_to_vector, METH_O, NULL},
 	 { "Serie_get_set_serie", _wrap_Serie_get_set_serie, METH_O, NULL},
 	 { "Serie_get_vector_set_serie", _wrap_Serie_get_vector_set_serie, METH_O, NULL},
@@ -67118,10 +64130,14 @@ static PyMethodDef SwigMethods[] = {
 	 { "Serie_set_basic_none", _wrap_Serie_set_basic_none, METH_O, NULL},
 	 { "Serie_set_basic_numpy", _wrap_Serie_set_basic_numpy, METH_VARARGS, NULL},
 	 { "Serie_set_vector_string", _wrap_Serie_set_vector_string, METH_VARARGS, NULL},
+	 { "Serie_set_calculation", _wrap_Serie_set_calculation, METH_VARARGS, NULL},
 	 { "Serie_type_set", _wrap_Serie_type_set, METH_VARARGS, NULL},
 	 { "Serie_type_get", _wrap_Serie_type_get, METH_O, NULL},
+	 { "Serie_write_notification_set", _wrap_Serie_write_notification_set, METH_VARARGS, NULL},
+	 { "Serie_write_notification_get", _wrap_Serie_write_notification_get, METH_O, NULL},
 	 { "Serie_swigregister", Serie_swigregister, METH_O, NULL},
 	 { "Serie_swiginit", Serie_swiginit, METH_VARARGS, NULL},
+	 { "array", _wrap_array, METH_VARARGS, NULL},
 	 { "delete_Serie2d", _wrap_delete_Serie2d, METH_O, NULL},
 	 { "new_Serie2d", _wrap_new_Serie2d, METH_VARARGS, NULL},
 	 { "Serie2d_swigregister", Serie2d_swigregister, METH_O, NULL},
@@ -67137,7 +64153,7 @@ static PyMethodDef SwigMethods[] = {
 	 { "sub2ref", _wrap_sub2ref, METH_VARARGS, NULL},
 	 { "sum2", _wrap_sum2, METH_VARARGS, NULL},
 	 { "sum2ref", _wrap_sum2ref, METH_VARARGS, NULL},
-	 { "array", _wrap_array, METH_VARARGS, NULL},
+	 { "sum_reactive", _wrap_sum_reactive, METH_VARARGS, NULL},
 	 { "first", _wrap_first, METH_VARARGS, NULL},
 	 { "last", _wrap_last, METH_VARARGS, NULL},
 	 { "agg", _wrap_agg, METH_VARARGS, NULL},
@@ -67203,36 +64219,6 @@ static PyMethodDef SwigMethods[] = {
 	 { "delete_CategoricalNoneType", _wrap_delete_CategoricalNoneType, METH_O, NULL},
 	 { "CategoricalNoneType_swigregister", CategoricalNoneType_swigregister, METH_O, NULL},
 	 { "CategoricalNoneType_swiginit", CategoricalNoneType_swiginit, METH_VARARGS, NULL},
-	 { "delete_Categorical", _wrap_delete_Categorical, METH_O, NULL},
-	 { "new_Categorical", _wrap_new_Categorical, METH_VARARGS, NULL},
-	 { "Categorical___str__", _wrap_Categorical___str__, METH_O, NULL},
-	 { "Categorical_get_calc", _wrap_Categorical_get_calc, METH_O, NULL},
-	 { "Categorical_data", _wrap_Categorical_data, METH_O, NULL},
-	 { "Categorical_raw_data", _wrap_Categorical_raw_data, METH_VARARGS, NULL},
-	 { "Categorical_sub", _wrap_Categorical_sub, METH_VARARGS, NULL},
-	 { "Categorical_size", _wrap_Categorical_size, METH_O, NULL},
-	 { "Categorical_wait", _wrap_Categorical_wait, METH_VARARGS, NULL},
-	 { "Categorical_is_calculated", _wrap_Categorical_is_calculated, METH_O, NULL},
-	 { "Categorical_get_basic_string", _wrap_Categorical_get_basic_string, METH_O, NULL},
-	 { "Categorical_get_map_string_serie", _wrap_Categorical_get_map_string_serie, METH_O, NULL},
-	 { "Categorical_get_map_serie_serie", _wrap_Categorical_get_map_serie_serie, METH_O, NULL},
-	 { "Categorical_get_vector_none", _wrap_Categorical_get_vector_none, METH_O, NULL},
-	 { "Categorical_get_vector_string", _wrap_Categorical_get_vector_string, METH_O, NULL},
-	 { "Categorical_get_vector_serie", _wrap_Categorical_get_vector_serie, METH_O, NULL},
-	 { "Categorical_get_vector_map_string_serie", _wrap_Categorical_get_vector_map_string_serie, METH_O, NULL},
-	 { "Categorical_get_vector_map_serie_serie", _wrap_Categorical_get_vector_map_serie_serie, METH_O, NULL},
-	 { "Categorical_get_basic_numpy", _wrap_Categorical_get_basic_numpy, METH_O, NULL},
-	 { "Categorical_to_vector", _wrap_Categorical_to_vector, METH_O, NULL},
-	 { "Categorical_get_set_serie", _wrap_Categorical_get_set_serie, METH_O, NULL},
-	 { "Categorical_get_vector_set_serie", _wrap_Categorical_get_vector_set_serie, METH_O, NULL},
-	 { "Categorical_set_basic_string", _wrap_Categorical_set_basic_string, METH_VARARGS, NULL},
-	 { "Categorical_set_basic_none", _wrap_Categorical_set_basic_none, METH_O, NULL},
-	 { "Categorical_set_basic_numpy", _wrap_Categorical_set_basic_numpy, METH_VARARGS, NULL},
-	 { "Categorical_set_vector_string", _wrap_Categorical_set_vector_string, METH_VARARGS, NULL},
-	 { "Categorical_type_set", _wrap_Categorical_type_set, METH_VARARGS, NULL},
-	 { "Categorical_type_get", _wrap_Categorical_type_get, METH_O, NULL},
-	 { "Categorical_swigregister", Categorical_swigregister, METH_O, NULL},
-	 { "Categorical_swiginit", Categorical_swiginit, METH_VARARGS, NULL},
 	 { "year", _wrap_year, METH_NOARGS, NULL},
 	 { "zero", _wrap_zero, METH_NOARGS, NULL},
 	 { "one", _wrap_one, METH_NOARGS, NULL},
@@ -67575,6 +64561,12 @@ static PyMethodDef SwigMethods_proxydocs[] = {
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
+static void *_p_pf__ClosedDealTo_p_pf__Deal(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((pf::Deal *)  ((pf::ClosedDeal *) x));
+}
+static void *_p_pf__OpenDealTo_p_pf__Deal(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((pf::Deal *)  ((pf::OpenDeal *) x));
+}
 static void *_p_qs__CouponCashFlowTo_p_qs__CashFlow(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((qs::CashFlow *)  ((qs::CouponCashFlow *) x));
 }
@@ -67587,18 +64579,10 @@ static void *_p_qs__EndCashFlowTo_p_qs__CashFlow(void *x, int *SWIGUNUSEDPARM(ne
 static void *_p_qs__CustomCashFlowTo_p_qs__CashFlow(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((qs::CashFlow *)  ((qs::CustomCashFlow *) x));
 }
-static void *_p_pf__ClosedDealTo_p_pf__Deal(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((pf::Deal *)  ((pf::ClosedDeal *) x));
-}
-static void *_p_pf__OpenDealTo_p_pf__Deal(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((pf::Deal *)  ((pf::OpenDeal *) x));
-}
 static void *_p_qs__ZeroPeriodTo_p_qs__ForwardPeriod(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((qs::ForwardPeriod *)  ((qs::ZeroPeriod *) x));
 }
 static swig_type_info _swigt__p_Buffer = {"_p_Buffer", "Buffer *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_Categorical = {"_p_Categorical", "Categorical *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_CategoricalBuffer = {"_p_CategoricalBuffer", "CategoricalBuffer *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_CategoricalNoneType = {"_p_CategoricalNoneType", "CategoricalNoneType *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_NoneType = {"_p_NoneType", "std::vector< NoneType >::value_type *|NoneType *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Serie = {"_p_Serie", "rp::column *|Serie *", 0, 0, (void*)0, 0};
@@ -67608,13 +64592,12 @@ static swig_type_info _swigt__p_date__year_month_day = {"_p_date__year_month_day
 static swig_type_info _swigt__p_difference_type = {"_p_difference_type", "difference_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_double = {"_p_double", "double *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_f_int_p_q_const__char__void = {"_p_f_int_p_q_const__char__void", "void (*)(int,char const *)", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_fes__syncT_std__shared_ptrT_Serie_t_t = {"_p_fes__syncT_std__shared_ptrT_Serie_t_t", "fes::sync< std::shared_ptr< Serie > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_hasher = {"_p_hasher", "hasher *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_key_equal = {"_p_key_equal", "key_equal *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_key_type = {"_p_key_type", "key_type *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_long = {"_p_long", "long *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_mapped_type = {"_p_mapped_type", "mapped_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_nc__NdArrayT_double_t = {"_p_nc__NdArrayT_double_t", "rp::internal_array *|Serie::Buffer *|nc::NdArray< double > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_nc__NdArrayT_long_t = {"_p_nc__NdArrayT_long_t", "Categorical::CategoricalBuffer *|nc::NdArray< long > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_PyObject = {"_p_p_PyObject", "PyObject **", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pf__BlockChain = {"_p_pf__BlockChain", "pf::BlockChain *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pf__ClosedDeal = {"_p_pf__ClosedDeal", "pf::ClosedDeal *", 0, 0, (void*)0, 0};
@@ -67642,8 +64625,6 @@ static swig_type_info _swigt__p_qs__StartCashFlow = {"_p_qs__StartCashFlow", "qs
 static swig_type_info _swigt__p_qs__TermStructure = {"_p_qs__TermStructure", "qs::TermStructure *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_qs__ZeroPeriod = {"_p_qs__ZeroPeriod", "qs::ZeroPeriod *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_results_type = {"_p_results_type", "results_type *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_rp__CalculationT_Categorical_t = {"_p_rp__CalculationT_Categorical_t", "rp::Calculation< Categorical > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_rp__CalculationT_Categorical_t__result_type = {"_p_rp__CalculationT_Categorical_t__result_type", "rp::Calculation< Categorical >::result_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_rp__CalculationT_Serie_t = {"_p_rp__CalculationT_Serie_t", "rp::Calculation< Serie > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_rp__CalculationT_Serie_t__result_type = {"_p_rp__CalculationT_Serie_t__result_type", "rp::Calculation< Serie >::result_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_rp__Serie2d = {"_p_rp__Serie2d", "rp::Serie2d *", 0, 0, (void*)0, 0};
@@ -67666,25 +64647,19 @@ static swig_type_info _swigt__p_std__functionT_std__shared_ptrT_Serie_t_frp__col
 static swig_type_info _swigt__p_std__functionT_std__shared_ptrT_Serie_t_frp__column_ptr_const_R_rp__column_ptr_const_RF_t = {"_p_std__functionT_std__shared_ptrT_Serie_t_frp__column_ptr_const_R_rp__column_ptr_const_RF_t", "std::function< std::shared_ptr< Serie > (rp::column_ptr const &,rp::column_ptr const &) > *|rp::function_ptr *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__functionT_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_fstd__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_const_R_intF_t = {"_p_std__functionT_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_fstd__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_const_R_intF_t", "std::function< std::vector< std::shared_ptr< Serie >,std::allocator< std::shared_ptr< Serie > > > (std::vector< std::shared_ptr< Serie >,std::allocator< std::shared_ptr< Serie > > > const &,int) > *|rp::indicator_ptr *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__initializer_listT_double_t = {"_p_std__initializer_listT_double_t", "std::initializer_list< double > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__initializer_listT_long_t = {"_p_std__initializer_listT_long_t", "std::initializer_list< long > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__invalid_argument = {"_p_std__invalid_argument", "std::invalid_argument *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__ostream = {"_p_std__ostream", "std::ostream *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__shared_ptrT_CalculationT_Categorical_t_t = {"_p_std__shared_ptrT_CalculationT_Categorical_t_t", "std::shared_ptr< Calculation< Categorical > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__shared_ptrT_CalculationT_Serie_t_t = {"_p_std__shared_ptrT_CalculationT_Serie_t_t", "std::shared_ptr< Calculation< Serie > > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__shared_ptrT_Categorical_t = {"_p_std__shared_ptrT_Categorical_t", "std::shared_ptr< Categorical > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__shared_ptrT_Serie_t = {"_p_std__shared_ptrT_Serie_t", "std::shared_ptr< Serie > *|rp::column_ptr *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__shared_ptrT_qs__CustomCashFlow_const_t = {"_p_std__shared_ptrT_qs__CustomCashFlow_const_t", "std::shared_ptr< qs::CustomCashFlow const > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__shared_ptrT_rp__CalculationT_Serie_t_t = {"_p_std__shared_ptrT_rp__CalculationT_Serie_t_t", "std::shared_ptr< rp::Calculation< Serie > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__tupleT_long_long_t = {"_p_std__tupleT_long_long_t", "std::tuple< long,long > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t = {"_p_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t", "std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t = {"_p_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t", "std::unordered_map< std::shared_ptr< Serie >,std::shared_ptr< Serie > > *|std::unordered_map< std::shared_ptr< Serie >,std::shared_ptr< Serie >,std::hash< std::shared_ptr< Serie > >,std::equal_to< std::shared_ptr< Serie > >,std::allocator< std::pair< std::shared_ptr< Serie > const,std::shared_ptr< Serie > > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t = {"_p_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t", "std::unordered_map< std::string,Serie > *|std::unordered_map< std::string,Serie,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,Serie > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__unordered_mapT_std__string_double_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_double_t_t_t = {"_p_std__unordered_mapT_std__string_double_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_double_t_t_t", "std::unordered_map< std::string,double > *|std::unordered_map< std::string,double,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,double > > > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t = {"_p_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t", "std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t = {"_p_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t", "std::unordered_map< std::string,std::shared_ptr< Serie > > *|std::unordered_map< std::string,std::shared_ptr< Serie >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Serie > > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__unordered_mapT_std__tupleT_long_long_t_std__tupleT_pf__Transaction_pf__TxTo_t_pf__tuple_hash_std__equal_toT_std__tupleT_long_long_t_t_std__allocatorT_std__pairT_std__tupleT_long_long_t_const_std__tupleT_pf__Transaction_pf__TxTo_t_t_t_t = {"_p_std__unordered_mapT_std__tupleT_long_long_t_std__tupleT_pf__Transaction_pf__TxTo_t_pf__tuple_hash_std__equal_toT_std__tupleT_long_long_t_t_std__allocatorT_std__pairT_std__tupleT_long_long_t_const_std__tupleT_pf__Transaction_pf__TxTo_t_t_t_t", "std::unordered_map< std::tuple< long,long >,std::tuple< pf::Transaction,pf::TxTo >,pf::tuple_hash,std::equal_to< std::tuple< long,long > >,std::allocator< std::pair< std::tuple< long,long > const,std::tuple< pf::Transaction,pf::TxTo > > > > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t = {"_p_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t", "std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t = {"_p_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t", "std::unordered_set< std::shared_ptr< Serie > > *|std::unordered_set< std::shared_ptr< Serie >,std::hash< std::shared_ptr< Serie > >,std::equal_to< std::shared_ptr< Serie > >,std::allocator< std::shared_ptr< Serie > > > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__vectorT_CategoricalNoneType_std__allocatorT_CategoricalNoneType_t_t = {"_p_std__vectorT_CategoricalNoneType_std__allocatorT_CategoricalNoneType_t_t", "std::vector< CategoricalNoneType,std::allocator< CategoricalNoneType > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_NoneType_std__allocatorT_NoneType_t_t = {"_p_std__vectorT_NoneType_std__allocatorT_NoneType_t_t", "std::vector< NoneType,std::allocator< NoneType > > *|std::vector< NoneType > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_double_std__allocatorT_double_t_t = {"_p_std__vectorT_double_std__allocatorT_double_t_t", "std::vector< double,std::allocator< double > > *|std::vector< double > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_long_std__allocatorT_long_t_t = {"_p_std__vectorT_long_std__allocatorT_long_t_t", "std::vector< long,std::allocator< long > > *|std::vector< long > *", 0, 0, (void*)0, 0};
@@ -67698,17 +64673,13 @@ static swig_type_info _swigt__p_std__vectorT_qs__InterestRate_std__allocatorT_qs
 static swig_type_info _swigt__p_std__vectorT_qs__Leg_std__allocatorT_qs__Leg_t_t = {"_p_std__vectorT_qs__Leg_std__allocatorT_qs__Leg_t_t", "std::vector< qs::Leg,std::allocator< qs::Leg > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_qs__Maturity_std__allocatorT_qs__Maturity_t_t = {"_p_std__vectorT_qs__Maturity_std__allocatorT_qs__Maturity_t_t", "std::vector< qs::Maturity,std::allocator< qs::Maturity > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_qs__ZeroPeriod_std__allocatorT_qs__ZeroPeriod_t_t = {"_p_std__vectorT_qs__ZeroPeriod_std__allocatorT_qs__ZeroPeriod_t_t", "std::vector< qs::ZeroPeriod,std::allocator< qs::ZeroPeriod > > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__vectorT_std__shared_ptrT_Categorical_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t = {"_p_std__vectorT_std__shared_ptrT_Categorical_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t", "std::vector< std::shared_ptr< Categorical >,std::allocator< std::shared_ptr< Categorical > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t = {"_p_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t", "std::vector< std::shared_ptr< Serie > > *|std::vector< std::shared_ptr< Serie >,std::allocator< std::shared_ptr< Serie > > > *|rp::dataframe *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_std__shared_ptrT_qs__CustomCashFlow_const_t_std__allocatorT_std__shared_ptrT_qs__CustomCashFlow_const_t_t_t = {"_p_std__vectorT_std__shared_ptrT_qs__CustomCashFlow_const_t_std__allocatorT_std__shared_ptrT_qs__CustomCashFlow_const_t_t_t", "std::vector< std::shared_ptr< qs::CustomCashFlow const >,std::allocator< std::shared_ptr< qs::CustomCashFlow const > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_std__string_std__allocatorT_std__string_t_t = {"_p_std__vectorT_std__string_std__allocatorT_std__string_t_t", "std::vector< std::string,std::allocator< std::string > > *|std::vector< std::string > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_std__allocatorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_t_t = {"_p_std__vectorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_std__allocatorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_t_t", "std::vector< std::tuple< pf::Transaction,pf::TxTo,size_t >,std::allocator< std::tuple< pf::Transaction,pf::TxTo,size_t > > > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_t_t = {"_p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_t_t", "std::vector< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > >,std::allocator< std::unordered_map< std::shared_ptr< Categorical >,std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::pair< std::shared_ptr< Categorical > const,std::shared_ptr< Categorical > > > > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_t_t = {"_p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_t_t", "std::vector< std::unordered_map< std::shared_ptr< Serie >,std::shared_ptr< Serie > > > *|std::vector< std::unordered_map< std::shared_ptr< Serie >,std::shared_ptr< Serie >,std::hash< std::shared_ptr< Serie > >,std::equal_to< std::shared_ptr< Serie > >,std::allocator< std::pair< std::shared_ptr< Serie > const,std::shared_ptr< Serie > > > >,std::allocator< std::unordered_map< std::shared_ptr< Serie >,std::shared_ptr< Serie >,std::hash< std::shared_ptr< Serie > >,std::equal_to< std::shared_ptr< Serie > >,std::allocator< std::pair< std::shared_ptr< Serie > const,std::shared_ptr< Serie > > > > > > *|std::vector< std::unordered_map< std::shared_ptr< Serie >,std::shared_ptr< Serie >,std::hash< std::shared_ptr< Serie > >,std::equal_to< std::shared_ptr< Serie > >,std::allocator< std::pair< std::shared_ptr< Serie > const,std::shared_ptr< Serie > > > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_std__allocatorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_t_t = {"_p_std__vectorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_std__allocatorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_t_t", "std::vector< std::unordered_map< std::string,Serie > > *|std::vector< std::unordered_map< std::string,Serie,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,Serie > > >,std::allocator< std::unordered_map< std::string,Serie,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,Serie > > > > > *|std::vector< std::unordered_map< std::string,Serie,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,Serie > > > > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_t_t = {"_p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_t_t", "std::vector< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > >,std::allocator< std::unordered_map< std::string,std::shared_ptr< Categorical >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Categorical > > > > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_t_t = {"_p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_t_t", "sim::Simulator::results_type *|std::vector< std::unordered_map< std::string,std::shared_ptr< Serie >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Serie > > > >,std::allocator< std::unordered_map< std::string,std::shared_ptr< Serie >,std::hash< std::string >,std::equal_to< std::string >,std::allocator< std::pair< std::string const,std::shared_ptr< Serie > > > > > > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__vectorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_t_t = {"_p_std__vectorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_t_t", "std::vector< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > >,std::allocator< std::unordered_set< std::shared_ptr< Categorical >,std::hash< std::shared_ptr< Categorical > >,std::equal_to< std::shared_ptr< Categorical > >,std::allocator< std::shared_ptr< Categorical > > > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_t_t = {"_p_std__vectorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_t_t", "std::vector< std::unordered_set< std::shared_ptr< Serie >,std::hash< std::shared_ptr< Serie > >,std::equal_to< std::shared_ptr< Serie > >,std::allocator< std::shared_ptr< Serie > > >,std::allocator< std::unordered_set< std::shared_ptr< Serie >,std::hash< std::shared_ptr< Serie > >,std::equal_to< std::shared_ptr< Serie > >,std::allocator< std::shared_ptr< Serie > > > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_swig__SwigPyIterator = {"_p_swig__SwigPyIterator", "swig::SwigPyIterator *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_value_type = {"_p_value_type", "value_type *", 0, 0, (void*)0, 0};
@@ -67716,8 +64687,6 @@ static swig_type_info _swigt__p_wchar_t = {"_p_wchar_t", "wchar_t *", 0, 0, (voi
 
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Buffer,
-  &_swigt__p_Categorical,
-  &_swigt__p_CategoricalBuffer,
   &_swigt__p_CategoricalNoneType,
   &_swigt__p_NoneType,
   &_swigt__p_Serie,
@@ -67727,13 +64696,12 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_difference_type,
   &_swigt__p_double,
   &_swigt__p_f_int_p_q_const__char__void,
+  &_swigt__p_fes__syncT_std__shared_ptrT_Serie_t_t,
   &_swigt__p_hasher,
   &_swigt__p_key_equal,
   &_swigt__p_key_type,
-  &_swigt__p_long,
   &_swigt__p_mapped_type,
   &_swigt__p_nc__NdArrayT_double_t,
-  &_swigt__p_nc__NdArrayT_long_t,
   &_swigt__p_p_PyObject,
   &_swigt__p_pf__BlockChain,
   &_swigt__p_pf__ClosedDeal,
@@ -67761,8 +64729,6 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_qs__TermStructure,
   &_swigt__p_qs__ZeroPeriod,
   &_swigt__p_results_type,
-  &_swigt__p_rp__CalculationT_Categorical_t,
-  &_swigt__p_rp__CalculationT_Categorical_t__result_type,
   &_swigt__p_rp__CalculationT_Serie_t,
   &_swigt__p_rp__CalculationT_Serie_t__result_type,
   &_swigt__p_rp__Serie2d,
@@ -67785,25 +64751,19 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_std__functionT_std__shared_ptrT_Serie_t_frp__column_ptr_const_R_rp__column_ptr_const_RF_t,
   &_swigt__p_std__functionT_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_fstd__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_const_R_intF_t,
   &_swigt__p_std__initializer_listT_double_t,
-  &_swigt__p_std__initializer_listT_long_t,
   &_swigt__p_std__invalid_argument,
   &_swigt__p_std__ostream,
-  &_swigt__p_std__shared_ptrT_CalculationT_Categorical_t_t,
   &_swigt__p_std__shared_ptrT_CalculationT_Serie_t_t,
-  &_swigt__p_std__shared_ptrT_Categorical_t,
   &_swigt__p_std__shared_ptrT_Serie_t,
   &_swigt__p_std__shared_ptrT_qs__CustomCashFlow_const_t,
+  &_swigt__p_std__shared_ptrT_rp__CalculationT_Serie_t_t,
   &_swigt__p_std__tupleT_long_long_t,
-  &_swigt__p_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t,
   &_swigt__p_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t,
   &_swigt__p_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t,
   &_swigt__p_std__unordered_mapT_std__string_double_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_double_t_t_t,
-  &_swigt__p_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t,
   &_swigt__p_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t,
   &_swigt__p_std__unordered_mapT_std__tupleT_long_long_t_std__tupleT_pf__Transaction_pf__TxTo_t_pf__tuple_hash_std__equal_toT_std__tupleT_long_long_t_t_std__allocatorT_std__pairT_std__tupleT_long_long_t_const_std__tupleT_pf__Transaction_pf__TxTo_t_t_t_t,
-  &_swigt__p_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t,
   &_swigt__p_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t,
-  &_swigt__p_std__vectorT_CategoricalNoneType_std__allocatorT_CategoricalNoneType_t_t,
   &_swigt__p_std__vectorT_NoneType_std__allocatorT_NoneType_t_t,
   &_swigt__p_std__vectorT_double_std__allocatorT_double_t_t,
   &_swigt__p_std__vectorT_long_std__allocatorT_long_t_t,
@@ -67817,17 +64777,13 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_std__vectorT_qs__Leg_std__allocatorT_qs__Leg_t_t,
   &_swigt__p_std__vectorT_qs__Maturity_std__allocatorT_qs__Maturity_t_t,
   &_swigt__p_std__vectorT_qs__ZeroPeriod_std__allocatorT_qs__ZeroPeriod_t_t,
-  &_swigt__p_std__vectorT_std__shared_ptrT_Categorical_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t,
   &_swigt__p_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t,
   &_swigt__p_std__vectorT_std__shared_ptrT_qs__CustomCashFlow_const_t_std__allocatorT_std__shared_ptrT_qs__CustomCashFlow_const_t_t_t,
   &_swigt__p_std__vectorT_std__string_std__allocatorT_std__string_t_t,
   &_swigt__p_std__vectorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_std__allocatorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_t_t,
-  &_swigt__p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_t_t,
   &_swigt__p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_t_t,
   &_swigt__p_std__vectorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_std__allocatorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_t_t,
-  &_swigt__p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_t_t,
   &_swigt__p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_t_t,
-  &_swigt__p_std__vectorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_t_t,
   &_swigt__p_std__vectorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_t_t,
   &_swigt__p_swig__SwigPyIterator,
   &_swigt__p_value_type,
@@ -67835,8 +64791,6 @@ static swig_type_info *swig_type_initial[] = {
 };
 
 static swig_cast_info _swigc__p_Buffer[] = {  {&_swigt__p_Buffer, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_Categorical[] = {  {&_swigt__p_Categorical, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_CategoricalBuffer[] = {  {&_swigt__p_CategoricalBuffer, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_CategoricalNoneType[] = {  {&_swigt__p_CategoricalNoneType, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_NoneType[] = {  {&_swigt__p_NoneType, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Serie[] = {  {&_swigt__p_Serie, 0, 0, 0},{0, 0, 0, 0}};
@@ -67846,13 +64800,12 @@ static swig_cast_info _swigc__p_date__year_month_day[] = {  {&_swigt__p_date__ye
 static swig_cast_info _swigc__p_difference_type[] = {  {&_swigt__p_difference_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_double[] = {  {&_swigt__p_double, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_f_int_p_q_const__char__void[] = {  {&_swigt__p_f_int_p_q_const__char__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_fes__syncT_std__shared_ptrT_Serie_t_t[] = {  {&_swigt__p_fes__syncT_std__shared_ptrT_Serie_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_hasher[] = {  {&_swigt__p_hasher, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_key_equal[] = {  {&_swigt__p_key_equal, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_key_type[] = {  {&_swigt__p_key_type, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_long[] = {  {&_swigt__p_long, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_mapped_type[] = {  {&_swigt__p_mapped_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_nc__NdArrayT_double_t[] = {  {&_swigt__p_nc__NdArrayT_double_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_nc__NdArrayT_long_t[] = {  {&_swigt__p_nc__NdArrayT_long_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_PyObject[] = {  {&_swigt__p_p_PyObject, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pf__BlockChain[] = {  {&_swigt__p_pf__BlockChain, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pf__ClosedDeal[] = {  {&_swigt__p_pf__ClosedDeal, 0, 0, 0},{0, 0, 0, 0}};
@@ -67880,8 +64833,6 @@ static swig_cast_info _swigc__p_qs__StartCashFlow[] = {  {&_swigt__p_qs__StartCa
 static swig_cast_info _swigc__p_qs__TermStructure[] = {  {&_swigt__p_qs__TermStructure, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_qs__ZeroPeriod[] = {  {&_swigt__p_qs__ZeroPeriod, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_results_type[] = {  {&_swigt__p_results_type, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_rp__CalculationT_Categorical_t[] = {  {&_swigt__p_rp__CalculationT_Categorical_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_rp__CalculationT_Categorical_t__result_type[] = {  {&_swigt__p_rp__CalculationT_Categorical_t__result_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_rp__CalculationT_Serie_t[] = {  {&_swigt__p_rp__CalculationT_Serie_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_rp__CalculationT_Serie_t__result_type[] = {  {&_swigt__p_rp__CalculationT_Serie_t__result_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_rp__Serie2d[] = {  {&_swigt__p_rp__Serie2d, 0, 0, 0},{0, 0, 0, 0}};
@@ -67904,25 +64855,19 @@ static swig_cast_info _swigc__p_std__functionT_std__shared_ptrT_Serie_t_frp__col
 static swig_cast_info _swigc__p_std__functionT_std__shared_ptrT_Serie_t_frp__column_ptr_const_R_rp__column_ptr_const_RF_t[] = {  {&_swigt__p_std__functionT_std__shared_ptrT_Serie_t_frp__column_ptr_const_R_rp__column_ptr_const_RF_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__functionT_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_fstd__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_const_R_intF_t[] = {  {&_swigt__p_std__functionT_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_fstd__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_const_R_intF_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__initializer_listT_double_t[] = {  {&_swigt__p_std__initializer_listT_double_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__initializer_listT_long_t[] = {  {&_swigt__p_std__initializer_listT_long_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__invalid_argument[] = {  {&_swigt__p_std__invalid_argument, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__ostream[] = {  {&_swigt__p_std__ostream, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__shared_ptrT_CalculationT_Categorical_t_t[] = {  {&_swigt__p_std__shared_ptrT_CalculationT_Categorical_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__shared_ptrT_CalculationT_Serie_t_t[] = {  {&_swigt__p_std__shared_ptrT_CalculationT_Serie_t_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__shared_ptrT_Categorical_t[] = {  {&_swigt__p_std__shared_ptrT_Categorical_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__shared_ptrT_Serie_t[] = {  {&_swigt__p_std__shared_ptrT_Serie_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__shared_ptrT_qs__CustomCashFlow_const_t[] = {  {&_swigt__p_std__shared_ptrT_qs__CustomCashFlow_const_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__shared_ptrT_rp__CalculationT_Serie_t_t[] = {  {&_swigt__p_std__shared_ptrT_rp__CalculationT_Serie_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__tupleT_long_long_t[] = {  {&_swigt__p_std__tupleT_long_long_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t[] = {  {&_swigt__p_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t[] = {  {&_swigt__p_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t[] = {  {&_swigt__p_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__unordered_mapT_std__string_double_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_double_t_t_t[] = {  {&_swigt__p_std__unordered_mapT_std__string_double_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_double_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t[] = {  {&_swigt__p_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t[] = {  {&_swigt__p_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__unordered_mapT_std__tupleT_long_long_t_std__tupleT_pf__Transaction_pf__TxTo_t_pf__tuple_hash_std__equal_toT_std__tupleT_long_long_t_t_std__allocatorT_std__pairT_std__tupleT_long_long_t_const_std__tupleT_pf__Transaction_pf__TxTo_t_t_t_t[] = {  {&_swigt__p_std__unordered_mapT_std__tupleT_long_long_t_std__tupleT_pf__Transaction_pf__TxTo_t_pf__tuple_hash_std__equal_toT_std__tupleT_long_long_t_t_std__allocatorT_std__pairT_std__tupleT_long_long_t_const_std__tupleT_pf__Transaction_pf__TxTo_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t[] = {  {&_swigt__p_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t[] = {  {&_swigt__p_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__vectorT_CategoricalNoneType_std__allocatorT_CategoricalNoneType_t_t[] = {  {&_swigt__p_std__vectorT_CategoricalNoneType_std__allocatorT_CategoricalNoneType_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_NoneType_std__allocatorT_NoneType_t_t[] = {  {&_swigt__p_std__vectorT_NoneType_std__allocatorT_NoneType_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_double_std__allocatorT_double_t_t[] = {  {&_swigt__p_std__vectorT_double_std__allocatorT_double_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_long_std__allocatorT_long_t_t[] = {  {&_swigt__p_std__vectorT_long_std__allocatorT_long_t_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -67936,17 +64881,13 @@ static swig_cast_info _swigc__p_std__vectorT_qs__InterestRate_std__allocatorT_qs
 static swig_cast_info _swigc__p_std__vectorT_qs__Leg_std__allocatorT_qs__Leg_t_t[] = {  {&_swigt__p_std__vectorT_qs__Leg_std__allocatorT_qs__Leg_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_qs__Maturity_std__allocatorT_qs__Maturity_t_t[] = {  {&_swigt__p_std__vectorT_qs__Maturity_std__allocatorT_qs__Maturity_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_qs__ZeroPeriod_std__allocatorT_qs__ZeroPeriod_t_t[] = {  {&_swigt__p_std__vectorT_qs__ZeroPeriod_std__allocatorT_qs__ZeroPeriod_t_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__vectorT_std__shared_ptrT_Categorical_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t[] = {  {&_swigt__p_std__vectorT_std__shared_ptrT_Categorical_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t[] = {  {&_swigt__p_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_std__shared_ptrT_qs__CustomCashFlow_const_t_std__allocatorT_std__shared_ptrT_qs__CustomCashFlow_const_t_t_t[] = {  {&_swigt__p_std__vectorT_std__shared_ptrT_qs__CustomCashFlow_const_t_std__allocatorT_std__shared_ptrT_qs__CustomCashFlow_const_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_std__string_std__allocatorT_std__string_t_t[] = {  {&_swigt__p_std__vectorT_std__string_std__allocatorT_std__string_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_std__allocatorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_t_t[] = {  {&_swigt__p_std__vectorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_std__allocatorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_t_t[] = {  {&_swigt__p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_t_t[] = {  {&_swigt__p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_std__allocatorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_t_t[] = {  {&_swigt__p_std__vectorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_std__allocatorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_t_t[] = {  {&_swigt__p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_t_t[] = {  {&_swigt__p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__vectorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_t_t[] = {  {&_swigt__p_std__vectorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_t_t[] = {  {&_swigt__p_std__vectorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_swig__SwigPyIterator[] = {  {&_swigt__p_swig__SwigPyIterator, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_value_type[] = {  {&_swigt__p_value_type, 0, 0, 0},{0, 0, 0, 0}};
@@ -67954,8 +64895,6 @@ static swig_cast_info _swigc__p_wchar_t[] = {  {&_swigt__p_wchar_t, 0, 0, 0},{0,
 
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Buffer,
-  _swigc__p_Categorical,
-  _swigc__p_CategoricalBuffer,
   _swigc__p_CategoricalNoneType,
   _swigc__p_NoneType,
   _swigc__p_Serie,
@@ -67965,13 +64904,12 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_difference_type,
   _swigc__p_double,
   _swigc__p_f_int_p_q_const__char__void,
+  _swigc__p_fes__syncT_std__shared_ptrT_Serie_t_t,
   _swigc__p_hasher,
   _swigc__p_key_equal,
   _swigc__p_key_type,
-  _swigc__p_long,
   _swigc__p_mapped_type,
   _swigc__p_nc__NdArrayT_double_t,
-  _swigc__p_nc__NdArrayT_long_t,
   _swigc__p_p_PyObject,
   _swigc__p_pf__BlockChain,
   _swigc__p_pf__ClosedDeal,
@@ -67999,8 +64937,6 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_qs__TermStructure,
   _swigc__p_qs__ZeroPeriod,
   _swigc__p_results_type,
-  _swigc__p_rp__CalculationT_Categorical_t,
-  _swigc__p_rp__CalculationT_Categorical_t__result_type,
   _swigc__p_rp__CalculationT_Serie_t,
   _swigc__p_rp__CalculationT_Serie_t__result_type,
   _swigc__p_rp__Serie2d,
@@ -68023,25 +64959,19 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_std__functionT_std__shared_ptrT_Serie_t_frp__column_ptr_const_R_rp__column_ptr_const_RF_t,
   _swigc__p_std__functionT_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_fstd__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_const_R_intF_t,
   _swigc__p_std__initializer_listT_double_t,
-  _swigc__p_std__initializer_listT_long_t,
   _swigc__p_std__invalid_argument,
   _swigc__p_std__ostream,
-  _swigc__p_std__shared_ptrT_CalculationT_Categorical_t_t,
   _swigc__p_std__shared_ptrT_CalculationT_Serie_t_t,
-  _swigc__p_std__shared_ptrT_Categorical_t,
   _swigc__p_std__shared_ptrT_Serie_t,
   _swigc__p_std__shared_ptrT_qs__CustomCashFlow_const_t,
+  _swigc__p_std__shared_ptrT_rp__CalculationT_Serie_t_t,
   _swigc__p_std__tupleT_long_long_t,
-  _swigc__p_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t,
   _swigc__p_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t,
   _swigc__p_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t,
   _swigc__p_std__unordered_mapT_std__string_double_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_double_t_t_t,
-  _swigc__p_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t,
   _swigc__p_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t,
   _swigc__p_std__unordered_mapT_std__tupleT_long_long_t_std__tupleT_pf__Transaction_pf__TxTo_t_pf__tuple_hash_std__equal_toT_std__tupleT_long_long_t_t_std__allocatorT_std__pairT_std__tupleT_long_long_t_const_std__tupleT_pf__Transaction_pf__TxTo_t_t_t_t,
-  _swigc__p_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t,
   _swigc__p_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t,
-  _swigc__p_std__vectorT_CategoricalNoneType_std__allocatorT_CategoricalNoneType_t_t,
   _swigc__p_std__vectorT_NoneType_std__allocatorT_NoneType_t_t,
   _swigc__p_std__vectorT_double_std__allocatorT_double_t_t,
   _swigc__p_std__vectorT_long_std__allocatorT_long_t_t,
@@ -68055,17 +64985,13 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_std__vectorT_qs__Leg_std__allocatorT_qs__Leg_t_t,
   _swigc__p_std__vectorT_qs__Maturity_std__allocatorT_qs__Maturity_t_t,
   _swigc__p_std__vectorT_qs__ZeroPeriod_std__allocatorT_qs__ZeroPeriod_t_t,
-  _swigc__p_std__vectorT_std__shared_ptrT_Categorical_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t,
   _swigc__p_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t,
   _swigc__p_std__vectorT_std__shared_ptrT_qs__CustomCashFlow_const_t_std__allocatorT_std__shared_ptrT_qs__CustomCashFlow_const_t_t_t,
   _swigc__p_std__vectorT_std__string_std__allocatorT_std__string_t_t,
   _swigc__p_std__vectorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_std__allocatorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_t_t,
-  _swigc__p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Categorical_t_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Categorical_t_const_std__shared_ptrT_Categorical_t_t_t_t_t_t,
   _swigc__p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_t_t,
   _swigc__p_std__vectorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_std__allocatorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_t_t,
-  _swigc__p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Categorical_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Categorical_t_t_t_t_t_t,
   _swigc__p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_t_t,
-  _swigc__p_std__vectorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Categorical_t_std__hashT_std__shared_ptrT_Categorical_t_t_std__equal_toT_std__shared_ptrT_Categorical_t_t_std__allocatorT_std__shared_ptrT_Categorical_t_t_t_t_t,
   _swigc__p_std__vectorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_t_t,
   _swigc__p_swig__SwigPyIterator,
   _swigc__p_value_type,

@@ -56,9 +56,7 @@ struct CategoricalNoneType
 
 };
 
-//
-// Categorical = numerical and Categorical = categorical
-//
+/*
 class Categorical : public std::enable_shared_from_this<Categorical>
 {
 public:
@@ -313,11 +311,10 @@ public:
         }
     }
 
-    const rp::Calculation<Categorical>::result_type& get_calc() const
+    rp::Calculation<Serie>::result_type get_calc() const
     {
-        const auto& calculation = get< std::shared_ptr<rp::Calculation<Categorical>> >();
-        const auto& result = calculation->get();
-        return result;
+        auto calculation = get< std::shared_ptr<rp::Calculation<Serie>> >();
+        return calculation->get();
     }
 
     template <typename T>
@@ -584,8 +581,9 @@ protected:
         std::shared_ptr<rp::Calculation<Categorical> >
 
 	> values;
-    size_t precision;
 };
+
+*/
 
 //std::shared_ptr<Categorical> operator+(const std::shared_ptr<Categorical>& one, const std::shared_ptr<Categorical>& other);
 //std::shared_ptr<Categorical> operator-(const std::shared_ptr<Categorical>& one, const std::shared_ptr<Categorical>& other);

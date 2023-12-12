@@ -13,16 +13,15 @@ namespace rp {
         DEFINE_KEY(RandNormal);
 
         explicit RandNormal(int n) {
-            _future = _promise.get_future();
-            _task = std::jthread([](std::promise<result_type> &promise, int nn) -> void {
+            auto ticket = make_ticket();
+            _task = std::jthread([](const ticket_type& ticket, int nn) -> void {
 
 #if defined(RELEASE_PYTHON_THREAD) && RELEASE_PYTHON_THREAD == 1
                 gil_scoped_release release;
 #endif
-                promise.set_value(std::make_shared<Serie>(nc::random::randN<double>(nc::Shape(1, nn))));
+                ticket->set_value(std::make_shared<Serie>(nc::random::randN<double>(nc::Shape(1, nn))));
 
-            }, std::ref(_promise), n);
-            // _task.join();
+            }, ticket, n);
         }
     };
 

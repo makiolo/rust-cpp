@@ -15,8 +15,8 @@ namespace rp {
 
         template <typename T>
         explicit Rsi(T&& s0, int period) {
-            _future = _promise.get_future();
-            _task = std::jthread([](std::promise<result_type>& promise, const T& ss0, int period) -> void {
+            auto ticket = make_ticket();
+            _task = std::jthread([](const ticket_type& ticket, T &&ss0, int period) -> void {
 
 #if defined(RELEASE_PYTHON_THREAD) && RELEASE_PYTHON_THREAD == 1
                 gil_scoped_release release;
@@ -28,7 +28,7 @@ namespace rp {
                 int len = n0.numCols();
                 if(len < period)
                 {
-                    promise.set_value(std::make_shared<Serie>(Serie::Buffer({NAN})));
+                    ticket->set_value(std::make_shared<Serie>(Serie::Buffer({NAN})));
                 }
                 else
                 {
@@ -53,11 +53,10 @@ namespace rp {
                     if (rs != TA_SUCCESS)
                         throw std::runtime_error("Error calculating indicator.");
 
-                    promise.set_value(std::make_shared<Serie>(output, len, true));
+                    ticket->set_value(std::make_shared<Serie>(output, len, true));
                 }
 
-            }, std::ref(_promise), std::forward<T>(s0), period);
-            // _task.join();
+            }, ticket, std::forward<T>(s0), period);
         }
     };
 

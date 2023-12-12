@@ -24,6 +24,28 @@
 #include "formulas/greeks.h"
 #include <functional>
 
+TEST_CASE("sum ref", "[rp]")
+{
+    auto s1 = rp::array({1, 2, 3 , 4,  5,  6});
+    auto s2 = rp::array({2, 4, 6 , 8, 10, 12});
+    auto future_result = rp::sum_reactive(s1, s2);
+
+    // future_result->make_reactive();
+
+//    s1.write_notification.connect([&](const Serie& newserie) {
+//        future_result = newserie + s2;
+//    });
+//    s2.write_notification.connect([&](const Serie& newserie) {
+//        future_result = s1 + newserie;
+//    });
+
+    s1->write(0, 7);
+    s2->write(0, 7);
+
+    auto result = rp::calculate(future_result);
+
+    REQUIRE_THAT(result->to_vector(), Catch::Matchers::Approx(std::vector<double>({14, 6, 9 , 12,  15, 18})) );
+}
 
 TEST_CASE("sum", "[rp]")
 {
@@ -37,7 +59,7 @@ TEST_CASE("sum", "[rp]")
 
 TEST_CASE("sum - Vector N + scalar", "[rp]")
 {
-    auto s1 = std::make_shared<Serie>(rp::internal_array({1, 2, 3 , 4, 5, 6}));
+    auto s1 = std::make_shared<Serie>(rp::internal_array({1, 2, 3, 4, 5, 6}));
     auto s2 = std::make_shared<Serie>(4);
 
     auto result = rp::calculate(s1 + s2);
