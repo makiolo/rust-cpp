@@ -12,7 +12,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 #else()
 #    set(PYTHON_VERSION python311)
 #endif()
-set(PYTHON_VERSION python310)
+set(PYTHON_VERSION python311)
 
 
 
@@ -25,7 +25,7 @@ set(PYTHON_VERSION python310)
 #else()
 #    set(PYTHON_HOME $ENV{USERPROFILE}/AppData/Local/Programs/Python/${PYTHON_VERSION})
 #endif()
-set(PYTHON_HOME c:/Miniconda3)
+set(PYTHON_HOME D:/Miniconda311)
 
 file(GLOB SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/excelbind/chrono.h
@@ -49,6 +49,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/pybind11/include)
 include_directories(${PYTHON_HOME}/include)
 
 add_library(excelbind SHARED ${SOURCES})
+target_sources(excelbind PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../examples/excelbind.conf ${CMAKE_CURRENT_SOURCE_DIR}/../examples/excelbind_export.py ${CMAKE_CURRENT_SOURCE_DIR}/../examples/basic_functions.py )
     
 add_compile_definitions(_LIB)
 add_compile_definitions(_WINDOWS)

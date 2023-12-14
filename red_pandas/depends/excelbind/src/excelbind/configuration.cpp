@@ -12,13 +12,13 @@
 
 INIReader load_config_file()
 {
-    std::string user_home_path = std::getenv("USERPROFILE");
+    // std::string user_home_path = "D:/miniconda311/Lib/site-packages/red_pandas";
 
 //    std::ofstream f(R"(C:\Users\n424613\kk.txt)", std::ofstream::out);
 //    f << "read config " << user_home_path << std::endl;
 //    f.close();
 
-    INIReader reader(user_home_path + "/excelbind.conf");
+    INIReader reader("D:/miniconda311/Lib/site-packages/red_pandas/excelbind.conf");
     return reader;
 }
 

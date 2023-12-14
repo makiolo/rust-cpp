@@ -70,6 +70,7 @@ set(PUBLIC_sources
 set(PUBLIC_extra_sources
         libs/core/tests/test_core.py
         libs/core/python/red_pandas.py
+        libs/core/python/red_pandas_impl.py
         libs/core/python/interface_py.i
         libs/core/python/numpy.i
         libs/core/python/swig_generate.cmd
@@ -89,18 +90,8 @@ set(PUBLIC_link_dirs
         # depends/libtorch/lib
         )
 set(PUBLIC_options
-        # $<$<CONFIG:Debug>:-/MDd>
-        # $<$<CONFIG:Release>:-/MD>
         )
 set(PUBLIC_definitions
-#        WIN32_LEAN_AND_MEAN
-#        WIN32
-#        _CRT_NON_CONFORMING_SWPRINTFS
-#        _CRT_SECURE_NO_WARNINGS
-#        _CRT_SECURE_NO_DEPRECATE
-#        _DEBUG
-#        _CONSOLE
-
         NUMCPP_NO_USE_BOOST=1
         NUMCPP_USE_MULTITHREAD=0
         SWIG_PYTHON_INTERPRETER_NO_DEBUG=1
@@ -159,8 +150,6 @@ target_link_directories(red_pandas_static PUBLIC ${PUBLIC_link_dirs})
 target_link_libraries(red_pandas_static PRIVATE ${PRIVATE_targets} ${MKL_LIB})
 # target_link_libraries(red_pandas_static PRIVATE ${PRIVATE_targets})
 target_link_libraries(red_pandas_static PUBLIC ${PUBLIC_targets})
-install(TARGETS red_pandas_static DESTINATION ${CMAKE_SOURCE_DIR}/bin)
-install(TARGETS ta_lib_static DESTINATION ${CMAKE_SOURCE_DIR}/bin)
 
 # tests LIBRARY
 add_executable(test_core)
@@ -232,5 +221,7 @@ set_tests_properties(test_volatility_py PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB
 set(PYTHON_BASEDIR "${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python")
 set(PYTHON_INSTALL ${PYTHONHOME}/Lib/site-packages/red_pandas)
 install(TARGETS red_pandas DESTINATION ${PYTHON_INSTALL})
+install(TARGETS excelbind DESTINATION ${PYTHON_INSTALL})
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/depends/excelbind/examples/excelbind.conf DESTINATION ${PYTHON_INSTALL})
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python/red_pandas.py DESTINATION ${PYTHON_INSTALL} RENAME __init__.py)
 

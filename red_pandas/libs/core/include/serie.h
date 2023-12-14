@@ -85,7 +85,7 @@ public:
         , type(other.type)
         , write_notification(other.write_notification)
     {
-        std::cout << "Serie copy constructor" << std::endl;
+        //std::cout << "Serie copy constructor" << std::endl;
     }
 
     Serie(Serie&& other) noexcept
@@ -93,13 +93,13 @@ public:
         , type(other.type)
         , write_notification(std::move(other.write_notification))
     {
-        std::cout << "Serie move constructor" << std::endl;
+        //std::cout << "Serie move constructor" << std::endl;
     }
 
     Serie& operator=(const Serie& other)
     {
         if (this != &other) {
-            std::cout << "Serie operator= copy" << std::endl;
+            //std::cout << "Serie operator= copy" << std::endl;
             values = other.values;
             type = other.type;
             write_notification = other.write_notification;
@@ -110,7 +110,7 @@ public:
     Serie& operator=(Serie&& other) noexcept
     {
         if (this != &other) {
-            std::cout << "Serie operator= move" << std::endl;
+            //std::cout << "Serie operator= move" << std::endl;
             values = std::move(other.values);
             type = other.type;
             write_notification = std::move(write_notification);

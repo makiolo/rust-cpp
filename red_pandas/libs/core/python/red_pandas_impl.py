@@ -1,8 +1,10 @@
 import json
 import ctypes
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 from pprint import pprint
+import excelbind
 
 
 def dumps_rec(serie, depth=0, recursive=False):
@@ -266,3 +268,76 @@ def use_callback(py_callback):
 
     _red_pandas.use_callback(f_ptr)
 
+
+
+@excelbind.function
+def d1_(S:list, K:list, r:list, q:list, T:list, Vol:list) -> list:
+    return _red_pandas.d1(array(S), array(K), array(r), array(q), array(T), array(Vol)).to_vector()
+
+@excelbind.function
+def d2_(S:list, K:list, r:list, q:list, T:list, Vol:list) -> list:
+    return _red_pandas.d2(array(S), array(K), array(r), array(q), array(T), array(Vol)).to_vector()
+
+@excelbind.function
+def CallPrice_(S:list, K:list, r:list, q:list, T:list, Vol:list, d_uno:list, d_dos:list) -> list:
+    return _red_pandas.CallPrice(array(S), array(K), array(r), array(q), array(T), array(Vol), array(d_uno), array(d_dos)).to_vector()
+
+@excelbind.function
+def PutPrice_(S:list, K:list, r:list, q:list, T:list, Vol:list, d_uno:list, d_dos:list) -> list:
+    return _red_pandas.PutPrice(array(S), array(K), array(r), array(q), array(T), array(Vol), array(d_uno), array(d_dos)).to_vector()
+
+@excelbind.function
+def CallGreeksDelta_(S:list, K:list, r:list, q:list, T:list, Vol:list, d_uno:list, d_dos:list) -> list:
+    return _red_pandas.CallGreeksDelta(array(S), array(K), array(r), array(q), array(T), array(Vol), array(d_uno), array(d_dos)).to_vector()
+
+@excelbind.function
+def CallGreeksGamma_(S:list, K:list, r:list, q:list, T:list, Vol:list, d_uno:list, d_dos:list) -> list:
+    return _red_pandas.CallGreeksGamma(array(S), array(K), array(r), array(q), array(T), array(Vol), array(d_uno), array(d_dos)).to_vector()
+
+@excelbind.function
+def CallGreeksTheta_(S:list, K:list, r:list, q:list, T:list, Vol:list, d_uno:list, d_dos:list) -> list:
+    return _red_pandas.CallGreeksTheta(array(S), array(K), array(r), array(q), array(T), array(Vol), array(d_uno), array(d_dos)).to_vector()
+
+@excelbind.function
+def CallGreeksVega_(S:list, K:list, r:list, q:list, T:list, Vol:list, d_uno:list, d_dos:list) -> list:
+    return _red_pandas.CallGreeksVega(array(S), array(K), array(r), array(q), array(T), array(Vol), array(d_uno), array(d_dos)).to_vector()
+
+@excelbind.function
+def CallGreeksRho_(S:list, K:list, r:list, q:list, T:list, Vol:list, d_uno:list, d_dos:list) -> list:
+    return _red_pandas.CallGreeksRho(array(S), array(K), array(r), array(q), array(T), array(Vol), array(d_uno), array(d_dos)).to_vector()
+
+@excelbind.function
+def PutGreeksDelta_(S:list, K:list, r:list, q:list, T:list, Vol:list, d_uno:list, d_dos:list) -> list:
+    return _red_pandas.PutGreeksDelta(array(S), array(K), array(r), array(q), array(T), array(Vol), array(d_uno), array(d_dos)).to_vector()
+
+@excelbind.function
+def PutGreeksGamma_(S:list, K:list, r:list, q:list, T:list, Vol:list, d_uno:list, d_dos:list) -> list:
+    return _red_pandas.PutGreeksGamma(array(S), array(K), array(r), array(q), array(T), array(Vol), array(d_uno), array(d_dos)).to_vector()
+
+@excelbind.function
+def PutGreeksTheta_(S:list, K:list, r:list, q:list, T:list, Vol:list, d_uno:list, d_dos:list) -> list:
+    return _red_pandas.PutGreeksTheta(array(S), array(K), array(r), array(q), array(T), array(Vol), array(d_uno), array(d_dos)).to_vector()
+
+@excelbind.function
+def PutGreeksVega_(S:list, K:list, r:list, q:list, T:list, Vol:list, d_uno:list, d_dos:list) -> list:
+    return _red_pandas.PutGreeksVega(array(S), array(K), array(r), array(q), array(T), array(Vol), array(d_uno), array(d_dos)).to_vector()
+
+@excelbind.function
+def PutGreeksRho_(S:list, K:list, r:list, q:list, T:list, Vol:list, d_uno:list, d_dos:list) -> list:
+    return _red_pandas.PutGreeksRho(array(S), array(K), array(r), array(q), array(T), array(Vol), array(d_uno), array(d_dos)).to_vector()
+
+@excelbind.function
+def ImpliedVolatility_(S:list, K:list, r:list, q:list, T:list, Vol_guess:list, market_price:list, flag:str, tol:float=0.0001, lr:float=0.33) -> list:
+    return _red_pandas.ImpliedVolatility(array(S), array(K), array(r), array(q), array(T), array(Vol_guess), array(market_price), flag, tol, lr, 100).to_vector()
+
+@excelbind.function
+def CallImpliedvolatility_(S:list, K:list, r:list, q:list, T:list, Vol_guess:list, market_price:list) -> list:
+    return _red_pandas.CallImpliedvolatility(array(S), array(K), array(r), array(q), array(T), array(Vol_guess), array(market_price)).to_vector()
+
+@excelbind.function
+def PutImpliedvolatility_(S:list, K:list, r:list, q:list, T:list, Vol_guess:list, market_price:list) -> list:
+    return _red_pandas.PutImpliedvolatility(array(S), array(K), array(r), array(q), array(T), array(Vol_guess), array(market_price)).to_vector()
+
+@excelbind.function
+def GreeksVolga(S:list, K:list, r:list, q:list, T:list, Vol:list, d_uno:list, d_dos:list) -> list:
+    return _red_pandas.GreeksVolga(array(S), array(K), array(r), array(q), array(T), array(Vol), array(d_uno), array(d_dos)).to_vector()

@@ -2,6 +2,7 @@
 
 SET mypath=%~dp0
 SET PATH=C:\dev\swigwin-4.0.2;%PATH%
+SET PATH=D:\swigwin-4.1.1;%PATH%
 
 :: cd %mypath%\java
 :: swig -Wall -java -c++ -I%mypath%/core/include -module red_pandas -outcurrentdir %mypath%\java\interface_py.i

@@ -77,6 +77,7 @@ void register_python_function(
 
     // Information Excel needs to register add-in.
     xll::Args functionBuilder = xll::Function(XLL_LPOPER, export_name.c_str(), xll_name.c_str())
+    // xll::Args functionBuilder = xll::Function(XLL_FP, export_name.c_str(), xll_name.c_str())
         .Category(cast_string(Configuration::excel_category()).c_str())
         .FunctionHelp(function_doc.cast<std::wstring>().c_str())
         ;

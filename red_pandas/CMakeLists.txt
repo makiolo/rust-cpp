@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.25)
+cmake_minimum_required(VERSION 3.23.2)
 cmake_policy(SET CMP0116 OLD)
 
 # config it
@@ -12,7 +12,7 @@ project(red_pandas_project LANGUAGES CXX)
 
 set(PROJECT_VERSION "1.0.0")
 if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release)
+    set(CMAKE_BUILD_TYPE Debug)
 endif()
 message("-- detected mode ${CMAKE_BUILD_TYPE}")
 
@@ -43,10 +43,10 @@ set(EXTERNALLIBS "")
 
 if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
     message("-- detected platform win64")
-    set(PYTHONHOME "C:/Miniconda2")
-    set(PYTHONLIBNAME "python27.lib")
-    # set(PYTHONHOME "C:/miniconda3")
-    # set(PYTHONLIBNAME "python310.lib")
+    # set(PYTHONHOME "C:/Miniconda2")
+    # set(PYTHONLIBNAME "python27.lib")
+    set(PYTHONHOME "D:/miniconda311")
+    set(PYTHONLIBNAME "python311.lib")
 else()
     message("-- detected platform win32")
     set(PYTHONHOME "C:/Python27")
