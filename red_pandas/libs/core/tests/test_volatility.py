@@ -137,8 +137,8 @@ def test_volatility_matplotlib():
                         # TODO: y si compramos el asset en moneda extranjera ?
                         blockchains[p].add_transaction(1, 2, qty, 'EUR')
                         blockchains[p].add_transaction(2, 1, qty / S.read(p), 'ASSET_BUY_IN_EUR')
-                        # total_price += S.read(p)
-                        # total_eur += qty
+                        # esta operacion abre -> el beneficio se compara con el precio de mercado
+                        # beneficio abierta = Precio compra - Precio mercado
 
         # closed open positions
         local_signals_sells = signals_sells_transposed[i]
@@ -150,8 +150,8 @@ def test_volatility_matplotlib():
                         if asset_balance > 0.0:
                             blockchains[p].add_transaction(1, 2, asset_balance, 'ASSET_BUY_IN_EUR')
                             blockchains[p].add_transaction(2, 1, asset_balance * S.read(p), 'EUR')
-                            # total_price -= asset_balance
-                            # total_eur -= asset_balance * S.read(p)
+                            # esta operacion cierra, se acumula al beneficio de cerradas
+                            # Beneficio cierre = Precio venta - precio compra
 
         slide_balance = []
         slide_equity = []
@@ -159,6 +159,8 @@ def test_volatility_matplotlib():
             open_balance = get_balance(blockchains[p], 1, "ASSET_BUY_IN_EUR")
             close_balance = get_balance(blockchains[p], 1, "EUR")
             # invest + closed
+            # equity = depositos + beneficios de cerradas + beneficios de abiertas
+            # balance = depositos + beneficios de cerradas
             invest_balance = -(get_balance(blockchains[p], 2, "EUR") - current_bank_central)
             # slide_balance.append(((total_price / total_eur) * open_balance) + close_balance)
             # convert Asset quantity in Eur value
