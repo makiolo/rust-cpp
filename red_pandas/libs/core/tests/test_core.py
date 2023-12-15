@@ -669,6 +669,6 @@ def _test_serie_integer():
 if __name__ == '__main__':
 
     import pytest
-    args_str = "-rP -k test_"
+    args_str = "-rP -k test_core"
     args = args_str.split(" ")
     sys.exit(pytest.main(args))

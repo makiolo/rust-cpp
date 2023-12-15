@@ -31,7 +31,7 @@ FetchContent_MakeAvailable(curl)
 add_library(curl_int INTERFACE)
 target_link_libraries(curl_int INTERFACE libcurl)
 target_include_directories(curl_int INTERFACE ${curl_SOURCE_DIR}/include ${curl_BINARY_DIR}/include/curl)
-add_library(curl_int)
+# add_library(CURL::libcurl ALIAS curl_int)
 
 # LOCAL LIBS
 

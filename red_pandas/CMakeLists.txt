@@ -11,8 +11,17 @@ project(red_pandas_project LANGUAGES CXX)
 # https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-windows/2024-0/conda.html
 
 set(PROJECT_VERSION "1.0.0")
+
+if(NOT DEFINED ENV{PYTHON_HOME})
+    message(FATAL_ERROR "not defined environment variable PYTHON_HOME. Example: \"C:\\Miniconda2\"")
+endif()
+
+if(NOT DEFINED ENV{PYTHON_LIB})
+    message(FATAL_ERROR "not defined environment variable PYTHON_LIB. Example: \"python27\"")
+endif()
+
 if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Debug)
+    set(CMAKE_BUILD_TYPE Release)
 endif()
 message("-- detected mode ${CMAKE_BUILD_TYPE}")
 
@@ -38,22 +47,13 @@ else()
     add_compile_definitions("-D_LIBCPP_DISABLE_DEPRECATION_WARNINGS=1")
 endif()
 
-# TODO: need remove it
-set(EXTERNALLIBS "")
-
 if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
     message("-- detected platform win64")
-    # set(PYTHONHOME "C:/Miniconda2")
-    # set(PYTHONLIBNAME "python27.lib")
-    set(PYTHONHOME "D:/miniconda311")
-    set(PYTHONLIBNAME "python311.lib")
 else()
     message("-- detected platform win32")
-    set(PYTHONHOME "C:/Python27")
-    set(PYTHONLIBNAME "python27.lib")
-    # set(PYTHONHOME "C:/Python310")
-    # set(PYTHONLIBNAME "python310.lib")
 endif()
+set(PYTHONHOME "$ENV{PYTHON_HOME}")
+set(PYTHONLIBNAME "$ENV{PYTHON_LIB}.lib")
 message("Using Python home: ${PYTHONHOME}. Linkage with: ${PYTHONLIBNAME}")
 
 set(PYTHON3_LIB "${PYTHONHOME}/libs/${PYTHONLIBNAME}")
@@ -71,5 +71,12 @@ set(MKL_LIBDIR "${PYTHONHOME}/Library/lib")
 set(THIRD_LIB "${PYTHONHOME}/Library/bin")
 # set(THIRD_LIB "${CMAKE_CURRENT_SOURCE_DIR}/depends/libtorch/lib")
 # set(THIRD_LIB "C:\\dev\\rust\\rust-cpp\\red_pandas\\depends\\libtorch\\lib")
+set(PYTHON_BASEDIR "${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python")
+set(PYTHON_INSTALL ${PYTHONHOME}/Lib/site-packages/red_pandas)
+set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/dist")
 
 include(libs/CMakeLists.txt)
+
+# install all targets
+get_property(target_names DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY BUILDSYSTEM_TARGETS)
+install(TARGETS ${target_names} DESTINATION ${CMAKE_INSTALL_PREFIX})

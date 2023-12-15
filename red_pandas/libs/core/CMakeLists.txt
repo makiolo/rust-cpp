@@ -218,10 +218,5 @@ set_tests_properties(test_volatility_py PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB
 
 
 # copy resources to dist
-set(PYTHON_BASEDIR "${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python")
-set(PYTHON_INSTALL ${PYTHONHOME}/Lib/site-packages/red_pandas)
 install(TARGETS red_pandas DESTINATION ${PYTHON_INSTALL})
-install(TARGETS excelbind DESTINATION ${PYTHON_INSTALL})
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/depends/excelbind/examples/excelbind.conf DESTINATION ${PYTHON_INSTALL})
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python/red_pandas.py DESTINATION ${PYTHON_INSTALL} RENAME __init__.py)
-

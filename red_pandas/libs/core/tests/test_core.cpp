@@ -43,8 +43,12 @@ TEST_CASE("sum ref", "[rp]")
     s2->write(0, 7);
 
     auto result = rp::calculate(future_result);
-
     REQUIRE_THAT(result->to_vector(), Catch::Matchers::Approx(std::vector<double>({14, 6, 9 , 12,  15, 18})) );
+
+    s2->write(0, 3);
+    auto result2 = rp::calculate(future_result);
+    REQUIRE_THAT(result->to_vector(), Catch::Matchers::Approx(std::vector<double>({14, 6, 9 , 12,  15, 18})) );
+
 }
 
 TEST_CASE("sum", "[rp]")
@@ -752,19 +756,19 @@ TEST_CASE("diff_3 negative", "[diff]")
 
 TEST_CASE("test range", "[range]")
 {
-    auto generated = rp::range(20) * rp::constant(3.0);
+    auto generated = rp::seq(20) * rp::constant(3.0);
     REQUIRE_THAT(generated->to_vector(), Catch::Matchers::Approx(std::vector<double>(
             { 0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0, 33.0, 36.0,
               39.0, 42.0, 45.0, 48.0, 51.0, 54.0, 57.0 }
     )) );
 
-    auto generated2 = rp::range(-20);
+    auto generated2 = rp::seq(-20);
     REQUIRE_THAT(generated2->to_vector(), Catch::Matchers::Approx(std::vector<double>(
             { 0.0, -1.0, -2.0, -3.0, -4.0, -5.0, -6.0, -7.0, -8.0, -9.0, -10.0, -11.0,
               -12.0, -13.0, -14.0, -15.0, -16.0, -17.0, -18.0, -19.0 }
     )) );
 
-//    auto range2 = rp::calculate(rp::range(100));
+//    auto range2 = rp::calculate(rp::seq(100));
 //    for(auto n : range2->data())
 //        std::cout << "n = " << n << std::endl;
 }

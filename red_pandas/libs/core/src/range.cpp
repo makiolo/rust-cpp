@@ -9,11 +9,11 @@
 
 namespace rp {
 
-    class Range : public rp::Calculation<Serie> {
+    class Seq : public rp::Calculation<Serie> {
     public:
-        DEFINE_KEY(Range);
+        DEFINE_KEY(Seq);
 
-        explicit Range(int elements) {
+        explicit Seq(int elements) {
             auto ticket = make_ticket();
             _task = std::jthread([](const ticket_type& ticket, int elements) -> void {
 
@@ -45,13 +45,13 @@ namespace rp {
         }
     };
 
-    std::shared_ptr<Serie> range(int elements)
+    std::shared_ptr<Serie> seq(int elements)
     {
-        return std::make_shared<Serie>(Range(elements));
+        return std::make_shared<Serie>(Seq(elements));
     }
 
-    Serie rangeref(int elements)
+    Serie seqref(int elements)
     {
-        return Serie{Range{elements}};
+        return Serie{Seq{elements}};
     }
 }

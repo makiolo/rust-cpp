@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from pprint import pprint
-import excelbind
 
 
 def dumps_rec(serie, depth=0, recursive=False):
@@ -233,17 +232,39 @@ def Serie_to_numpy(self):
     return np.array(self.to_vector())
 
 
-def Serie_plot(self):
-    plt.plot(range(self.size()), self.to_numpy())
+def Serie_plot(self, name=None):
+    '''
+    plot "one" in horizontal
+    '''
+    if name is None:
+        plt.plot(range(self.size()), self.to_numpy())
+    else:
+        plt.plot(range(self.size()), self.to_numpy(), label=name)
 
 
-def plot_transpose(simulation):
-    simulation = map(lambda e: e.to_numpy(), simulation)
-    plt.plot(range(len(simulation)), simulation)
+def plot_transpose(dataframe, name=None):
+    """
+    plot "multiples" in vertical
+    """
+    dataframe = list(map(lambda e: e.to_numpy(), dataframe))
+    if name is None:
+        plt.plot(range(len(dataframe)), dataframe)
+    else:
+        plt.plot(range(len(dataframe)), dataframe, label=name)
 
 
-def show():
+def show(legend=False):
+    if legend:
+        plt.legend()
     plt.show()
+
+
+def Serie_plot_and_show(self, legend=False):
+    """
+    plot and show
+    """
+    Serie_plot(self)
+    show(legend=legend)
 
 
 Serie.get = Serie_get
@@ -254,6 +275,7 @@ Serie.__iter__ = Serie___iter__
 Serie.__repr__ = Serie__repr__
 Serie.to_numpy = Serie_to_numpy
 Serie.plot = Serie_plot
+Serie.show = Serie_plot_and_show
 
 # a ctypes callback prototype
 py_callback_type = ctypes.CFUNCTYPE(None, ctypes.c_int, ctypes.c_char_p)
@@ -268,7 +290,8 @@ def use_callback(py_callback):
 
     _red_pandas.use_callback(f_ptr)
 
-
+'''
+import excelbind
 
 @excelbind.function
 def d1_(S:list, K:list, r:list, q:list, T:list, Vol:list) -> list:
@@ -341,3 +364,4 @@ def PutImpliedvolatility_(S:list, K:list, r:list, q:list, T:list, Vol_guess:list
 @excelbind.function
 def GreeksVolga(S:list, K:list, r:list, q:list, T:list, Vol:list, d_uno:list, d_dos:list) -> list:
     return _red_pandas.GreeksVolga(array(S), array(K), array(r), array(q), array(T), array(Vol), array(d_uno), array(d_dos)).to_vector()
+'''

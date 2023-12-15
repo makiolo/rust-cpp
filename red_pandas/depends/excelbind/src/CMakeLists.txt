@@ -12,9 +12,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 #else()
 #    set(PYTHON_VERSION python311)
 #endif()
-set(PYTHON_VERSION python311)
-
-
 
 # Checks if the USEPYTHONVERSION_PYTHONLOCATION env var is set
 # (by e.g. Azure pipeline) otherwise default to standard location for python installation.
@@ -25,7 +22,8 @@ set(PYTHON_VERSION python311)
 #else()
 #    set(PYTHON_HOME $ENV{USERPROFILE}/AppData/Local/Programs/Python/${PYTHON_VERSION})
 #endif()
-set(PYTHON_HOME D:/Miniconda311)
+set(PYTHON_VERSION $ENV{PYTHON_LIB})
+set(PYTHON_HOME $ENV{PYTHON_HOME})
 
 file(GLOB SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/excelbind/chrono.h

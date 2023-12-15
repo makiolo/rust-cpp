@@ -4,7 +4,7 @@
 
 namespace rp
 {
-    std::shared_ptr<Serie> range(int elements);
+    std::shared_ptr<Serie> seq(int elements);
 
-    Serie rangeref(int elements);
+    Serie seqref(int elements);
 }
