@@ -176,7 +176,7 @@ namespace pf {
                 auto txtos = get_utxos(from, amount, currency);
                 for(const auto& [transaction, txto, vout] : txtos)
                 {
-                    tx1.froms.emplace_back(transaction.txid, vout);
+                    tx1.froms.emplace_back(TxFrom(transaction.txid, vout));
                 }
 
                 std::unordered_map<long, double> group_txtos;

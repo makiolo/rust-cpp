@@ -1,363 +1,530 @@
-// fp.h - Two dimensional array of doubles.
-// Copyright (c) KALX, LLC. All rights reserved. No warranty is made.
+// fp.h - Two-dimensional array of doubles
 #pragma once
-#include <algorithm>
-#include <cstdlib>
-#include <initializer_list>
-#include <numeric>
-#include <iterator>
-#include <stdexcept>
-#include <Windows.h>
-#include "XLCALL.H"
-#include "ensure.h"
+#include "traits.h"
 
 namespace xll {
 
-	inline INT32 rows(const _FP12& fp)
+	inline unsigned short size(const _FP& a)
 	{
-		return fp.rows;
-	}
-	inline INT32 columns(const _FP12& fp)
-	{
-		return fp.columns;
-	}
-	inline INT32 size(const _FP12& fp)
-	{
-		return fp.rows * fp.columns;
-	}
-	// cyclic index
-	inline INT32 cyclic(INT32 i, INT32 n)
-	{
-		i = i % n;
-
-		return i >= 0 ? i : i + n;
-	}
-	inline double& index(_FP12& fp, INT32 i)
-	{
-		return fp.array[cyclic(i, size(fp))];
-	}
-	inline const double& index(const _FP12& fp, INT32 i)
-	{
-		return fp.array[cyclic(i, size(fp))];
-	}
-	inline double& index(_FP12& fp, RW i, COL j)
-	{
-		return fp.array[cyclic(i, fp.rows)*fp.columns + cyclic(j, fp.columns)];
-	}
-	inline const double& index(const _FP12& fp, RW i, COL j)
-	{
-		return fp.array[cyclic(i, fp.rows)*fp.columns + cyclic(j, fp.columns)];
-	}
-	inline double* begin(_FP12& fp)
-	{
-		return &fp.array[0];
-	}
-	inline double* end(_FP12& fp)
-	{
-		return &fp.array[0] + size(fp);
+		return a.rows * a.columns;
 	}
 
-	inline const double* begin(const _FP12& fp)
+	inline double& index(_FP& a, unsigned short i)
 	{
-		return &fp.array[0];
+		return a.array[xmod<unsigned short>(i, size(a))];
 	}
-	inline const double* end(const _FP12& fp)
+	inline double index(const _FP& a, unsigned short i)
 	{
-		return &fp.array[0] + size(fp);
+		return a.array[xmod<unsigned short>(i, size(a))];
+	}
+	inline double& index(_FP& a, unsigned short i, unsigned short j)
+	{
+		return index(a, a.columns * xmod<unsigned short>(i, a.rows) + xmod<unsigned short>(j, a.columns));
+	}
+	inline double index(const _FP& a, unsigned short i, unsigned short j)
+	{
+		return index(a, a.columns * xmod<unsigned short>(i, a.rows) + xmod<unsigned short>(j, a.columns));
 	}
 
-	class FP12 {
+	// Make FP STL friendly.
+	inline double* begin(_FP& a)
+	{
+		return a.array;
+	}
+	inline const double* begin(const _FP& a)
+	{
+		return a.array;
+	}
+	inline double* end(_FP& a)
+	{
+		return a.array + size(a);
+	}
+	inline const double* end(const _FP& a)
+	{
+		return a.array + size(a);
+	}
+
+	inline unsigned size(const _FP12& a)
+	{
+		return a.rows * a.columns;
+	}
+
+	inline double& index(_FP12& a, unsigned i)
+	{
+		return a.array[xmod<unsigned>(i, size(a))];
+	}
+	inline double index(const _FP12& a, unsigned i)
+	{
+		return a.array[xmod<unsigned>(i, size(a))];
+	}
+	inline double& index(_FP12& a, unsigned i, unsigned j)
+	{
+		return index(a, a.columns * xmod<unsigned>(i, a.rows) + xmod<unsigned>(j, a.columns));
+	}
+	inline double index(const _FP12& a, unsigned i, unsigned j)
+	{
+		return index(a, a.columns * xmod<unsigned>(i, a.rows) + xmod<unsigned>(j, a.columns));
+	}
+
+	inline double* begin(_FP12& a)
+	{
+		return a.array;
+	}
+	inline const double* begin(const _FP12& a)
+	{
+		return a.array;
+	}
+	inline double* end(_FP12& a)
+	{
+		return a.array + size(a);
+	}
+	inline const double* end(const _FP12& a)
+	{
+		return a.array + size(a);
+	}
+
+	inline bool equal(const _FP* a, const _FP* b)
+	{
+		return a->rows == b->rows && a->columns == b->columns
+			&& std::equal(begin(*a), end(*a), begin(*b));
+	}
+	inline bool equal(const _FP12* a, const _FP12* b)
+	{
+		return a->rows == b->rows && a->columns == b->columns
+			&& std::equal(begin(*a), end(*a), begin(*b));
+	}
+
+	inline _FP12* drop(_FP12* pa, int n)
+	{
+		if (n == 0) {
+			return pa;
+		}
+
+		int na = static_cast<int>(size(*pa));
+		n = std::clamp(n, -na, na);
+
+		int off;
+		if (pa->rows == 1) {
+			off = abs(n);
+			pa->columns -= abs(n);
+		}
+		else {
+			off = abs(n) * pa->columns;
+			pa->rows -= abs(n);
+		}
+
+		if (n > 0) {
+			MoveMemory(begin(*pa), begin(*pa) + off, size(*pa) * sizeof(double));
+		}
+
+		return pa;
+	}
+
+	inline _FP12* take(_FP12* pa, int n)
+	{
+		if (n == 0) {
+			pa->rows = 0;
+			pa->columns = 0;
+
+			return pa;
+		}
+
+		int na = static_cast<int>(size(*pa));
+		n = std::clamp(n, -na, na);
+
+		int off;
+		auto e = end(*pa);
+		if (pa->rows == 1) {
+			off = abs(n);
+			pa->columns = abs(n);
+		}
+		else {
+			off = abs(n) * pa->columns;
+			pa->rows = abs(n);
+		}
+
+		if (n < 0) {
+			MoveMemory(begin(*pa), e - off, size(*pa) * sizeof(double));
+		}
+
+		return pa;
+	}
+
+	template<class Op>
+	inline _FP12* scan(const Op& op, _FP12* pa)
+	{
+		if (pa->rows == 1) {
+			for (int i = 1; i < pa->columns; ++i) {
+				pa->array[i] = op(pa->array[i - 1], pa->array[i]);
+			}
+		}
+		else {
+			// scan each column
+			for (int j = 0; j < pa->columns; ++j) {
+				for (int i = 1; i < pa->rows; ++i) {
+					index(*pa, i, j) = op(index(*pa, i - 1, j), index(*pa, i, j));
+				}
+			}
+		}
+
+		return pa;
+	}
+
+	template<class Op>
+	inline _FP12* diff(_FP12* pa/*, const Op& op = std::minus<double>{}*/)
+	{
+		if (xll::size(*pa) <= 1) {
+			return pa;
+		}
+
+		Op op = Op{};
+		if (pa->rows == 1) {
+			for (unsigned i = pa->columns - 1; i; --i) {
+				pa->array[i] = op(pa->array[i], pa->array[i - 1]);
+			}
+		}
+		else {
+			// diff each column
+			for (int j = 0; j < pa->columns; ++j) {
+				for (int i = pa->rows - 1; i; --i) {
+					index(*pa, i, j) = op(index(*pa, i, j), index(*pa, i - 1, j));
+				}
+			}
+		}
+
+		return pa;
+	}
+
+	inline _FP12* mask(_FP12* pa, const _FP12* pm)
+	{
+		if (pa->rows == 1) {
+			int j = 0;
+			for (int i = 0; i < pa->columns; ++i) {
+				if (index(*pm, i)) {
+					pa->array[j] = pa->array[i];
+					++j;
+				}
+			}
+			pa->columns = j;
+		}
+		else {
+			int j = 0;
+			for (int i = 0; i < pa->rows; ++i) {
+				if (index(*pm, i)) {
+					CopyMemory(&index(*pa, j, 0), &index(*pa, i, 0), pa->columns * sizeof(double));
+					++j;
+				}
+			}
+			pa->rows = j;
+		}
+
+		return pa;
+	}
+
+	inline _FP12* rotate(_FP12* pa, int n)
+	{
+		n = n % (int)size(*pa);
+
+		if (n > 0) {
+			std::rotate(begin(*pa), begin(*pa) + n, end(*pa));
+		}
+		else if (n < 0) {
+			std::rotate(begin(*pa), end(*pa) + n, end(*pa));
+		}
+
+		return pa;
+	}
+
+	inline _FP12* shift(_FP12* pa, int n)
+	{
+		n = n % (int)size(*pa);
+
+		if (n > 0) {
+			std::rotate(begin(*pa), end(*pa) - n, end(*pa));
+			ZeroMemory(begin(*pa), n * sizeof(double));
+		}
+		else if (n < 0) {
+			std::rotate(begin(*pa), begin(*pa) - n, end(*pa));
+			ZeroMemory(end(*pa) + n, -n * sizeof(double));
+		}
+
+		return pa;
+	}
+
+	// fixed size FP types
+	template<unsigned R, unsigned C = 1>
+	struct FP_ {
+		unsigned short int rows;
+		unsigned short int columns;
+		double array[R*C];
+		FP_()
+			: rows(R), columns(C)
+		{
+		}
+		auto size() const
+		{
+			return rows * columns;
+		}
+		FP_& resize(unsigned short int r, unsigned short int c)
+		{
+			ensure(r * c <= R * C);
+
+			rows = r;
+			columns = c;
+
+			return *this;
+		}
+		double& operator[](unsigned short int i)
+		{
+			return index(*(_FP*)this, i);
+		}
+		double operator[](unsigned short int i) const
+		{
+			return index(*(_FP*)this, i);
+		}
+	};
+
+	template<unsigned R, unsigned C = 1>
+	struct FP12_ {
+		INT32 rows;
+		INT32 columns;
+		double array[R*C];
+		FP12_()
+			: rows(R), columns(C)
+		{ }
+		unsigned size() const
+		{
+			return rows * columns;
+		}
+		FP12_& resize(int r, int c)
+		{
+			ensure(r * c <= R * C);
+
+			rows = r;
+			columns = c;
+
+			return *this;
+		}
+		double& operator[](unsigned i)
+		{
+			return index(*(_FP12*)this, i);
+		}
+		double operator[](unsigned i) const
+		{
+			return index(*(_FP12*)this, i);
+		}
+	};
+
+	template<unsigned R, unsigned C = 1>
+#if XLL_VERSION == 12
+	using FPX_ = FP12_<R,C>;
+#else
+	using FPX_ = FP_<R,C>;
+#endif
+
+	/// <summary>
+	/// C++ wrapper for FP and FP12 data types
+	/// </summary>
+	template<class X>
+		requires (std::is_same_v<XLOPER, X> || std::is_same_v<XLOPER12, X>)
+	class XFP {
+		typedef typename traits<X>::xint xint;
+		typedef typename traits<X>::xfp xfp;
+		xfp* fp;
 	public:
-		FP12()
-			: buf(nullptr)
+		XFP(xint r = 1, xint c = 1)
 		{
-			realloc(0,0);
+			fp_alloc(r, c);
 		}
-		FP12(RW r, COL c) 
-			: buf(nullptr) 
+		XFP(const xfp& a)
+			: XFP(a.rows, a.columns)
 		{
-			realloc(r, c);
+			MoveMemory(begin(), a.array, size() * sizeof(double));
 		}
-		FP12(const xll::FP12& x) 
-			: buf(nullptr)
+		XFP(const XFP& a)
+			: XFP(*a.fp)
+		{ }
+		XFP(XFP&& a) noexcept
+			: fp(std::exchange(a.fp, nullptr))
+		{ }
+		XFP& operator=(const XFP& a)
 		{
-			realloc(x.rows(), x.columns());
-			copy(x.get());
-		}
-		FP12(const _FP12& x)
-			: buf(nullptr)
-		{
-			realloc(x.rows, x.columns);
-			copy(&x);
-		}
-		FP12(std::initializer_list<double> a)
-			: buf(nullptr)
-		{
-			realloc(static_cast<RW>(a.size()), 1);
-			copy(a.begin());
-		}
-		FP12& operator=(const xll::FP12& x)
-		{
-			if (&x != this) {
-				realloc(x.rows(), x.columns());
-			    copy(x.get());
+			if (this != &a) {
+				fp_realloc(a.rows(), a.columns());
+				MoveMemory(begin(), a.begin(), size() * sizeof(double));
 			}
 
 			return *this;
 		}
-		FP12& operator=(const _FP12& x)
+		XFP& operator=(const xfp& a)
 		{
-			realloc(x.rows, x.columns);
-			copy(x.array);
+			fp_realloc(a.rows, a.columns);
+			MoveMemory(begin(), xll::begin(a), size() * sizeof(double));
 
 			return *this;
 		}
-		~FP12()
+		XFP& operator=(XFP&& a) noexcept
 		{
-			free(buf);
+			fp = std::exchange(a.fp, nullptr);
+
+			return *this;
+		}
+		~XFP()
+		{
+			fp_free();
 		}
 
-		bool operator==(const _FP12& x) const
+		// Convert to native Excel FP type pointer.
+		xfp* get()
 		{
-			return rows() == x.rows && columns() == x.columns
-				&& std::equal(begin(), end(), &x.array[0]);
+			return fp;
 		}
-		bool operator==(const xll::FP12& x) const
+		const xfp* get() const
 		{
-            return operator==(*x.get());
-        }
-		bool operator!=(const _FP12& x) const
-		{
-			return !operator==(x);
+			return fp;
 		}
-		bool operator!=(const xll::FP12& x) const
+		/*
+		xfp* operator&()
 		{
-			return !operator==(x);
+			return get();
 		}
-		_FP12* get(void)
+		*/
+
+		bool operator==(const XFP& a) const
 		{
-            return reinterpret_cast<_FP12*>(buf);
-        }
-		// use when returning to Excel
-		const _FP12* get(void) const
+			if (rows() != a.rows()) {
+				return false;
+			}
+			if (columns() != a.columns()) {
+				return false;
+			}
+			
+			return std::equal(begin(), end(), a.begin());
+		}
+
+		XFP& resize(xint r, xint c)
 		{
-            return reinterpret_cast<const _FP12*>(buf);
-        }
+			fp_realloc(r, c);
+
+			return *this;
+		}
+
+		xint rows() const
+		{
+			return fp ? fp->rows : 0;
+		}
+		xint columns() const
+		{
+			return fp ? fp->columns : 0;
+		}
+		xint size() const
+		{
+			return rows() * columns();
+		}
+		bool is_empty() const
+		{
+			return fp == nullptr;
+		}
 		double* array()
 		{
-			return get()->array;
+			return fp->array;
 		}
 		const double* array() const
 		{
-			return get()->array;
+			return fp->array;
 		}
-        INT32 rows() const
+		double& operator[](xint i)
 		{
-			return get()->rows;
-		}
-        INT32 columns() const
-		{
-			return get()->columns;
-		}
-        INT32 size() const
-		{
-			return buf ? get()->rows * get()->columns : 0;
-		}
+			ensure(fp != nullptr);
 
-		void resize(RW r, COL c = 1)
-		{
-			realloc(r, c);
+			return fp->array[xmod(i, size())];
 		}
-		const double& operator[](INT32 i) const
+		const double& operator[](xint i) const
 		{
-			return get()->array[i];
-		}
-		double& operator[](INT32 i)
-		{
-			return get()->array[i];
-		}
-		const double& operator()(RW i, COL j) const
-		{
-			return xll::index(*get(), i, j);
-		}
-		double& operator()(RW i, COL j)
-		{
-			return xll::index(*get(), i, j);
-		}
-		// cyclic index
-		const double& index(INT32 i) const
-		{
-			return xll::index(*get(), i);
-		}
-		double& index(INT32 i)
-		{
-			return xll::index(*get(), i);
-		}
-		const double& index(RW i, COL j) const
-		{
-			return xll::index(*get(), i, j);
-		}
-		double& index(RW i, COL j)
-		{
-			return xll::index(*get(), i, j);
-		}
+			ensure(fp != nullptr);
 
+			return fp->array[xmod(i, size())];
+		}
+		double& operator()(xint i, xint j)
+		{
+			return operator[](xmod(i, rows())*columns() + xmod(j, columns()));
+		}
+		const double& operator()(xint i, xint j) const
+		{
+			return operator[](xmod(i, rows())* columns() + xmod(j, columns()));
+		}
 		double* begin()
 		{
-			return get()->array;
-		}
-		const double* begin() const
-		{
-			return get()->array;
+			return fp ? fp->array : nullptr;
 		}
 		double* end()
 		{
-			return get()->array + size();
+			return fp ? fp->array + size() : nullptr;
+		}
+		const double* begin() const
+		{
+			return fp ? fp->array : nullptr;
 		}
 		const double* end() const
 		{
-			return get()->array + size();
+			return fp ? fp->array + size() : nullptr;
 		}
-		template<class T>
-		FP12& push_back(const T& t)
+		XFP& drop(int n)
 		{
-			return push_back(&t, &t + 1);
-		}
-		// favor columns
-		template<class I>
-		FP12& push_back(I b, I e)
-		{
-			INT32 n = static_cast<INT32>(std::distance(b, e));
-
-			if (size() == 0) {
-				resize(1, n);
-			}
-			else if (rows() == 1) {
-				resize(1, columns() + n);
-			}
-			else if (columns() == 1) {
-				resize(rows() + n, 1);
-			}
-			else  {
-				ensure (columns() == n);
-
-				resize(rows() + 1, n);
-			}
-
-			std::copy(b, e, stdext::checked_array_iterator<double*>(end() - n, n));
+			fp = xll::drop(fp, n);
 
 			return *this;
 		}
-		FP12& push_back(std::initializer_list<double> a)
+		XFP& take(int n)
 		{
-			return push_back(a.begin(), a.end());
-		}
-		template<class I>
-		FP12& push_down(I b, I e)
-		{
-			INT32 n = static_cast<INT32>(std::distance(b, e));
-
-			if (size() == 0) {
-				resize(n, 1);
-			}
-			else if (columns() == 1) {
-				resize(rows() + n, 1);
-			}
-			else {
-				ensure (columns() == n);
-				resize(rows() + 1, n);
-			}
-
-			std::copy(b, e, stdext::checked_array_iterator<double*>(end() - n, n));
+			fp = xll::take(fp, n);
 
 			return *this;
 		}
-		FP12& push_down(std::initializer_list<double> a)
-		{
-			return push_down(a.begin(), a.end());
-		}
-
-		// buffer n rows
-		template<class I>
-		FP12& buffer(I b, I e, int n)
-		{
-			INT32 c = static_cast<INT32>(std::distance(b, e));
-
-			if (size() == 0 || n == -1) {
-				push_back(b, e, true);
-			}
-			// push_front
-			else if (n == 0) {
-				INT32 sz = size();
-				ensure (c == columns());
-				resize(rows() + 1, columns());
-				memmove(begin() + c, get()->array, sz*sizeof(double));
-				memcpy(begin(), b, c*sizeof(double));
-			}
-			else if (n < -1) {
-				if (rows() == static_cast<INT32>(-n)) {
-					memmove(begin(), begin() + c, (size() - c)*sizeof(double));
-					memcpy(end() - c, b, c*sizeof(double));
-				}
-				else {
-					push_back(b, e, true);
-				}
-			}
-			else {
-				ensure (n > 0);
-				if (rows() == static_cast<INT32>(n)) {
-					memmove(begin() + c, begin(), (size() - c)*sizeof(double));
-					memcpy(begin(), b, c*sizeof(double));
-				}
-				else {
-					INT32 sz = size();
-					resize(rows() + 1, columns());
-					memmove(begin() + c, begin(), sz*sizeof(double));
-					memcpy(begin(), b, c*sizeof(double));
-				}
-			}
-
-			return *this;
-		}
-
 	private:
-		void copy(const double* p)
+		void fp_alloc(xint r, xint c)
 		{
-			for (INT32 i = 0; i < size(); ++i)
-				get()->array[i] = p[i];
-		}
-		void copy(const _FP12* p)
-		{
-			ensure (get()->rows == p->rows);
-			ensure (get()->columns == p->columns);
-
-			copy(p->array);
-		}
-		void realloc(RW r, COL c)
-		{
-			if (buf == nullptr || size() != r*c) {
-				auto size = r * c;
-				auto tmp = static_cast<char*>(::realloc(buf, sizeof(_FP12) + size*sizeof(double)));
-                if (tmp == nullptr) {
-                    free(buf);
-                }
-                buf = tmp;
-				ensure (buf != nullptr);
+			ensure(r >= 0 && c >= 0);
+			xint n = r * c;
+			if (n == 0) {
+				fp = nullptr;
 			}
-			// check size
-			get()->rows = r;
-			get()->columns = c;
+			else {
+				fp = (xfp*)malloc(sizeof(xfp) + n * sizeof(double));
+				if (!fp) {
+					throw std::bad_alloc{};
+				}
+				fp->rows = r;
+				fp->columns = c;
+			}
 		}
-		char* buf;
+		void fp_realloc(xint r, xint c)
+		{
+			ensure(r >= 0 && c >= 0);
+			xint n = r * c;
+			if (n == 0) {
+				fp_free();
+			}
+			else {
+				if (n != size()) {
+					void* tmp = realloc(fp, sizeof(xfp) + n * sizeof(double));
+					if (!tmp) {
+						throw std::bad_alloc{};
+					}
+					fp = (xfp*)tmp;
+				}
+				fp->rows = r;
+				fp->columns = c;
+			}
+		}
+		void fp_free()
+		{
+			free(fp);
+			fp = nullptr;
+		}
 	};
 
-} // namespace xll
-
-inline auto begin(const xll::FP12& a) { return a.begin(); }
-inline auto begin(xll::FP12& a) { return a.begin(); }
-inline auto end(const xll::FP12& a) { return a.end(); }
-inline auto end(xll::FP12& a) { return a.end(); }
-inline auto index(const xll::FP12& a, INT32 i) { return a.index(i); }
-inline auto index(xll::FP12& a, INT32 i) { return a.index(i); }
-inline auto index(const xll::FP12& a, INT32 i, INT32 j) { return a.index(i, j); }
-inline auto index(xll::FP12& a, INT32 i, INT32 j) { return a.index(i, j); }
+	using FP4 = XFP<XLOPER>;
+	using FP12 = XFP<XLOPER12>;
+	using FPX = XFP<XLOPERX>;
+}

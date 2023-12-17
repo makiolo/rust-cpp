@@ -1,56 +1,51 @@
-// excel.h - Wrapper functions for Excel* functions.
+// excel.h - Wrapper functions for Excelv
 // Copyright (c) KALX, LLC. All rights reserved. No warranty made.
 #pragma once
+#include <array>
+#include <utility>
 #include "oper.h"
 
 namespace xll {
 
-	template<typename... Args>
-	inline OPER12 Excel(int xlf, const Args&... args)
+	template<typename X>
+	inline XOPER<X> Excelv(int xlfn, unsigned n, X* opers[])
 	{
-		OPER12 o;
+		XOPER<X> o;
 
-        try {
-            XLOPER12 o_;
-		    int ret = ::Excel12(xlf, &o_, sizeof...(args), &args...);
-		    ensure (ret == xlretSuccess);
-            o = o_;
-		    if (!o.isScalar()) {
-                ::Excel12(xlFree, 0, 1, &o_);
-            }
-        }
-        catch (const std::exception& ex) {
-            MessageBoxA(GetForegroundWindow(), ex.what(), "Excel failed", MB_OKCANCEL| MB_ICONERROR);
-        }
+		int ret = traits<X>::Excelv(xlfn, &o, static_cast<int>(n), &opers[0]);
+		if (ret != xlretSuccess) {
+			ensure(o.xltype == xltypeErr);
+			XLL_INFO(xll_err_desc[o.val.err]);
+		}
+		else if (!o.is_scalar()) {
+			o.xltype |= xlbitXLFree;
+		}
+
 		return o;
 	}
 
-	inline OPER12 Excelv(int xlf, const OPER12& args)
+	template<typename X, typename... Args>
+	inline XOPER<X> XExcel(int xlfn, const Args&... args)
 	{
-		OPER12 o;
-		LPXLOPER12 pargs[256]; // just like XLCALL.CPP
+		std::array<const X*,sizeof...(Args)> xargs = { &args... };
 
-        try {
-		    ensure (args.size() < 256);
-		    for (int i = 0; i < args.size(); ++i) {
-			    pargs[i] = (LPXLOPER12)&args[i];
-		    }
-		    int ret = ::Excel12v(xlf, &o, static_cast<int>(args.size()), pargs);
-		    ensure (ret == xlretSuccess);
-		    if (!o.isScalar())
-			    o.xltype |= xlbitXLFree;
-        }
-        catch (const std::exception& ex) {
-            MessageBoxA(GetForegroundWindow(), ex.what(), "Excelv failed", MB_OKCANCEL| MB_ICONERROR);
-        }
+		return xll::Excelv(xlfn, sizeof...(args), const_cast<X**>(xargs.data()));
+	}
 
-        return o;
+	template<typename... Args>
+	inline OPER4 Excel4(int fn, Args&&... args)
+	{
+		return XExcel<XLOPER, Args...>(fn, args...);
+	}
+	template<typename... Args>
+	inline OPER12 Excel12(int fn, Args&&... args)
+	{
+		return XExcel<XLOPER12, Args...>(fn, args...);
+	}
+	template<typename... Args>
+	inline OPER Excel(int fn, Args&&... args)
+	{
+		return XExcel<XLOPERX, Args...>(fn, args...);
 	}
 
 } // namespace xll
-
-// Just like Excel
-inline xll::OPER12 operator&(const xll::OPER12& a, const xll::OPER12& b)
-{
-	return xll::Excel(xlfConcatenate, a, b);
-}

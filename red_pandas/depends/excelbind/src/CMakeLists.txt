@@ -2,9 +2,9 @@ cmake_minimum_required (VERSION 3.10)
 
 project(excelbind CXX ASM_MASM)
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
+# set(CMAKE_CXX_STANDARD 17)
+# set(CMAKE_CXX_STANDARD_REQUIRED ON)
+# set(CMAKE_CXX_EXTENSIONS OFF)
 
 # set env var PYTHON_VERSION or change the lines below if you plan to build against python35 or python36.
 #if(DEFINED ENV{PYTHON_VERSION})
@@ -43,7 +43,7 @@ file(GLOB SOURCES
 )
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/thirdparty)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/pybind11/include)
+# include_directories(${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/pybind11/include)
 include_directories(${PYTHON_HOME}/include)
 
 add_library(excelbind SHARED ${SOURCES})
@@ -68,7 +68,7 @@ target_link_options(excelbind PRIVATE /SAFESEH:NO /DEBUG:FULL)
 
 target_link_libraries(excelbind ${PYTHON_HOME}/libs/${PYTHON_VERSION}.lib)
 
-target_link_libraries(excelbind xll12)
+target_link_libraries(excelbind xll12 red_pandas_static)
 
 add_custom_command(TARGET excelbind POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:excelbind> ${CMAKE_CURRENT_SOURCE_DIR}/../Binaries/${CMAKE_GENERATOR_PLATFORM}/$<CONFIG>/excelbind.xll

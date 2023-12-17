@@ -2,13 +2,6 @@
 // Copyright (c) KALX, LLC. All rights reserved. No warranty made.
 // #define NENSURE before including to turn ensure checking off
 #pragma once
-#ifdef _WIN32
-#define NOMINMAX
-#define VC_EXTRALEAN
-#define WIN32_LEAN_AND_MEAN
-#include <Windows.h>
-#endif
-#include <limits>
 #include <stdexcept>
 
 // Define NENSURE to turn off ensure.
@@ -29,9 +22,13 @@
 #define ENSURE_LINE "\nline: " ENSURE_STRZ_(__LINE__)
 #define ENSURE_SPOT ENSURE_FILE ENSURE_LINE ENSURE_FUNC
 
+#if defined(_DEBUG) && defined(DEBUG_BREAK)
+#define ensure(e) if (!(e)) { DebugBreak(); }
+#else
 #define ensure(e) if (!(e)) { \
 		throw std::runtime_error(ENSURE_SPOT "\nensure: \"" #e "\" failed"); \
 		} else (void)0;
+#endif // _DEBUG
 
 #endif // ensure
 

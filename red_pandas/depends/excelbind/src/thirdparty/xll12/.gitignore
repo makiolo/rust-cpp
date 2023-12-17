@@ -293,3 +293,5 @@ ModelManifest.xml
 /shfb/Help
 *.swp
 /sample/sample.chm
+/xllproject
+/docs/Excel4Macros/.md

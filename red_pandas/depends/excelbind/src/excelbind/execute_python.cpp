@@ -1,6 +1,7 @@
 #include "pybind11/embed.h"
 
 #include "xll12/xll/xll.h"
+#include "xll12/xll/oper.h"
 
 #include "type_conversion.h"
 #include "configuration.h"
@@ -100,7 +101,7 @@ xll::LPOPER executePython(
         {
             XLL_ERROR(e.what());
         }
-        res_xll = xll::OPER(xlerr::Num);
+        res_xll = xll::OPER(xlerrNum);
     }
     return &res_xll;
 }
@@ -111,17 +112,19 @@ xll::AddIn execute_python(
     xll::Function(XLL_LPOPER, L"?executePython", 
         Configuration::is_function_prefix_set()
         ? (cast_string(Configuration::function_prefix()) + L".execute_python").c_str() : L"execute_python")
-    .Arg(XLL_CSTRING, L"Script")
-    .Arg(XLL_LPOPER, L"arg0")
-    .Arg(XLL_LPOPER, L"arg1")
-    .Arg(XLL_LPOPER, L"arg2")
-    .Arg(XLL_LPOPER, L"arg3")
-    .Arg(XLL_LPOPER, L"arg4")
-    .Arg(XLL_LPOPER, L"arg5")
-    .Arg(XLL_LPOPER, L"arg6")
-    .Arg(XLL_LPOPER, L"arg7")
-    .Arg(XLL_LPOPER, L"arg8")
-    .Arg(XLL_LPOPER, L"arg9")
+    .Arguments({
+       .Arg(XLL_CSTRING, L"Script")
+       .Arg(XLL_LPOPER, L"arg0")
+       .Arg(XLL_LPOPER, L"arg1")
+       .Arg(XLL_LPOPER, L"arg2")
+       .Arg(XLL_LPOPER, L"arg3")
+       .Arg(XLL_LPOPER, L"arg4")
+       .Arg(XLL_LPOPER, L"arg5")
+       .Arg(XLL_LPOPER, L"arg6")
+       .Arg(XLL_LPOPER, L"arg7")
+       .Arg(XLL_LPOPER, L"arg8")
+       .Arg(XLL_LPOPER, L"arg9")
+    })
     .Category(cast_string(Configuration::excel_category()).c_str())
     .FunctionHelp(L"Execute python code")
 );

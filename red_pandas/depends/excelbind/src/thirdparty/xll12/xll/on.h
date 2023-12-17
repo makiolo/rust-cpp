@@ -4,51 +4,51 @@
 #include "auto.h"
 #include "excel.h"
 
-// used with On<Key>
-#define ON_SHIFT       L"+"
-#define ON_CTRL        L"^"
-#define ON_ALT         L"%"
-#define ON_COMMAND     L"*"
-#define ON_ENTER       L"~"
-#define ON_BACKSPACE   L"{BACKSPACE}" 
-#define ON_BS          L"{BS}" 
-#define ON_BREAK       L"{BREAK}" 
-#define ON_CAPS_LOCK   L"{CAPSLOCK}" 
-#define ON_CLEAR       L"{CLEAR}" 
-#define ON_DELETE      L"{DELETE}" 
-#define ON_DEL         L"{DEL}" 
-#define ON_DOWN_ARROW  L"{DOWN}" 
-#define ON_END         L"{END}" 
-#define ON_ENTER_NUM   L"{ENTER}" 
-#define ON_ESCAPE      L"{ESCAPE}" 
-#define ON_ESC         L"{ESC}" 
-#define ON_F1          L"{F1}" 
-#define ON_F2          L"{F2}" 
-#define ON_F3          L"{F3}" 
-#define ON_F4          L"{F4}" 
-#define ON_F5          L"{F5}" 
-#define ON_F6          L"{F6}" 
-#define ON_F7          L"{F7}" 
-#define ON_F8          L"{F8}" 
-#define ON_F9          L"{F9}" 
-#define ON_F10         L"{F10}" 
-#define ON_F11         L"{F11}" 
-#define ON_F12         L"{F12}" 
-#define ON_F13         L"{F13}" 
-#define ON_F14         L"{F14}" 
-#define ON_F15         L"{F15}" 
-#define ON_HELP        L"{HELP}" 
-#define ON_HOME        L"{HOME}" 
-#define ON_INSERT      L"{INSERT}" 
-#define ON_LEFT_ARROW  L"{LEFT}" 
-#define ON_NUM_LOCK    L"{NUMLOCK}" 
-#define ON_PAGE_DOWN   L"{PGDN}" 
-#define ON_PAGE_UP     L"{PGUP}" 
-#define ON_RETURN      L"{RETURN}" 
-#define ON_RIGHT_ARROW L"{RIGHT}" 
-#define ON_SCROLL_LOCK L"{SCROLLLOCK}" 
-#define ON_TAB         L"{TAB}" 
-#define ON_UP_ARROW    L"{UP}" 
+// For use with On<Key>
+#define ON_SHIFT       "+"
+#define ON_CTRL        "^"
+#define ON_ALT         "%"
+#define ON_COMMAND     "*"
+#define ON_ENTER       "~"
+#define ON_BACKSPACE   "{BACKSPACE}" 
+#define ON_BS          "{BS}" 
+#define ON_BREAK       "{BREAK}" 
+#define ON_CAPS_LOCK   "{CAPSLOCK}" 
+#define ON_CLEAR       "{CLEAR}" 
+#define ON_DELETE      "{DELETE}" 
+#define ON_DEL         "{DEL}" 
+#define ON_DOWN_ARROW  "{DOWN}" 
+#define ON_END         "{END}" 
+#define ON_ENTER_NUM   "{ENTER}" 
+#define ON_ESCAPE      "{ESCAPE}" 
+#define ON_ESC         "{ESC}" 
+#define ON_F1          "{F1}" 
+#define ON_F2          "{F2}" 
+#define ON_F3          "{F3}" 
+#define ON_F4          "{F4}" 
+#define ON_F5          "{F5}" 
+#define ON_F6          "{F6}" 
+#define ON_F7          "{F7}" 
+#define ON_F8          "{F8}" 
+#define ON_F9          "{F9}" 
+#define ON_F10         "{F10}" 
+#define ON_F11         "{F11}" 
+#define ON_F12         "{F12}" 
+#define ON_F13         "{F13}" 
+#define ON_F14         "{F14}" 
+#define ON_F15         "{F15}" 
+#define ON_HELP        "{HELP}" 
+#define ON_HOME        "{HOME}" 
+#define ON_INSERT      "{INSERT}" 
+#define ON_LEFT_ARROW  "{LEFT}" 
+#define ON_NUM_LOCK    "{NUMLOCK}" 
+#define ON_PAGE_DOWN   "{PGDN}" 
+#define ON_PAGE_UP     "{PGUP}" 
+#define ON_RETURN      "{RETURN}" 
+#define ON_RIGHT_ARROW "{RIGHT}" 
+#define ON_SCROLL_LOCK "{SCROLLLOCK}" 
+#define ON_TAB         "{TAB}" 
+#define ON_UP_ARROW    "{UP}" 
 
 namespace xll {
 
@@ -76,42 +76,46 @@ namespace xll {
 	struct Window {
 		static const int On = xlcOnWindow;
 	};
-
-	// static On<Key> ok("shortcut", "MACRO");
+	
+	// Calls on xlcOnXXX but overwrites existing macros.
+	// ???Keep a list of all On macros???
 	template<class Key>
 	class On {
-		using xcstr = const XCHAR*;
+		using cstr = const char*;
 	public:
-		On(xcstr text, xcstr macro)
+		On(cstr text, cstr macro)
 		{
-			Auto<Open> xao([text, macro]() {
-				return Excel(Key::On, OPER12(text), OPER12(macro)) == true;
+			Auto<OpenAfter> xao([text, macro]() {
+				return Excel(Key::On, OPER(text), OPER(macro)) == true;
 			});
-			Auto<Close> xac([text]() {
-				return Excel(Key::On, OPER12(text)) == true;
+			/* This seems to cause memory leaks!!!
+			Auto<CloseBefore> xac([text]() {
+				return Excel(Key::On, OPER(text)) == true;
+			});
+			*/
+		}
+		On(cstr text, cstr macro, bool activate)
+		{
+			static_assert(std::is_same_v<Key, Sheet>);
+
+			Auto<OpenAfter> xao([text, macro, activate]() {
+				return Excel(Key::On, OPER(text), OPER(macro), OPER(activate)) == true;
+			});
+			Auto<CloseBefore> xac([text]() {
+				return Excel(Key::On, OPER(text)) == true;
 			});
 		}
-		On(xcstr text, xcstr macro, bool activate)
+		On(const OPER& time, cstr macro, const OPER& tolerance, bool insert)
 		{
-			ensure (Key::On == xlcOnSheet);
+			static_assert(std::is_same_v<Key, Time>);
 
-			Auto<Open> xao([text, macro, activate]() {
-				return Excel(Key::On, OPER12(text), OPER12(macro), OPER12(activate)) == true;
+			Auto<OpenAfter> xao([time, macro, tolerance, insert]() {
+				return Excel(Key::On, OPER(time), OPER(macro), OPER(tolerance), OPER(insert)) == true;
 			});
-			Auto<Close> xac([text]() {
-				return Excel(Key::On, OPER12(text)) == true;
-			});
-		}
-		On(const OPER12& time, xcstr macro,  const OPER12& tolerance, bool insert)
-		{
-			ensure (Key::On == xlcOnTime);
-
-			Auto<Open> xao([time, macro, tolerance, insert]() {
-				return Excel(Key::On, OPER12(time), OPER12(macro), OPER12(tolerance), OPER12(insert)) == true;
-			});
-			Auto<Close> xac([]() {
+			Auto<CloseBefore> xac([]() {
 				return Excel(Key::On) == true;
 			});
 		}
 	};
+
 } // namespace xll

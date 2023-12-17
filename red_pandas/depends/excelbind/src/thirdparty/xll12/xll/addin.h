@@ -1,55 +1,54 @@
 // addin.h - convenience wrapper for Excel add-ins
 // Copyright (c) KALX, LLC. All rights reserved. No warranty made.
 #pragma once
-#include <cwctype>
 #include <map>
-#include "auto.h"
 #include "args.h"
 
 namespace xll {
 
-	/// Manage the lifecycle of an Excel add-in.
-	class AddIn {
-    public:
-        static std::map<OPER, Args> KeyArgsMap;
-        static std::map<double, OPER> RegIdKeyMap;
-
-        /// Register and Unregister an add-in when Excel calls xlAutoOpen and xlAutoClose.
-        AddIn(const Args& args)
+    /// <summary>
+    /// Store argument add-in data for xlfRegister
+    /// </summary>
+	struct AddIn {
+        // add-ins indexed by Excel name
+        static inline std::map<OPER, Args> Map;
+ 
+        AddIn(const Args& args) noexcept
         {
-            for (const OPER& key : args.Key()) {
-                Auto<Open> ao([=]() {
-                    try {
-                        OPER oReg = args.Register();
-                        RegIdKeyMap.insert(std::make_pair(oReg.val.num, key));
-                        KeyArgsMap.insert(std::make_pair(key, args));
-
-                        return TRUE;
-                    }
-                    catch (const std::exception& ex) {
-                        MessageBoxA(GetForegroundWindow(), ex.what(), "AddIn Auto<Close> failed", MB_OK | MB_ICONERROR);
-
-                        return FALSE;
-                    }
-                });
-                
-                Auto<Close> ac([=]() {
-                    try {
-                        args.Unregister();
-                    }
-                    catch (const std::exception& ex) {
-                        MessageBoxA(GetForegroundWindow(), ex.what(), "AddIn Auto<Close> failed", MB_OK | MB_ICONERROR);
-
-                        return FALSE;
-                    }
-
-                    return TRUE;
-                });
+            const OPER& key = args.FunctionText();
+            auto i = Map.insert_or_assign(key, args);
+            if (!i.second) {
+                std::basic_string<TCHAR> msg{ TEXT("AddIn previously defined: ") };
+                msg.append(key.val.str + 1, key.val.str[0]);
+                MessageBox(GetForegroundWindow(), msg.c_str(), 0, MB_OK);
             }
         }
+
+        static size_t Erase(const OPER& key)
+        {
+            return Map.erase(key);
+        }
+
+        // Get arguments using Excel function text name.
+        static Args* Arguments(const OPER& name)
+        {
+            auto i = Map.find(name);
+            
+            return i != Map.end() ? &i->second : nullptr;
+        }
+        // Get arguments using register id.
+        static Args* Arguments(double regid)
+        {
+            for (auto& args : Map) {
+                if (args.second.RegisterId().val.num == regid) {
+                    return &args.second;
+                }
+            }
+
+            return nullptr;
+        }
     };
-	using AddIn12 = AddIn;
-	using AddInX = AddIn;
+
 } // xll namespace
 
 

@@ -1,9 +1,9 @@
-// Assert::IsTrue - Error reporting functions
+// error.h - Error reporting functions
 // Copyright (c) KALX, LLC. All rights reserved.
 #pragma once
-#include <Windows.h>
+//#include <Windows.h>
 
-enum { 
+enum /*!!! class*/ { 
 	XLL_ALERT_ERROR   = 1,
 	XLL_ALERT_WARNING = 2, 
 	XLL_ALERT_INFO    = 4,
@@ -11,7 +11,7 @@ enum {
 };
 
 /// Set error level and return old
-DWORD XLL_ALERT_LEVEL(DWORD level);
+unsigned long XLL_ALERT_LEVEL(unsigned long level);
 
 /// OKCANCEL message box. Cancel turns off error bit
 int XLL_ERROR(const char* e, bool force = false);
@@ -19,5 +19,5 @@ int XLL_ERROR(const char* e, bool force = false);
 /// OKCANCEL message box. Cancel turns off warning bit
 int XLL_WARNING(const char* e, bool force = false);
 
-/// OKCANCEL message box. Cancel turns off info bit
+/// OKCANCEL message box. Cancel turns off information bit
 int XLL_INFO(const char* e, bool force = false);

@@ -1,80 +1,31 @@
 #pragma warning(disable: 4996)
 #include <stdexcept>
+#include "xll.h"
+#include "registry.h"
+#include "exports.h"
 #include "error.h"
 
-namespace Reg {
-	class CreateKey {
-		HKEY hkey;
-		DWORD disp;
-	public:
-		CreateKey(HKEY hKey, PCTSTR lpSubKey)
-		{
-			LSTATUS status = RegCreateKeyEx(hKey, lpSubKey, 0, 0, 0, KEY_ALL_ACCESS | KEY_WOW64_64KEY, 0, &hkey, &disp);
-			if (status != ERROR_SUCCESS) {
-				throw std::runtime_error("CreateKey: RegCreateKeyEx failed");
-			}
-		}
-		CreateKey(const CreateKey&) = delete;
-		CreateKey& operator=(const CreateKey&) = delete;
-		~CreateKey()
-		{
-			RegCloseKey(hkey);
-		}
-		operator HKEY() const
-		{
-			return hkey;
-		}
-		DWORD disposition() const
-		{
-			return disp;
-		}
-		struct Proxy {
-			CreateKey& key;
-			PCTSTR value;
-			Proxy(CreateKey& key, PCTSTR value)
-				: key(key), value(value)
-			{ }
-			CreateKey& operator=(DWORD dword)
-			{
-				LSTATUS status = RegSetValueEx(key, value, 0, REG_DWORD, (const BYTE*)&dword, sizeof(DWORD));
-				if (ERROR_SUCCESS != status)
-				{
-					throw std::runtime_error("RegSetValueEx failed");
-				}
-
-				return key;
-			}
-			// operator=(string) etc
-		};
-		Proxy operator[](PCTSTR value)
-		{
-			return Proxy(*this, value);
-		}
-	};
-}
+using namespace xll;
 
 class reg_alert_level {
+	Reg::Key key; 
 	DWORD value;
 public:
+	// default to ERROR, WARNING, and INFO on
 	reg_alert_level()
-		: value(0x7)
+		: key(HKEY_CURRENT_USER, TEXT("Software\\KALX\\xll")), value(0x7)
 	{
-		DWORD size = sizeof(DWORD);
-		LSTATUS status = RegGetValue(
-			HKEY_CURRENT_USER, 
-			TEXT("Software\\KALX\\xll"),
-			TEXT("xll_alert_level"), 
-			RRF_RT_REG_DWORD, 0,
-			&value, &size);
-		if (ERROR_SUCCESS != status) 
-		{
-			operator=(value);
+		try {
+			value = key[TEXT("xll_alert_level")];
+		}
+		catch (...) {
+			; // value gets set to default
 		}
 	}
 	reg_alert_level& operator=(DWORD level)
 	{
-		Reg::CreateKey key(HKEY_CURRENT_USER, TEXT("Software\\KALX\\xll"));
 		key[TEXT("xll_alert_level")] = level;
+        value = level;
 
 		return *this;
 	}
@@ -125,27 +76,60 @@ XLL_INFO(const char* e, bool force)
 	return XLL_ALERT(e, "Information", XLL_ALERT_INFO, MB_ICONINFORMATION, force);
 }
 
+XLL_CONST(WORD, XLL_ALERT_ERROR, XLL_ALERT_ERROR,
+	"ALERT.LEVEL flag for errors[1].", "XLL", "")
+XLL_CONST(WORD, XLL_ALERT_WARNING, XLL_ALERT_WARNING,
+	"ALERT.LEVEL flag for warnings[2].", "XLL", "")
+XLL_CONST(WORD, XLL_ALERT_INFO, XLL_ALERT_INFO,
+	"ALERT.LEVEL flag for information[4].", "XLL", "")
+
+AddIn xai_alert_level(
+	Function(XLL_WORD, "xll_alert_level_", "XLL.ALERT.LEVEL")
+	.Arguments({
+		Arg(XLL_LPOPER, "level", "is the alert level mask to set.", "=XLL_ALERT_ERROR()"),
+	})
+	.FunctionHelp("Set the current alert level using a mask and return the old mask.")
+	.Category("XLL")
+	.Documentation(R"(
+The xll library can report errors, warnings, and information using pop-up alerts.
+These can be turned on or off using any sum of <code>XLL_ALERT_ERROR()</code>,
+<code>XLL_ALERT_WARNING()</code>, or <code>XLL_ALERT_INFO()</code> flags.
+The function returns the previous mask and the argument
+is stored at <code>HKEY_CURRENT_USER\Software\KALX\xll\xll_alert_level</code>
+in the registry to persist across Excel sessions.
+)")
+);
+DWORD WINAPI xll_alert_level_(LPOPER plevel)
+{
+#pragma XLLEXPORT
+	DWORD oal = xll_alert_level;
+
+	if (plevel->is_num()) {
+		xll_alert_level = static_cast<DWORD>(plevel->as_num());
+	}
+
+	return oal;
+}
+
 #ifdef _DEBUG
-#if 0
-struct test_registry {
-    Reg::Key key;
-	test_registry()
+
+struct test_dword {
+	Reg::Key key;
+	test_dword()
+		: key(HKEY_CURRENT_USER, TEXT("tmp\\key"))
 	{
-		key = Reg::Key(HKEY_CURRENT_USER, TEXT("tmp\\key"));
-        LSTATUS status;
-        status = RegDeleteKey(key, TEXT("tmp\\key"));
-        using tstring = std::basic_string<TCHAR>;
-        Reg::Key key2(HKEY_CURRENT_USER, TEXT("tmp\\string"));
-        Reg::Entry<tstring> value(key2, TEXT("value"));
-        tstring s = value;
-        value = TEXT("text");
-        s = value;
-        s = s;
-    }
-	~test_registry()
+		key[TEXT("foo")] = 123;
+		DWORD dw;
+		dw = key[TEXT("foo")];
+		if (dw != 123) {
+			MessageBox(0, L"dword failed", L"Error", MB_OK);
+		}
+	}
+	~test_dword()
 	{
+		RegDeleteKey(key, TEXT("tmp\\key"));
 	}
 };
-test_registry _{};
-#endif // 0
+test_dword test_dword_{};
+
 #endif // _DEBUG

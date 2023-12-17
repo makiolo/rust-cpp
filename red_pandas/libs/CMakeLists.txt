@@ -25,10 +25,13 @@ include(libs/finance/CMakeLists.txt)
 include(libs/portfolio/CMakeLists.txt)
 include(libs/simulator/CMakeLists.txt)
 
+
 # Excel bridge (use core for direct Access from Excel to C++) (use pybind for call Python Scripts User)
 # add_subdirectory(depends/excelbind/src)
 # install(TARGETS excelbind DESTINATION ${PYTHON_INSTALL})
 # install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/depends/excelbind/examples/excelbind.conf DESTINATION ${PYTHON_INSTALL})
+# target_include_directories(excelbind PUBLIC depends/pybind11/include)
 
 # optional GUI (use core for calculate prices, greeks) (use pybind for call Python Scripts User)
 # add_subdirectory(depends/implot_demos)
+# target_include_directories(stocks PUBLIC depends/pybind11/include)

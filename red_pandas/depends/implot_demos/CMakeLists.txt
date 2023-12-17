@@ -190,7 +190,7 @@ add_custom_command(TARGET spectrogram POST_BUILD  COMMAND ${CMAKE_COMMAND} -E co
 
 # stocks demo
 add_executable(stocks "demos/stocks.cpp" )
-target_link_libraries(stocks app fmt::fmt curl_int)
+target_link_libraries(stocks app fmt::fmt curl_int red_pandas_static)
 target_compile_features(stocks PRIVATE cxx_std_17)
 
 # voice demo
