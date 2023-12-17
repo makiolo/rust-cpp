@@ -46,10 +46,6 @@ setup(
     # The project's main homepage.
     # url='https://github.com/makiolo/broadlink2mqtt',
 
-    # Author details
-    author='Ricardo Marmolejo Garcia',
-    author_email='ricardo.marmolejo@gruposantander.com',
-
     # Choose your license
     # license='MIT',
 
