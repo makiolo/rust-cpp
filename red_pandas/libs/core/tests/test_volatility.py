@@ -181,7 +181,7 @@ def test_volatility_matplotlib():
     else:
         raise Exception("Invalid number paths.")
 
-    rp.show(legend=True)
+    # rp.show(legend=True)
 
     elapsed = time.time() - begin
     print('Eleapsed time: {}'.format(elapsed))

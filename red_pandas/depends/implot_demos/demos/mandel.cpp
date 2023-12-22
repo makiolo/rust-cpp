@@ -216,7 +216,8 @@ struct ImMandel : App {
 
     template <typename T>
     void mandel_basic_par() {
-        std::future<void> results[kThreads];
+        /*
+        std::shared_future<void> results[kThreads];
         for (int i = 0; i < kThreads; ++i) {
             spec ss = s;
             ss.height /= kThreads;
@@ -229,12 +230,15 @@ struct ImMandel : App {
             };
             results[i] = pool.enqueue(worker);
         }
-        for (int i=0; i<kThreads; i++) results[i].wait();
+        for (int i=0; i<kThreads; i++)
+            results[i].wait();
+        */
     }
 
     template <typename T>
     void mandel_avx_par() {
-        std::future<void> results[kThreads];
+        /*
+        std::shared_future<void> results[kThreads];
         for (int i = 0; i < kThreads; ++i) {
             spec ss = s;
             ss.height /= kThreads;
@@ -247,7 +251,9 @@ struct ImMandel : App {
             };
             results[i] = pool.enqueue(worker);
         }
-        for (int i=0; i<kThreads; i++) results[i].wait();
+        for (int i=0; i<kThreads; i++)
+            results[i].wait();
+        */
     }
 
     void Update() override {
@@ -266,7 +272,7 @@ struct ImMandel : App {
         ImGui::SetNextWindowSize(GetWindowSize(), ImGuiCond_Always);
         ImGui::Begin("##Mandel", nullptr, ImGuiWindowFlags_NoTitleBar|ImGuiWindowFlags_NoResize);
 
-        if (ImGui::Button(ICON_FA_HOME))
+        if (ImGui::Button(reinterpret_cast<const char *>(ICON_FA_HOME)))
             ImPlot::SetNextAxesLimits(-2.5,1.5,-1.5,1.5,ImGuiCond_Always);
         ImGui::SameLine(); 
         ImGui::Checkbox("AVX",&avx); ImGui::SameLine();

@@ -223,3 +223,10 @@ set_tests_properties(test_volatility_py PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB
 # copy resources to dist
 install(TARGETS red_pandas DESTINATION ${PYTHON_INSTALL})
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python/red_pandas.py DESTINATION ${PYTHON_INSTALL} RENAME __init__.py)
+
+# test stocks
+add_test(
+        NAME test_stocks
+        COMMAND ${CMAKE_CURRENT_BINARY_DIR}/depends/implot_demos/${CMAKE_BUILD_TYPE}/stocks.exe
+        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/depends/implot_demos/${CMAKE_BUILD_TYPE})
+set_tests_properties(test_stocks PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;${CMAKE_CURRENT_BINARY_DIR}/depends/implot_demos/${CMAKE_BUILD_TYPE}\;${PYTHONHOME}\;${PYTHONHOME}/Scripts\;${PYTHONHOME}/Library/bin\;$ENV{PATH};PYTHONHOME=${PYTHONHOME};PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python\;${CMAKE_CURRENT_BINARY_DIR}/depends/implot_demos/${CMAKE_BUILD_TYPE}")
