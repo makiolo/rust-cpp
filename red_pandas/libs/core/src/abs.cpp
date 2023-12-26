@@ -23,6 +23,7 @@ namespace rp {
                 const auto& n0 = get_value< Serie::Buffer >(s0);
                 ticket->set_value(std::make_shared<Serie>(nc::abs(n0)));
 
+
             }, ticket, std::forward<T>(s0));
         }
     };
