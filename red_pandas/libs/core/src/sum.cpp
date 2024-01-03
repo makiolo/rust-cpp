@@ -55,6 +55,11 @@ namespace rp {
             }, ticket, std::forward<T>(s0), std::forward<T>(s1));
         }
 
+        // http://www.unitytechgroup.com/doc/autodiff/
+        // autodiff
+        // algoritmo autodiff: https://en.wikipedia.org/wiki/Automatic_differentiation
+        // articulo diff: https://www.quantandfinancial.com/2017/02/automatic-differentiation-templated.html
+
         ~Sum()
         {
 
