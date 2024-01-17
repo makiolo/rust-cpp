@@ -1,0 +1,647 @@
+diff --git a/.gitignore b/.gitignore
+index 6985cf1..01b40c5 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -12,3 +12,22 @@ Cargo.lock
+ 
+ # MSVC Windows builds of rustc generate these, which store debugging information
+ *.pdb
++
++red_pandas/libs/core/tests/*.dll
++red_pandas/cmake-build-*-visual-studio/
++**/__pycache__/
++**/*.pyc
++**/.idea
++.vs/
++
++# temporal
++red_pandas/bin/
++red_pandas/depends/excelbind/Binaries/
++red_pandas/depends/excelbind/src/thirdparty/pybind11/
++red_pandas/depends/libtorch/
++red_pandas/depends/mimalloc-master/
++red_pandas/dist/
++red_pandas/out/
++red_pandas/zig-cross-main/
++test_cpp/bin/
++
+diff --git a/red_pandas/CMakeLists.txt b/red_pandas/CMakeLists.txt
+index 0ccbbeb..83446a9 100644
+--- a/red_pandas/CMakeLists.txt
++++ b/red_pandas/CMakeLists.txt
+@@ -20,22 +20,28 @@ if(NOT DEFINED ENV{PYTHON_LIB})
+     message(FATAL_ERROR "not defined environment variable PYTHON_LIB. Example: \"python27\"")
+ endif()
+ 
++if(NOT DEFINED ENV{BOOST_ROOT})
++    message(FATAL_ERROR "not defined environment variable BOOST_ROOT. Example: \"C:\\Miniconda2\\Library\"")
++endif()
++
+ if(NOT CMAKE_BUILD_TYPE)
+     set(CMAKE_BUILD_TYPE Release)
+ endif()
+ message("-- detected mode ${CMAKE_BUILD_TYPE}")
+ 
+ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /Od /Zi /MDd")
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /Od /Zi /MDd")
++    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /Od /Zi /MTd")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /Od /Zi /MTd")
+     add_link_options("/DEBUG")
+     add_compile_definitions("_DISABLE_VECTOR_ANNOTATION")
+-    # add_compile_definitions("-DMIMALLOC_SHOW_STATS=1")
++    add_compile_definitions("_ITERATOR_DEBUG_LEVEL=0")
++    add_compile_definitions("_SECURE_SCL=0")
++    add_compile_definitions("_WIN32_WINNT=0x0601")
+     message("-- add debug options")
+ else()
+     # dynamic linkage to C runtime for let malloc/free replace
+-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /MD /W4 /arch:AVX2 /fp:fast")
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MD /W4 /arch:AVX2 /fp:fast")
++    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /MT /W4 /arch:AVX2 /fp:fast")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MT /W4 /arch:AVX2 /fp:fast")
+     message("-- add release options")
+ endif()
+ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /std:c++20")
+diff --git a/red_pandas/libs/CMakeLists.txt b/red_pandas/libs/CMakeLists.txt
+index e2b21fa..45b1ba6 100644
+--- a/red_pandas/libs/CMakeLists.txt
++++ b/red_pandas/libs/CMakeLists.txt
+@@ -16,6 +16,7 @@ add_subdirectory(depends/mdspan-stable)
+ # add_subdirectory(depends/eigen-3.4.0)
+ # add_subdirectory(depends/libinterpolate)
+ # add_subdirectory(depends/libintegrate)
++add_subdirectory(depends/mimalloc-master)
+ # non-linear solvers
+ 
+ # Core Layer
+diff --git a/red_pandas/libs/core/CMakeLists.txt b/red_pandas/libs/core/CMakeLists.txt
+index 34a092b..3b316d1 100644
+--- a/red_pandas/libs/core/CMakeLists.txt
++++ b/red_pandas/libs/core/CMakeLists.txt
+@@ -1,3 +1,4 @@
++find_package(Boost 1.82 REQUIRED COMPONENTS system filesystem)
+ 
+ set(PRIVATE_sources
+         libs/core/src/div.cpp
+@@ -84,6 +85,7 @@ set(PUBLIC_include_dirs
+         ${PYTHON3_INCLUDE}
+         ${MKL_INCLUDE}
+         ${NUMPY_INCLUDE}
++        ${Boost_INCLUDE_DIRS}
+         )
+ set(PUBLIC_link_dirs
+         ${MKL_LIBDIR}
+@@ -102,6 +104,8 @@ set(PRIVATE_targets
+         ta_lib_static
+         # torch_cpu
+         # c10
++        ${Boost_LIBRARIES}
++        mimalloc-static
+         )
+ 
+ set(PUBLIC_targets
+@@ -137,21 +141,14 @@ target_link_libraries(red_pandas PUBLIC ${PUBLIC_targets})
+ 
+ # create STATIC library
+ add_library(red_pandas_static STATIC)
+-# target_sources(red_pandas_static PRIVATE ${PRIVATE_sources} depends/mimalloc-master/src/static.c libs/core/src/allocator.cpp PUBLIC ${PUBLIC_sources} ${PUBLIC_extra_sources})
+-# target_include_directories(red_pandas_static PUBLIC ${PUBLIC_include_dirs} depends/mimalloc-master/include)
+-target_sources(red_pandas_static PRIVATE ${PRIVATE_sources} libs/core/src/allocator.cpp PUBLIC ${PUBLIC_sources} ${PUBLIC_extra_sources})
++target_sources(red_pandas_static PRIVATE ${PRIVATE_sources} PUBLIC ${PUBLIC_sources} ${PUBLIC_extra_sources})
+ target_include_directories(red_pandas_static PUBLIC ${PUBLIC_include_dirs})
+ target_compile_options(red_pandas_static PUBLIC ${PUBLIC_options})
+ target_compile_features(red_pandas_static PUBLIC cxx_std_20)
+-target_compile_definitions(red_pandas_static PUBLIC ${PUBLIC_definitions} RELEASE_PYTHON_THREAD=0 MKL_ALLOCATOR=1)
+-# if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+-#     target_compile_options(red_pandas_static PUBLIC "/fsanitize=address")
+-# endif()
+-# target_compile_definitions(red_pandas_static PUBLIC ${PUBLIC_definitions} RELEASE_PYTHON_THREAD=0 MKL_ALLOCATOR=0)
++target_compile_definitions(red_pandas_static PUBLIC ${PUBLIC_definitions} RELEASE_PYTHON_THREAD=0 MKL_ALLOCATOR=0)
+ set_target_properties(red_pandas_static PROPERTIES VERSION ${PROJECT_VERSION})
+ target_link_directories(red_pandas_static PUBLIC ${PUBLIC_link_dirs})
+-target_link_libraries(red_pandas_static PRIVATE ${PRIVATE_targets} ${MKL_LIB})
+-# target_link_libraries(red_pandas_static PRIVATE ${PRIVATE_targets})
++target_link_libraries(red_pandas_static PRIVATE ${PRIVATE_targets})
+ target_link_libraries(red_pandas_static PUBLIC ${PUBLIC_targets})
+ 
+ # tests LIBRARY
+@@ -230,3 +227,39 @@ add_test(
+         COMMAND ${CMAKE_CURRENT_BINARY_DIR}/depends/implot_demos/${CMAKE_BUILD_TYPE}/stocks.exe
+         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/depends/implot_demos/${CMAKE_BUILD_TYPE})
+ set_tests_properties(test_stocks PROPERTIES ENVIRONMENT "PATH=${THIRD_LIB}\;${CMAKE_CURRENT_BINARY_DIR}/depends/implot_demos/${CMAKE_BUILD_TYPE}\;${PYTHONHOME}\;${PYTHONHOME}/Scripts\;${PYTHONHOME}/Library/bin\;$ENV{PATH};PYTHONHOME=${PYTHONHOME};PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python\;${CMAKE_CURRENT_BINARY_DIR}/depends/implot_demos/${CMAKE_BUILD_TYPE}")
++
++### server and client
++add_executable(test_server)
++set(PRIVATE_tests_sources
++        libs/core/src/server.cpp
++        )
++set(PUBLIC_tests_sources
++        )
++set(PUBLIC_include_dirs
++        ${Boost_INCLUDE_DIRS}
++        )
++set(PUBLIC_targets
++        ${Boost_LIBRARIES}
++        )
++target_sources(test_server PRIVATE ${PRIVATE_tests_sources} PUBLIC ${PUBLIC_tests_sources})
++target_include_directories(test_server PUBLIC ${PUBLIC_include_dirs})
++target_compile_features(test_server PUBLIC cxx_std_20)
++target_link_libraries(test_server PUBLIC ${PUBLIC_targets})
++
++
++add_executable(test_client)
++set(PRIVATE_tests_sources
++        libs/core/src/client.cpp
++        )
++set(PUBLIC_tests_sources
++        )
++set(PUBLIC_include_dirs
++        ${Boost_INCLUDE_DIRS}
++        )
++set(PUBLIC_targets
++        ${Boost_LIBRARIES}
++        )
++target_sources(test_client PRIVATE ${PRIVATE_tests_sources} PUBLIC ${PUBLIC_tests_sources})
++target_include_directories(test_client PUBLIC ${PUBLIC_include_dirs})
++target_compile_features(test_client PUBLIC cxx_std_20)
++target_link_libraries(test_client PUBLIC ${PUBLIC_targets})
+diff --git a/red_pandas/libs/core/include/serie.h b/red_pandas/libs/core/include/serie.h
+index 0c93afa..be45e82 100644
+--- a/red_pandas/libs/core/include/serie.h
++++ b/red_pandas/libs/core/include/serie.h
+@@ -366,6 +366,175 @@ public:
+ 		}
+ 	}
+ 
++    static std::string dumps(const Serie& self) {
++        // copy from python implementation
++        return "";
++    }
++
++    static Serie loads(const std::string& buffer) {
++        // copy from python implementation
++        return Serie({1,2,3});
++    }
++
++    /*
++
++def dumps_rec(serie, depth=0, recursive=False):
++
++    if isinstance(serie, Serie):
++
++        if serie.type == map_serie_serie_type or serie.type == map_string_serie_type:
++
++            if serie.type == map_serie_serie_type:
++                serie_map = serie.get_map_serie_serie()
++            elif serie.type == map_string_serie_type:
++                serie_map = serie.get_map_string_serie()
++            else:
++                raise Exception('Invalid type: {}'.format(serie.type))
++
++            if recursive:
++                new_map = {}
++                for k, v in serie_map.items():
++                    key_map = dumps_rec(k, depth+1, recursive=recursive)
++                    value_map = dumps_rec(v, depth+1, recursive=recursive)
++                    new_map[key_map] = value_map
++                return new_map
++            else:
++                # return serie_map.asdict()
++                return serie_map
++
++        elif serie.type == set_serie_type:
++
++            return serie.get_set_serie()
++
++        elif    serie.type == basic_numpy_type or \
++                serie.type == string_type or \
++                serie.type == basic_none_type:
++
++            if serie.type == basic_numpy_type:
++                basic = serie.get_basic_numpy()
++                if len(basic) == 1:
++                    # TODO: convert List[1] to double
++                    basic = basic[0]
++            elif serie.type == string_type:
++                basic = serie.get_basic_string()
++            elif serie.type == basic_none_type:
++                basic = None
++            else:
++                raise Exception('Invalid type: {}'.format(serie.type))
++
++            return basic
++
++        elif serie.type == calculation_type:
++
++            return dumps_rec(serie.get_calc(), depth+1, recursive=recursive)
++
++        else:
++            if serie.type == vector_none_type:
++                listdata = [None] * len(serie.get_vector_none())
++            elif serie.type == vector_string_type:
++                listdata = serie.get_vector_string()
++            elif serie.type == vector_serie_type:
++                listdata = serie.get_vector_serie()
++            elif serie.type == vector_map_serie_serie_type:
++                listdata = serie.get_vector_map_serie_serie()
++            elif serie.type == vector_map_string_serie_type:
++                listdata = serie.get_vector_map_string_serie()
++            elif serie.type == vector_set_serie_type:
++                listdata = serie.get_vector_set_serie()
++            else:
++                raise Exception('Invalid type: {}'.format(serie.type))
++
++            if recursive:
++                list_str = []
++                for k in listdata:
++                    list_str.append(dumps_rec(k, depth+1, recursive=recursive))
++                listdata = list_str
++
++            if len(listdata) == 1:
++                # List[1] to double
++                # TODO: use special type
++                return listdata[0]
++            else:
++                return listdata
++
++    else:
++        # python type
++        return serie
++
++
++def dumps(serie, recursive=False):
++    '''
++    Print IL with your typing
++    '''
++    return dumps_rec(serie, recursive=recursive)
++
++
++def loads(serie):
++    '''
++    Convert Python Structure to IL
++    '''
++    if isinstance(serie, dict):
++        try:
++            new_map = {}
++            for k, v in serie.items():
++                k_serie = loads(k)
++                v_serie = loads(v)
++                if not isinstance(v_serie, Serie):
++                    v_serie = Serie(v_serie)
++                new_map[k_serie] = v_serie
++            return Serie(new_map)
++        except (ValueError, TypeError):
++            new_map = {}
++            for k, v in serie.items():
++                k_serie = loads(k)
++                if not isinstance(k_serie, Serie):
++                    k_serie = Serie(k_serie)
++                v_serie = loads(v)
++                if not isinstance(v_serie, Serie):
++                    v_serie = Serie(v_serie)
++                new_map[k_serie] = v_serie
++            return Serie(new_map)
++    elif isinstance(serie, list) or isinstance(serie, tuple):
++        try:
++            l = []  # list with same basic type
++            for k in serie:
++                l.append(loads(k))
++            return Serie(l)
++        except (ValueError, TypeError):
++            l = []  # list multiples types differents
++            for k in serie:
++                elem = loads(k)
++                if not isinstance(elem, Serie):
++                    l.append(Serie(elem))
++                else:
++                    l.append(elem)
++            return l
++    elif isinstance(serie, set):
++        try:
++            l = set()  # list with same basic type
++            for k in serie:
++                l.add(loads(k))
++            return Serie(l)
++        except (ValueError, TypeError):
++            l = set()  # list multiples types differents
++            for k in serie:
++                elem = loads(k)
++                if not isinstance(elem, Serie):
++                    l.add(Serie(elem))
++                else:
++                    l.add(elem)
++            return l
++    else:
++        if serie is None:
++            return NoneType()
++        else:
++            if type(serie) == unicode:
++                return str(serie)
++            else:
++                return serie
++
++     */
++
+     double read(int offset) const
+     {
+         return raw_data()[offset];
+@@ -380,9 +549,11 @@ public:
+     template <typename T>
+ 	inline const T& get() const  // throw(std::bad_variant_access)
+ 	{
+-        try {
++        try
++        {
+             return std::get<T>(values);
+-        } catch(const std::bad_variant_access& e)
++        }
++        catch(const std::bad_variant_access& e)
+         {
+             // debug point
+             throw;
+diff --git a/red_pandas/libs/core/src/allocator.cpp b/red_pandas/libs/core/src/allocator.cpp
+index 7825242..bafa441 100644
+--- a/red_pandas/libs/core/src/allocator.cpp
++++ b/red_pandas/libs/core/src/allocator.cpp
+@@ -3,36 +3,35 @@
+ //
+ //
+ 
+-// #include "mimalloc-new-delete.h"
++#include <mimalloc.h>
+ 
+-#if 1
++#if 0
+ 
+ #include <cstddef>
+ #include <unordered_map>
+-
+-#include <mkl.h>
++// #include <mkl.h>
+ 
+ 
+ void* operator new (std::size_t n) noexcept(false)
+ {
+     int alignment = std::min(int((trunc(double(n - 1) / 8.0) + 1) * 8), 16); // max 128 bits
+-    return mkl_malloc(n, alignment);
++    return mi_malloc_aligned(n, alignment);
+ }
+ 
+ void operator delete(void *p) noexcept
+ {
+-    mkl_free(p);
++    mi_free(p);
+ }
+ 
+ void* operator new[] (std::size_t n) noexcept(false)
+ {
+     int alignment = std::min(int((trunc(double(n - 1) / 8.0) + 1) * 8), 16); // max 128 bits
+-    return mkl_malloc(n, alignment);
++    return mi_malloc_aligned(n, alignment);
+ }
+ 
+ void operator delete[](void *p) noexcept
+ {
+-    mkl_free(p);
++    mi_free(p);
+ }
+ 
+ #endif
+diff --git a/red_pandas/libs/core/src/client.cpp b/red_pandas/libs/core/src/client.cpp
+index 3390e29..5b7e42b 100644
+--- a/red_pandas/libs/core/src/client.cpp
++++ b/red_pandas/libs/core/src/client.cpp
+@@ -1,3 +1,62 @@
+ //
+ // Created by n424613 on 02/01/2024.
+ //
++
++
++#include <iostream>
++#include <string>
++#include <boost/asio.hpp>
++
++
++using boost::asio::ip::tcp;
++using asio_context = boost::asio::io_context;
++
++
++class scoped_connection
++{
++public:
++    scoped_connection(asio_context& context)
++        : _socket(context)
++        , _resolver(context)
++    {
++        ;
++    }
++
++    ~scoped_connection()
++    {
++        boost::system::error_code ec;
++        _socket.shutdown(boost::asio::ip::tcp::socket::shutdown_both, ec);
++        _socket.close();
++    }
++
++    void connect(const std::string& hostname, const std::string& port)
++    {
++        boost::asio::connect(_socket, _resolver.resolve(hostname, port));
++    }
++
++    void write(const std::string& data)
++    {
++        auto result = boost::asio::write(_socket, boost::asio::buffer(data));
++        std::cout << "data sent: " << data.length() << '/' << result << std::endl;
++    }
++
++protected:
++    tcp::socket _socket;
++    tcp::resolver _resolver;
++};
++
++int main(int argc, char* argv[])
++{
++    // Implementar calculadora con shunting yard algorithmn
++    // https://github.com/aslze/asl-calculator?tab=readme-ov-file
++    //
++    asio_context io_context;
++
++    scoped_connection conn(io_context);
++    conn.connect("127.0.0.1", "25000");
++
++    std::string data{"some client data ..."};
++    conn.write(data);
++
++    return 0;
++}
+diff --git a/red_pandas/libs/core/src/serie.cpp b/red_pandas/libs/core/src/serie.cpp
+index 25bd587..f55bc71 100644
+--- a/red_pandas/libs/core/src/serie.cpp
++++ b/red_pandas/libs/core/src/serie.cpp
+@@ -11,12 +11,14 @@
+ // torch
+ // #include <torch/torch.h>
+ // #include <ATen/Context.h>
++// boost
++#include <boost/filesystem.hpp>
+ 
+ 
+ struct talib_data
+ {
+     talib_data()
+-    {
++    {   
+         TA_RetCode rc = TA_Initialize();
+         if (rc != TA_SUCCESS)
+             throw std::runtime_error("Error initializing TA Lib.");
+@@ -196,4 +198,4 @@ namespace rp {
+         return std::make_shared<column>(xx, xx_n, takeOwnerShip);
+     }
+ 
+-}
+\ No newline at end of file
++}
+diff --git a/red_pandas/libs/core/src/server.cpp b/red_pandas/libs/core/src/server.cpp
+index 3390e29..c9d4c93 100644
+--- a/red_pandas/libs/core/src/server.cpp
++++ b/red_pandas/libs/core/src/server.cpp
+@@ -1,3 +1,83 @@
+ //
+ // Created by n424613 on 02/01/2024.
+ //
++#pragma once
++
++#include <iostream>
++#include <string>
++
++#include <boost/asio.hpp>
++
++using boost::asio::ip::tcp;
++
++class handler : public std::enable_shared_from_this<handler>
++{
++public:
++    handler(tcp::socket socket)  : m_socket(std::move(socket)) { }
++
++    void run() {
++        wait_for_request();
++    }
++private:
++    void wait_for_request() {
++        auto self(shared_from_this());
++        boost::asio::async_read_until(m_socket, m_buffer, "\0",
++                                      [this, self](boost::system::error_code ec, std::size_t /*length*/)
++                                      {
++                                          if (!ec)  {
++                                              std::string data{
++                                                      std::istreambuf_iterator<char>(&m_buffer),
++                                                      std::istreambuf_iterator<char>()
++                                              };
++                                              std::cout << data << std::endl;
++                                              // string to data
++
++                                              wait_for_request();
++                                          } else {
++                                              // maybe client disconnection
++                                              // std::cout << "error server 2: " << ec << std::endl;
++                                          }
++                                      });
++    }
++private:
++    tcp::socket m_socket;
++    boost::asio::streambuf m_buffer;
++};
++
++
++class server
++{
++public:
++    server(boost::asio::io_context& io_context, short port)
++            : m_acceptor(io_context, tcp::endpoint(tcp::v4(), port))
++    {
++        do_accept();
++    }
++private:
++    void do_accept() {
++        m_acceptor.async_accept([this](boost::system::error_code ec, tcp::socket socket) {
++            if (!ec) {
++                std::cout << "creating handler on: "
++                          << socket.remote_endpoint().address().to_string()
++                          << ":" << socket.remote_endpoint().port() << '\n';
++
++                std::make_shared<handler>(std::move(socket))->run();
++            } else {
++                std::cout << "error server1: " << ec.message() << std::endl;
++            }
++            do_accept();
++        });
++    }
++private:
++    tcp::acceptor m_acceptor;
++};
++
++
++int main(int argc, char* argv[])
++{
++    boost::asio::io_context io_context;
++    server s(io_context, 25000);
++    io_context.run();
++
++    return 0;
++}
+diff --git a/red_pandas/libs/core/src/sum.cpp b/red_pandas/libs/core/src/sum.cpp
+index 61694ef..608fde2 100644
+--- a/red_pandas/libs/core/src/sum.cpp
++++ b/red_pandas/libs/core/src/sum.cpp
+@@ -46,6 +46,11 @@ namespace rp {
+             }, ticket, std::forward<T>(s0), std::forward<T>(s1));
+         }
+ 
++        // http://www.unitytechgroup.com/doc/autodiff/
++        // autodiff
++        // algoritmo autodiff: https://en.wikipedia.org/wiki/Automatic_differentiation
++        // articulo diff: https://www.quantandfinancial.com/2017/02/automatic-differentiation-templated.html
++
+         ~Sum()
+         {
+ 
+diff --git a/red_pandas/libs/core/tests/test_volatility.py b/red_pandas/libs/core/tests/test_volatility.py
+index 2ca3728..e5e8a2b 100644
+--- a/red_pandas/libs/core/tests/test_volatility.py
++++ b/red_pandas/libs/core/tests/test_volatility.py
+@@ -181,7 +181,7 @@ def test_volatility_matplotlib():
+     else:
+         raise Exception("Invalid number paths.")
+ 
+-    # rp.show(legend=True)
++    rp.show(legend=True)
+ 
+     elapsed = time.time() - begin
+     print('Eleapsed time: {}'.format(elapsed))
+diff --git a/red_pandas/nvim.cmd b/red_pandas/nvim.cmd
+new file mode 100644
+index 0000000..4a3dc9d
+--- /dev/null
++++ b/red_pandas/nvim.cmd
+@@ -0,0 +1,20 @@
++@echo off
++
++:: isolation
++set PATH=C:\dev\sandbox\bin;C:\dev\zig;C:\dev\cmake-3.27.1-windows-x86_64\bin;C:\nvim-win64\bin;C:\Program Files\Git\cmd;C:\Windows\System32
++set PYTHONHOME=;
++
++:: change to python 3 (64)
++set "PYTHONHOME=C:\Miniconda3"
++set "PATH=%PATH:C:\Python27=C:\Miniconda3%"
++set "PATH=%PATH:C:\Python310=C:\Miniconda3%"
++set "PATH=%PATH:C:\Miniconda2=C:\Miniconda3%"
++set PATH=%PYTHONHOME%;%PATH%
++set PATH=%PYTHONHOME%\Scripts;%PATH%
++set PATH=%PYTHONHOME%\Library\bin;%PATH%
++
++SET mypath=%~dp0
++SET script_path=%mypath:~0,-1%
++
++cd /d %script_path%
++cmd /c C:\nvim-win64\bin\nvim.exe
