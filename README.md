@@ -30,4 +30,6 @@ cmake -DLLVM_ENABLE_PROJECTS=clang -G "Visual Studio 17 2022" -A x64 -Thost=x64 
 cmake -DLLVM_ENABLE_PROJECTS=lld -G "Visual Studio 17 2022" -A x64 -Thost=x64 ..\llvm
 
 cmake -DLLVM_ENABLE_PROJECTS=“clang;lld;lldb” -G "Visual Studio 17 2022" -A x64 -Thost=x64 ..\llvm
+
+mklink /J %cd%\..\compile_commands.json %cd%\compile_commands.json
 ```
