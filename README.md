@@ -10,6 +10,8 @@ https://www.youtube.com/watch?v=JU7fMhHr2L8
 setup:
 ```
 cmake .. -G Ninja -DCMAKE_C_COMPILER="C:/dev/llvm-project/build/Release/bin/clang.exe" -DCMAKE_CXX_COMPILER="C:/dev/llvm-project/build/Release/bin/clang.exe" -DCMAKE_LINKER="C:/dev/llvm-project/build/Release/bin/lld-link.exe"
+
+cmake .. -G Ninja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang -DCMAKE_LINKER=lld-link
 ```
 build:
 ```
