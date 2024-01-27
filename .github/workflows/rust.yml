@@ -21,6 +21,9 @@ jobs:
         # environment-file: etc/example-environment.yml
         auto-activate-base: true
     - run: |
+        conda install numpy
+        conda install -c intel mkl mkl-devel
+        conda install -c anaconda boost
         conda info
         conda list
     - uses: actions/checkout@v3
