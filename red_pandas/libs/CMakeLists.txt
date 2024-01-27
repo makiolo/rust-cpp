@@ -16,6 +16,7 @@ add_subdirectory(depends/mdspan-stable)
 # add_subdirectory(depends/eigen-3.4.0)
 # add_subdirectory(depends/libinterpolate)
 # add_subdirectory(depends/libintegrate)
+# add_subdirectory(depends/mimalloc-master)
 # non-linear solvers
 
 # Core Layer
@@ -26,15 +27,12 @@ include(libs/portfolio/CMakeLists.txt)
 include(libs/simulator/CMakeLists.txt)
 
 
-# optional GUI (use core for calculate prices, greeks) (use pybind for call Python Scripts User)
-add_subdirectory(depends/implot_demos)
-target_include_directories(stocks PUBLIC depends/pybind11/include)
-
-
 # Excel bridge (use core for direct Access from Excel to C++) (use pybind for call Python Scripts User)
 # add_subdirectory(depends/excelbind/src)
 # install(TARGETS excelbind DESTINATION ${PYTHON_INSTALL})
 # install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/depends/excelbind/examples/excelbind.conf DESTINATION ${PYTHON_INSTALL})
 # target_include_directories(excelbind PUBLIC depends/pybind11/include)
-# configure excelbind using cmake variables
-# configure_file(${SRCDIR}/cmake/flapigen_regen_headers.cmake.in ${BINDIR}/flapigen_regen_headers.cmake @ONLY)
+
+# optional GUI (use core for calculate prices, greeks) (use pybind for call Python Scripts User)
+# add_subdirectory(depends/implot_demos)
+# target_include_directories(stocks PUBLIC depends/pybind11/include)

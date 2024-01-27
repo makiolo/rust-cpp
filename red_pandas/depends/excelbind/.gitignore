@@ -49,3 +49,4 @@ docs/_build
 
 # cmake
 build/
+/src/thirdparty/

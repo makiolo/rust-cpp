@@ -14,3 +14,7 @@ pip install tensorflow==2.10
 pip install ipykernel
 python -m ipykernel install --user
 pip install notebook
+
+# Generate ".h"
+
+- cbindgen --config cbindgen.toml --crate red_pandas --output lib/red_pandas.h

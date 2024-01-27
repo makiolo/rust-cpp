@@ -12,3 +12,26 @@ Cargo.lock
 
 # MSVC Windows builds of rustc generate these, which store debugging information
 *.pdb
+
+red_pandas/libs/core/tests/*.dll
+red_pandas/cmake-build-*-visual-studio/
+**/__pycache__/
+**/*.pyc
+**/.idea
+.vs/
+
+# temporal
+red_pandas/bin/
+red_pandas/depends/excelbind/Binaries/
+red_pandas/depends/excelbind/src/thirdparty/pybind11/
+red_pandas/depends/libtorch/
+red_pandas/depends/mimalloc-master/
+red_pandas/dist/
+red_pandas/out/
+red_pandas/zig-cross-main/
+test_cpp/bin/
+
+/red_pandas/cmake-build-release-visual-studio-64/
+/red_pandas/cmake-build-debug-visual-studio-64/
+/red_pandas/depends/pybind11/
+/cmake-build-debug/

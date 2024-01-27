@@ -122,7 +122,7 @@ include_directories(../implot/)
 # APP FRAMEWORK
 ###############################################################################
 
-add_library(app 
+add_library(app
   common/App.h
   common/App.cpp
   common/Shader.h
@@ -138,8 +138,11 @@ add_library(app
   common/Fonts/RobotoMonoBold.cpp
   common/Fonts/RobotoMonoItalic.cpp
 )
-target_include_directories(app PUBLIC common)
-target_link_libraries(app implot nfd)
+target_include_directories(app PRIVATE
+      3rdparty
+      common
+)
+target_link_libraries(app PRIVATE implot nfd)
 target_compile_features(app PRIVATE cxx_std_17)
 
 ###############################################################################
@@ -151,67 +154,66 @@ add_executable(demo "demos/demo.cpp")
 target_link_libraries(demo app)
 
 # maps demo
-add_executable(maps "demos/maps.cpp")
-target_link_libraries(maps app curl_int)
-target_compile_features(maps PRIVATE cxx_std_17)
+# add_executable(maps "demos/maps.cpp")
+# target_link_libraries(maps app curl_int)
+# target_compile_features(maps PRIVATE cxx_std_17)
 
 # perlin demo
-add_executable(perlin "demos/perlin.cpp")
-target_link_libraries(perlin app)
-target_include_directories(perlin PRIVATE "3rdparty")
+# add_executable(perlin "demos/perlin.cpp")
+# target_link_libraries(perlin app)
+# target_include_directories(perlin PRIVATE "3rdparty")
 
 # mandel demo
-add_executable(mandel "demos/mandel.cpp")
-target_link_libraries(mandel app)
-target_include_directories(mandel PRIVATE "3rdparty")
-if (MSVC)
-  target_compile_options(mandel PRIVATE /arch:AVX2 /fp:fast /openmp)
-endif()
+# add_executable(mandel "demos/mandel.cpp")
+# target_link_libraries(mandel app)
+# target_include_directories(mandel PRIVATE "3rdparty")
+# if (MSVC)
+#   target_compile_options(mandel PRIVATE /arch:AVX2 /fp:fast /openmp)
+# endif()
 
 # graph demo
-add_executable(graph "demos/graph.cpp")
-target_link_libraries(graph app)
-target_include_directories(graph PRIVATE "3rdparty")
-if (MSVC)
-  set_target_properties(graph PROPERTIES COMPILE_FLAGS "/bigobj")
-endif()
+# add_executable(graph "demos/graph.cpp")
+# target_link_libraries(graph app)
+# target_include_directories(graph PRIVATE "3rdparty")
+# if (MSVC)
+#   set_target_properties(graph PROPERTIES COMPILE_FLAGS "/bigobj")
+# endif()
 
 # filter demo
-add_executable(filter "demos/filter.cpp" ${KISS_SRC})
-target_link_libraries(filter app iir::iir_static)
-target_compile_features(filter PRIVATE cxx_std_17)
-target_compile_definitions(filter PRIVATE kiss_fft_scalar=double NOMINMAX)
+# add_executable(filter "demos/filter.cpp" ${KISS_SRC})
+# target_link_libraries(filter app iir::iir_static)
+# target_compile_features(filter PRIVATE cxx_std_17)
+# target_compile_definitions(filter PRIVATE kiss_fft_scalar=double NOMINMAX)
 
 # spectrogram demo
-add_executable(spectrogram "demos/spectrogram.cpp" ${KISS_SRC})              
-target_link_libraries(spectrogram app)        
-target_compile_features(spectrogram PRIVATE cxx_std_17)
-add_custom_command(TARGET spectrogram POST_BUILD  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/resources/audio/aphex_twin_formula.wav $<TARGET_FILE_DIR:spectrogram>)
+# add_executable(spectrogram "demos/spectrogram.cpp" ${KISS_SRC})
+# target_link_libraries(spectrogram app)
+# target_compile_features(spectrogram PRIVATE cxx_std_17)
+# add_custom_command(TARGET spectrogram POST_BUILD  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/resources/audio/aphex_twin_formula.wav $<TARGET_FILE_DIR:spectrogram>)
 
 # stocks demo
-add_executable(stocks "demos/stocks.cpp" )
-target_link_libraries(stocks app fmt::fmt curl_int red_pandas_static)
-target_compile_features(stocks PRIVATE cxx_std_17)
+# add_executable(stocks "demos/stocks.cpp" )
+# target_link_libraries(stocks app fmt::fmt curl_int)
+# target_compile_features(stocks PRIVATE cxx_std_17)
 
 # voice demo
-add_executable(voice "demos/voice.cpp" ${KISS_SRC})              
-target_link_libraries(voice app)        
-target_compile_features(voice PRIVATE cxx_std_17)
+# add_executable(voice "demos/voice.cpp" ${KISS_SRC})
+# target_link_libraries(voice app)
+# target_compile_features(voice PRIVATE cxx_std_17)
 
 ###############################################################################
 # TEST APPS
 ###############################################################################
 
-add_executable(benchmark "tests/benchmark.cpp")
-target_link_libraries(benchmark app)
-target_compile_features(benchmark PRIVATE cxx_std_17)
-add_custom_command(TARGET spectrogram POST_BUILD 
-                   COMMAND ${CMAKE_COMMAND} -E copy_directory 
-                   ${CMAKE_CURRENT_SOURCE_DIR}/resources/shaders/
-                   $<TARGET_FILE_DIR:spectrogram>/shaders/)
-
-if (MSVC)
-  target_compile_options(benchmark PRIVATE /arch:AVX2 /fp:fast)
-else()
-  target_compile_options(benchmark PRIVATE -lstdc++fs -mavx2 -Ofast)
-endif()      
+# add_executable(benchmark "tests/benchmark.cpp")
+# target_link_libraries(benchmark app)
+# target_compile_features(benchmark PRIVATE cxx_std_17)
+# add_custom_command(TARGET spectrogram POST_BUILD
+#                    COMMAND ${CMAKE_COMMAND} -E copy_directory
+#                    ${CMAKE_CURRENT_SOURCE_DIR}/resources/shaders/
+#                    $<TARGET_FILE_DIR:spectrogram>/shaders/)
+#
+# if (MSVC)
+#   target_compile_options(benchmark PRIVATE /arch:AVX2 /fp:fast)
+# else()
+#   target_compile_options(benc
