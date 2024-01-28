@@ -35,3 +35,5 @@ test_cpp/bin/
 /red_pandas/cmake-build-debug-visual-studio-64/
 /red_pandas/depends/pybind11/
 /cmake-build-debug/
+red_pandas/cmake-build-debug
+red_pandas/cmake-build-release

@@ -110,11 +110,9 @@ namespace rp {
     // group_by_transpose
 
     // slicing multi dimensional ?
+
     void use_callback(void (*f)(int i, const char* str));
 
-
-
-//    void example_unique(borrowed_ptr< std::unique_ptr<Serie> > borrowed);
 }
 
 extern "C" {

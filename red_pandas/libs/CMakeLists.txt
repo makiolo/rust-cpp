@@ -9,7 +9,6 @@ set(ENTITYX_DT_TYPE std::shared_ptr<Serie> CACHE STRING "The type used for delta
 set(ENTITYX_BUILD_SHARED false CACHE BOOL "Build shared libraries?")
 set(ENTITYX_BUILD_TESTING false CACHE BOOL "Enable building of tests.")
 add_subdirectory(depends/entityx-12-2-2023)
-
 add_subdirectory(depends/mdspan-stable)
 
 # Add PyTorch or eigen like backend to calculate
