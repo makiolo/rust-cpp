@@ -8,32 +8,35 @@ project(implot_demos VERSION 0.1.0)
 ###############################################################################
 
 # FETCH CONTENT LIBS
-include(FetchContent) 
+# include(FetchContent)
 # set(FETCHCONTENT_FULLY_DISCONNECTED ON)
 
-FetchContent_Declare(fmt GIT_REPOSITORY https://github.com/fmtlib/fmt)
-FetchContent_MakeAvailable(fmt)
+# FetchContent_Declare(fmt GIT_REPOSITORY https://github.com/fmtlib/fmt)
+# FetchContent_MakeAvailable(fmt)
 
-FetchContent_Declare(glfw GIT_REPOSITORY https://github.com/glfw/glfw) 
-FetchContent_MakeAvailable(glfw)
+# FetchContent_Declare(glfw GIT_REPOSITORY https://github.com/glfw/glfw)
+# FetchContent_MakeAvailable(glfw)
 
-FetchContent_Declare(iir GIT_REPOSITORY https://github.com/berndporr/iir1) 
-FetchContent_MakeAvailable(iir)
+# FetchContent_Declare(iir GIT_REPOSITORY https://github.com/berndporr/iir1)
+# FetchContent_MakeAvailable(iir)
 
-if (WIN32)
-  set(CMAKE_USE_SCHANNEL ON)
-endif()
-FetchContent_Declare(curl
-URL                    https://github.com/curl/curl/releases/download/curl-7_75_0/curl-7.75.0.tar.xz
-URL_HASH               SHA256=fe0c49d8468249000bda75bcfdf9e30ff7e9a86d35f1a21f428d79c389d55675 # the file hash for curl-7.75.0.tar.xz
-USES_TERMINAL_DOWNLOAD TRUE) 
-FetchContent_MakeAvailable(curl)
-add_library(curl_int INTERFACE)
-target_link_libraries(curl_int INTERFACE libcurl)
-target_include_directories(curl_int INTERFACE ${curl_SOURCE_DIR}/include ${curl_BINARY_DIR}/include/curl)
-# add_library(CURL::libcurl ALIAS curl_int)
+# if (WIN32)
+#  set(CMAKE_USE_SCHANNEL ON)
+# endif()
 
-# LOCAL LIBS
+# FetchContent_Declare(curl
+# URL                    https://github.com/curl/curl/releases/download/curl-7_75_0/curl-7.75.0.tar.xz
+# URL_HASH               SHA256=fe0c49d8468249000bda75bcfdf9e30ff7e9a86d35f1a21f428d79c389d55675 # the file hash for curl-7.75.0.tar.xz
+# USES_TERMINAL_DOWNLOAD TRUE)
+# FetchContent_MakeAvailable(curl)
+# add_library(curl_int INTERFACE)
+# target_link_libraries(curl_int INTERFACE libcurl)
+# target_include_directories(curl_int INTERFACE ${curl_SOURCE_DIR}/include ${curl_BINARY_DIR}/include/curl)
+
+find_package(fmt CONFIG REQUIRED)
+find_package(CURL REQUIRED)
+find_package(glfw3 CONFIG REQUIRED)
+find_package(OpenGL REQUIRED)
 
 # GLAD
 add_subdirectory(3rdparty/glad)
@@ -78,7 +81,6 @@ set(IMGUI_SRC
     ../imgui/misc/cpp/imgui_stdlib.cpp
 )
 
-find_package(OpenGL REQUIRED)
 
 add_library(imgui ${IMGUI_HEADERS} ${IMGUI_SRC})
 if(MSVC)
@@ -150,8 +152,8 @@ target_compile_features(app PRIVATE cxx_std_17)
 ###############################################################################
 
 # main ImPlot demo
-add_executable(demo "demos/demo.cpp")
-target_link_libraries(demo app)
+# add_executable(demo "demos/demo.cpp")
+# target_link_libraries(demo app)
 
 # maps demo
 # add_executable(maps "demos/maps.cpp")

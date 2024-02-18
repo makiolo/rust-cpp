@@ -217,7 +217,7 @@ void TickerTooltip(const TickerData& data, bool span_subplots = false) {
             ImGui::Text("Close:");  ImGui::SameLine(60); ImGui::Text("$%.2f", data.close[idx]);
             ImGui::Text("High:");   ImGui::SameLine(60); ImGui::Text("$%.2f", data.high[idx]);
             ImGui::Text("Low:");    ImGui::SameLine(60); ImGui::Text("$%.2f", data.low[idx]);
-            ImGui::Text("Volume:"); ImGui::SameLine(60); ImGui::Text(fmt::format(std::locale("en_US.UTF-8"),"{:L}", (int)(data.volume[idx])).c_str());
+            // ImGui::Text("Volume:"); ImGui::SameLine(60); ImGui::Text(fmt::format(std::locale("es_ES.UTF-8"),"{:L}", (int)(data.volume[idx])).c_str());
             ImGui::EndTooltip();
         }
     }
@@ -288,15 +288,14 @@ int VolumeFormatter(double value, char* buff, int size, void*) {
 
 struct ImStocks : App
 {
-
     using App::App;
 
     char t1_str[32];
     char t2_str[32];
     ImPlotTime t1;
     ImPlotTime t2;
+
     int timeline;
-    int frame_counter;
 
     void Start() override {
         t2 = ImPlot::FloorTime(ImPlotTime::FromDouble((double)time(0)),ImPlotTimeUnit_Day);
@@ -308,7 +307,6 @@ struct ImStocks : App
             m_ticker_data[d.ticker] = d;
         ImPlot::GetStyle().FitPadding.y = 0.2f;
         timeline = 8600;
-        frame_counter = 0;
     }
 
     void Update() override
@@ -320,8 +318,17 @@ struct ImStocks : App
         ImGui::SetNextWindowSize(GetWindowSize(), ImGuiCond_Always);
         ImGui::Begin("##ImStocks", nullptr, ImGuiWindowFlags_NoTitleBar|ImGuiWindowFlags_NoResize/*|ImGuiWindowFlags_MenuBar*/);
 
+        // ImGuiIO &io = ImGui::GetIO();
 
-        /*
+        if(ImGui::IsKeyPressed(ImGui::GetKeyIndex(ImGuiKey_RightArrow), false))
+        {
+            timeline += 1;
+        }
+        if(ImGui::IsKeyPressed(ImGui::GetKeyIndex(ImGuiKey_LeftArrow), false))
+        {
+            timeline -= 1;
+        }
+
         static char buff[8] = "AAPL";
         ImGui::SetNextItemWidth(200);
         if (ImGui::InputText("##Ticker",buff,8,ImGuiInputTextFlags_EnterReturnsTrue|ImGuiInputTextFlags_CharsUppercase)) {
@@ -354,9 +361,9 @@ struct ImStocks : App
             else
                 fmt::print("Failed to get data for ticker symbol {}!\n",buff);
         }
-        */
+
         ImGui::SameLine();
-        ImGui::Text("FPS: %.2f", ImGui::GetIO().Framerate);
+        // ImGui::Text("FPS: %.2f", ImGui::GetIO().Framerate);
 
         if (ImGui::BeginTabBar("TickerTabs")) {
             for (auto& pair : m_ticker_data) {
@@ -404,21 +411,16 @@ struct ImStocks : App
         }
 
         ImGui::End();
-
-        if (frame_counter % 120 == 0)
-        {
-            timeline += 1;
-        }
-        frame_counter += 1;
     }
 
     YahooFinanceAPI   m_api;
     std::map<std::string,TickerData> m_ticker_data;
 };
 
-int main(int argc, char const *argv[])
+int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
 {
     // system("python -c \"import yfinance as yf; df = yf.download('AAPL'); df.to_csv('AAPL.csv')\"");
-    ImStocks app("ImStocks",960,540,argc,argv);
+    ImStocks app("ImStocks",960,540,(int)__argc, (char const**)__argv);
     app.Run();
 }
+

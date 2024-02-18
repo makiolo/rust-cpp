@@ -32,6 +32,9 @@ include(libs/simulator/CMakeLists.txt)
 # install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/depends/excelbind/examples/excelbind.conf DESTINATION ${PYTHON_INSTALL})
 # target_include_directories(excelbind PUBLIC depends/pybind11/include)
 
+
 # optional GUI (use core for calculate prices, greeks) (use pybind for call Python Scripts User)
+include(libs/gui/CMakeLists.txt)
 # add_subdirectory(depends/implot_demos)
 # target_include_directories(stocks PUBLIC depends/pybind11/include)
+

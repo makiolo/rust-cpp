@@ -1889,8 +1889,56 @@ def PutImpliedvolatility(S, K, r, q, T, Vol_guess, market_price):
 def GreeksVolga(S, K, r, q, T, Vol, d_uno, d_dos):
     return _red_pandas.GreeksVolga(S, K, r, q, T, Vol, d_uno, d_dos)
 
+def Vanna(S, K, r, q, T, Vol, d_uno, d_dos):
+    return _red_pandas.Vanna(S, K, r, q, T, Vol, d_uno, d_dos)
+
 def parkinson(period, high, low):
     return _red_pandas.parkinson(period, high, low)
+class packed(object):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+    close = property(_red_pandas.packed_close_get, _red_pandas.packed_close_set)
+    open = property(_red_pandas.packed_open_get, _red_pandas.packed_open_set)
+    high = property(_red_pandas.packed_high_get, _red_pandas.packed_high_set)
+    low = property(_red_pandas.packed_low_get, _red_pandas.packed_low_set)
+    volume = property(_red_pandas.packed_volume_get, _red_pandas.packed_volume_set)
+
+    def __init__(self):
+        _red_pandas.packed_swiginit(self, _red_pandas.new_packed())
+    __swig_destroy__ = _red_pandas.delete_packed
+
+# Register packed in _red_pandas:
+_red_pandas.packed_swigregister(packed)
+class packed_soa(object):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+    close = property(_red_pandas.packed_soa_close_get, _red_pandas.packed_soa_close_set)
+    open = property(_red_pandas.packed_soa_open_get, _red_pandas.packed_soa_open_set)
+    high = property(_red_pandas.packed_soa_high_get, _red_pandas.packed_soa_high_set)
+    low = property(_red_pandas.packed_soa_low_get, _red_pandas.packed_soa_low_set)
+    volume = property(_red_pandas.packed_soa_volume_get, _red_pandas.packed_soa_volume_set)
+
+    def __init__(self):
+        _red_pandas.packed_soa_swiginit(self, _red_pandas.new_packed_soa())
+    __swig_destroy__ = _red_pandas.delete_packed_soa
+
+# Register packed_soa in _red_pandas:
+_red_pandas.packed_soa_swigregister(packed_soa)
+class packed_helper(object):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+    prices = property(_red_pandas.packed_helper_prices_get, _red_pandas.packed_helper_prices_set)
+    prices_soa = property(_red_pandas.packed_helper_prices_soa_get, _red_pandas.packed_helper_prices_soa_set)
+
+    def transpose_close(self):
+        return _red_pandas.packed_helper_transpose_close(self)
+
+    def __init__(self):
+        _red_pandas.packed_helper_swiginit(self, _red_pandas.new_packed_helper())
+    __swig_destroy__ = _red_pandas.delete_packed_helper
+
+# Register packed_helper in _red_pandas:
+_red_pandas.packed_helper_swigregister(packed_helper)
 LINEAR = _red_pandas.LINEAR
 YIELD = _red_pandas.YIELD
 EXPONENTIAL = _red_pandas.EXPONENTIAL

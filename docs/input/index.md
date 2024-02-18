@@ -12,7 +12,6 @@ aaaaaa
 print("asda")
 ```
 
-
 ## Download Mercury
 - [Download Mercury](https://github.alm.europe.cloudcenter.corp/pages/cib-mercury-quants/meta-mercury/mercury/)
 - [Download Mercury (admin mode)](https://github.alm.europe.cloudcenter.corp/pages/cib-mercury-quants/meta-mercury/mercury/?token=mercury)

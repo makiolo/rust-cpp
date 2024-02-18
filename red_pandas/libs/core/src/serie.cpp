@@ -8,6 +8,7 @@
 #include "abs.h"
 #include "operators/less.h"
 #include "formulas/greeks.h"
+#include <zmq.hpp>
 // torch
 // #include <torch/torch.h>
 // #include <ATen/Context.h>
@@ -17,6 +18,11 @@ struct talib_data
 {
     talib_data()
     {
+        zmq::context_t ctx;
+        zmq::socket_t sock(ctx, zmq::socket_type::push);
+        sock.bind("inproc://test");
+        sock.send(zmq::str_buffer("Hello, world"), zmq::send_flags::dontwait);
+
         TA_RetCode rc = TA_Initialize();
         if (rc != TA_SUCCESS)
             throw std::runtime_error("Error initializing TA Lib.");

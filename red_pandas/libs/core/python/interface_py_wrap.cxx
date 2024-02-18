@@ -3002,93 +3002,96 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 #define SWIGTYPE_p_mapped_type swig_types[14]
 #define SWIGTYPE_p_nc__NdArrayT_double_t swig_types[15]
 #define SWIGTYPE_p_p_PyObject swig_types[16]
-#define SWIGTYPE_p_pf__BlockChain swig_types[17]
-#define SWIGTYPE_p_pf__ClosedDeal swig_types[18]
-#define SWIGTYPE_p_pf__Deal swig_types[19]
-#define SWIGTYPE_p_pf__FakeTrader swig_types[20]
-#define SWIGTYPE_p_pf__OpenDeal swig_types[21]
-#define SWIGTYPE_p_pf__SymbolInfoTick swig_types[22]
-#define SWIGTYPE_p_pf__Transaction swig_types[23]
-#define SWIGTYPE_p_pf__TxFrom swig_types[24]
-#define SWIGTYPE_p_pf__TxTo swig_types[25]
-#define SWIGTYPE_p_pf__amount_info swig_types[26]
-#define SWIGTYPE_p_pf__tuple_hash swig_types[27]
-#define SWIGTYPE_p_qs__CashFlow swig_types[28]
-#define SWIGTYPE_p_qs__CouponCashFlow swig_types[29]
-#define SWIGTYPE_p_qs__CustomCashFlow swig_types[30]
-#define SWIGTYPE_p_qs__DiscountFactor swig_types[31]
-#define SWIGTYPE_p_qs__EndCashFlow swig_types[32]
-#define SWIGTYPE_p_qs__ForwardPeriod swig_types[33]
-#define SWIGTYPE_p_qs__InterestRate swig_types[34]
-#define SWIGTYPE_p_qs__Leg swig_types[35]
-#define SWIGTYPE_p_qs__Maturity swig_types[36]
-#define SWIGTYPE_p_qs__Product swig_types[37]
-#define SWIGTYPE_p_qs__Schedule swig_types[38]
-#define SWIGTYPE_p_qs__StartCashFlow swig_types[39]
-#define SWIGTYPE_p_qs__TermStructure swig_types[40]
-#define SWIGTYPE_p_qs__ZeroPeriod swig_types[41]
-#define SWIGTYPE_p_results_type swig_types[42]
-#define SWIGTYPE_p_rp__CalculationT_Serie_t swig_types[43]
-#define SWIGTYPE_p_rp__CalculationT_Serie_t__result_type swig_types[44]
-#define SWIGTYPE_p_rp__Serie2d swig_types[45]
-#define SWIGTYPE_p_sim__Simulator swig_types[46]
-#define SWIGTYPE_p_size_t swig_types[47]
-#define SWIGTYPE_p_size_type swig_types[48]
-#define SWIGTYPE_p_std__allocatorT_NoneType_t swig_types[49]
-#define SWIGTYPE_p_std__allocatorT_double_t swig_types[50]
-#define SWIGTYPE_p_std__allocatorT_long_t swig_types[51]
-#define SWIGTYPE_p_std__allocatorT_pf__TxFrom_t swig_types[52]
-#define SWIGTYPE_p_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t swig_types[53]
-#define SWIGTYPE_p_std__allocatorT_std__pairT_std__string_const_Serie_t_t swig_types[54]
-#define SWIGTYPE_p_std__allocatorT_std__pairT_std__string_const_double_t_t swig_types[55]
-#define SWIGTYPE_p_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t swig_types[56]
-#define SWIGTYPE_p_std__allocatorT_std__shared_ptrT_Serie_t_t swig_types[57]
-#define SWIGTYPE_p_std__allocatorT_std__string_t swig_types[58]
-#define SWIGTYPE_p_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_t swig_types[59]
-#define SWIGTYPE_p_std__allocatorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_t swig_types[60]
-#define SWIGTYPE_p_std__functionT_std__shared_ptrT_Serie_t_frp__column_ptr_const_RF_t swig_types[61]
-#define SWIGTYPE_p_std__functionT_std__shared_ptrT_Serie_t_frp__column_ptr_const_R_rp__column_ptr_const_RF_t swig_types[62]
-#define SWIGTYPE_p_std__functionT_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_fstd__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_const_R_intF_t swig_types[63]
-#define SWIGTYPE_p_std__initializer_listT_double_t swig_types[64]
-#define SWIGTYPE_p_std__invalid_argument swig_types[65]
-#define SWIGTYPE_p_std__ostream swig_types[66]
-#define SWIGTYPE_p_std__shared_ptrT_CalculationT_Serie_t_t swig_types[67]
-#define SWIGTYPE_p_std__shared_ptrT_Serie_t swig_types[68]
-#define SWIGTYPE_p_std__shared_ptrT_qs__CustomCashFlow_const_t swig_types[69]
-#define SWIGTYPE_p_std__shared_ptrT_rp__CalculationT_Serie_t_t swig_types[70]
-#define SWIGTYPE_p_std__tupleT_long_long_t swig_types[71]
-#define SWIGTYPE_p_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t swig_types[72]
-#define SWIGTYPE_p_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t swig_types[73]
-#define SWIGTYPE_p_std__unordered_mapT_std__string_double_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_double_t_t_t swig_types[74]
-#define SWIGTYPE_p_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t swig_types[75]
-#define SWIGTYPE_p_std__unordered_mapT_std__tupleT_long_long_t_std__tupleT_pf__Transaction_pf__TxTo_t_pf__tuple_hash_std__equal_toT_std__tupleT_long_long_t_t_std__allocatorT_std__pairT_std__tupleT_long_long_t_const_std__tupleT_pf__Transaction_pf__TxTo_t_t_t_t swig_types[76]
-#define SWIGTYPE_p_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t swig_types[77]
-#define SWIGTYPE_p_std__vectorT_NoneType_std__allocatorT_NoneType_t_t swig_types[78]
-#define SWIGTYPE_p_std__vectorT_double_std__allocatorT_double_t_t swig_types[79]
-#define SWIGTYPE_p_std__vectorT_long_std__allocatorT_long_t_t swig_types[80]
-#define SWIGTYPE_p_std__vectorT_pf__Transaction_std__allocatorT_pf__Transaction_t_t swig_types[81]
-#define SWIGTYPE_p_std__vectorT_pf__TxFrom_std__allocatorT_pf__TxFrom_t_t swig_types[82]
-#define SWIGTYPE_p_std__vectorT_pf__TxTo_std__allocatorT_pf__TxTo_t_t swig_types[83]
-#define SWIGTYPE_p_std__vectorT_pf__amount_info_std__allocatorT_pf__amount_info_t_t swig_types[84]
-#define SWIGTYPE_p_std__vectorT_qs__DiscountFactor_std__allocatorT_qs__DiscountFactor_t_t swig_types[85]
-#define SWIGTYPE_p_std__vectorT_qs__ForwardPeriod_std__allocatorT_qs__ForwardPeriod_t_t swig_types[86]
-#define SWIGTYPE_p_std__vectorT_qs__InterestRate_std__allocatorT_qs__InterestRate_t_t swig_types[87]
-#define SWIGTYPE_p_std__vectorT_qs__Leg_std__allocatorT_qs__Leg_t_t swig_types[88]
-#define SWIGTYPE_p_std__vectorT_qs__Maturity_std__allocatorT_qs__Maturity_t_t swig_types[89]
-#define SWIGTYPE_p_std__vectorT_qs__ZeroPeriod_std__allocatorT_qs__ZeroPeriod_t_t swig_types[90]
-#define SWIGTYPE_p_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t swig_types[91]
-#define SWIGTYPE_p_std__vectorT_std__shared_ptrT_qs__CustomCashFlow_const_t_std__allocatorT_std__shared_ptrT_qs__CustomCashFlow_const_t_t_t swig_types[92]
-#define SWIGTYPE_p_std__vectorT_std__string_std__allocatorT_std__string_t_t swig_types[93]
-#define SWIGTYPE_p_std__vectorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_std__allocatorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_t_t swig_types[94]
-#define SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_t_t swig_types[95]
-#define SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_std__allocatorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_t_t swig_types[96]
-#define SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_t_t swig_types[97]
-#define SWIGTYPE_p_std__vectorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_t_t swig_types[98]
-#define SWIGTYPE_p_swig__SwigPyIterator swig_types[99]
-#define SWIGTYPE_p_value_type swig_types[100]
-#define SWIGTYPE_p_wchar_t swig_types[101]
-static swig_type_info *swig_types[103];
-static swig_module_info swig_module = {swig_types, 102, 0, 0, 0, 0};
+#define SWIGTYPE_p_packed swig_types[17]
+#define SWIGTYPE_p_packed_helper swig_types[18]
+#define SWIGTYPE_p_packed_soa swig_types[19]
+#define SWIGTYPE_p_pf__BlockChain swig_types[20]
+#define SWIGTYPE_p_pf__ClosedDeal swig_types[21]
+#define SWIGTYPE_p_pf__Deal swig_types[22]
+#define SWIGTYPE_p_pf__FakeTrader swig_types[23]
+#define SWIGTYPE_p_pf__OpenDeal swig_types[24]
+#define SWIGTYPE_p_pf__SymbolInfoTick swig_types[25]
+#define SWIGTYPE_p_pf__Transaction swig_types[26]
+#define SWIGTYPE_p_pf__TxFrom swig_types[27]
+#define SWIGTYPE_p_pf__TxTo swig_types[28]
+#define SWIGTYPE_p_pf__amount_info swig_types[29]
+#define SWIGTYPE_p_pf__tuple_hash swig_types[30]
+#define SWIGTYPE_p_qs__CashFlow swig_types[31]
+#define SWIGTYPE_p_qs__CouponCashFlow swig_types[32]
+#define SWIGTYPE_p_qs__CustomCashFlow swig_types[33]
+#define SWIGTYPE_p_qs__DiscountFactor swig_types[34]
+#define SWIGTYPE_p_qs__EndCashFlow swig_types[35]
+#define SWIGTYPE_p_qs__ForwardPeriod swig_types[36]
+#define SWIGTYPE_p_qs__InterestRate swig_types[37]
+#define SWIGTYPE_p_qs__Leg swig_types[38]
+#define SWIGTYPE_p_qs__Maturity swig_types[39]
+#define SWIGTYPE_p_qs__Product swig_types[40]
+#define SWIGTYPE_p_qs__Schedule swig_types[41]
+#define SWIGTYPE_p_qs__StartCashFlow swig_types[42]
+#define SWIGTYPE_p_qs__TermStructure swig_types[43]
+#define SWIGTYPE_p_qs__ZeroPeriod swig_types[44]
+#define SWIGTYPE_p_results_type swig_types[45]
+#define SWIGTYPE_p_rp__CalculationT_Serie_t swig_types[46]
+#define SWIGTYPE_p_rp__CalculationT_Serie_t__result_type swig_types[47]
+#define SWIGTYPE_p_rp__Serie2d swig_types[48]
+#define SWIGTYPE_p_sim__Simulator swig_types[49]
+#define SWIGTYPE_p_size_t swig_types[50]
+#define SWIGTYPE_p_size_type swig_types[51]
+#define SWIGTYPE_p_std__allocatorT_NoneType_t swig_types[52]
+#define SWIGTYPE_p_std__allocatorT_double_t swig_types[53]
+#define SWIGTYPE_p_std__allocatorT_long_t swig_types[54]
+#define SWIGTYPE_p_std__allocatorT_pf__TxFrom_t swig_types[55]
+#define SWIGTYPE_p_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t swig_types[56]
+#define SWIGTYPE_p_std__allocatorT_std__pairT_std__string_const_Serie_t_t swig_types[57]
+#define SWIGTYPE_p_std__allocatorT_std__pairT_std__string_const_double_t_t swig_types[58]
+#define SWIGTYPE_p_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t swig_types[59]
+#define SWIGTYPE_p_std__allocatorT_std__shared_ptrT_Serie_t_t swig_types[60]
+#define SWIGTYPE_p_std__allocatorT_std__string_t swig_types[61]
+#define SWIGTYPE_p_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_t swig_types[62]
+#define SWIGTYPE_p_std__allocatorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_t swig_types[63]
+#define SWIGTYPE_p_std__functionT_std__shared_ptrT_Serie_t_frp__column_ptr_const_RF_t swig_types[64]
+#define SWIGTYPE_p_std__functionT_std__shared_ptrT_Serie_t_frp__column_ptr_const_R_rp__column_ptr_const_RF_t swig_types[65]
+#define SWIGTYPE_p_std__functionT_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_fstd__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_const_R_intF_t swig_types[66]
+#define SWIGTYPE_p_std__initializer_listT_double_t swig_types[67]
+#define SWIGTYPE_p_std__invalid_argument swig_types[68]
+#define SWIGTYPE_p_std__ostream swig_types[69]
+#define SWIGTYPE_p_std__shared_ptrT_CalculationT_Serie_t_t swig_types[70]
+#define SWIGTYPE_p_std__shared_ptrT_Serie_t swig_types[71]
+#define SWIGTYPE_p_std__shared_ptrT_qs__CustomCashFlow_const_t swig_types[72]
+#define SWIGTYPE_p_std__shared_ptrT_rp__CalculationT_Serie_t_t swig_types[73]
+#define SWIGTYPE_p_std__tupleT_long_long_t swig_types[74]
+#define SWIGTYPE_p_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t swig_types[75]
+#define SWIGTYPE_p_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t swig_types[76]
+#define SWIGTYPE_p_std__unordered_mapT_std__string_double_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_double_t_t_t swig_types[77]
+#define SWIGTYPE_p_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t swig_types[78]
+#define SWIGTYPE_p_std__unordered_mapT_std__tupleT_long_long_t_std__tupleT_pf__Transaction_pf__TxTo_t_pf__tuple_hash_std__equal_toT_std__tupleT_long_long_t_t_std__allocatorT_std__pairT_std__tupleT_long_long_t_const_std__tupleT_pf__Transaction_pf__TxTo_t_t_t_t swig_types[79]
+#define SWIGTYPE_p_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t swig_types[80]
+#define SWIGTYPE_p_std__vectorT_NoneType_std__allocatorT_NoneType_t_t swig_types[81]
+#define SWIGTYPE_p_std__vectorT_double_std__allocatorT_double_t_t swig_types[82]
+#define SWIGTYPE_p_std__vectorT_long_std__allocatorT_long_t_t swig_types[83]
+#define SWIGTYPE_p_std__vectorT_pf__Transaction_std__allocatorT_pf__Transaction_t_t swig_types[84]
+#define SWIGTYPE_p_std__vectorT_pf__TxFrom_std__allocatorT_pf__TxFrom_t_t swig_types[85]
+#define SWIGTYPE_p_std__vectorT_pf__TxTo_std__allocatorT_pf__TxTo_t_t swig_types[86]
+#define SWIGTYPE_p_std__vectorT_pf__amount_info_std__allocatorT_pf__amount_info_t_t swig_types[87]
+#define SWIGTYPE_p_std__vectorT_qs__DiscountFactor_std__allocatorT_qs__DiscountFactor_t_t swig_types[88]
+#define SWIGTYPE_p_std__vectorT_qs__ForwardPeriod_std__allocatorT_qs__ForwardPeriod_t_t swig_types[89]
+#define SWIGTYPE_p_std__vectorT_qs__InterestRate_std__allocatorT_qs__InterestRate_t_t swig_types[90]
+#define SWIGTYPE_p_std__vectorT_qs__Leg_std__allocatorT_qs__Leg_t_t swig_types[91]
+#define SWIGTYPE_p_std__vectorT_qs__Maturity_std__allocatorT_qs__Maturity_t_t swig_types[92]
+#define SWIGTYPE_p_std__vectorT_qs__ZeroPeriod_std__allocatorT_qs__ZeroPeriod_t_t swig_types[93]
+#define SWIGTYPE_p_std__vectorT_std__shared_ptrT_Serie_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t swig_types[94]
+#define SWIGTYPE_p_std__vectorT_std__shared_ptrT_qs__CustomCashFlow_const_t_std__allocatorT_std__shared_ptrT_qs__CustomCashFlow_const_t_t_t swig_types[95]
+#define SWIGTYPE_p_std__vectorT_std__string_std__allocatorT_std__string_t_t swig_types[96]
+#define SWIGTYPE_p_std__vectorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_std__allocatorT_std__tupleT_pf__Transaction_pf__TxTo_size_t_t_t_t swig_types[97]
+#define SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__shared_ptrT_Serie_t_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__pairT_std__shared_ptrT_Serie_t_const_std__shared_ptrT_Serie_t_t_t_t_t_t swig_types[98]
+#define SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_std__allocatorT_std__unordered_mapT_std__string_Serie_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_Serie_t_t_t_t_t swig_types[99]
+#define SWIGTYPE_p_std__vectorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_std__allocatorT_std__unordered_mapT_std__string_std__shared_ptrT_Serie_t_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__shared_ptrT_Serie_t_t_t_t_t_t swig_types[100]
+#define SWIGTYPE_p_std__vectorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_std__allocatorT_std__unordered_setT_std__shared_ptrT_Serie_t_std__hashT_std__shared_ptrT_Serie_t_t_std__equal_toT_std__shared_ptrT_Serie_t_t_std__allocatorT_std__shared_ptrT_Serie_t_t_t_t_t swig_types[101]
+#define SWIGTYPE_p_swig__SwigPyIterator swig_types[102]
+#define SWIGTYPE_p_value_type swig_types[103]
+#define SWIGTYPE_p_wchar_t swig_types[104]
+static swig_type_info *swig_types[106];
+static swig_module_info swig_module = {swig_types, 105, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -45869,6 +45872,179 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Vanna(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  rp::column_ptr *arg1 = 0 ;
+  rp::column_ptr *arg2 = 0 ;
+  rp::column_ptr *arg3 = 0 ;
+  rp::column_ptr *arg4 = 0 ;
+  rp::column_ptr *arg5 = 0 ;
+  rp::column_ptr *arg6 = 0 ;
+  rp::column_ptr *arg7 = 0 ;
+  rp::column_ptr *arg8 = 0 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  rp::column_ptr tempshared1 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  rp::column_ptr tempshared2 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  rp::column_ptr tempshared3 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  rp::column_ptr tempshared4 ;
+  void *argp5 ;
+  int res5 = 0 ;
+  rp::column_ptr tempshared5 ;
+  void *argp6 ;
+  int res6 = 0 ;
+  rp::column_ptr tempshared6 ;
+  void *argp7 ;
+  int res7 = 0 ;
+  rp::column_ptr tempshared7 ;
+  void *argp8 ;
+  int res8 = 0 ;
+  rp::column_ptr tempshared8 ;
+  PyObject *swig_obj[8] ;
+  rp::column_ptr result;
+  
+  if (!SWIG_Python_UnpackTuple(args, "Vanna", 8, 8, swig_obj)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_std__shared_ptrT_Serie_t,  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Vanna" "', argument " "1"" of type '" "rp::column_ptr const &""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp1) tempshared1 = *reinterpret_cast< rp::column_ptr * >(argp1);
+      delete reinterpret_cast< rp::column_ptr * >(argp1);
+      arg1 = &tempshared1;
+    } else {
+      arg1 = (argp1) ? reinterpret_cast< rp::column_ptr * >(argp1) : &tempshared1;
+    }
+  }
+  {
+    int newmem = 0;
+    res2 = SWIG_ConvertPtrAndOwn(swig_obj[1], &argp2, SWIGTYPE_p_std__shared_ptrT_Serie_t,  0 , &newmem);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Vanna" "', argument " "2"" of type '" "rp::column_ptr const &""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp2) tempshared2 = *reinterpret_cast< rp::column_ptr * >(argp2);
+      delete reinterpret_cast< rp::column_ptr * >(argp2);
+      arg2 = &tempshared2;
+    } else {
+      arg2 = (argp2) ? reinterpret_cast< rp::column_ptr * >(argp2) : &tempshared2;
+    }
+  }
+  {
+    int newmem = 0;
+    res3 = SWIG_ConvertPtrAndOwn(swig_obj[2], &argp3, SWIGTYPE_p_std__shared_ptrT_Serie_t,  0 , &newmem);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "Vanna" "', argument " "3"" of type '" "rp::column_ptr const &""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp3) tempshared3 = *reinterpret_cast< rp::column_ptr * >(argp3);
+      delete reinterpret_cast< rp::column_ptr * >(argp3);
+      arg3 = &tempshared3;
+    } else {
+      arg3 = (argp3) ? reinterpret_cast< rp::column_ptr * >(argp3) : &tempshared3;
+    }
+  }
+  {
+    int newmem = 0;
+    res4 = SWIG_ConvertPtrAndOwn(swig_obj[3], &argp4, SWIGTYPE_p_std__shared_ptrT_Serie_t,  0 , &newmem);
+    if (!SWIG_IsOK(res4)) {
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "Vanna" "', argument " "4"" of type '" "rp::column_ptr const &""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp4) tempshared4 = *reinterpret_cast< rp::column_ptr * >(argp4);
+      delete reinterpret_cast< rp::column_ptr * >(argp4);
+      arg4 = &tempshared4;
+    } else {
+      arg4 = (argp4) ? reinterpret_cast< rp::column_ptr * >(argp4) : &tempshared4;
+    }
+  }
+  {
+    int newmem = 0;
+    res5 = SWIG_ConvertPtrAndOwn(swig_obj[4], &argp5, SWIGTYPE_p_std__shared_ptrT_Serie_t,  0 , &newmem);
+    if (!SWIG_IsOK(res5)) {
+      SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "Vanna" "', argument " "5"" of type '" "rp::column_ptr const &""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp5) tempshared5 = *reinterpret_cast< rp::column_ptr * >(argp5);
+      delete reinterpret_cast< rp::column_ptr * >(argp5);
+      arg5 = &tempshared5;
+    } else {
+      arg5 = (argp5) ? reinterpret_cast< rp::column_ptr * >(argp5) : &tempshared5;
+    }
+  }
+  {
+    int newmem = 0;
+    res6 = SWIG_ConvertPtrAndOwn(swig_obj[5], &argp6, SWIGTYPE_p_std__shared_ptrT_Serie_t,  0 , &newmem);
+    if (!SWIG_IsOK(res6)) {
+      SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "Vanna" "', argument " "6"" of type '" "rp::column_ptr const &""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp6) tempshared6 = *reinterpret_cast< rp::column_ptr * >(argp6);
+      delete reinterpret_cast< rp::column_ptr * >(argp6);
+      arg6 = &tempshared6;
+    } else {
+      arg6 = (argp6) ? reinterpret_cast< rp::column_ptr * >(argp6) : &tempshared6;
+    }
+  }
+  {
+    int newmem = 0;
+    res7 = SWIG_ConvertPtrAndOwn(swig_obj[6], &argp7, SWIGTYPE_p_std__shared_ptrT_Serie_t,  0 , &newmem);
+    if (!SWIG_IsOK(res7)) {
+      SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "Vanna" "', argument " "7"" of type '" "rp::column_ptr const &""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp7) tempshared7 = *reinterpret_cast< rp::column_ptr * >(argp7);
+      delete reinterpret_cast< rp::column_ptr * >(argp7);
+      arg7 = &tempshared7;
+    } else {
+      arg7 = (argp7) ? reinterpret_cast< rp::column_ptr * >(argp7) : &tempshared7;
+    }
+  }
+  {
+    int newmem = 0;
+    res8 = SWIG_ConvertPtrAndOwn(swig_obj[7], &argp8, SWIGTYPE_p_std__shared_ptrT_Serie_t,  0 , &newmem);
+    if (!SWIG_IsOK(res8)) {
+      SWIG_exception_fail(SWIG_ArgError(res8), "in method '" "Vanna" "', argument " "8"" of type '" "rp::column_ptr const &""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp8) tempshared8 = *reinterpret_cast< rp::column_ptr * >(argp8);
+      delete reinterpret_cast< rp::column_ptr * >(argp8);
+      arg8 = &tempshared8;
+    } else {
+      arg8 = (argp8) ? reinterpret_cast< rp::column_ptr * >(argp8) : &tempshared8;
+    }
+  }
+  {
+    try {
+      result = rp::Vanna((std::shared_ptr< Serie > const &)*arg1,(std::shared_ptr< Serie > const &)*arg2,(std::shared_ptr< Serie > const &)*arg3,(std::shared_ptr< Serie > const &)*arg4,(std::shared_ptr< Serie > const &)*arg5,(std::shared_ptr< Serie > const &)*arg6,(std::shared_ptr< Serie > const &)*arg7,(std::shared_ptr< Serie > const &)*arg8);
+    } catch (std::bad_variant_access& e) {
+      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
+    } catch (std::out_of_range& e) {
+      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
+    } catch (const std::overflow_error& e) {
+      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  {
+    std::shared_ptr<  Serie > *smartresult = result ? new std::shared_ptr<  Serie >(result) : 0;
+    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_std__shared_ptrT_Serie_t, SWIG_POINTER_OWN);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_parkinson(PyObject *self, PyObject *args) {
   PyObject *resultobj = 0;
   int arg1 ;
@@ -45941,6 +46117,917 @@ fail:
   return NULL;
 }
 
+
+SWIGINTERN PyObject *_wrap_packed_close_set(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed *arg1 = (packed *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "packed_close_set", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_close_set" "', argument " "1"" of type '" "packed *""'"); 
+  }
+  arg1 = reinterpret_cast< packed * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "packed_close_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->close = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_close_get(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed *arg1 = (packed *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  double result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_close_get" "', argument " "1"" of type '" "packed *""'"); 
+  }
+  arg1 = reinterpret_cast< packed * >(argp1);
+  result = (double) ((arg1)->close);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_open_set(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed *arg1 = (packed *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "packed_open_set", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_open_set" "', argument " "1"" of type '" "packed *""'"); 
+  }
+  arg1 = reinterpret_cast< packed * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "packed_open_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->open = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_open_get(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed *arg1 = (packed *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  double result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_open_get" "', argument " "1"" of type '" "packed *""'"); 
+  }
+  arg1 = reinterpret_cast< packed * >(argp1);
+  result = (double) ((arg1)->open);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_high_set(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed *arg1 = (packed *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "packed_high_set", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_high_set" "', argument " "1"" of type '" "packed *""'"); 
+  }
+  arg1 = reinterpret_cast< packed * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "packed_high_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->high = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_high_get(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed *arg1 = (packed *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  double result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_high_get" "', argument " "1"" of type '" "packed *""'"); 
+  }
+  arg1 = reinterpret_cast< packed * >(argp1);
+  result = (double) ((arg1)->high);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_low_set(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed *arg1 = (packed *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "packed_low_set", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_low_set" "', argument " "1"" of type '" "packed *""'"); 
+  }
+  arg1 = reinterpret_cast< packed * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "packed_low_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->low = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_low_get(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed *arg1 = (packed *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  double result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_low_get" "', argument " "1"" of type '" "packed *""'"); 
+  }
+  arg1 = reinterpret_cast< packed * >(argp1);
+  result = (double) ((arg1)->low);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_volume_set(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed *arg1 = (packed *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "packed_volume_set", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_volume_set" "', argument " "1"" of type '" "packed *""'"); 
+  }
+  arg1 = reinterpret_cast< packed * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "packed_volume_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->volume = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_volume_get(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed *arg1 = (packed *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  double result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_volume_get" "', argument " "1"" of type '" "packed *""'"); 
+  }
+  arg1 = reinterpret_cast< packed * >(argp1);
+  result = (double) ((arg1)->volume);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_packed(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed *result = 0 ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "new_packed", 0, 0, 0)) SWIG_fail;
+  {
+    try {
+      result = (packed *)new packed();
+    } catch (std::bad_variant_access& e) {
+      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
+    } catch (std::out_of_range& e) {
+      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
+    } catch (const std::overflow_error& e) {
+      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_packed, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_packed(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed *arg1 = (packed *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_packed" "', argument " "1"" of type '" "packed *""'"); 
+  }
+  arg1 = reinterpret_cast< packed * >(argp1);
+  {
+    try {
+      delete arg1;
+    } catch (std::bad_variant_access& e) {
+      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
+    } catch (std::out_of_range& e) {
+      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
+    } catch (const std::overflow_error& e) {
+      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *packed_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!SWIG_Python_UnpackTuple(args, "swigregister", 1, 1, &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_packed, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *packed_swiginit(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  return SWIG_Python_InitShadowInstance(args);
+}
+
+SWIGINTERN PyObject *_wrap_packed_soa_close_set(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_soa *arg1 = (packed_soa *) 0 ;
+  double *arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "packed_soa_close_set", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed_soa, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_soa_close_set" "', argument " "1"" of type '" "packed_soa *""'"); 
+  }
+  arg1 = reinterpret_cast< packed_soa * >(argp1);
+  res2 = SWIG_ConvertPtr(swig_obj[1], &argp2,SWIGTYPE_p_double, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "packed_soa_close_set" "', argument " "2"" of type '" "double [100]""'"); 
+  } 
+  arg2 = reinterpret_cast< double * >(argp2);
+  {
+    if (arg2) {
+      size_t ii = 0;
+      for (; ii < (size_t)100; ++ii) *(double *)&arg1->close[ii] = *((double *)arg2 + ii);
+    } else {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""close""' of type '""double [100]""'");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_soa_close_get(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_soa *arg1 = (packed_soa *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  double *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed_soa, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_soa_close_get" "', argument " "1"" of type '" "packed_soa *""'"); 
+  }
+  arg1 = reinterpret_cast< packed_soa * >(argp1);
+  result = (double *)(double *) ((arg1)->close);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_double, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_soa_open_set(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_soa *arg1 = (packed_soa *) 0 ;
+  double *arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "packed_soa_open_set", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed_soa, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_soa_open_set" "', argument " "1"" of type '" "packed_soa *""'"); 
+  }
+  arg1 = reinterpret_cast< packed_soa * >(argp1);
+  res2 = SWIG_ConvertPtr(swig_obj[1], &argp2,SWIGTYPE_p_double, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "packed_soa_open_set" "', argument " "2"" of type '" "double [100]""'"); 
+  } 
+  arg2 = reinterpret_cast< double * >(argp2);
+  {
+    if (arg2) {
+      size_t ii = 0;
+      for (; ii < (size_t)100; ++ii) *(double *)&arg1->open[ii] = *((double *)arg2 + ii);
+    } else {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""open""' of type '""double [100]""'");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_soa_open_get(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_soa *arg1 = (packed_soa *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  double *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed_soa, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_soa_open_get" "', argument " "1"" of type '" "packed_soa *""'"); 
+  }
+  arg1 = reinterpret_cast< packed_soa * >(argp1);
+  result = (double *)(double *) ((arg1)->open);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_double, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_soa_high_set(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_soa *arg1 = (packed_soa *) 0 ;
+  double *arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "packed_soa_high_set", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed_soa, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_soa_high_set" "', argument " "1"" of type '" "packed_soa *""'"); 
+  }
+  arg1 = reinterpret_cast< packed_soa * >(argp1);
+  res2 = SWIG_ConvertPtr(swig_obj[1], &argp2,SWIGTYPE_p_double, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "packed_soa_high_set" "', argument " "2"" of type '" "double [100]""'"); 
+  } 
+  arg2 = reinterpret_cast< double * >(argp2);
+  {
+    if (arg2) {
+      size_t ii = 0;
+      for (; ii < (size_t)100; ++ii) *(double *)&arg1->high[ii] = *((double *)arg2 + ii);
+    } else {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""high""' of type '""double [100]""'");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_soa_high_get(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_soa *arg1 = (packed_soa *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  double *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed_soa, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_soa_high_get" "', argument " "1"" of type '" "packed_soa *""'"); 
+  }
+  arg1 = reinterpret_cast< packed_soa * >(argp1);
+  result = (double *)(double *) ((arg1)->high);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_double, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_soa_low_set(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_soa *arg1 = (packed_soa *) 0 ;
+  double *arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "packed_soa_low_set", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed_soa, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_soa_low_set" "', argument " "1"" of type '" "packed_soa *""'"); 
+  }
+  arg1 = reinterpret_cast< packed_soa * >(argp1);
+  res2 = SWIG_ConvertPtr(swig_obj[1], &argp2,SWIGTYPE_p_double, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "packed_soa_low_set" "', argument " "2"" of type '" "double [100]""'"); 
+  } 
+  arg2 = reinterpret_cast< double * >(argp2);
+  {
+    if (arg2) {
+      size_t ii = 0;
+      for (; ii < (size_t)100; ++ii) *(double *)&arg1->low[ii] = *((double *)arg2 + ii);
+    } else {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""low""' of type '""double [100]""'");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_soa_low_get(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_soa *arg1 = (packed_soa *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  double *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed_soa, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_soa_low_get" "', argument " "1"" of type '" "packed_soa *""'"); 
+  }
+  arg1 = reinterpret_cast< packed_soa * >(argp1);
+  result = (double *)(double *) ((arg1)->low);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_double, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_soa_volume_set(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_soa *arg1 = (packed_soa *) 0 ;
+  double *arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "packed_soa_volume_set", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed_soa, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_soa_volume_set" "', argument " "1"" of type '" "packed_soa *""'"); 
+  }
+  arg1 = reinterpret_cast< packed_soa * >(argp1);
+  res2 = SWIG_ConvertPtr(swig_obj[1], &argp2,SWIGTYPE_p_double, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "packed_soa_volume_set" "', argument " "2"" of type '" "double [100]""'"); 
+  } 
+  arg2 = reinterpret_cast< double * >(argp2);
+  {
+    if (arg2) {
+      size_t ii = 0;
+      for (; ii < (size_t)100; ++ii) *(double *)&arg1->volume[ii] = *((double *)arg2 + ii);
+    } else {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""volume""' of type '""double [100]""'");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_soa_volume_get(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_soa *arg1 = (packed_soa *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  double *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed_soa, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_soa_volume_get" "', argument " "1"" of type '" "packed_soa *""'"); 
+  }
+  arg1 = reinterpret_cast< packed_soa * >(argp1);
+  result = (double *)(double *) ((arg1)->volume);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_double, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_packed_soa(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_soa *result = 0 ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "new_packed_soa", 0, 0, 0)) SWIG_fail;
+  {
+    try {
+      result = (packed_soa *)new packed_soa();
+    } catch (std::bad_variant_access& e) {
+      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
+    } catch (std::out_of_range& e) {
+      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
+    } catch (const std::overflow_error& e) {
+      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_packed_soa, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_packed_soa(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_soa *arg1 = (packed_soa *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed_soa, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_packed_soa" "', argument " "1"" of type '" "packed_soa *""'"); 
+  }
+  arg1 = reinterpret_cast< packed_soa * >(argp1);
+  {
+    try {
+      delete arg1;
+    } catch (std::bad_variant_access& e) {
+      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
+    } catch (std::out_of_range& e) {
+      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
+    } catch (const std::overflow_error& e) {
+      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *packed_soa_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!SWIG_Python_UnpackTuple(args, "swigregister", 1, 1, &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_packed_soa, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *packed_soa_swiginit(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  return SWIG_Python_InitShadowInstance(args);
+}
+
+SWIGINTERN PyObject *_wrap_packed_helper_prices_set(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_helper *arg1 = (packed_helper *) 0 ;
+  packed *arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "packed_helper_prices_set", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed_helper, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_helper_prices_set" "', argument " "1"" of type '" "packed_helper *""'"); 
+  }
+  arg1 = reinterpret_cast< packed_helper * >(argp1);
+  res2 = SWIG_ConvertPtr(swig_obj[1], &argp2,SWIGTYPE_p_packed, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "packed_helper_prices_set" "', argument " "2"" of type '" "packed [100]""'"); 
+  } 
+  arg2 = reinterpret_cast< packed * >(argp2);
+  {
+    if (arg2) {
+      size_t ii = 0;
+      for (; ii < (size_t)100; ++ii) *(packed *)&arg1->prices[ii] = *((packed *)arg2 + ii);
+    } else {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""prices""' of type '""packed [100]""'");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_helper_prices_get(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_helper *arg1 = (packed_helper *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  packed *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed_helper, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_helper_prices_get" "', argument " "1"" of type '" "packed_helper *""'"); 
+  }
+  arg1 = reinterpret_cast< packed_helper * >(argp1);
+  result = (packed *)(packed *) ((arg1)->prices);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_packed, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_helper_prices_soa_set(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_helper *arg1 = (packed_helper *) 0 ;
+  packed_soa *arg2 = (packed_soa *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "packed_helper_prices_soa_set", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed_helper, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_helper_prices_soa_set" "', argument " "1"" of type '" "packed_helper *""'"); 
+  }
+  arg1 = reinterpret_cast< packed_helper * >(argp1);
+  res2 = SWIG_ConvertPtr(swig_obj[1], &argp2,SWIGTYPE_p_packed_soa, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "packed_helper_prices_soa_set" "', argument " "2"" of type '" "packed_soa *""'"); 
+  }
+  arg2 = reinterpret_cast< packed_soa * >(argp2);
+  if (arg1) (arg1)->prices_soa = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_helper_prices_soa_get(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_helper *arg1 = (packed_helper *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  packed_soa *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed_helper, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_helper_prices_soa_get" "', argument " "1"" of type '" "packed_helper *""'"); 
+  }
+  arg1 = reinterpret_cast< packed_helper * >(argp1);
+  result = (packed_soa *)& ((arg1)->prices_soa);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_packed_soa, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packed_helper_transpose_close(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_helper *arg1 = (packed_helper *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  double *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed_helper, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packed_helper_transpose_close" "', argument " "1"" of type '" "packed_helper *""'"); 
+  }
+  arg1 = reinterpret_cast< packed_helper * >(argp1);
+  {
+    try {
+      result = (double *)(arg1)->transpose_close();
+    } catch (std::bad_variant_access& e) {
+      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
+    } catch (std::out_of_range& e) {
+      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
+    } catch (const std::overflow_error& e) {
+      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_double, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_packed_helper(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_helper *result = 0 ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "new_packed_helper", 0, 0, 0)) SWIG_fail;
+  {
+    try {
+      result = (packed_helper *)new packed_helper();
+    } catch (std::bad_variant_access& e) {
+      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
+    } catch (std::out_of_range& e) {
+      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
+    } catch (const std::overflow_error& e) {
+      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_packed_helper, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_packed_helper(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  packed_helper *arg1 = (packed_helper *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_packed_helper, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_packed_helper" "', argument " "1"" of type '" "packed_helper *""'"); 
+  }
+  arg1 = reinterpret_cast< packed_helper * >(argp1);
+  {
+    try {
+      delete arg1;
+    } catch (std::bad_variant_access& e) {
+      SWIG_exception(SWIG_ValueError, const_cast<char*>(e.what()));
+    } catch (std::out_of_range& e) {
+      SWIG_exception(SWIG_IndexError, const_cast<char*>(e.what()));
+    } catch (const std::overflow_error& e) {
+      SWIG_exception(SWIG_OverflowError, const_cast<char*>(e.what()));
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *packed_helper_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!SWIG_Python_UnpackTuple(args, "swigregister", 1, 1, &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_packed_helper, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *packed_helper_swiginit(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  return SWIG_Python_InitShadowInstance(args);
+}
 
 SWIGINTERN PyObject *_wrap_discount2rate__SWIG_0(PyObject *self, Py_ssize_t nobjs, PyObject **swig_obj) {
   PyObject *resultobj = 0;
@@ -64620,7 +65707,45 @@ static PyMethodDef SwigMethods[] = {
 	 { "CallImpliedvolatility", _wrap_CallImpliedvolatility, METH_VARARGS, NULL},
 	 { "PutImpliedvolatility", _wrap_PutImpliedvolatility, METH_VARARGS, NULL},
 	 { "GreeksVolga", _wrap_GreeksVolga, METH_VARARGS, NULL},
+	 { "Vanna", _wrap_Vanna, METH_VARARGS, NULL},
 	 { "parkinson", _wrap_parkinson, METH_VARARGS, NULL},
+	 { "packed_close_set", _wrap_packed_close_set, METH_VARARGS, NULL},
+	 { "packed_close_get", _wrap_packed_close_get, METH_O, NULL},
+	 { "packed_open_set", _wrap_packed_open_set, METH_VARARGS, NULL},
+	 { "packed_open_get", _wrap_packed_open_get, METH_O, NULL},
+	 { "packed_high_set", _wrap_packed_high_set, METH_VARARGS, NULL},
+	 { "packed_high_get", _wrap_packed_high_get, METH_O, NULL},
+	 { "packed_low_set", _wrap_packed_low_set, METH_VARARGS, NULL},
+	 { "packed_low_get", _wrap_packed_low_get, METH_O, NULL},
+	 { "packed_volume_set", _wrap_packed_volume_set, METH_VARARGS, NULL},
+	 { "packed_volume_get", _wrap_packed_volume_get, METH_O, NULL},
+	 { "new_packed", _wrap_new_packed, METH_NOARGS, NULL},
+	 { "delete_packed", _wrap_delete_packed, METH_O, NULL},
+	 { "packed_swigregister", packed_swigregister, METH_O, NULL},
+	 { "packed_swiginit", packed_swiginit, METH_VARARGS, NULL},
+	 { "packed_soa_close_set", _wrap_packed_soa_close_set, METH_VARARGS, NULL},
+	 { "packed_soa_close_get", _wrap_packed_soa_close_get, METH_O, NULL},
+	 { "packed_soa_open_set", _wrap_packed_soa_open_set, METH_VARARGS, NULL},
+	 { "packed_soa_open_get", _wrap_packed_soa_open_get, METH_O, NULL},
+	 { "packed_soa_high_set", _wrap_packed_soa_high_set, METH_VARARGS, NULL},
+	 { "packed_soa_high_get", _wrap_packed_soa_high_get, METH_O, NULL},
+	 { "packed_soa_low_set", _wrap_packed_soa_low_set, METH_VARARGS, NULL},
+	 { "packed_soa_low_get", _wrap_packed_soa_low_get, METH_O, NULL},
+	 { "packed_soa_volume_set", _wrap_packed_soa_volume_set, METH_VARARGS, NULL},
+	 { "packed_soa_volume_get", _wrap_packed_soa_volume_get, METH_O, NULL},
+	 { "new_packed_soa", _wrap_new_packed_soa, METH_NOARGS, NULL},
+	 { "delete_packed_soa", _wrap_delete_packed_soa, METH_O, NULL},
+	 { "packed_soa_swigregister", packed_soa_swigregister, METH_O, NULL},
+	 { "packed_soa_swiginit", packed_soa_swiginit, METH_VARARGS, NULL},
+	 { "packed_helper_prices_set", _wrap_packed_helper_prices_set, METH_VARARGS, NULL},
+	 { "packed_helper_prices_get", _wrap_packed_helper_prices_get, METH_O, NULL},
+	 { "packed_helper_prices_soa_set", _wrap_packed_helper_prices_soa_set, METH_VARARGS, NULL},
+	 { "packed_helper_prices_soa_get", _wrap_packed_helper_prices_soa_get, METH_O, NULL},
+	 { "packed_helper_transpose_close", _wrap_packed_helper_transpose_close, METH_O, NULL},
+	 { "new_packed_helper", _wrap_new_packed_helper, METH_NOARGS, NULL},
+	 { "delete_packed_helper", _wrap_delete_packed_helper, METH_O, NULL},
+	 { "packed_helper_swigregister", packed_helper_swigregister, METH_O, NULL},
+	 { "packed_helper_swiginit", packed_helper_swiginit, METH_VARARGS, NULL},
 	 { "discount2rate", _wrap_discount2rate, METH_VARARGS, NULL},
 	 { "rate2discount", _wrap_rate2discount, METH_VARARGS, NULL},
 	 { "equivalent_rate", _wrap_equivalent_rate, METH_VARARGS, NULL},
@@ -64966,6 +66091,9 @@ static swig_type_info _swigt__p_key_type = {"_p_key_type", "key_type *", 0, 0, (
 static swig_type_info _swigt__p_mapped_type = {"_p_mapped_type", "mapped_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_nc__NdArrayT_double_t = {"_p_nc__NdArrayT_double_t", "Serie::Buffer *|rp::internal_array *|nc::NdArray< double > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_PyObject = {"_p_p_PyObject", "PyObject **", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_packed = {"_p_packed", "packed *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_packed_helper = {"_p_packed_helper", "packed_helper *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_packed_soa = {"_p_packed_soa", "packed_soa *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pf__BlockChain = {"_p_pf__BlockChain", "pf::BlockChain *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pf__ClosedDeal = {"_p_pf__ClosedDeal", "pf::ClosedDeal *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pf__Deal = {"_p_pf__Deal", "pf::Deal *", 0, 0, (void*)0, 0};
@@ -65070,6 +66198,9 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_mapped_type,
   &_swigt__p_nc__NdArrayT_double_t,
   &_swigt__p_p_PyObject,
+  &_swigt__p_packed,
+  &_swigt__p_packed_helper,
+  &_swigt__p_packed_soa,
   &_swigt__p_pf__BlockChain,
   &_swigt__p_pf__ClosedDeal,
   &_swigt__p_pf__Deal,
@@ -65174,6 +66305,9 @@ static swig_cast_info _swigc__p_key_type[] = {  {&_swigt__p_key_type, 0, 0, 0},{
 static swig_cast_info _swigc__p_mapped_type[] = {  {&_swigt__p_mapped_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_nc__NdArrayT_double_t[] = {  {&_swigt__p_nc__NdArrayT_double_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_PyObject[] = {  {&_swigt__p_p_PyObject, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_packed[] = {  {&_swigt__p_packed, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_packed_helper[] = {  {&_swigt__p_packed_helper, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_packed_soa[] = {  {&_swigt__p_packed_soa, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pf__BlockChain[] = {  {&_swigt__p_pf__BlockChain, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pf__ClosedDeal[] = {  {&_swigt__p_pf__ClosedDeal, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pf__Deal[] = {  {&_swigt__p_pf__Deal, 0, 0, 0},  {&_swigt__p_pf__ClosedDeal, _p_pf__ClosedDealTo_p_pf__Deal, 0, 0},  {&_swigt__p_pf__OpenDeal, _p_pf__OpenDealTo_p_pf__Deal, 0, 0},{0, 0, 0, 0}};
@@ -65278,6 +66412,9 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_mapped_type,
   _swigc__p_nc__NdArrayT_double_t,
   _swigc__p_p_PyObject,
+  _swigc__p_packed,
+  _swigc__p_packed_helper,
+  _swigc__p_packed_soa,
   _swigc__p_pf__BlockChain,
   _swigc__p_pf__ClosedDeal,
   _swigc__p_pf__Deal,

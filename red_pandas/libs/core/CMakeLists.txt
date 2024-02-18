@@ -1,4 +1,12 @@
 
+# vcpkg install libffi:x64-windows
+find_package(Arrow CONFIG REQUIRED)
+find_package(Parquet CONFIG REQUIRED)
+find_package(gRPC CONFIG REQUIRED)
+find_package(ZeroMQ CONFIG REQUIRED)
+find_package(cppzmq CONFIG REQUIRED)
+
+
 set(PRIVATE_sources
         libs/core/src/div.cpp
         libs/core/src/mul.cpp
@@ -133,6 +141,11 @@ set_target_properties(red_pandas PROPERTIES SUFFIX ".pyd")
 target_link_directories(red_pandas PUBLIC ${PUBLIC_link_dirs})
 target_link_libraries(red_pandas PRIVATE ${PRIVATE_targets})
 target_link_libraries(red_pandas PUBLIC ${PUBLIC_targets})
+target_link_libraries(red_pandas PRIVATE "$<IF:$<BOOL:${ARROW_BUILD_STATIC}>,Arrow::arrow_static,Arrow::arrow_shared>")
+target_link_libraries(red_pandas PRIVATE "$<IF:$<BOOL:${ARROW_BUILD_STATIC}>,Parquet::parquet_static,Parquet::parquet_shared>")
+target_link_libraries(red_pandas PRIVATE gRPC::gpr gRPC::grpc gRPC::grpc++ gRPC::grpc++_alts)
+target_link_libraries(red_pandas PRIVATE libzmq libzmq-static)
+target_link_libraries(red_pandas PRIVATE cppzmq cppzmq-static)
 
 
 # create STATIC library
@@ -153,6 +166,11 @@ target_link_directories(red_pandas_static PUBLIC ${PUBLIC_link_dirs})
 target_link_libraries(red_pandas_static PRIVATE ${PRIVATE_targets} ${MKL_LIB})
 # target_link_libraries(red_pandas_static PRIVATE ${PRIVATE_targets})
 target_link_libraries(red_pandas_static PUBLIC ${PUBLIC_targets})
+target_link_libraries(red_pandas_static PRIVATE "$<IF:$<BOOL:${ARROW_BUILD_STATIC}>,Arrow::arrow_static,Arrow::arrow_shared>")
+target_link_libraries(red_pandas_static PRIVATE "$<IF:$<BOOL:${ARROW_BUILD_STATIC}>,Parquet::parquet_static,Parquet::parquet_shared>")
+target_link_libraries(red_pandas_static PRIVATE gRPC::gpr gRPC::grpc gRPC::grpc++ gRPC::grpc++_alts)
+target_link_libraries(red_pandas_static PRIVATE libzmq libzmq-static)
+target_link_libraries(red_pandas_static PRIVATE cppzmq cppzmq-static)
 
 # tests LIBRARY
 add_executable(test_core)

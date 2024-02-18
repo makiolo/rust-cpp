@@ -16,6 +16,45 @@
 //#include "rapidcsv.h"
 #include "portfolio.h"
 
+// AoS
+struct packed {
+    double close;
+    double open;
+    double high;
+    double low;
+    double volume;
+};
+
+// SoA
+struct packed_soa {
+    double close[100]; // use std::vector ?
+    double open[100];
+    double high[100];
+    double low[100];
+    double volume[100];
+};
+
+struct packed_helper {
+
+    // AoS
+    packed prices[100];
+
+    // SoA
+    packed_soa prices_soa;
+
+    double* transpose_close() {
+        long i = 0;
+        for (const auto& p : prices)
+        {
+            prices_soa.close[i] = p.close;
+            ++i;
+        }
+        return prices_soa.close;
+    }
+};
+
+
+
 namespace qs {
 
     class ForwardPeriod;
@@ -689,7 +728,7 @@ namespace qs {
             double w1 = last_mat.value / maturity.value;
             double w2 = (maturity.value - last_mat.value) / maturity.value;
             double spot_rate = last_ir.value * w1 + ir_exp.value * w2;
-            append_spot(maturity, InterestRate(spot_rate, Convention::EXPONENTIAL));
+            append_spot(maturity, InterestRate(spot_rate, ir_exp.conv));
         }
 
         void append_par(const Maturity& maturity, const InterestRate& ir)
@@ -972,7 +1011,7 @@ namespace qs {
             return coupon_from_fv(cash, term);
         }
         virtual CustomCashFlow to_custom_cashflow(const Maturity& maturity) const override;
-        virtual CustomCashFlow to_custom_cashflow(const Maturity& maturity, const InterestRate& other_interest_rate) const;
+        virtual CustomCashFlow to_custom_cashflow(const Maturity& maturity, const InterestRate& other_interest_rate) const override;
     };
 
     class CustomCashFlow : public CashFlow
@@ -1008,7 +1047,7 @@ namespace qs {
             return CouponCashFlow(term, cash);  // , growth
         };
         virtual CustomCashFlow to_custom_cashflow(const Maturity& maturity) const override;
-        virtual CustomCashFlow to_custom_cashflow(const Maturity& maturity, const InterestRate& other_interest_rate) const;
+        virtual CustomCashFlow to_custom_cashflow(const Maturity& maturity, const InterestRate& other_interest_rate) const override;
 
         const Maturity& get_maturity() const
         {

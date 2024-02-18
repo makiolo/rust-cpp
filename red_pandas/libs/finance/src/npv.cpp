@@ -2,10 +2,8 @@
 
 namespace qs {
 
-
     const Maturity Maturity::ZERO(0.0);
     const Maturity Maturity::ONE(1.0);
-
     const InterestRate InterestRate::ZERO(0.0);
 
     double Leg::npv() const
@@ -18,7 +16,8 @@ namespace qs {
         return npv;
     }
 
-    void Leg::add(const std::shared_ptr<const CustomCashFlow>& flow) {
+    void Leg::add(const std::shared_ptr<const CustomCashFlow>& flow)
+    {
         flows.emplace_back(flow);
     }
 

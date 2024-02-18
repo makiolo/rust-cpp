@@ -261,4 +261,12 @@ namespace rp {
         return rp::CallGreeksVega(S, K, r, q, T, Vol, d_uno, d_dos) * ((d_uno * d_dos) / Vol);
     }
 
+    rp::column_ptr
+    Vanna(const rp::column_ptr &S, const rp::column_ptr &K, const rp::column_ptr &r, const rp::column_ptr &q,
+                const rp::column_ptr &T,
+                const rp::column_ptr &Vol, const rp::column_ptr &d_uno, const rp::column_ptr &d_dos)
+    {
+        return -((rp::exp(-q * T) * rp::pdf(d_uno) * d_dos) / Vol);
+    }
+
 }
