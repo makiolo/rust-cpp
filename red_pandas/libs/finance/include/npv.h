@@ -952,7 +952,7 @@ namespace qs {
         virtual EndCashFlow to_end_cashflow() const override;
         virtual CouponCashFlow to_coupon(const InterestRate& growth = InterestRate::ZERO) const override {return CouponCashFlow{term, cash};};
         virtual CustomCashFlow to_custom_cashflow(const Maturity& maturity) const override;
-        virtual CustomCashFlow to_custom_cashflow(const Maturity& maturity, const InterestRate& other_interest_rate) const;
+        virtual CustomCashFlow to_custom_cashflow(const Maturity& maturity, const InterestRate& other_interest_rate) const override;
 
     public:
         InterestRate growth;
@@ -980,7 +980,7 @@ namespace qs {
             return coupon_from_npv(cash, term);
         }
         virtual CustomCashFlow to_custom_cashflow(const Maturity& maturity) const override;
-        virtual CustomCashFlow to_custom_cashflow(const Maturity& maturity, const InterestRate& other_interest_rate) const;
+        virtual CustomCashFlow to_custom_cashflow(const Maturity& maturity, const InterestRate& other_interest_rate) const override;
     };
 
     class EndCashFlow : public CashFlow

@@ -1,10 +1,60 @@
 
-# create LIBRARY
 
+
+# 1 llega un mensaje JSON/YAML
+# 2 devuelve 200 si algun job acepta su esquema y name de job valido
+# 3 se mete en la cola de requests
+# 4 si hay ejecutores libres, se mete en la cola de cada job
+# 5 el job lee de su cola, ejecuta el job y devuelve SUCCESS, UNSTABLE, FAILED, ABORTED, ERROR.
+# 6. Se almacena el resultado en una tabla de la base de datos con el status y el tiempo de ejecución.
+
+
+
+# Comunicacion exterior: REST, RPC, WebSockets ...
+# Llega una request (con el nombre del job y los parametros)
+# Se mete en la cola
+# Se va despachando si hay ejecutores libres
+# El job es un behaviour tree parametrizado
+# Desde la ejecución puede:
+# - Escribir Log o Backtraces
+# - Enviar mensajes a otros jobs, aunque idealmente un job debe ser independiente
+# - Enviar mensajes a otros servicios (zeromq, http, rpc, websockets ...)
+# - Leer y escribir en una base de datos
+# - Leer y escribir en un archivo
+# - Leer y escribir en una cola de mensajes
+# - Leer y escribir en una cola de eventos
+# - Calcular querys de la base de datos y almacenarlo en una tabla
 find_package(fmt CONFIG REQUIRED)
+# Download
 find_package(CURL REQUIRED)
-find_package(glfw3 CONFIG REQUIRED)
+# User interfacde
 find_package(OpenGL REQUIRED)
+find_package(glfw3 CONFIG REQUIRED)
+# Send and receive data
+find_package(ZeroMQ CONFIG REQUIRED)
+find_package(cppzmq CONFIG REQUIRED)
+# Save and load data
+find_package(unofficial-sqlite3 CONFIG REQUIRED)
+find_package(SqliteOrm CONFIG REQUIRED)
+find_package(SQLiteCpp CONFIG REQUIRED)
+# Algorithms
+find_package(ParallelSTL CONFIG REQUIRED)
+# Calculate on data
+find_package(DataFrame CONFIG REQUIRED)
+# Ejecutar Jobs (Un scheduler de corutinas)
+find_package(behaviortree_cpp CONFIG REQUIRED)
+# Organizacion de Objetos Reutilizables
+find_package(EnTT CONFIG REQUIRED)
+# Optimizar memoria
+find_package(mimalloc CONFIG REQUIRED)
+# include(FetchContent)
+# FetchContent_Declare(
+#         libcoro
+#         GIT_REPOSITORY https://github.com/jbaldwin/libcoro.git
+#         GIT_TAG        v0.11.1
+# )
+# FetchContent_MakeAvailable(libcoro)
+
 
 # GLAD
 add_subdirectory(depends/implot_demos/3rdparty/glad)
@@ -53,6 +103,7 @@ add_library(imgui ${IMGUI_HEADERS} ${IMGUI_SRC})
 if(MSVC)
         target_compile_options(imgui PRIVATE /W4 /WX /arch:AVX2 /fp:fast)
 endif()
+
 # imm32 is needed for Multimedia Input
 target_link_libraries(imgui PUBLIC glfw glad OpenGL::GL imm32)
 target_compile_definitions(imgui PRIVATE IMGUI_DLL_EXPORT)
@@ -109,6 +160,7 @@ include_directories(depends/implot/)
 
 set(PRIVATE_sources
         libs/gui/src/gui.cpp
+        # libs/gui/src/producer.cpp
         depends/implot_demos/common/App.cpp
         depends/implot_demos/common/Native.cpp
         depends/implot_demos/common/Fonts/FontAwesome5.cpp
@@ -121,6 +173,7 @@ set(PRIVATE_sources
         )
 set(PUBLIC_sources
         libs/gui/include/gui.h
+        # libs/gui/include/producer.h
         depends/implot_demos/common/App.h
         depends/implot_demos/common/Shader.h
         depends/implot_demos/common/Native.h
@@ -145,7 +198,11 @@ set(PRIVATE_targets
 set(PUBLIC_targets
 
         )
-add_executable(gui WIN32)
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+        add_executable(gui)
+else()
+        add_executable(gui WIN32)
+endif()
 target_sources(gui PRIVATE ${PRIVATE_sources} PUBLIC ${PUBLIC_sources})
 target_include_directories(gui PUBLIC ${PUBLIC_include_dirs})
 target_include_directories(gui PRIVATE ${PRIVATE_include_dirs})
@@ -153,5 +210,16 @@ target_compile_features(gui PUBLIC cxx_std_20)
 set_target_properties(gui PROPERTIES VERSION ${PROJECT_VERSION})
 target_link_libraries(gui PRIVATE ${PRIVATE_targets})
 target_link_libraries(gui PUBLIC ${PUBLIC_targets})
+target_link_libraries(gui PRIVATE libzmq libzmq-static)
+target_link_libraries(gui PRIVATE cppzmq cppzmq-static)
+target_link_libraries(gui PRIVATE unofficial::sqlite3::sqlite3)
+target_link_libraries(gui PRIVATE SQLiteCpp)
+target_link_libraries(gui PRIVATE sqlite_orm::sqlite_orm)
+target_link_libraries(gui PRIVATE pstl::ParallelSTL)
+target_link_libraries(gui PRIVATE DataFrame::DataFrame)
+# target_link_libraries(gui PRIVATE libcoro)
+target_link_libraries(gui PRIVATE BT::behaviortree_cpp)
+target_link_libraries(gui PRIVATE EnTT::EnTT)
+target_link_libraries(gui PRIVATE mimalloc-static)
 install(TARGETS gui DESTINATION ${CMAKE_SOURCE_DIR}/bin)
 install(IMPORTED_RUNTIME_ARTIFACTS glfw DESTINATION ${CMAKE_INSTALL_PREFIX})

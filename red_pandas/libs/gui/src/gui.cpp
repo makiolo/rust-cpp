@@ -13,6 +13,12 @@
 #include <csv.h>
 #include <fmt/format.h>
 #include <implot_internal.h>
+// #include <zmq.hpp>
+// #include "producer.h"
+// #include <future>
+// #include <iostream>
+// #include <string>
+// #include <thread>
 
 namespace fs = std::filesystem;
 
@@ -417,10 +423,32 @@ struct ImStocks : App
     std::map<std::string,TickerData> m_ticker_data;
 };
 
+#ifdef _DEBUG
+int main(int argc, char const *argv[])
+#else
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
+#endif
 {
+    /*
+    zmq::context_t ctx(0);
+
+    auto thread1 = std::async(std::launch::async, PublisherThread, &ctx);
+
+    // Give the publisher a chance to bind, since inproc requires it
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+    auto thread2 = std::async(std::launch::async, SubscriberThread1, &ctx);
+    auto thread3 = std::async(std::launch::async, SubscriberThread2, &ctx);
+    */
+
     // system("python -c \"import yfinance as yf; df = yf.download('AAPL'); df.to_csv('AAPL.csv')\"");
+#ifdef _DEBUG
+    ImStocks app("ImStocks",960,540, argc, argv);
+#else
     ImStocks app("ImStocks",960,540,(int)__argc, (char const**)__argv);
+#endif
     app.Run();
+
+    return 0;
 }
 

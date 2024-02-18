@@ -86,3 +86,5 @@ include(libs/CMakeLists.txt)
 # install all targets
 get_property(target_names DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY BUILDSYSTEM_TARGETS)
 install(TARGETS ${target_names} DESTINATION ${CMAKE_INSTALL_PREFIX})
+
+# cpack
