@@ -17,4 +17,4 @@ pip install notebook
 
 # Generate ".h"
 
-- cbindgen --config cbindgen.toml --crate red_pandas --output lib/red_pandas.h
+- cbindgen --config cbindgen.toml --crate red_pandas --output libs/red_pandas.h

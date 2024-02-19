@@ -71,3 +71,5 @@ void SubscriberThread2(zmq::context_t *ctx) {
                   << recv_msgs[1].to_string() << std::endl;
     }
 }
+
+

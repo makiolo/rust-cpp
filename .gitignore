@@ -37,3 +37,5 @@ test_cpp/bin/
 /cmake-build-debug/
 red_pandas/cmake-build-debug
 red_pandas/cmake-build-release
+docs/input/.obsidian
+red_pandas/build
