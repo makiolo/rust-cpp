@@ -57,7 +57,7 @@ fn main() {
     let dst = cmake::Config::new(".")
         .generator("Ninja")
         .profile("Release")
-        .build_target("red_pandas_static")
+        // .build_target("red_pandas_static")
         .define("CMAKE_C_COMPILER", "D:/Microsoft Visual Studio/2022/Community/VC/Tools/Llvm/bin/clang-cl.exe")
         .define("CMAKE_CXX_COMPILER", "D:/Microsoft Visual Studio/2022/Community/VC/Tools/Llvm/bin/clang-cl.exe")
         .define("CMAKE_C_FLAGS", "-m64")
