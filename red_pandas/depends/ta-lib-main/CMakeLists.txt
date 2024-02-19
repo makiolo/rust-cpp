@@ -254,4 +254,8 @@ target_include_directories(ta_lib PUBLIC ${PUBLIC_include_dirs})
 target_include_directories(ta_lib_static PUBLIC ${PUBLIC_include_dirs})
 
 # INSTALL(FILES ${ta-lib_HEADERS} DESTINATION include/ta-lib)
-# INSTALL(TARGETS ta_lib ta_lib_static DESTINATION lib)
+INSTALL(TARGETS ta_lib ta_lib_static
+	ARCHIVE DESTINATION .
+	LIBRARY DESTINATION .
+	RUNTIME DESTINATION .
+)

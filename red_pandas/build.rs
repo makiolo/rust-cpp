@@ -56,8 +56,8 @@ fn main() {
 
     let dst = cmake::Config::new(".")
         .generator("Ninja")
-        .profile("Release")
-        // .build_target("red_pandas_static")
+        .build_target("install")
+        .pic(true)
         .define("CMAKE_C_COMPILER", "D:/Microsoft Visual Studio/2022/Community/VC/Tools/Llvm/bin/clang-cl.exe")
         .define("CMAKE_CXX_COMPILER", "D:/Microsoft Visual Studio/2022/Community/VC/Tools/Llvm/bin/clang-cl.exe")
         .define("CMAKE_C_FLAGS", "-m64")
@@ -66,11 +66,12 @@ fn main() {
         .define("CMAKE_TOOLCHAIN_FILE", "C:/Users/makiolo/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake")
         .build();
 
-    println!("cargo:rustc-link-search=all={}\\..\\bin", out_dir);
     println!("cargo:rustc-link-search=all={}\\Library\\bin", python_home);
     println!("cargo:rustc-link-search=all={}\\Library\\lib", python_home);
     println!("cargo:rustc-link-search=all={}\\libs", python_home);
-    println!("cargo:rustc-link-search={}", Path::new(&dir).join("bin").display());
+    println!("cargo:rustc-link-search={}", Path::new(&dir).join("dist").display());
+    // println!("cargo:rustc-link-search={}", Path::new(&dir).join("bin").display());
+    /*
     if cfg!(windows) {
         let profile = env::var("PROFILE").unwrap();
         println!("cargo:rustc-link-search=all={}\\build\\{}", out_dir, profile);
@@ -79,6 +80,7 @@ fn main() {
     } else {
         println!("Invalid OS: {}", env::consts::OS);
     }
+    */
 
     println!("cargo:rustc-link-lib=static={}", "red_pandas_static");
     println!("cargo:rustc-link-lib=static={}", "mkl_intel_lp64_dll");
