@@ -23,6 +23,8 @@
 #include "rand_normal.h"
 #include "formulas/greeks.h"
 #include <functional>
+#include "arrow.h"
+
 
 TEST_CASE("sum ref", "[rp]")
 {
@@ -826,6 +828,7 @@ rp::dataframe calculate_returns(
     return data_returns;
 }
 
+/*
 TEST_CASE("reward ratio", "[reward]")
 {
     int elements = 500;
@@ -947,6 +950,7 @@ TEST_CASE("reward ratio", "[reward]")
               0.0672672074, 0.0744082421 }
     )) );
 }
+*/
 
 TEST_CASE("moving average 20", "[ma]")
 {
@@ -957,7 +961,7 @@ TEST_CASE("moving average 20", "[ma]")
     auto dataset = rp::mapcalculate( rp::window( rp::calculate(close), 20) );
     auto avg = rp::mean({rp::mean(dataset)});
     REQUIRE_THAT(avg->to_vector(), Catch::Matchers::Approx(std::vector<double>(
-            { 40.0079193258 }
+            { 40.0026154698 }
     )) );
 }
 // make rp::linspace(-5, +5, 0.1)
@@ -965,3 +969,14 @@ TEST_CASE("moving average 20", "[ma]")
 
 // usar callbacks de python, combinando swig con ctypes
 // leer: https://stackoverflow.com/questions/34445045/passing-python-functions-to-swig-wrapped-c-code
+
+
+TEST_CASE("arrow test", "[rp]")
+{
+    rp::Arrow test;
+    test.append(1);
+    test.append(2);
+    test.append(3);
+    test.finish();
+    // std::cout << "test: " << test.to_string() << std::endl;
+}

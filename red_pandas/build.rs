@@ -57,14 +57,30 @@ fn main() {
     let dst = cmake::Config::new(".")
         .generator("Ninja")
         .build_target("install")
-        .pic(true)
         .define("CMAKE_C_COMPILER", "D:/Microsoft Visual Studio/2022/Community/VC/Tools/Llvm/bin/clang-cl.exe")
         .define("CMAKE_CXX_COMPILER", "D:/Microsoft Visual Studio/2022/Community/VC/Tools/Llvm/bin/clang-cl.exe")
         .define("CMAKE_C_FLAGS", "-m64")
         .define("CMAKE_CXX_FLAGS", "-m64")
         .define("CMAKE_MAKE_PROGRAM", "D:/CLion/bin/ninja/win/x64/ninja.exe")
-        .define("CMAKE_TOOLCHAIN_FILE", "C:/Users/makiolo/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake")
+        // VCPKG_CHAINLOAD_TOOLCHAIN_FILE
+        .define("CMAKE_TOOLCHAIN_FILE", "D:/dev/vcpkg_root/scripts/buildsystems/vcpkg.cmake")
+        // debug
+        .define("VCPKG_TARGET_TRIPLET", "x64-windows")
+
         .build();
+
+    /*
+    let profile = env::var("PROFILE").unwrap();
+    if profile == "release" {
+        dst.define("VCPKG_TARGET_TRIPLET", "x64-windows-static")
+           .static_crt(true)
+           .pic(true)
+           .build();
+    } else {
+        dst.define("VCPKG_TARGET_TRIPLET", "x64-windows")
+            .build();
+    }
+    */
 
     println!("cargo:rustc-link-search=all={}\\Library\\bin", python_home);
     println!("cargo:rustc-link-search=all={}\\Library\\lib", python_home);

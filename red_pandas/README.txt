@@ -18,3 +18,14 @@ pip install notebook
 # Generate ".h"
 
 - cbindgen --config cbindgen.toml --crate red_pandas --output libs/red_pandas.h
+
+
+# Configurar preset y compilar
+
+vcpkg install --triplet x64-windows
+cmake -B build -S . --preset=win-x64-release
+cmake --build build --config Release
+
+# Probar Bazel
+
+https://medium.com/@Vertexwahn/bazel-as-an-alternative-to-cmake-fb7c86d95b48

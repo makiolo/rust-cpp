@@ -3,7 +3,9 @@
 find_package(Arrow CONFIG REQUIRED)
 find_package(Parquet CONFIG REQUIRED)
 find_package(gRPC CONFIG REQUIRED)
-
+find_package(flatbuffers CONFIG REQUIRED)
+# find_package(Protobuf CONFIG REQUIRED)
+find_package(unofficial-avro-cpp CONFIG REQUIRED)
 
 set(PRIVATE_sources
         libs/core/src/div.cpp
@@ -37,6 +39,7 @@ set(PRIVATE_sources
         ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python/interface_py_wrap.cxx
         libs/core/src/formulas/greeks.cpp
         libs/core/src/formulas/volatility.cpp
+        libs/core/src/arrow.cpp
         )
 set(PUBLIC_sources
         libs/core/include/serie.h
@@ -72,6 +75,7 @@ set(PUBLIC_sources
         libs/core/include/IterableRepository.h
         libs/core/include/formulas/greeks.h
         libs/core/include/formulas/volatility.h
+        libs/core/include/arrow.h
         )
 set(PUBLIC_extra_sources
         libs/core/tests/test_core.py
@@ -85,15 +89,12 @@ set(PUBLIC_include_dirs
         libs/core/include
         depends/NumCpp-master/include
         depends/parallel-hashmap
-        # depends/libtorch/include
-        # depends/libtorch/include/torch/csrc/api/include
         ${PYTHON3_INCLUDE}
         ${MKL_INCLUDE}
         ${NUMPY_INCLUDE}
         )
 set(PUBLIC_link_dirs
         ${MKL_LIBDIR}
-        # depends/libtorch/lib
         )
 set(PUBLIC_options
         )
@@ -106,8 +107,6 @@ set(PRIVATE_targets
         ${PYTHON3_LIB}
         ${NUMPY_LIB}
         ta_lib_static
-        # torch_cpu
-        # c10
         )
 
 set(PUBLIC_targets
@@ -122,7 +121,7 @@ add_custom_command(
         OUTPUT  ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python/interface_py_wrap.cxx
         COMMAND swig_generate.cmd
         MAIN_DEPENDENCY ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python/interface_py.i
-        DEPENDS ${public_sources} ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python/red_pandas_impl.py ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python/javascript/interface_py.i
+        DEPENDS ${public_sources} ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python/red_pandas_impl.py
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/core/python
 )
 
@@ -142,6 +141,9 @@ target_link_libraries(red_pandas PUBLIC ${PUBLIC_targets})
 target_link_libraries(red_pandas PRIVATE "$<IF:$<BOOL:${ARROW_BUILD_STATIC}>,Arrow::arrow_static,Arrow::arrow_shared>")
 target_link_libraries(red_pandas PRIVATE "$<IF:$<BOOL:${ARROW_BUILD_STATIC}>,Parquet::parquet_static,Parquet::parquet_shared>")
 target_link_libraries(red_pandas PRIVATE gRPC::gpr gRPC::grpc gRPC::grpc++ gRPC::grpc++_alts)
+target_link_libraries(red_pandas PRIVATE flatbuffers::flatbuffers)
+# target_link_libraries(red_pandas PRIVATE protobuf::libprotoc protobuf::libprotobuf protobuf::libprotobuf-lite)
+target_link_libraries(red_pandas PRIVATE unofficial::avro-cpp::avrocpp)
 
 
 # create STATIC library
@@ -165,6 +167,9 @@ target_link_libraries(red_pandas_static PUBLIC ${PUBLIC_targets})
 target_link_libraries(red_pandas_static PRIVATE "$<IF:$<BOOL:${ARROW_BUILD_STATIC}>,Arrow::arrow_static,Arrow::arrow_shared>")
 target_link_libraries(red_pandas_static PRIVATE "$<IF:$<BOOL:${ARROW_BUILD_STATIC}>,Parquet::parquet_static,Parquet::parquet_shared>")
 target_link_libraries(red_pandas_static PRIVATE gRPC::gpr gRPC::grpc gRPC::grpc++ gRPC::grpc++_alts)
+target_link_libraries(red_pandas_static PRIVATE flatbuffers::flatbuffers)
+# target_link_libraries(red_pandas_static PRIVATE protobuf::libprotoc protobuf::libprotobuf protobuf::libprotobuf-lite)
+target_link_libraries(red_pandas_static PRIVATE unofficial::avro-cpp::avrocpp)
 
 
 # tests LIBRARY
